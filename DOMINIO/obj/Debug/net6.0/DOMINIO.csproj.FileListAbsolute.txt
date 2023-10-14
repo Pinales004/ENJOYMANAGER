@@ -1,0 +1,15 @@
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.deps.json
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.pdb
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.pdb
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.AssemblyReference.cache
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfoInputs.cache
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfo.cs
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CoreCompileInputs.cache
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CopyComplete
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
