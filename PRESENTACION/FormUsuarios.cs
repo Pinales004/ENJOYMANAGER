@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,16 @@ using System.Windows.Forms;
 
 namespace PRESENTACION
 {
-    public partial class FormUsuarios : Form
+    public partial class Frm_Usuarios : MaterialForm
     {
-        public FormUsuarios()
+        public Frm_Usuarios()
         {
             InitializeComponent();
+        }
+
+        private void FormUsuarios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

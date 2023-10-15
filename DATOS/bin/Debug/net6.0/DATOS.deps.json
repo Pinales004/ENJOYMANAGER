@@ -8,10 +8,20 @@
     ".NETCoreApp,Version=v6.0": {
       "DATOS/1.0.0": {
         "dependencies": {
+          "Comun": "1.0.0",
+          "MaterialSkin": "0.2.1",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {
           "DATOS.dll": {}
+        }
+      },
+      "MaterialSkin/0.2.1": {
+        "runtime": {
+          "lib/MaterialSkin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
@@ -88,7 +98,12 @@
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
-      "System.Security.Principal.Windows/4.7.0": {}
+      "System.Security.Principal.Windows/4.7.0": {},
+      "Comun/1.0.0": {
+        "runtime": {
+          "Comun.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -96,6 +111,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MaterialSkin/0.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/6AEh6qIeNKbxsha7IHBb5s50tyvB0iZuGQPB9mjyR+mRdfQ7vnKTklwI26Y/DbrymTcg+aBHSgCgAT7/qLIrQ==",
+      "path": "materialskin/0.2.1",
+      "hashPath": "materialskin.0.2.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
@@ -159,6 +181,11 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "Comun/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

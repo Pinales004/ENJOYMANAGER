@@ -1,6 +1,6 @@
 ﻿namespace PRESENTACION
 {
-    partial class FormUsuarios
+    partial class Frm_Usuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            SuspendLayout();
+            this.SuspendLayout();
             // 
-            // label1
+            // Frm_Usuarios
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(356, 218);
-            label1.Name = "label1";
-            label1.Size = new Size(52, 15);
-            label1.TabIndex = 1;
-            label1.Text = "Usuarios";
-            // 
-            // FormUsuarios
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Name = "FormUsuarios";
-            Text = "FormUsuarios";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "Frm_Usuarios";
+            this.Text = "Administracion Usuarios";
+            this.Load += new System.EventHandler(this.FormUsuarios_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
-
-        private Label label1;
     }
 }

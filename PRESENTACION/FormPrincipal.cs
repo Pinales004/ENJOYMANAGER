@@ -1,3 +1,5 @@
+using Comun.Biblioteca.Enums;
+using Comun.Cache;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +28,29 @@ namespace PRESENTACION
             {
 
             }
+        }
+
+        
+
+        private void LoadUserData()
+        {
+            lblNombre.Text = UserLoginCache.Nombres;
+            lblApellido.Text = UserLoginCache.Apellido;
+
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Administrador)
+            {
+                lblRol.Text = "Administrador";
+            }
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+            {
+                lblRol.Text = "Gerente";
+            }
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+            {
+                lblRol.Text = "Programador";
+            }
+
+
         }
 
         //Constructor
@@ -127,7 +152,7 @@ namespace PRESENTACION
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FormUsuarios>();
+            AbrirFormulario<Frm_Usuarios>();
         }
 
         private void btnProyectos_Click(object sender, EventArgs e)
@@ -138,6 +163,11 @@ namespace PRESENTACION
         private void btnTareas_Click(object sender, EventArgs e)
         {
             AbrirFormulario<FormTareas>();
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            LoadUserData();
         }
 
         private void btnProgramadores_Click(object sender, EventArgs e)

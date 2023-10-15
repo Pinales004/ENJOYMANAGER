@@ -151,8 +151,9 @@ namespace PRESENTACION
 
         private void Logout(object sender, FormClosedEventArgs e)
         {
-            TxtContrasena.Clear();
-            txtUsuario.Clear();
+            TxtContrasena.Text= "CONTRASEÑA";
+            TxtContrasena.UseSystemPasswordChar = false;
+            txtUsuario.Text = "USUARIO";
             blErrorMensaje.Visible = false;
             this.Show();
             txtUsuario.Focus();

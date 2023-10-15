@@ -22,3 +22,6 @@ C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\n
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\refint\DATOS.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.pdb
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\ref\DATOS.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\bin\Debug\net6.0\Comun.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\bin\Debug\net6.0\Comun.pdb
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.csproj.CopyComplete
