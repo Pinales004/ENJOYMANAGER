@@ -10,3 +10,15 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DAT
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\obj\Debug\net6.0\refint\DATOS.dll
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\obj\Debug\net6.0\ref\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\bin\Debug\net6.0\DATOS.deps.json
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\bin\Debug\net6.0\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\bin\Debug\net6.0\DATOS.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.csproj.AssemblyReference.cache
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.AssemblyInfoInputs.cache
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.AssemblyInfo.cs
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.csproj.CoreCompileInputs.cache
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\refint\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\ref\DATOS.dll

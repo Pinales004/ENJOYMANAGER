@@ -105,13 +105,14 @@ namespace PRESENTACION
 
             if (txtUsuario.Text != "USUARIO")
             {
-                if (TxtContrasena.Text != "CONTRASEÑA") {
+                if (TxtContrasena.Text != "CONTRASEÑA")
+                {
 
                     Usuario user = new Usuario();
                     var ValidLogin = user.LoginUser(txtUsuario.Text, TxtContrasena.Text);
-                    if (ValidLogin==true)
+                    if (ValidLogin == true)
                     {
-                        Form1 menu = new Form1();
+                        FormPrincipal menu = new FormPrincipal();
                         menu.FormClosed += Logout;
                         menu.Show();
                         this.Hide();
@@ -123,7 +124,7 @@ namespace PRESENTACION
                         this.TxtContrasena.Clear();
                         this.txtUsuario.Focus();
                     }
-                
+
                 }
                 else
                 {
@@ -138,11 +139,12 @@ namespace PRESENTACION
         }
 
         //mensaje advertencia reutilizable
-        private void MsgError(string msg) {
+        private void MsgError(string msg)
+        {
             blErrorMensaje.Text = "     " + msg;
             blErrorMensaje.Visible = true;
-        
-        
+
+
         }
 
 
