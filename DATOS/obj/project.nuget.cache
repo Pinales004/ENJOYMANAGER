@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2+yfudYJk0bWNXerbEH2bUtojlKoUgaL20A/E8t1yV/upgDJ5J+F7MECo7BUxlbkswO1h5CyaDSkA3+9Vqe6Fg==",
+  "dgSpecHash": "qZXKuzk5zi/s3f+2wXn6ml5nBw4MdtXMyaznPnCZ+FLURtKWKn3UyLNnWvriFEYREUns7g0rLPOOkXBu+8dy3g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
+  "projectFilePath": "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darkj\\.nuget\\packages\\materialskin\\0.2.1\\materialskin.0.2.1.nupkg.sha512",
     "C:\\Users\\darkj\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

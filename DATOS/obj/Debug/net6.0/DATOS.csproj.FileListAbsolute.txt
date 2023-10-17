@@ -40,3 +40,6 @@ C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DA
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DATOS\obj\Debug\net6.0\refint\DATOS.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.pdb
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DATOS\obj\Debug\net6.0\ref\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\bin\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\bin\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.csproj.CopyComplete

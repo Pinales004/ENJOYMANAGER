@@ -21,3 +21,14 @@ C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\Comun\obj\Debug\net6.0\Co
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\Comun\obj\Debug\net6.0\refint\Comun.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.pdb
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\Comun\obj\Debug\net6.0\ref\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.deps.json
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.AssemblyInfoInputs.cache
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.AssemblyInfo.cs
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.csproj.CoreCompileInputs.cache
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\refint\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\ref\Comun.dll

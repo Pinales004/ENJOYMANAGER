@@ -44,8 +44,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
+            ForeColor = Color.White;
             Name = "FormProyectos";
             Text = "FormProyectos";
             ResumeLayout(false);

@@ -47,3 +47,5 @@ C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.pdb

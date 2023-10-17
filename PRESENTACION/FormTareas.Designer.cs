@@ -34,6 +34,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.White;
             label1.Location = new Point(356, 218);
             label1.Name = "label1";
             label1.Size = new Size(39, 15);
@@ -44,6 +45,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
             Name = "FormTareas";

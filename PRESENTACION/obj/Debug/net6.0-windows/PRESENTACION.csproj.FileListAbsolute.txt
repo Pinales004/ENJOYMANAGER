@@ -59,7 +59,6 @@ C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormProgramadores.resources
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormProyectos.resources
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormTareas.resources
-C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormUsuarios.resources
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormPrincipal.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\MaterialSkin.dll
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormPrincipal.resources
@@ -106,3 +105,7 @@ C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\ne
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.pdb
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\MaterialSkin.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Usuarios.resources

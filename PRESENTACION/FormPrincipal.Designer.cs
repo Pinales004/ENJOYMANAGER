@@ -33,6 +33,11 @@
             panelContenedor = new Panel();
             panelFormularios = new Panel();
             panelMenu = new Panel();
+            pictureBox6 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox2 = new PictureBox();
             lblNombre = new Label();
             lblApellido = new Label();
             lblRol = new Label();
@@ -49,6 +54,11 @@
             btnCerrar = new PictureBox();
             panelContenedor.SuspendLayout();
             panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
@@ -65,11 +75,11 @@
             btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-            btnCerrarSesion.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarSesion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = Color.Gainsboro;
-            btnCerrarSesion.Location = new Point(24, 435);
+            btnCerrarSesion.Location = new Point(54, 426);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(200, 30);
+            btnCerrarSesion.Size = new Size(158, 30);
             btnCerrarSesion.TabIndex = 0;
             btnCerrarSesion.Text = "Cerrar sesión";
             btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -89,7 +99,7 @@
             // 
             // panelFormularios
             // 
-            panelFormularios.BackColor = Color.FromArgb(64, 64, 64);
+            panelFormularios.BackColor = Color.FromArgb(15, 15, 15);
             panelFormularios.Dock = DockStyle.Fill;
             panelFormularios.Location = new Point(233, 47);
             panelFormularios.Name = "panelFormularios";
@@ -98,7 +108,12 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = SystemColors.HotTrack;
+            panelMenu.BackColor = Color.FromArgb(0, 122, 204);
+            panelMenu.Controls.Add(pictureBox6);
+            panelMenu.Controls.Add(pictureBox5);
+            panelMenu.Controls.Add(pictureBox4);
+            panelMenu.Controls.Add(pictureBox3);
+            panelMenu.Controls.Add(pictureBox2);
             panelMenu.Controls.Add(lblNombre);
             panelMenu.Controls.Add(lblApellido);
             panelMenu.Controls.Add(lblRol);
@@ -113,6 +128,73 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(233, 477);
             panelMenu.TabIndex = 1;
+            panelMenu.Paint += panelMenu_Paint;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.Cursor = Cursors.Hand;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(25, 426);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(30, 30);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 12;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += btnCerrarSesion_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Cursor = Cursors.Hand;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(25, 263);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(30, 30);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 11;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += btnProgramadores_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Cursor = Cursors.Hand;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(25, 214);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(30, 30);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 10;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += btnTareas_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Cursor = Cursors.Hand;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(25, 165);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(30, 30);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 9;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += btnProyectos_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Cursor = Cursors.Hand;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(25, 115);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 30);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 8;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += btnUsuarios_Click;
             // 
             // lblNombre
             // 
@@ -153,17 +235,16 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnUsuarios.Cursor = Cursors.Hand;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnUsuarios.FlatStyle = FlatStyle.Flat;
-            btnUsuarios.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsuarios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsuarios.ForeColor = Color.Gainsboro;
-            btnUsuarios.Location = new Point(24, 207);
+            btnUsuarios.Location = new Point(54, 115);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(200, 30);
+            btnUsuarios.Size = new Size(158, 30);
             btnUsuarios.TabIndex = 3;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
@@ -171,17 +252,16 @@
             // 
             // btnProgramadores
             // 
-            btnProgramadores.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnProgramadores.Cursor = Cursors.Hand;
             btnProgramadores.FlatAppearance.BorderSize = 0;
             btnProgramadores.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnProgramadores.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnProgramadores.FlatStyle = FlatStyle.Flat;
-            btnProgramadores.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProgramadores.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnProgramadores.ForeColor = Color.Gainsboro;
-            btnProgramadores.Location = new Point(24, 355);
+            btnProgramadores.Location = new Point(54, 263);
             btnProgramadores.Name = "btnProgramadores";
-            btnProgramadores.Size = new Size(200, 30);
+            btnProgramadores.Size = new Size(158, 30);
             btnProgramadores.TabIndex = 2;
             btnProgramadores.Text = "Programadores";
             btnProgramadores.UseVisualStyleBackColor = true;
@@ -189,17 +269,16 @@
             // 
             // btnTareas
             // 
-            btnTareas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnTareas.Cursor = Cursors.Hand;
             btnTareas.FlatAppearance.BorderSize = 0;
             btnTareas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnTareas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnTareas.FlatStyle = FlatStyle.Flat;
-            btnTareas.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTareas.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnTareas.ForeColor = Color.Gainsboro;
-            btnTareas.Location = new Point(24, 306);
+            btnTareas.Location = new Point(54, 214);
             btnTareas.Name = "btnTareas";
-            btnTareas.Size = new Size(200, 30);
+            btnTareas.Size = new Size(158, 30);
             btnTareas.TabIndex = 1;
             btnTareas.Text = "Tareas";
             btnTareas.UseVisualStyleBackColor = true;
@@ -207,17 +286,16 @@
             // 
             // btnProyectos
             // 
-            btnProyectos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnProyectos.Cursor = Cursors.Hand;
             btnProyectos.FlatAppearance.BorderSize = 0;
             btnProyectos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnProyectos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnProyectos.FlatStyle = FlatStyle.Flat;
-            btnProyectos.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProyectos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             btnProyectos.ForeColor = Color.Gainsboro;
-            btnProyectos.Location = new Point(24, 257);
+            btnProyectos.Location = new Point(54, 165);
             btnProyectos.Name = "btnProyectos";
-            btnProyectos.Size = new Size(200, 30);
+            btnProyectos.Size = new Size(158, 30);
             btnProyectos.TabIndex = 0;
             btnProyectos.Text = "Proyectos";
             btnProyectos.UseVisualStyleBackColor = true;
@@ -236,6 +314,7 @@
             panelBarraTitulo.Name = "panelBarraTitulo";
             panelBarraTitulo.Size = new Size(800, 47);
             panelBarraTitulo.TabIndex = 0;
+            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
             // 
             // panel1
             // 
@@ -304,14 +383,20 @@
             ClientSize = new Size(800, 524);
             Controls.Add(panelContenedor);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(650, 400);
+            MinimumSize = new Size(650, 450);
             Name = "FormPrincipal";
+            Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPrincipal";
             Load += FormPrincipal_Load;
             panelContenedor.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
@@ -341,5 +426,10 @@
         private Label lblRol;
         private PictureBox pictureBox1;
         private Panel panel1;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox6;
     }
 }

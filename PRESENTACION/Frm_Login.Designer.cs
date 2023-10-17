@@ -55,7 +55,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 330);
             panel1.TabIndex = 0;
-            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
             // 
             // pictureBox3
             // 
@@ -179,7 +179,7 @@
             Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            MouseDown += Frm_Login_MouseDown;
+            MouseMove += Frm_Login_MouseMove;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)BtnCerrar).EndInit();

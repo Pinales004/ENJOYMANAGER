@@ -175,6 +175,11 @@ namespace PRESENTACION
             AbrirFormulario<FormProgramadores>();
         }
 
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
 
         #endregion
 

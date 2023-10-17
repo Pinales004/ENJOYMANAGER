@@ -81,17 +81,17 @@ namespace PRESENTACION
 
 
         //no esta funcionando esto no se porque se supone que debe de moverse la ventana
-        private void Frm_Login_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x122, 0xf012, 0);
-        }
+        //private void Frm_Login_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(this.Handle, 0x122, 0xf012, 0);
+        //}
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x122, 0xf012, 0);
-        }
+        //private void panel1_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    ReleaseCapture();
+        //    SendMessage(this.Handle, 0x122, 0xf012, 0);
+        //}
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
@@ -148,16 +148,27 @@ namespace PRESENTACION
         }
 
 
-
         private void Logout(object sender, FormClosedEventArgs e)
         {
-            TxtContrasena.Text= "CONTRASEÑA";
+            TxtContrasena.Text = "CONTRASEÑA";
             TxtContrasena.UseSystemPasswordChar = false;
             txtUsuario.Text = "USUARIO";
             blErrorMensaje.Visible = false;
             this.Show();
             txtUsuario.Focus();
 
+        }
+
+        private void Frm_Login_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 
