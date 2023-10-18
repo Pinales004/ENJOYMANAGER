@@ -22,5 +22,11 @@ namespace PRESENTACION
         {
 
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Administracion_Usuarios.Frm_AgregarEdit formAgreagar = new Administracion_Usuarios.Frm_AgregarEdit();
+            formAgreagar.Show();
+        }
     }
 }

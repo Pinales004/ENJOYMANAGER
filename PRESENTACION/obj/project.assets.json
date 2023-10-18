@@ -11,6 +11,18 @@
           "lib/MaterialSkin.dll": {}
         }
       },
+      "MaterialSkin.2/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -27,14 +39,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -90,14 +98,10 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -117,14 +121,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -136,14 +136,10 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -208,6 +204,23 @@
         "lib/MaterialSkin.dll",
         "materialskin.0.2.1.nupkg.sha512",
         "materialskin.nuspec"
+      ]
+    },
+    "MaterialSkin.2/2.3.1": {
+      "sha512": "w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
+      "type": "package",
+      "path": "materialskin.2/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MaterialSkin.dll",
+        "lib/net461/MaterialSkin.dll",
+        "lib/net48/MaterialSkin.dll",
+        "lib/net5.0-windows7.0/MaterialSkin.dll",
+        "materialskin.2.2.3.1.nupkg.sha512",
+        "materialskin.2.nuspec",
+        "nugetIcon.png"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -539,38 +552,47 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "DOMINIO >= 1.0.0",
-      "MaterialSkin >= 0.2.1"
+      "MaterialSkin >= 0.2.1",
+      "MaterialSkin.2 >= 2.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\darkj\\.nuget\\packages\\": {}
+    "C:\\Users\\pinal\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+      "projectUniqueName": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
       "projectName": "PRESENTACION",
-      "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
-      "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\PRESENTACION\\obj\\",
+      "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+      "packagesPath": "C:\\Users\\pinal\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\pinal\\source\\repos\\GymLite\\GymLite": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
-              "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\Proyecto final\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
+            "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
+              "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
             }
           }
         }
@@ -588,6 +610,10 @@
           "MaterialSkin": {
             "target": "Package",
             "version": "[0.2.1, )"
+          },
+          "MaterialSkin.2": {
+            "target": "Package",
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
@@ -596,8 +622,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -609,7 +634,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.318\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -618,7 +643,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"MaterialSkin 0.2.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"MaterialSkin 0.2.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "MaterialSkin",
       "targetGraphs": [
         "net6.0-windows7.0"

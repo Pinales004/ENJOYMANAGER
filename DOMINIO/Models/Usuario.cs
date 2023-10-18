@@ -16,5 +16,9 @@ namespace DOMINIO.Models
             return users.Login(User , pass);
         }
 
+        public System.Data.DataTable GetRoles()
+        {
+            return users.CargarRoles();
+        }
     }
 }

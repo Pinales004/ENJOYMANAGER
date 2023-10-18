@@ -12,6 +12,8 @@ namespace DATOS.Conexion
 {
     public class UserAcceso: ConexionSQL
     {
+
+        private SqlDataReader leerfilas;
         public bool Login(string user , string pass)
         {
             using (var connection = GETConexionSQL()) {
@@ -51,10 +53,55 @@ namespace DATOS.Conexion
                 }
             }
 
+}
 
+        //public DataTable CargarRoles(){
+
+
+        //     DataTable table = new DataTable();
+        //    using (var connection = GETConexionSQL()){
+        //      connection.Open();
+        //        using (var command = new SqlCommand()) {
+        //            command.Connection = connection;
+        //            command.CommandText = "Select * from UsuarioRol";
+        //            command.CommandType = CommandType.Text;
+        //            leerfilas = command.ExecuteReader();
+        //            table.Load(leerfilas);
+        //            leerfilas.Close();
+
+        //                  }
+
+
+        //        }
+        //    return table;
+
+
+        //}
+        public DataTable CargarRoles()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM UsuarioRol";
+                    command.CommandType = CommandType.Text;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        table.Load(reader);
+                    }
+                }
+            }
+
+            return table;
         }
 
 
 
     }
-}
+            }
