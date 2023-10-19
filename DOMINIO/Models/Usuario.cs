@@ -20,5 +20,18 @@ namespace DOMINIO.Models
         {
             return users.CargarRoles();
         }
+
+
+
+        public void InsertarUsuarios(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo) {
+
+            users.InsertUsuario(UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
+        
+        }
+
+        public System.Data.DataTable GetUsuarios()
+        {
+            return users.CargarUsuarios();
+        }
     }
 }

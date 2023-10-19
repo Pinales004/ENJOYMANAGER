@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using DOMINIO.Models;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,11 +21,22 @@ namespace PRESENTACION
 
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
+            CargarUsuarios();
+        }
+
+        private void CargarUsuarios()
+        {
+            Usuario cargar = new Usuario();
+            this.dataGridView1.AutoGenerateColumns = true;
+            this.dataGridView1.DataSource = cargar.GetUsuarios();
+
 
         }
 
+
         private void materialButton1_Click(object sender, EventArgs e)
         {
+            CargarUsuarios();
             Administracion_Usuarios.Frm_AgregarEdit formAgreagar = new Administracion_Usuarios.Frm_AgregarEdit();
             formAgreagar.Show();
         }
