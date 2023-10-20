@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DOMINIO.Models
 {
-    public class ProyectoMiembro:ProyectoMiembrosAccess
+    public class ProyectoMiembro
     {
         public ProyectoMiembro(int idProyectoMiembro, int idProyecto, int idUsuario)
         {
@@ -26,8 +26,6 @@ namespace DOMINIO.Models
             ProyectoMiembrosAccess miembros = new ProyectoMiembrosAccess();
 
             miembros.InsertarMiembro(this.IdProyecto,this.IdUsuario);
-
-
 
         }
 
