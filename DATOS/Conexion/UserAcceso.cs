@@ -182,6 +182,27 @@ namespace DATOS.Conexion
             }
         }
 
+        public void EliminarUsuario(int IdUsuario)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "DELETE FROM Usuario WHERE IdUsuario = @IdUsuario";
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega el parámetro para el IdUsuario
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", IdUsuario));
+
+                    // Ejecuta la consulta
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
 
 
 

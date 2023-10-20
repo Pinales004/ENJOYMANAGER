@@ -23,6 +23,8 @@ namespace PRESENTACION
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
             CargarUsuarios();
+            ListarRoles();
+            LLnearCombroboxGnero();
 
         }
         String OperacionTipo = "Insertar";
@@ -151,7 +153,7 @@ namespace PRESENTACION
             TxtEmail.Text = dataGridView1.CurrentRow.Cells["EmailUsuario"].Value.ToString();
             TxtContrasena.Text = dataGridView1.CurrentRow.Cells["ContrasenaUsuario"].Value.ToString();
             CmbSexo.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            CmbRol.SelectedItem = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            CmbRol.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
           //  CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
               
 
@@ -174,7 +176,30 @@ namespace PRESENTACION
             this.TxtEmail.Text = string.Empty;
             this.CmbRol.SelectedItem = null;
         }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Usuario cargar = new Usuario();
+                cargar.EliminarUusario(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString()));
+                CargarUsuarios();
+                MessageBox.Show("Usuario Eliminado Correctamente");
+                LimpiarDatos();
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un usuario");
+            }
+
+            }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+        }
+    }
     }
 
-    }
+    
 

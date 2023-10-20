@@ -40,5 +40,12 @@ namespace DOMINIO.Models
 
         }
 
+        public void EliminarUusario(int IdUsuario) {
+
+            users.EliminarUsuario(IdUsuario);
+
+
+        }
+
     }
 }
