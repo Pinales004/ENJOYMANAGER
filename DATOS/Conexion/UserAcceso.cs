@@ -10,10 +10,10 @@ using Comun.Cache;
 
 namespace DATOS.Conexion
 {
-    public class UserAcceso: ConexionSQL
+    public class UserAcceso : ConexionSQL
     {
 
-        public bool Login(string user , string pass)
+        public bool Login(string user, string pass)
         {
             using (var connection = GETConexionSQL()) {
                 connection.Open();
@@ -52,7 +52,7 @@ namespace DATOS.Conexion
                 }
             }
 
-}
+        }
 
         public DataTable CargarRoles()
         {
@@ -142,6 +142,48 @@ namespace DATOS.Conexion
 
             return table;
         }
+
+
+        public void EditarUsuario(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Usuario " +
+                                        "SET UsuarioNombre = @UsuarioNombre, " +
+                                        "Nombres = @Nombres, " +
+                                        "Apellido = @Apellido, " +
+                                        "Sexo = @Sexo, " +
+                                        "EmailUsuario = @EmailUsuario, " +
+                                        "ContrasenaUsuario = @ContrasenaUsuario, " +
+                                        "RolUsuario = @RolUsuario, " +
+                                        "Activo = @Activo " +
+                                        "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega los parámetros y sus valores
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", IdUsuario));
+                    command.Parameters.Add(new SqlParameter("@UsuarioNombre", UsuarioNombre));
+                    command.Parameters.Add(new SqlParameter("@Nombres", nombres));
+                    command.Parameters.Add(new SqlParameter("@Apellido", apellido));
+                    command.Parameters.Add(new SqlParameter("@Sexo", sexo));
+                    command.Parameters.Add(new SqlParameter("@EmailUsuario", EmailUsuario));
+                    command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
+                    command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
+                    command.Parameters.Add(new SqlParameter("@Activo", Activo));
+
+                    // Ejecuta la consulta
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
 
 
 

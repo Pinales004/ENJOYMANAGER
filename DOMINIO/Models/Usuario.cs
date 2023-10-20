@@ -33,5 +33,12 @@ namespace DOMINIO.Models
         {
             return users.CargarUsuarios();
         }
+        public void ActualizarUsuarios(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+        {
+
+            users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
+
+        }
+
     }
 }

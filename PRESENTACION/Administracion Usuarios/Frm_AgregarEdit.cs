@@ -11,7 +11,7 @@ using DOMINIO.Models;
 using MaterialSkin.Controls;
 namespace PRESENTACION.Administracion_Usuarios
 {
-    public partial class Frm_AgregarEdit : MaterialForm
+    public partial class Frm_AgregarEdit : Form
     {
         public Frm_AgregarEdit()
         {
@@ -38,6 +38,7 @@ namespace PRESENTACION.Administracion_Usuarios
         private void ListarRoles()
         {
             Usuario cargar = new Usuario();
+            
             this.CmbRol.DataSource = cargar.GetRoles();
             this.CmbRol.DisplayMember = "Rol";
             this.CmbRol.ValueMember = "IdUsuarioRol";

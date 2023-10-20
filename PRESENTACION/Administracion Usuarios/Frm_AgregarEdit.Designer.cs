@@ -72,9 +72,9 @@
             this.panel1.Controls.Add(this.materialLabel2);
             this.panel1.Controls.Add(this.materialLabel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(568, 573);
+            this.panel1.Size = new System.Drawing.Size(574, 640);
             this.panel1.TabIndex = 0;
             // 
             // materialLabel6
@@ -303,7 +303,7 @@
             this.TxtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtApellido.HideSelection = true;
             this.TxtApellido.LeadingIcon = null;
-            this.TxtApellido.Location = new System.Drawing.Point(370, 0);
+            this.TxtApellido.Location = new System.Drawing.Point(370, 3);
             this.TxtApellido.MaxLength = 32767;
             this.TxtApellido.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtApellido.Name = "TxtApellido";
@@ -331,7 +331,7 @@
             this.TxtNombres.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.TxtNombres.HideSelection = true;
             this.TxtNombres.LeadingIcon = null;
-            this.TxtNombres.Location = new System.Drawing.Point(90, 0);
+            this.TxtNombres.Location = new System.Drawing.Point(71, 3);
             this.TxtNombres.MaxLength = 32767;
             this.TxtNombres.MouseState = MaterialSkin.MouseState.OUT;
             this.TxtNombres.Name = "TxtNombres";
@@ -459,16 +459,16 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialComboBox CmbRol;
-        private MaterialSkin.Controls.MaterialMaskedTextBox TxtEmail;
-        private MaterialSkin.Controls.MaterialComboBox CmbSexo;
-        private MaterialSkin.Controls.MaterialTextBox2 TxtApellido;
-        private MaterialSkin.Controls.MaterialTextBox2 TxtNombres;
         private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialTextBox2 TxtContrasena2;
-        private MaterialSkin.Controls.MaterialTextBox2 TxtContrasena;
-        private MaterialSkin.Controls.MaterialCheckbox CheckActivo;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialTextBox2 txtUsuarioNombre;
+        public MaterialSkin.Controls.MaterialMaskedTextBox TxtEmail;
+        public MaterialSkin.Controls.MaterialComboBox CmbSexo;
+        public MaterialSkin.Controls.MaterialTextBox2 TxtApellido;
+        public MaterialSkin.Controls.MaterialTextBox2 TxtNombres;
+        public MaterialSkin.Controls.MaterialTextBox2 TxtContrasena2;
+        public MaterialSkin.Controls.MaterialTextBox2 TxtContrasena;
+        public MaterialSkin.Controls.MaterialCheckbox CheckActivo;
+        public MaterialSkin.Controls.MaterialTextBox2 txtUsuarioNombre;
+        public MaterialSkin.Controls.MaterialComboBox CmbRol;
     }
 }
