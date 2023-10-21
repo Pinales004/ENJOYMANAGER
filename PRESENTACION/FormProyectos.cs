@@ -16,30 +16,23 @@ namespace PRESENTACION
 {
     public partial class FormProyectos : Form
     {
-        private Proyecto proyecto;
 
         public FormProyectos()
         {
             InitializeComponent();
-            proyecto = new Proyecto();
         }
 
         private void FormProyectos_Load(object sender, EventArgs e)
         {
             CargarProyectos();
-            ListarEstadosProyecto();
             LimpiarDatos();
         }
 
         private void CargarProyectos()
         {
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = proyecto.GetProyectos(mostrarBorrados: true);
-        }
-
-        private void ListarEstadosProyecto()
-        {
-            // Puedes llenar un ComboBox con los estados de proyecto aquí
+            Proyectos cargar = new Proyectos();
+            this.dataGridView1.AutoGenerateColumns = true;
+            this.dataGridView1.DataSource = cargar.GetProyectos();
         }
 
         private void LimpiarDatos()
@@ -51,66 +44,6 @@ namespace PRESENTACION
             dateTimePickerEntrega.Value = DateTimePicker.MinimumDateTime;
         }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
-            {
-                MessageBox.Show("Debe indicar un nombre de proyecto.");
-            }
-            else if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
-            {
-                MessageBox.Show("Debe indicar una descripción.");
-            }
-            else if (cmbEstadoProyecto.SelectedItem == null)
-            {
-                MessageBox.Show("Debe seleccionar un estado de proyecto.");
-            }
-            else
-            {
-                // Obtén el idUsuario desde UserLoginCache
-                int idUsuario = UserLoginCache.IdUsuario;
-
-                proyecto.InsertarProyecto(
-                    txtNombreProyecto.Text,
-                    txtDescripcionProyecto.Text,
-                    dateTimePickerInicio.Value,
-                    dateTimePickerEntrega.Value,
-                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
-                idUsuario, // Asegúrate de tener el ID del usuario adecuado
-                    false // Puedes establecer el valor de borrado según tus necesidades
-                );
-                CargarProyectos();
-                LimpiarDatos();
-            }
-        }
-
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                // Código para editar un proyecto seleccionado
-                // Similar al método btn_agregar_Click
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar una fila para editar.");
-            }
-        }
-
-        private void btn_eliminar_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                proyecto.EliminarProyecto(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdProyecto"].Value.ToString()));
-                CargarProyectos();
-                MessageBox.Show("Proyecto eliminado correctamente.");
-                LimpiarDatos();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar una fila para eliminar un proyecto.");
-            }
-        }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
         {

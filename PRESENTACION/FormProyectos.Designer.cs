@@ -312,6 +312,7 @@
             ForeColor = Color.White;
             Name = "FormProyectos";
             Text = "FormProyectos";
+            Load += FormProyectos_Load;
             panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
