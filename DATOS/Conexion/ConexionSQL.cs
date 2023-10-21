@@ -10,10 +10,11 @@ namespace DATOS.Conexion
     public abstract class ConexionSQL
     {
 
-        private readonly string connectionsstring;
+        private readonly string 
+            connectionsstring;
 
         public ConexionSQL() {
-            connectionsstring = "Server=(LocalDB)\\MSSQLLocalDB;Initial Catalog=ENJOYMANNAGER;Integrated Security=True";
+            connectionsstring = "Server=DESKTOP-MTL1D8I;Initial Catalog=ENJOYMANNAGER;Integrated Security=True";
         }
 
 

@@ -71,12 +71,13 @@
             // 
             txtUsuario.BackColor = Color.FromArgb(15, 15, 15);
             txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.Cursor = Cursors.IBeam;
             txtUsuario.ForeColor = Color.DimGray;
-            txtUsuario.Location = new Point(320, 58);
+            txtUsuario.Location = new Point(320, 80);
             txtUsuario.Margin = new Padding(5);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(415, 20);
-            txtUsuario.TabIndex = 1;
+            txtUsuario.TabIndex = 2;
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
             txtUsuario.Leave += txtUsuario_Leave;
@@ -85,12 +86,13 @@
             // 
             TxtContrasena.BackColor = Color.FromArgb(15, 15, 15);
             TxtContrasena.BorderStyle = BorderStyle.None;
+            TxtContrasena.Cursor = Cursors.IBeam;
             TxtContrasena.ForeColor = Color.DimGray;
             TxtContrasena.Location = new Point(320, 136);
             TxtContrasena.Margin = new Padding(5);
             TxtContrasena.Name = "TxtContrasena";
             TxtContrasena.Size = new Size(415, 20);
-            TxtContrasena.TabIndex = 2;
+            TxtContrasena.TabIndex = 3;
             TxtContrasena.Text = "CONTRASEÑA";
             TxtContrasena.Enter += TxtContrasena_Enter;
             TxtContrasena.Leave += TxtContrasena_Leave;
@@ -100,15 +102,16 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.LightGray;
-            label1.Location = new Point(481, 0);
+            label1.Location = new Point(486, 9);
             label1.Name = "label1";
             label1.Size = new Size(85, 33);
-            label1.TabIndex = 3;
+            label1.TabIndex = 1;
             label1.Text = "Login";
             // 
             // BtnLogin
             // 
             BtnLogin.BackColor = Color.FromArgb(40, 40, 40);
+            BtnLogin.Cursor = Cursors.Hand;
             BtnLogin.FlatAppearance.BorderSize = 0;
             BtnLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             BtnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
@@ -124,22 +127,24 @@
             // 
             // BtnCerrar
             // 
+            BtnCerrar.Cursor = Cursors.Hand;
             BtnCerrar.Image = (Image)resources.GetObject("BtnCerrar.Image");
-            BtnCerrar.Location = new Point(759, 0);
+            BtnCerrar.Location = new Point(748, 12);
             BtnCerrar.Name = "BtnCerrar";
             BtnCerrar.Size = new Size(20, 21);
-            BtnCerrar.SizeMode = PictureBoxSizeMode.CenterImage;
+            BtnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
             BtnCerrar.TabIndex = 5;
             BtnCerrar.TabStop = false;
             BtnCerrar.Click += BtnCerrar_Click;
             // 
             // BtnMinimizar
             // 
+            BtnMinimizar.Cursor = Cursors.Hand;
             BtnMinimizar.Image = (Image)resources.GetObject("BtnMinimizar.Image");
-            BtnMinimizar.Location = new Point(733, 0);
+            BtnMinimizar.Location = new Point(722, 12);
             BtnMinimizar.Name = "BtnMinimizar";
             BtnMinimizar.Size = new Size(20, 21);
-            BtnMinimizar.SizeMode = PictureBoxSizeMode.CenterImage;
+            BtnMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
             BtnMinimizar.TabIndex = 6;
             BtnMinimizar.TabStop = false;
             BtnMinimizar.Click += BtnMinimizar_Click;

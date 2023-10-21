@@ -15,20 +15,14 @@ namespace DOMINIO.Models
         {
             return users.Login(User , pass);
         }
-
         public System.Data.DataTable GetRoles()
         {
             return users.CargarRoles();
         }
-
-
-
         public void InsertarUsuarios(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo) {
 
             users.InsertUsuario(UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
-        
         }
-
         public System.Data.DataTable GetUsuarios()
         {
             return users.CargarUsuarios();
@@ -37,15 +31,10 @@ namespace DOMINIO.Models
         {
 
             users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
-
         }
-
         public void EliminarUusario(int IdUsuario) {
 
             users.EliminarUsuario(IdUsuario);
-
-
         }
-
     }
 }

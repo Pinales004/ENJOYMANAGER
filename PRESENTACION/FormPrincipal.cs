@@ -205,6 +205,8 @@ namespace PRESENTACION
             {
                 formulario.BringToFront();
             }
+            formulario.Parent = panelFormularios; // Establecer el formulario como hijo del panelFormularios
+            formulario.Dock = DockStyle.Fill; // Asegurarse de que el formulario ocupe todo el espacio del panel
         }
     }
 }
