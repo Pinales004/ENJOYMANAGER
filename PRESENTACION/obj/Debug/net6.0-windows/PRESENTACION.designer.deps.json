@@ -6,11 +6,11 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MaterialSkin/0.2.1": {
+      "FontAwesome.Sharp/6.3.0": {
         "runtime": {
-          "lib/MaterialSkin.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {
+            "assemblyVersion": "6.3.0.0",
+            "fileVersion": "6.3.0.0"
           }
         }
       },
@@ -155,12 +155,12 @@
     }
   },
   "libraries": {
-    "MaterialSkin/0.2.1": {
+    "FontAwesome.Sharp/6.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/6AEh6qIeNKbxsha7IHBb5s50tyvB0iZuGQPB9mjyR+mRdfQ7vnKTklwI26Y/DbrymTcg+aBHSgCgAT7/qLIrQ==",
-      "path": "materialskin/0.2.1",
-      "hashPath": "materialskin.0.2.1.nupkg.sha512"
+      "sha512": "sha512-3/Fb0N04yYK8An07oox5ISlUyNgsnWildHfoP69uqTEOsemQemRyciphMkXZOcdBupjUD+lVsRE3FqG41/dzPA==",
+      "path": "fontawesome.sharp/6.3.0",
+      "hashPath": "fontawesome.sharp.6.3.0.nupkg.sha512"
     },
     "MaterialSkin.2/2.3.1": {
       "type": "package",

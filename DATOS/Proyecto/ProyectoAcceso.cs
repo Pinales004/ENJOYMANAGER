@@ -28,11 +28,7 @@ namespace DATOS.Proyecto
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT P.IdProyecto, P.NombreProyecto, P.Descripcion, P.FechaInicio, P.FechaFin, " +
-                                            "E.Estado AS EstadoProyecto, U.IdUsuario " +
-                                            "FROM Proyectos P " +
-                                            "INNER JOIN ProyectoEstado E ON P.EstadoProyectoid = E.EstadoProyectoid " +
-                                            "INNER JOIN Usuarios U ON P.IdUsuario = U.IdUsuario";
+                        command.CommandText = "select * from Proyecto_vw_ENJOY";
                         command.CommandType = CommandType.Text;
 
                         using (var reader = command.ExecuteReader())
@@ -51,34 +47,41 @@ namespace DATOS.Proyecto
             return table;
         }
 
-
         public void InsertarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
         {
-            using (var connection = GETConexionSQL())
+            try
             {
-                connection.Open();
-
-                using (var command = new SqlCommand())
+                using (var connection = GETConexionSQL())
                 {
-                    command.Connection = connection;
-                    command.CommandText = "INSERT INTO Proyectos (NombreProyecto, Descripcion, FechaInicio, FechaFin, EstadoProyectoid, IdUsuario) " +
-                                        "VALUES (@NombreProyecto, @Descripcion, @FechaInicio, @FechaFin, @EstadoProyectoid, @IdUsuario)";
-                    command.CommandType = CommandType.Text;
+                    connection.Open();
 
-                    // Agrega los parámetros y sus valores
-                    command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
-                    command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
-                    command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
-                    command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));
-                    command.Parameters.Add(new SqlParameter("@EstadoProyectoid", estadoProyectoid));
-                    command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "INSERT INTO Proyectos (NombreProyecto, Descripcion, FechaInicio, FechaFin, EstadoProyectoid, IdUsuario) " +
+                                            "VALUES (@NombreProyecto, @Descripcion, @FechaInicio, @FechaFin, @EstadoProyectoid, @IdUsuario)";
+                        command.CommandType = CommandType.Text;
 
-                    // Ejecuta la consulta para insertar el nuevo proyecto
-                    command.ExecuteNonQuery();
+                        // Agrega los parámetros y sus valores
+                        command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
+                        command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
+                        command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
+                        command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));
+                        command.Parameters.Add(new SqlParameter("@EstadoProyectoid", estadoProyectoid));
+                        command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                        // Ejecuta la consulta para insertar el nuevo proyecto
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                // En caso de error, puedes manejar la excepción aquí, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al insertar el proyecto: " + ex.Message);
+                throw; // Puedes lanzar la excepción nuevamente si lo deseas.
+            }
         }
-
 
         public void EditarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
         {

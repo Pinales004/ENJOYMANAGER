@@ -111,3 +111,5 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_AgregarEdit.resources
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.Frm_NuevoProyecto.resources

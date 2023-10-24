@@ -25,7 +25,7 @@ namespace PRESENTACION
         private void FormProyectos_Load(object sender, EventArgs e)
         {
             CargarProyectos();
-            LimpiarDatos();
+   
         }
 
         private void CargarProyectos()
@@ -35,20 +35,7 @@ namespace PRESENTACION
             this.dataGridView1.DataSource = cargar.GetProyectos();
         }
 
-        private void LimpiarDatos()
-        {
-            txtNombreProyecto.Text = string.Empty;
-            txtDescripcionProyecto.Text = string.Empty;
-            cmbEstadoProyecto.SelectedIndex = -1;
-            dateTimePickerInicio.Value = DateTimePicker.MinimumDateTime;
-            dateTimePickerEntrega.Value = DateTimePicker.MinimumDateTime;
-        }
 
-
-        private void btn_limpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarDatos();
-        }
 
         private void panel1_Resize(object sender, EventArgs e)
         {
@@ -67,5 +54,14 @@ namespace PRESENTACION
             }
             groupBox1.Location = new Point(centerX, groupBox1.Location.Y);
         }
+
+        private void BntNewProyect_Click(object sender, EventArgs e)
+        {
+            Proyecto.Frm_NuevoProyecto frm_ = new Proyecto.Frm_NuevoProyecto();
+            frm_.Show();
+        }
+
+
     }
-}
+    }
+
