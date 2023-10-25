@@ -244,6 +244,7 @@
             btnEquipoProyecto.SizeMode = PictureBoxSizeMode.Zoom;
             btnEquipoProyecto.TabIndex = 81;
             btnEquipoProyecto.TabStop = false;
+            btnEquipoProyecto.Click += btnEquipoProyecto_Click;
             // 
             // materialLabel2
             // 

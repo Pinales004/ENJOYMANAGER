@@ -116,3 +116,4 @@ C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\bin\Debug\ne
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_AgregarEdit.resources
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.Frm_NuevoProyecto.resources
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_NuevaTarea.resources
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.FrmEquipoProgramadores.resources

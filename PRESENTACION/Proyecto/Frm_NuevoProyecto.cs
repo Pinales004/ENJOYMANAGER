@@ -101,6 +101,26 @@ namespace PRESENTACION.Proyecto
             this.Close();
         }
 
+        private void btnEquipoProyecto_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario < FrmEquipoProgramadores>();
+        }
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
 
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
     }
 }
