@@ -47,6 +47,8 @@ namespace DATOS.Proyecto
             return table;
         }
 
+
+
         public void InsertarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
         {
             try
@@ -137,7 +139,37 @@ namespace DATOS.Proyecto
 
 
 
+        public DataTable ProyectoEstado()
+        {
+            DataTable table = new DataTable();
 
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select * from ProyectoEstado";
+                        command.CommandType = CommandType.Text;
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar proyectos: " + ex.Message);
+            }
+
+            return table;
+        }
 
 
 

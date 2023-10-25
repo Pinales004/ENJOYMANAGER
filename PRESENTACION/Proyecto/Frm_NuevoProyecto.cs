@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DOMINIO.Models;
 
 namespace PRESENTACION.Proyecto
 {
@@ -18,6 +19,10 @@ namespace PRESENTACION.Proyecto
         public Frm_NuevoProyecto()
         {
             InitializeComponent();
+        }
+        private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
+        {
+            CargarEstadoProyecto();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -32,48 +37,22 @@ namespace PRESENTACION.Proyecto
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
+
+        public void CargarEstadoProyecto()
         {
-            // Validar los campos antes de agregar el proyecto
-            if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
-            {
-                MessageBox.Show("Debe ingresar un nombre de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si falta el nombre
-            }
 
-            if (string.IsNullOrWhiteSpace(labelDescripcionProyecto.Text))
-            {
-                MessageBox.Show("Debe ingresar una descripción de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si falta la descripción
-            }
+            Proyectos cargar = new Proyectos();
 
-            if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
-            {
-                MessageBox.Show("La fecha de inicio no puede ser posterior a la fecha de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si la fecha de inicio es posterior a la fecha de fin
-            }
+            this.cmbEstadoProyecto.DataSource = cargar.GetProyectosEstado();
+            this.cmbEstadoProyecto.DisplayMember = "Estado";
+            this.cmbEstadoProyecto.ValueMember = "EstadoProyectoid";
 
-            if (cmbEstadoProyecto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un estado para el proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si no se selecciona un estado
-            }
-
-            // Si todas las validaciones pasan, puedes agregar el proyecto
-            AgregarNuevoProyecto();
         }
+
 
         private void AgregarNuevoProyecto()
         {
 
-            ProyectoAcceso proyecto = new ProyectoAcceso();
-            proyecto.InsertarProyecto(
-                this.txtNombreProyecto.Text
-                , this.labelDescripcionProyecto.Text,
-                dateTimePickerInicio.Value,
-                dateTimePickerEntrega.Value,
-                Convert.ToInt32(this.cmbEstadoProyecto.SelectedValue),
-                UserLoginCache.IdUsuario);
 
 
             MessageBox.Show("Proyecto agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -122,5 +101,42 @@ namespace PRESENTACION.Proyecto
                 formulario.BringToFront();
             }
         }
+
+        private void btn_guardar_Click_1(object sender, EventArgs e)
+        {
+            // Validar los campos antes de agregar el proyecto
+            if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
+            {
+                MessageBox.Show("Debe ingresar un nombre de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // No se agrega el proyecto si falta el nombre
+            }
+
+            if (string.IsNullOrWhiteSpace(labelDescripcionProyecto.Text))
+            {
+                MessageBox.Show("Debe ingresar una descripción de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // No se agrega el proyecto si falta la descripción
+            }
+
+            if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+            {
+                MessageBox.Show("La fecha de inicio no puede ser posterior a la fecha de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // No se agrega el proyecto si la fecha de inicio es posterior a la fecha de fin
+            }
+
+            if (cmbEstadoProyecto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un estado para el proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // No se agrega el proyecto si no se selecciona un estado
+            }
+
+            // Si todas las validaciones pasan, puedes agregar el proyecto
+            AgregarNuevoProyecto();
+
+        }
+
+
+
+
+
     }
 }

@@ -38,7 +38,7 @@ namespace DOMINIO.Models
         }
 
 
-        public void AgregarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+        public void AgregarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
         {
 
             ProyectoAcceso proyecto = new ProyectoAcceso();
@@ -50,6 +50,14 @@ namespace DOMINIO.Models
         {
             return project.CargarProyectos();
         }
+
+        public System.Data.DataTable GetProyectosEstado()
+        {
+            return project.ProyectoEstado();
+        }
+
+
+
     }
     
 
