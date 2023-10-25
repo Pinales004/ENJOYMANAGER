@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Comun.Cache;
 using DATOS.Conexion;
 using DOMINIO.Models;
+using PRESENTACION.Proyecto;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PRESENTACION
@@ -25,7 +26,7 @@ namespace PRESENTACION
         private void FormProyectos_Load(object sender, EventArgs e)
         {
             CargarProyectos();
-   
+
         }
 
         private void CargarProyectos()
@@ -35,33 +36,38 @@ namespace PRESENTACION
             this.dataGridView1.DataSource = cargar.GetProyectos();
         }
 
-
-
-        private void panel1_Resize(object sender, EventArgs e)
-        {
-            CenterGroupBoxHorizontally();
-        }
-        private void CenterGroupBoxHorizontally()
-        {
-            //Para mantener el contenido centrado dentro del panel superior del formulario Usuarios
-            int panelWidth = panel1.Width;
-            int groupBoxWidth = groupBox1.Width;
-
-            int centerX = (panelWidth - groupBoxWidth) / 2;
-            if (centerX < 0)
-            {
-                centerX = 0;
-            }
-            groupBox1.Location = new Point(centerX, groupBox1.Location.Y);
-        }
+        //private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    // Itera a través de todas las columnas y establece AutoSizeMode en AllCells
+        //    foreach (DataGridViewColumn column in dataGridView1.Columns)
+        //    {
+        //        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //    }
+        //}
 
         private void BntNewProyect_Click(object sender, EventArgs e)
         {
-            Proyecto.Frm_NuevoProyecto frm_ = new Proyecto.Frm_NuevoProyecto();
-            frm_.Show();
+            AbrirFormulario<Frm_NuevoProyecto>();
         }
 
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
 
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
     }
-    }
+
+}
 

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,7 +20,19 @@ namespace PRESENTACION.Proyecto
             InitializeComponent();
         }
 
-        private void btn_agregar_Click(object sender, EventArgs e)
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void Frm_NuevoProyecto_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
         {
             // Validar los campos antes de agregar el proyecto
             if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
@@ -28,7 +41,7 @@ namespace PRESENTACION.Proyecto
                 return; // No se agrega el proyecto si falta el nombre
             }
 
-            if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
+            if (string.IsNullOrWhiteSpace(labelDescripcionProyecto.Text))
             {
                 MessageBox.Show("Debe ingresar una descripción de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // No se agrega el proyecto si falta la descripción
@@ -56,10 +69,10 @@ namespace PRESENTACION.Proyecto
             ProyectoAcceso proyecto = new ProyectoAcceso();
             proyecto.InsertarProyecto(
                 this.txtNombreProyecto.Text
-                ,this.txtDescripcionProyecto.Text,
+                , this.labelDescripcionProyecto.Text,
                 dateTimePickerInicio.Value,
                 dateTimePickerEntrega.Value,
-                Convert.ToInt32(this.cmbEstadoProyecto.SelectedValue), 
+                Convert.ToInt32(this.cmbEstadoProyecto.SelectedValue),
                 UserLoginCache.IdUsuario);
 
 
@@ -72,10 +85,22 @@ namespace PRESENTACION.Proyecto
         {
             // Limpia los campos del formulario para futuras entradas
             txtNombreProyecto.Text = "";
-            txtDescripcionProyecto.Text = "";
+            labelDescripcionProyecto.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
             dateTimePickerEntrega.Value = DateTime.Now;
             cmbEstadoProyecto.SelectedIndex = -1;
         }
+
+        private void btn_limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void btn_volver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 }

@@ -33,17 +33,15 @@
             panelContenedor = new Panel();
             panelFormularios = new Panel();
             panelMenu = new Panel();
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pboxCerrarSesion = new PictureBox();
+            pboxTareas = new PictureBox();
+            pboxProyectos = new PictureBox();
+            pboxUsuarios = new PictureBox();
             lblNombre = new Label();
             lblApellido = new Label();
             lblRol = new Label();
             pictureBox1 = new PictureBox();
             btnUsuarios = new Button();
-            btnProgramadores = new Button();
             btnTareas = new Button();
             btnProyectos = new Button();
             panelBarraTitulo = new Panel();
@@ -54,11 +52,10 @@
             btnCerrar = new PictureBox();
             panelContenedor.SuspendLayout();
             panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxTareas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxProyectos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
@@ -109,17 +106,15 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(0, 122, 204);
-            panelMenu.Controls.Add(pictureBox6);
-            panelMenu.Controls.Add(pictureBox5);
-            panelMenu.Controls.Add(pictureBox4);
-            panelMenu.Controls.Add(pictureBox3);
-            panelMenu.Controls.Add(pictureBox2);
+            panelMenu.Controls.Add(pboxCerrarSesion);
+            panelMenu.Controls.Add(pboxTareas);
+            panelMenu.Controls.Add(pboxProyectos);
+            panelMenu.Controls.Add(pboxUsuarios);
             panelMenu.Controls.Add(lblNombre);
             panelMenu.Controls.Add(lblApellido);
             panelMenu.Controls.Add(lblRol);
             panelMenu.Controls.Add(pictureBox1);
             panelMenu.Controls.Add(btnUsuarios);
-            panelMenu.Controls.Add(btnProgramadores);
             panelMenu.Controls.Add(btnTareas);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnProyectos);
@@ -129,66 +124,54 @@
             panelMenu.Size = new Size(233, 503);
             panelMenu.TabIndex = 1;
             // 
-            // pictureBox6
+            // pboxCerrarSesion
             // 
-            pictureBox6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            pictureBox6.BackColor = Color.Transparent;
-            pictureBox6.Cursor = Cursors.Hand;
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(25, 452);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(30, 30);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 12;
-            pictureBox6.TabStop = false;
+            pboxCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pboxCerrarSesion.BackColor = Color.Transparent;
+            pboxCerrarSesion.Cursor = Cursors.Hand;
+            pboxCerrarSesion.Image = (Image)resources.GetObject("pboxCerrarSesion.Image");
+            pboxCerrarSesion.Location = new Point(25, 452);
+            pboxCerrarSesion.Name = "pboxCerrarSesion";
+            pboxCerrarSesion.Size = new Size(30, 30);
+            pboxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxCerrarSesion.TabIndex = 12;
+            pboxCerrarSesion.TabStop = false;
             // 
-            // pictureBox5
+            // pboxTareas
             // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(25, 263);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(30, 30);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 11;
-            pictureBox5.TabStop = false;
+            pboxTareas.BackColor = Color.Transparent;
+            pboxTareas.Cursor = Cursors.Hand;
+            pboxTareas.Image = (Image)resources.GetObject("pboxTareas.Image");
+            pboxTareas.Location = new Point(25, 214);
+            pboxTareas.Name = "pboxTareas";
+            pboxTareas.Size = new Size(30, 30);
+            pboxTareas.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxTareas.TabIndex = 10;
+            pboxTareas.TabStop = false;
             // 
-            // pictureBox4
+            // pboxProyectos
             // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.Cursor = Cursors.Hand;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(25, 214);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(30, 30);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 10;
-            pictureBox4.TabStop = false;
+            pboxProyectos.BackColor = Color.Transparent;
+            pboxProyectos.Cursor = Cursors.Hand;
+            pboxProyectos.Image = (Image)resources.GetObject("pboxProyectos.Image");
+            pboxProyectos.Location = new Point(25, 165);
+            pboxProyectos.Name = "pboxProyectos";
+            pboxProyectos.Size = new Size(30, 30);
+            pboxProyectos.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxProyectos.TabIndex = 9;
+            pboxProyectos.TabStop = false;
             // 
-            // pictureBox3
+            // pboxUsuarios
             // 
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Cursor = Cursors.Hand;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(25, 165);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(30, 30);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 9;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(25, 115);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(30, 30);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
+            pboxUsuarios.BackColor = Color.Transparent;
+            pboxUsuarios.Cursor = Cursors.Hand;
+            pboxUsuarios.Image = (Image)resources.GetObject("pboxUsuarios.Image");
+            pboxUsuarios.Location = new Point(25, 115);
+            pboxUsuarios.Name = "pboxUsuarios";
+            pboxUsuarios.Size = new Size(30, 30);
+            pboxUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxUsuarios.TabIndex = 8;
+            pboxUsuarios.TabStop = false;
             // 
             // lblNombre
             // 
@@ -246,23 +229,6 @@
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
             btnUsuarios.Click += btnUsuarios_Click;
-            // 
-            // btnProgramadores
-            // 
-            btnProgramadores.Cursor = Cursors.Hand;
-            btnProgramadores.FlatAppearance.BorderSize = 0;
-            btnProgramadores.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnProgramadores.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnProgramadores.FlatStyle = FlatStyle.Flat;
-            btnProgramadores.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            btnProgramadores.ForeColor = Color.Gainsboro;
-            btnProgramadores.Location = new Point(54, 263);
-            btnProgramadores.Name = "btnProgramadores";
-            btnProgramadores.Size = new Size(158, 30);
-            btnProgramadores.TabIndex = 5;
-            btnProgramadores.Text = "Programadores";
-            btnProgramadores.UseVisualStyleBackColor = true;
-            btnProgramadores.Click += btnProgramadores_Click;
             // 
             // btnTareas
             // 
@@ -389,11 +355,10 @@
             panelContenedor.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxTareas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxProyectos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
@@ -412,7 +377,6 @@
         private Panel panelBarraTitulo;
         private Button btnProyectos;
         private Button btnUsuarios;
-        private Button btnProgramadores;
         private Button btnTareas;
         private PictureBox btnMinimizar;
         private PictureBox btnMaximizar;
@@ -423,10 +387,9 @@
         private Label lblRol;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox6;
+        private PictureBox pboxTareas;
+        private PictureBox pboxProyectos;
+        private PictureBox pboxUsuarios;
+        private PictureBox pboxCerrarSesion;
     }
 }

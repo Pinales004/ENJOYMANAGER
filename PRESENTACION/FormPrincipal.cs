@@ -40,17 +40,39 @@ namespace PRESENTACION
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Administrador)
             {
                 lblRol.Text = "Administrador";
+                btnUsuarios.Visible = true;
+                pboxUsuarios.Visible = true;
+
+                btnProyectos.Visible = false;
+                pboxProyectos.Visible = false;
+
+                btnTareas.Visible = false;
+                pboxTareas.Visible = false;
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
             {
                 lblRol.Text = "Gerente";
+                btnUsuarios.Visible = false;
+                pboxUsuarios.Visible = false;
+
+                btnProyectos.Visible = true;
+                pboxProyectos.Visible = true;
+
+                btnTareas.Visible = true;
+                pboxTareas.Visible = true;
             }
-            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
                 lblRol.Text = "Programador";
+                btnUsuarios.Visible = false;
+                pboxUsuarios.Visible = false;
+
+                btnProyectos.Visible = false;
+                pboxProyectos.Visible = false;
+
+                btnTareas.Visible = true;
+                pboxTareas.Visible = true;
             }
-
-
         }
 
         //Constructor
@@ -169,17 +191,6 @@ namespace PRESENTACION
         {
             LoadUserData();
         }
-
-        private void btnProgramadores_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario<FormProgramadores>();
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
         #endregion
 

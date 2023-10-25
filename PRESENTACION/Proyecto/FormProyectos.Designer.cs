@@ -28,148 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BntNewProyect = new FontAwesome.Sharp.IconButton();
-            this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProyectos));
+            panelContenedor = new Panel();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            btn_agregar = new PictureBox();
+            btn_eliminar = new PictureBox();
+            btn_editar = new PictureBox();
+            txtbox_buscar = new TextBox();
+            label1 = new Label();
+            btn_buscar = new PictureBox();
+            panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
+            SuspendLayout();
             // 
             // panelContenedor
             // 
-            this.panelContenedor.Controls.Add(this.btn_limpiar);
-            this.panelContenedor.Controls.Add(this.btn_eliminar);
-            this.panelContenedor.Controls.Add(this.btn_editar);
-            this.panelContenedor.Controls.Add(this.dataGridView1);
-            this.panelContenedor.Controls.Add(this.panel1);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(884, 461);
-            this.panelContenedor.TabIndex = 2;
-            // 
-            // btn_limpiar
-            // 
-            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_limpiar.ForeColor = System.Drawing.Color.Black;
-            this.btn_limpiar.Location = new System.Drawing.Point(797, 269);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpiar.TabIndex = 56;
-            this.btn_limpiar.Text = "LIMPIAR";
-            this.btn_limpiar.UseVisualStyleBackColor = true;
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_eliminar.ForeColor = System.Drawing.Color.Black;
-            this.btn_eliminar.Location = new System.Drawing.Point(797, 240);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
-            this.btn_eliminar.TabIndex = 55;
-            this.btn_eliminar.Text = "ELIMINAR";
-            this.btn_eliminar.UseVisualStyleBackColor = true;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_editar.ForeColor = System.Drawing.Color.Black;
-            this.btn_editar.Location = new System.Drawing.Point(797, 211);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(75, 23);
-            this.btn_editar.TabIndex = 54;
-            this.btn_editar.Text = "EDITAR";
-            this.btn_editar.UseVisualStyleBackColor = true;
+            panelContenedor.Controls.Add(dataGridView1);
+            panelContenedor.Controls.Add(panel1);
+            panelContenedor.Dock = DockStyle.Fill;
+            panelContenedor.Location = new Point(0, 0);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(884, 461);
+            panelContenedor.TabIndex = 2;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(779, 343);
-            this.dataGridView1.TabIndex = 3;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.Location = new Point(12, 74);
+            dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle2.BackColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(860, 375);
+            dataGridView1.TabIndex = 3;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 100);
-            this.panel1.TabIndex = 2;
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btn_buscar);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(txtbox_buscar);
+            panel1.Controls.Add(btn_editar);
+            panel1.Controls.Add(btn_eliminar);
+            panel1.Controls.Add(btn_agregar);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(884, 68);
+            panel1.TabIndex = 2;
             // 
-            // groupBox1
+            // btn_agregar
             // 
-            this.groupBox1.Controls.Add(this.BntNewProyect);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(884, 95);
-            this.groupBox1.TabIndex = 54;
-            this.groupBox1.TabStop = false;
+            btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_agregar.Cursor = Cursors.Hand;
+            btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
+            btn_agregar.Location = new Point(725, 12);
+            btn_agregar.Name = "btn_agregar";
+            btn_agregar.Size = new Size(45, 45);
+            btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_agregar.TabIndex = 2;
+            btn_agregar.TabStop = false;
+            btn_agregar.Click += BntNewProyect_Click;
             // 
-            // BntNewProyect
+            // btn_eliminar
             // 
-            this.BntNewProyect.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.BntNewProyect.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.BntNewProyect.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BntNewProyect.Location = new System.Drawing.Point(779, 22);
-            this.BntNewProyect.Name = "BntNewProyect";
-            this.BntNewProyect.Size = new System.Drawing.Size(83, 54);
-            this.BntNewProyect.TabIndex = 0;
-            this.BntNewProyect.UseVisualStyleBackColor = true;
-            this.BntNewProyect.Click += new System.EventHandler(this.BntNewProyect_Click);
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(827, 12);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 4;
+            btn_eliminar.TabStop = false;
+            // 
+            // btn_editar
+            // 
+            btn_editar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_editar.Cursor = Cursors.Hand;
+            btn_editar.Image = (Image)resources.GetObject("btn_editar.Image");
+            btn_editar.Location = new Point(776, 12);
+            btn_editar.Name = "btn_editar";
+            btn_editar.Size = new Size(45, 45);
+            btn_editar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_editar.TabIndex = 5;
+            btn_editar.TabStop = false;
+            // 
+            // txtbox_buscar
+            // 
+            txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtbox_buscar.Location = new Point(27, 30);
+            txtbox_buscar.Name = "txtbox_buscar";
+            txtbox_buscar.Size = new Size(416, 23);
+            txtbox_buscar.TabIndex = 6;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(27, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(165, 20);
+            label1.TabIndex = 7;
+            label1.Text = "Busqueda de proyecto";
+            // 
+            // btn_buscar
+            // 
+            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_buscar.Cursor = Cursors.Hand;
+            btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
+            btn_buscar.Location = new Point(449, 27);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(30, 30);
+            btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_buscar.TabIndex = 8;
+            btn_buscar.TabStop = false;
             // 
             // FormProyectos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.panelContenedor);
-            this.ForeColor = System.Drawing.Color.White;
-            this.Name = "FormProyectos";
-            this.Text = "FormProyectos";
-            this.Load += new System.EventHandler(this.FormProyectos_Load);
-            this.panelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
+            ClientSize = new Size(884, 461);
+            Controls.Add(panelContenedor);
+            ForeColor = Color.White;
+            Name = "FormProyectos";
+            Text = "FormProyectos";
+            Load += FormProyectos_Load;
+            panelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
         private Panel panelContenedor;
         private Panel panel1;
         private DataGridView dataGridView1;
-        private Button btn_limpiar;
-        private Button btn_eliminar;
-        private Button btn_editar;
-        private GroupBox groupBox1;
-        private FontAwesome.Sharp.IconButton BntNewProyect;
+        private PictureBox btn_buscar;
+        private Label label1;
+        private TextBox txtbox_buscar;
+        private PictureBox btn_editar;
+        private PictureBox btn_eliminar;
+        private PictureBox btn_agregar;
     }
 }
