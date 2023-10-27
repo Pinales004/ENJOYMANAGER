@@ -32,8 +32,6 @@
             btn_guardar = new PictureBox();
             btn_volver = new PictureBox();
             materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
-            label1 = new Label();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
             SuspendLayout();
@@ -77,32 +75,12 @@
             materialCheckedListBox1.StripeDarkColor = Color.Empty;
             materialCheckedListBox1.TabIndex = 81;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 362);
-            label1.Name = "label1";
-            label1.Size = new Size(504, 15);
-            label1.TabIndex = 82;
-            label1.Text = "En la checkListBox agregate algo para que aparezcan en fila todos los usuarios programadores ";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 377);
-            label2.Name = "label2";
-            label2.Size = new Size(502, 15);
-            label2.TabIndex = 83;
-            label2.Text = "Este no es el color, solo no queria que fuera blanco porque se confunde con el otro formulario";
-            // 
             // FrmEquipoProgramadores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(519, 461);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(materialCheckedListBox1);
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
@@ -112,7 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -120,7 +97,5 @@
         private PictureBox btn_guardar;
         private PictureBox btn_volver;
         private MaterialSkin.Controls.MaterialCheckedListBox materialCheckedListBox1;
-        private Label label1;
-        private Label label2;
     }
 }

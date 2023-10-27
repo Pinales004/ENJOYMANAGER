@@ -82,7 +82,7 @@ namespace PRESENTACION.Proyecto
 
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario < FrmEquipoProgramadores>();
+            AbrirFormulario<FrmEquipoProgramadores>();
         }
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
@@ -111,7 +111,7 @@ namespace PRESENTACION.Proyecto
                 return; // No se agrega el proyecto si falta el nombre
             }
 
-            if (string.IsNullOrWhiteSpace(labelDescripcionProyecto.Text))
+            if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
             {
                 MessageBox.Show("Debe ingresar una descripción de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // No se agrega el proyecto si falta la descripción

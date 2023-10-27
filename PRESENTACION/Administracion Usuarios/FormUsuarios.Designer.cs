@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Usuarios));
             panelContenedor = new Panel();
             btm_editar = new Button();
-            btn_eliminar = new Button();
+            btn_eliminar2 = new Button();
             btnLimpiar = new Button();
             panel1 = new Panel();
             groupBox1 = new GroupBox();
-            btn_agregar = new Button();
+            btn_buscar = new PictureBox();
+            label1 = new Label();
+            txtbox_buscar = new TextBox();
+            btn_editar = new PictureBox();
+            btn_eliminar = new PictureBox();
+            btn_agregar = new PictureBox();
+            btn_agregar2 = new Button();
             CheckActivo = new MaterialSkin.Controls.MaterialCheckbox();
             materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -56,6 +63,10 @@
             panelContenedor.SuspendLayout();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -63,7 +74,7 @@
             // 
             panelContenedor.BackColor = Color.Black;
             panelContenedor.Controls.Add(btm_editar);
-            panelContenedor.Controls.Add(btn_eliminar);
+            panelContenedor.Controls.Add(btn_eliminar2);
             panelContenedor.Controls.Add(btnLimpiar);
             panelContenedor.Controls.Add(panel1);
             panelContenedor.Controls.Add(dataGridView1);
@@ -84,16 +95,16 @@
             btm_editar.UseVisualStyleBackColor = true;
             btm_editar.Click += btn_editar_Click;
             // 
-            // btn_eliminar
+            // btn_eliminar2
             // 
-            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_eliminar.Location = new Point(796, 320);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(75, 23);
-            btn_eliminar.TabIndex = 50;
-            btn_eliminar.Text = "ELIMINAR";
-            btn_eliminar.UseVisualStyleBackColor = true;
-            btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar2.Location = new Point(796, 320);
+            btn_eliminar2.Name = "btn_eliminar2";
+            btn_eliminar2.Size = new Size(75, 23);
+            btn_eliminar2.TabIndex = 50;
+            btn_eliminar2.Text = "ELIMINAR";
+            btn_eliminar2.UseVisualStyleBackColor = true;
+            btn_eliminar2.Click += btn_eliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -119,7 +130,13 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btn_buscar);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(txtbox_buscar);
+            groupBox1.Controls.Add(btn_editar);
+            groupBox1.Controls.Add(btn_eliminar);
             groupBox1.Controls.Add(btn_agregar);
+            groupBox1.Controls.Add(btn_agregar2);
             groupBox1.Controls.Add(CheckActivo);
             groupBox1.Controls.Add(materialLabel8);
             groupBox1.Controls.Add(materialLabel5);
@@ -143,22 +160,96 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             // 
+            // btn_buscar
+            // 
+            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_buscar.Cursor = Cursors.Hand;
+            btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
+            btn_buscar.Location = new Point(434, 225);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(30, 30);
+            btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_buscar.TabIndex = 52;
+            btn_buscar.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(12, 204);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 20);
+            label1.TabIndex = 51;
+            label1.Text = "Busqueda de tareas";
+            // 
+            // txtbox_buscar
+            // 
+            txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtbox_buscar.Location = new Point(12, 228);
+            txtbox_buscar.Name = "txtbox_buscar";
+            txtbox_buscar.Size = new Size(416, 23);
+            txtbox_buscar.TabIndex = 50;
+            // 
+            // btn_editar
+            // 
+            btn_editar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_editar.Cursor = Cursors.Hand;
+            btn_editar.Image = (Image)resources.GetObject("btn_editar.Image");
+            btn_editar.Location = new Point(776, 204);
+            btn_editar.Name = "btn_editar";
+            btn_editar.Size = new Size(45, 45);
+            btn_editar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_editar.TabIndex = 49;
+            btn_editar.TabStop = false;
+            btn_editar.MouseEnter += btn_editar_MouseEnter;
+            btn_editar.MouseLeave += btn_editar_MouseLeave;
+            // 
+            // btn_eliminar
+            // 
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(827, 204);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 48;
+            btn_eliminar.TabStop = false;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
+            // 
             // btn_agregar
             // 
             btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_agregar.Location = new Point(469, 216);
+            btn_agregar.Cursor = Cursors.Hand;
+            btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
+            btn_agregar.Location = new Point(725, 204);
             btn_agregar.Name = "btn_agregar";
-            btn_agregar.Size = new Size(75, 23);
-            btn_agregar.TabIndex = 40;
-            btn_agregar.Text = "AGREGAR";
-            btn_agregar.UseVisualStyleBackColor = true;
-            btn_agregar.Click += btn_agregar_Click;
+            btn_agregar.Size = new Size(45, 45);
+            btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_agregar.TabIndex = 47;
+            btn_agregar.TabStop = false;
+            btn_agregar.Click += btn_agregar_Click_1;
+            btn_agregar.MouseEnter += btn_agregar_MouseEnter;
+            btn_agregar.MouseLeave += btn_agregar_MouseLeave;
+            // 
+            // btn_agregar2
+            // 
+            btn_agregar2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_agregar2.Location = new Point(403, 99);
+            btn_agregar2.Name = "btn_agregar2";
+            btn_agregar2.Size = new Size(75, 23);
+            btn_agregar2.TabIndex = 40;
+            btn_agregar2.Text = "AGREGAR";
+            btn_agregar2.UseVisualStyleBackColor = true;
+            btn_agregar2.Click += btn_agregar_Click;
             // 
             // CheckActivo
             // 
             CheckActivo.AutoSize = true;
             CheckActivo.Depth = 0;
-            CheckActivo.Location = new Point(765, 133);
+            CheckActivo.Location = new Point(332, 33);
             CheckActivo.Margin = new Padding(0);
             CheckActivo.MouseLocation = new Point(-1, -1);
             CheckActivo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -175,7 +266,7 @@
             materialLabel8.AutoSize = true;
             materialLabel8.Depth = 0;
             materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel8.Location = new Point(245, 182);
+            materialLabel8.Location = new Point(242, 78);
             materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel8.Name = "materialLabel8";
             materialLabel8.Size = new Size(130, 19);
@@ -187,7 +278,7 @@
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel5.Location = new Point(9, 182);
+            materialLabel5.Location = new Point(153, 78);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(82, 19);
@@ -199,7 +290,7 @@
             materialLabel6.AutoSize = true;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel6.Location = new Point(469, 99);
+            materialLabel6.Location = new Point(200, 0);
             materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel6.Name = "materialLabel6";
             materialLabel6.Size = new Size(115, 19);
@@ -211,7 +302,7 @@
             materialLabel3.AutoSize = true;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(245, 100);
+            materialLabel3.Location = new Point(81, 78);
             materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel3.Name = "materialLabel3";
             materialLabel3.Size = new Size(51, 19);
@@ -223,7 +314,7 @@
             materialLabel7.AutoSize = true;
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel7.Location = new Point(6, 101);
+            materialLabel7.Location = new Point(0, 75);
             materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel7.Name = "materialLabel7";
             materialLabel7.Size = new Size(24, 19);
@@ -235,7 +326,7 @@
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(469, 15);
+            materialLabel4.Location = new Point(153, 0);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(41, 19);
@@ -247,7 +338,7 @@
             materialLabel2.AutoSize = true;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(245, 15);
+            materialLabel2.Location = new Point(81, 0);
             materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel2.Name = "materialLabel2";
             materialLabel2.Size = new Size(66, 19);
@@ -259,7 +350,7 @@
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(9, 19);
+            materialLabel1.Location = new Point(3, 4);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(72, 19);
@@ -275,7 +366,7 @@
             TxtContrasena2.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             TxtContrasena2.HideSelection = true;
             TxtContrasena2.LeadingIcon = null;
-            TxtContrasena2.Location = new Point(245, 204);
+            TxtContrasena2.Location = new Point(242, 100);
             TxtContrasena2.MaxLength = 32767;
             TxtContrasena2.MouseState = MaterialSkin.MouseState.OUT;
             TxtContrasena2.Name = "TxtContrasena2";
@@ -287,7 +378,7 @@
             TxtContrasena2.SelectionLength = 0;
             TxtContrasena2.SelectionStart = 0;
             TxtContrasena2.ShortcutsEnabled = true;
-            TxtContrasena2.Size = new Size(201, 48);
+            TxtContrasena2.Size = new Size(127, 48);
             TxtContrasena2.TabIndex = 39;
             TxtContrasena2.TabStop = false;
             TxtContrasena2.TextAlign = HorizontalAlignment.Left;
@@ -303,7 +394,7 @@
             TxtContrasena.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             TxtContrasena.HideSelection = true;
             TxtContrasena.LeadingIcon = null;
-            TxtContrasena.Location = new Point(9, 204);
+            TxtContrasena.Location = new Point(153, 100);
             TxtContrasena.MaxLength = 32767;
             TxtContrasena.MouseState = MaterialSkin.MouseState.OUT;
             TxtContrasena.Name = "TxtContrasena";
@@ -315,7 +406,7 @@
             TxtContrasena.SelectionLength = 0;
             TxtContrasena.SelectionStart = 0;
             TxtContrasena.ShortcutsEnabled = true;
-            TxtContrasena.Size = new Size(201, 48);
+            TxtContrasena.Size = new Size(83, 48);
             TxtContrasena.TabIndex = 38;
             TxtContrasena.TabStop = false;
             TxtContrasena.TextAlign = HorizontalAlignment.Left;
@@ -331,7 +422,7 @@
             txtUsuarioNombre.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtUsuarioNombre.HideSelection = true;
             txtUsuarioNombre.LeadingIcon = null;
-            txtUsuarioNombre.Location = new Point(469, 121);
+            txtUsuarioNombre.Location = new Point(200, 22);
             txtUsuarioNombre.MaxLength = 32767;
             txtUsuarioNombre.MouseState = MaterialSkin.MouseState.OUT;
             txtUsuarioNombre.Name = "txtUsuarioNombre";
@@ -343,7 +434,7 @@
             txtUsuarioNombre.SelectionLength = 0;
             txtUsuarioNombre.SelectionStart = 0;
             txtUsuarioNombre.ShortcutsEnabled = true;
-            txtUsuarioNombre.Size = new Size(293, 48);
+            txtUsuarioNombre.Size = new Size(115, 48);
             txtUsuarioNombre.TabIndex = 36;
             txtUsuarioNombre.TabStop = false;
             txtUsuarioNombre.TextAlign = HorizontalAlignment.Left;
@@ -364,11 +455,11 @@
             CmbSexo.FormattingEnabled = true;
             CmbSexo.IntegralHeight = false;
             CmbSexo.ItemHeight = 43;
-            CmbSexo.Location = new Point(245, 121);
+            CmbSexo.Location = new Point(81, 99);
             CmbSexo.MaxDropDownItems = 4;
             CmbSexo.MouseState = MaterialSkin.MouseState.OUT;
             CmbSexo.Name = "CmbSexo";
-            CmbSexo.Size = new Size(179, 49);
+            CmbSexo.Size = new Size(66, 49);
             CmbSexo.StartIndex = 0;
             CmbSexo.TabIndex = 35;
             // 
@@ -386,11 +477,11 @@
             CmbRol.FormattingEnabled = true;
             CmbRol.IntegralHeight = false;
             CmbRol.ItemHeight = 43;
-            CmbRol.Location = new Point(9, 121);
+            CmbRol.Location = new Point(3, 95);
             CmbRol.MaxDropDownItems = 4;
             CmbRol.MouseState = MaterialSkin.MouseState.OUT;
             CmbRol.Name = "CmbRol";
-            CmbRol.Size = new Size(177, 49);
+            CmbRol.Size = new Size(62, 49);
             CmbRol.StartIndex = 0;
             CmbRol.TabIndex = 34;
             // 
@@ -408,7 +499,7 @@
             TxtEmail.HideSelection = true;
             TxtEmail.InsertKeyMode = InsertKeyMode.Default;
             TxtEmail.LeadingIcon = null;
-            TxtEmail.Location = new Point(469, 37);
+            TxtEmail.Location = new Point(153, 22);
             TxtEmail.Mask = "";
             TxtEmail.MaxLength = 32767;
             TxtEmail.MouseState = MaterialSkin.MouseState.OUT;
@@ -425,7 +516,7 @@
             TxtEmail.SelectionLength = 0;
             TxtEmail.SelectionStart = 0;
             TxtEmail.ShortcutsEnabled = true;
-            TxtEmail.Size = new Size(406, 48);
+            TxtEmail.Size = new Size(41, 48);
             TxtEmail.SkipLiterals = true;
             TxtEmail.TabIndex = 33;
             TxtEmail.TabStop = false;
@@ -444,7 +535,7 @@
             TxtApellido.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             TxtApellido.HideSelection = true;
             TxtApellido.LeadingIcon = null;
-            TxtApellido.Location = new Point(245, 37);
+            TxtApellido.Location = new Point(81, 22);
             TxtApellido.MaxLength = 32767;
             TxtApellido.MouseState = MaterialSkin.MouseState.OUT;
             TxtApellido.Name = "TxtApellido";
@@ -456,7 +547,7 @@
             TxtApellido.SelectionLength = 0;
             TxtApellido.SelectionStart = 0;
             TxtApellido.ShortcutsEnabled = true;
-            TxtApellido.Size = new Size(194, 48);
+            TxtApellido.Size = new Size(66, 48);
             TxtApellido.TabIndex = 32;
             TxtApellido.TabStop = false;
             TxtApellido.TextAlign = HorizontalAlignment.Left;
@@ -472,7 +563,7 @@
             TxtNombres.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             TxtNombres.HideSelection = true;
             TxtNombres.LeadingIcon = null;
-            TxtNombres.Location = new Point(6, 37);
+            TxtNombres.Location = new Point(0, 22);
             TxtNombres.MaxLength = 32767;
             TxtNombres.MouseState = MaterialSkin.MouseState.OUT;
             TxtNombres.Name = "TxtNombres";
@@ -484,7 +575,7 @@
             TxtNombres.SelectionLength = 0;
             TxtNombres.SelectionStart = 0;
             TxtNombres.ShortcutsEnabled = true;
-            TxtNombres.Size = new Size(201, 48);
+            TxtNombres.Size = new Size(75, 48);
             TxtNombres.TabIndex = 31;
             TxtNombres.TabStop = false;
             TxtNombres.TextAlign = HorizontalAlignment.Left;
@@ -516,6 +607,10 @@
             panel1.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -545,7 +640,13 @@
         public MaterialSkin.Controls.MaterialTextBox2 TxtNombres;
         public DataGridView dataGridView1;
         private Button btm_editar;
-        private Button btn_eliminar;
-        private Button btn_agregar;
+        private Button btn_eliminar2;
+        private Button btn_agregar2;
+        private PictureBox btn_editar;
+        private PictureBox btn_eliminar;
+        private PictureBox btn_agregar;
+        private PictureBox btn_buscar;
+        private Label label1;
+        private TextBox txtbox_buscar;
     }
 }

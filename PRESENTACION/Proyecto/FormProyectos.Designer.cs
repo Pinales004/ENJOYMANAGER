@@ -34,19 +34,19 @@
             panelContenedor = new Panel();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
-            btn_agregar = new PictureBox();
-            btn_eliminar = new PictureBox();
-            btn_editar = new PictureBox();
-            txtbox_buscar = new TextBox();
-            label1 = new Label();
             btn_buscar = new PictureBox();
+            label1 = new Label();
+            txtbox_buscar = new TextBox();
+            btn_editar = new PictureBox();
+            btn_eliminar = new PictureBox();
+            btn_agregar = new PictureBox();
             panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
             SuspendLayout();
             // 
             // panelContenedor
@@ -95,30 +95,37 @@
             panel1.Size = new Size(884, 68);
             panel1.TabIndex = 2;
             // 
-            // btn_agregar
+            // btn_buscar
             // 
-            btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_agregar.Cursor = Cursors.Hand;
-            btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
-            btn_agregar.Location = new Point(725, 12);
-            btn_agregar.Name = "btn_agregar";
-            btn_agregar.Size = new Size(45, 45);
-            btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_agregar.TabIndex = 2;
-            btn_agregar.TabStop = false;
-            btn_agregar.Click += BntNewProyect_Click;
+            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_buscar.Cursor = Cursors.Hand;
+            btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
+            btn_buscar.Location = new Point(449, 27);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(30, 30);
+            btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_buscar.TabIndex = 8;
+            btn_buscar.TabStop = false;
             // 
-            // btn_eliminar
+            // label1
             // 
-            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_eliminar.Cursor = Cursors.Hand;
-            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
-            btn_eliminar.Location = new Point(827, 12);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(45, 45);
-            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_eliminar.TabIndex = 4;
-            btn_eliminar.TabStop = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(27, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(165, 20);
+            label1.TabIndex = 7;
+            label1.Text = "Busqueda de proyecto";
+            // 
+            // txtbox_buscar
+            // 
+            txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtbox_buscar.Cursor = Cursors.IBeam;
+            txtbox_buscar.Location = new Point(27, 30);
+            txtbox_buscar.Name = "txtbox_buscar";
+            txtbox_buscar.Size = new Size(416, 23);
+            txtbox_buscar.TabIndex = 6;
             // 
             // btn_editar
             // 
@@ -132,36 +139,30 @@
             btn_editar.TabIndex = 5;
             btn_editar.TabStop = false;
             // 
-            // txtbox_buscar
+            // btn_eliminar
             // 
-            txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            txtbox_buscar.Location = new Point(27, 30);
-            txtbox_buscar.Name = "txtbox_buscar";
-            txtbox_buscar.Size = new Size(416, 23);
-            txtbox_buscar.TabIndex = 6;
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(827, 12);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 4;
+            btn_eliminar.TabStop = false;
             // 
-            // label1
+            // btn_agregar
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(27, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 20);
-            label1.TabIndex = 7;
-            label1.Text = "Busqueda de proyecto";
-            // 
-            // btn_buscar
-            // 
-            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_buscar.Cursor = Cursors.Hand;
-            btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
-            btn_buscar.Location = new Point(449, 27);
-            btn_buscar.Name = "btn_buscar";
-            btn_buscar.Size = new Size(30, 30);
-            btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_buscar.TabIndex = 8;
-            btn_buscar.TabStop = false;
+            btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_agregar.Cursor = Cursors.Hand;
+            btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
+            btn_agregar.Location = new Point(725, 12);
+            btn_agregar.Name = "btn_agregar";
+            btn_agregar.Size = new Size(45, 45);
+            btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_agregar.TabIndex = 2;
+            btn_agregar.TabStop = false;
+            btn_agregar.Click += BntNewProyect_Click;
             // 
             // FormProyectos
             // 
@@ -178,10 +179,10 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
             ResumeLayout(false);
         }
 

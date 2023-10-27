@@ -1,5 +1,6 @@
 ﻿using DOMINIO.Models;
 using MaterialSkin.Controls;
+using PRESENTACION.Administracion_Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,9 @@ namespace PRESENTACION
         public Frm_Usuarios()
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_agregar);
+            btn_icon_hover.AplicarFormaRedonda(btn_editar);
+            btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
         }
 
         private void FormUsuarios_Load(object sender, EventArgs e)
@@ -204,6 +208,59 @@ namespace PRESENTACION
                 centerX = 0;
             }
             groupBox1.Location = new Point(centerX, groupBox1.Location.Y);
+        }
+
+        private void btn_agregar_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<Frm_NuevoUsuario>();
+        }
+
+        private void btn_agregar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_agregar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_editar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_editar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
+
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
         }
     }
 }
