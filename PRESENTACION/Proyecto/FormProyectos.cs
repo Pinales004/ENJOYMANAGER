@@ -17,6 +17,8 @@ namespace PRESENTACION
 {
     public partial class FormProyectos : Form
     {
+        Frm_NuevoProyecto form = new Frm_NuevoProyecto();
+        public string? idproyect;
 
         public FormProyectos()
         {
@@ -47,7 +49,7 @@ namespace PRESENTACION
 
         private void BntNewProyect_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Frm_NuevoProyecto>();
+
         }
 
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -66,6 +68,53 @@ namespace PRESENTACION
             {
                 formulario.BringToFront();
             }
+        }
+
+        public void CargarEstadoProyecto()
+        {
+            
+            Proyectos cargar = new Proyectos();
+
+            form.cmbEstadoProyecto.DataSource = cargar.GetProyectosEstado();
+            form.cmbEstadoProyecto.DisplayMember = "Estado";
+            form.cmbEstadoProyecto.ValueMember = "EstadoProyectoid";
+
+        }
+
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                form.Show();
+                CargarEstadoProyecto();
+
+                // Accede al DataTable subyacente
+                DataTable dataTable = (DataTable)dataGridView1.DataSource;
+
+                // Obtén la fila seleccionada
+                DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
+
+                // Accede al valor del ID del proyecto
+                int idProyecto = (int)selectedRow["IdProyecto"];
+
+                // Muestra el ID del proyecto (puedes hacer lo que desees con él)
+                MessageBox.Show($"ID del proyecto seleccionado: {idProyecto}");
+
+                form.IdProyecto.Text = idProyecto.ToString();
+                form.txtNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
+                form.txtDescripcionProyecto.Text = selectedRow["Descripcion"].ToString();
+                form.dateTimePickerInicio.Text = selectedRow["FechaInicio"].ToString();
+                form.dateTimePickerEntrega.Text = selectedRow["FechaFin"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+
+
+
         }
     }
 

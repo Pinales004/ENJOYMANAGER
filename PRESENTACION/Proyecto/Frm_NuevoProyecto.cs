@@ -11,11 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DOMINIO.Models;
-
+using Comun.Cache;
 namespace PRESENTACION.Proyecto
 {
     public partial class Frm_NuevoProyecto : Form
     {
+        String OperacionTipo = "Insertar";
+
         public Frm_NuevoProyecto()
         {
             InitializeComponent();
@@ -52,11 +54,46 @@ namespace PRESENTACION.Proyecto
 
         private void AgregarNuevoProyecto()
         {
+            Proyectos cargar = new Proyectos();
+            cargar.AgregarProyecto(this.txtNombreProyecto.Text,
+                                    this.txtDescripcionProyecto.Text,
+                                    this.dateTimePickerInicio.Value.Date,
+                                    this.dateTimePickerEntrega.Value.Date,
+                                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
+                                    UserLoginCache.IdUsuario);
 
-
-
+            CargarProyectos();
             MessageBox.Show("Proyecto agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
+
+        }
+
+        private void UpdateNuevoProyecto()
+        {
+            Proyectos cargar = new Proyectos();
+            cargar.UpdateProyecto(Convert.ToInt32(this.IdProyecto.Text),
+                                    this.txtNombreProyecto.Text,
+                                    this.txtDescripcionProyecto.Text,
+                                    this.dateTimePickerInicio.Value.Date,
+                                    this.dateTimePickerEntrega.Value.Date,
+                                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
+                                    UserLoginCache.IdUsuario);
+
+            CargarProyectos();
+            MessageBox.Show("Proyecto actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimpiarCampos();
+
+        }
+
+
+
+
+        private void CargarProyectos()
+        {
+            Proyectos cargar = new Proyectos();
+            FormProyectos form = new FormProyectos();
+            form.dataGridView1.AutoGenerateColumns = true;
+            form.dataGridView1.DataSource = cargar.GetProyectos();
         }
 
 
@@ -77,7 +114,7 @@ namespace PRESENTACION.Proyecto
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
@@ -104,34 +141,46 @@ namespace PRESENTACION.Proyecto
 
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {
-            // Validar los campos antes de agregar el proyecto
-            if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
+
+            if (OperacionTipo == "Insertar")
             {
-                MessageBox.Show("Debe ingresar un nombre de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si falta el nombre
+                // Validar los campos antes de agregar el proyecto
+                if (string.IsNullOrWhiteSpace(txtNombreProyecto.Text))
+                {
+                    MostrarError("Debe ingresar un nombre de proyecto.");
+                }
+                else if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
+                {
+                    MostrarError("Debe ingresar una descripción de proyecto.");
+                }
+                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+                {
+                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                }
+                else if (cmbEstadoProyecto.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un estado para el proyecto.");
+                }
+                else
+                {
+                    // Si todas las validaciones pasan, puedes agregar el proyecto
+                    AgregarNuevoProyecto();
+                }
+            }
+            else if (OperacionTipo == "Editar")
+            {
+                // Lógica para editar un proyecto
+                // (Puedes completar esta parte según tus necesidades)
             }
 
-            if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
-            {
-                MessageBox.Show("Debe ingresar una descripción de proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si falta la descripción
-            }
 
-            if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
-            {
-                MessageBox.Show("La fecha de inicio no puede ser posterior a la fecha de fin.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si la fecha de inicio es posterior a la fecha de fin
-            }
 
-            if (cmbEstadoProyecto.SelectedIndex == -1)
-            {
-                MessageBox.Show("Debe seleccionar un estado para el proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; // No se agrega el proyecto si no se selecciona un estado
-            }
 
-            // Si todas las validaciones pasan, puedes agregar el proyecto
-            AgregarNuevoProyecto();
+        }
 
+        private void MostrarError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
 

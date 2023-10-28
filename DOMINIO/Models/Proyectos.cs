@@ -41,11 +41,20 @@ namespace DOMINIO.Models
         public void AgregarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
         {
 
-            ProyectoAcceso proyecto = new ProyectoAcceso();
-            proyecto.InsertarProyecto(this.NombreProyecto, this.Descripcion, this.FechaInicio, this.FechaFin, this.EstadoProyectoid, this.IdUsuario);
+            project.InsertarProyecto(nombreProyecto, descripcion, fechaInicio, fechaFin, estadoProyectoid, idUsuario);
 
 
         }
+
+        public void UpdateProyecto(int IdProyecto,string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+        {
+
+            project.EditarProyecto(IdProyecto, nombreProyecto, descripcion, fechaInicio, fechaFin, estadoProyectoid, idUsuario);
+
+
+        }
+
+
         public System.Data.DataTable GetProyectos()
         {
             return project.CargarProyectos();
