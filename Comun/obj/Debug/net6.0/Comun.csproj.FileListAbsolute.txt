@@ -32,3 +32,14 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Com
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Comun\obj\Debug\net6.0\refint\Comun.dll
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Comun\obj\Debug\net6.0\ref\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.deps.json
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\bin\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.AssemblyInfoInputs.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.AssemblyInfo.cs
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.csproj.CoreCompileInputs.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\refint\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\ref\Comun.dll

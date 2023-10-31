@@ -123,3 +123,44 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.exe
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.deps.json
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.runtimeconfig.json
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\MaterialSkin.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\DOMINIO.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\DATOS.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.AssemblyReference.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormTareas.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_NuevaTarea.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Usuarios.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_NuevoUsuario.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormPrincipal.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Login.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Properties.Resources.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormProyectos.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.FrmEquipoProgramadores.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.Frm_NuevoProyecto.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.GenerateResource.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.AssemblyInfoInputs.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.AssemblyInfo.cs
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.CoreCompileInputs.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.CopyComplete
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\refint\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.pdb
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll

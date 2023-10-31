@@ -29,277 +29,277 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NuevoProyecto));
-            this.labelDescripcionProyecto = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePickerEntrega = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
-            this.labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
-            this.labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbEstadoProyecto = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtNombreProyecto = new MaterialSkin.Controls.MaterialTextBox2();
-            this.btn_volver = new System.Windows.Forms.PictureBox();
-            this.btn_guardar = new System.Windows.Forms.PictureBox();
-            this.txtDescripcionProyecto = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.btn_limpiar = new System.Windows.Forms.PictureBox();
-            this.btnEquipoProyecto = new System.Windows.Forms.PictureBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.IdProyecto = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEquipoProyecto)).BeginInit();
-            this.SuspendLayout();
+            labelDescripcionProyecto = new MaterialSkin.Controls.MaterialLabel();
+            dateTimePickerEntrega = new DateTimePicker();
+            dateTimePickerInicio = new DateTimePicker();
+            labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
+            labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            cmbEstadoProyecto = new MaterialSkin.Controls.MaterialComboBox();
+            txtNombreProyecto = new MaterialSkin.Controls.MaterialTextBox2();
+            btn_volver = new PictureBox();
+            btn_guardar = new PictureBox();
+            txtDescripcionProyecto = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            btn_limpiar = new PictureBox();
+            btnEquipoProyecto = new PictureBox();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            IdProyecto = new Label();
+            ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnEquipoProyecto).BeginInit();
+            SuspendLayout();
             // 
             // labelDescripcionProyecto
             // 
-            this.labelDescripcionProyecto.AutoSize = true;
-            this.labelDescripcionProyecto.Depth = 0;
-            this.labelDescripcionProyecto.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelDescripcionProyecto.Location = new System.Drawing.Point(12, 114);
-            this.labelDescripcionProyecto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelDescripcionProyecto.Name = "labelDescripcionProyecto";
-            this.labelDescripcionProyecto.Size = new System.Drawing.Size(174, 19);
-            this.labelDescripcionProyecto.TabIndex = 75;
-            this.labelDescripcionProyecto.Text = "Descripción del proyecto";
+            labelDescripcionProyecto.AutoSize = true;
+            labelDescripcionProyecto.Depth = 0;
+            labelDescripcionProyecto.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelDescripcionProyecto.Location = new Point(12, 114);
+            labelDescripcionProyecto.MouseState = MaterialSkin.MouseState.HOVER;
+            labelDescripcionProyecto.Name = "labelDescripcionProyecto";
+            labelDescripcionProyecto.Size = new Size(174, 19);
+            labelDescripcionProyecto.TabIndex = 75;
+            labelDescripcionProyecto.Text = "Descripción del proyecto";
             // 
             // dateTimePickerEntrega
             // 
-            this.dateTimePickerEntrega.Location = new System.Drawing.Point(275, 346);
-            this.dateTimePickerEntrega.Name = "dateTimePickerEntrega";
-            this.dateTimePickerEntrega.Size = new System.Drawing.Size(233, 23);
-            this.dateTimePickerEntrega.TabIndex = 73;
+            dateTimePickerEntrega.Location = new Point(275, 346);
+            dateTimePickerEntrega.Name = "dateTimePickerEntrega";
+            dateTimePickerEntrega.Size = new Size(233, 23);
+            dateTimePickerEntrega.TabIndex = 73;
             // 
             // dateTimePickerInicio
             // 
-            this.dateTimePickerInicio.Location = new System.Drawing.Point(12, 346);
-            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
-            this.dateTimePickerInicio.Size = new System.Drawing.Size(233, 23);
-            this.dateTimePickerInicio.TabIndex = 72;
+            dateTimePickerInicio.Location = new Point(12, 346);
+            dateTimePickerInicio.Name = "dateTimePickerInicio";
+            dateTimePickerInicio.Size = new Size(233, 23);
+            dateTimePickerInicio.TabIndex = 72;
             // 
             // labelFechaEntrega
             // 
-            this.labelFechaEntrega.AutoSize = true;
-            this.labelFechaEntrega.Depth = 0;
-            this.labelFechaEntrega.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelFechaEntrega.Location = new System.Drawing.Point(329, 324);
-            this.labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelFechaEntrega.Name = "labelFechaEntrega";
-            this.labelFechaEntrega.Size = new System.Drawing.Size(123, 19);
-            this.labelFechaEntrega.TabIndex = 71;
-            this.labelFechaEntrega.Text = "Fecha de Entrega";
+            labelFechaEntrega.AutoSize = true;
+            labelFechaEntrega.Depth = 0;
+            labelFechaEntrega.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelFechaEntrega.Location = new Point(329, 324);
+            labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
+            labelFechaEntrega.Name = "labelFechaEntrega";
+            labelFechaEntrega.Size = new Size(123, 19);
+            labelFechaEntrega.TabIndex = 71;
+            labelFechaEntrega.Text = "Fecha de Entrega";
             // 
             // labelFechaInicio
             // 
-            this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Depth = 0;
-            this.labelFechaInicio.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelFechaInicio.Location = new System.Drawing.Point(70, 324);
-            this.labelFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(107, 19);
-            this.labelFechaInicio.TabIndex = 70;
-            this.labelFechaInicio.Text = "Fecha de Inicio";
+            labelFechaInicio.AutoSize = true;
+            labelFechaInicio.Depth = 0;
+            labelFechaInicio.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelFechaInicio.Location = new Point(70, 324);
+            labelFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
+            labelFechaInicio.Name = "labelFechaInicio";
+            labelFechaInicio.Size = new Size(107, 19);
+            labelFechaInicio.TabIndex = 70;
+            labelFechaInicio.Text = "Fecha de Inicio";
             // 
             // materialLabel7
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(516, 28);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(140, 19);
-            this.materialLabel7.TabIndex = 69;
-            this.materialLabel7.Text = "Estado del proyecto";
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(516, 28);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(140, 19);
+            materialLabel7.TabIndex = 69;
+            materialLabel7.Text = "Estado del proyecto";
             // 
             // materialLabel1
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(12, 28);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(147, 19);
-            this.materialLabel1.TabIndex = 68;
-            this.materialLabel1.Text = "Nombre del proyecto";
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(12, 28);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(147, 19);
+            materialLabel1.TabIndex = 68;
+            materialLabel1.Text = "Nombre del proyecto";
             // 
             // cmbEstadoProyecto
             // 
-            this.cmbEstadoProyecto.AutoResize = false;
-            this.cmbEstadoProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbEstadoProyecto.Depth = 0;
-            this.cmbEstadoProyecto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbEstadoProyecto.DropDownHeight = 174;
-            this.cmbEstadoProyecto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoProyecto.DropDownWidth = 121;
-            this.cmbEstadoProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbEstadoProyecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbEstadoProyecto.FormattingEnabled = true;
-            this.cmbEstadoProyecto.IntegralHeight = false;
-            this.cmbEstadoProyecto.ItemHeight = 43;
-            this.cmbEstadoProyecto.Location = new System.Drawing.Point(506, 50);
-            this.cmbEstadoProyecto.MaxDropDownItems = 4;
-            this.cmbEstadoProyecto.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbEstadoProyecto.Name = "cmbEstadoProyecto";
-            this.cmbEstadoProyecto.Size = new System.Drawing.Size(266, 49);
-            this.cmbEstadoProyecto.StartIndex = 0;
-            this.cmbEstadoProyecto.TabIndex = 67;
+            cmbEstadoProyecto.AutoResize = false;
+            cmbEstadoProyecto.BackColor = Color.FromArgb(255, 255, 255);
+            cmbEstadoProyecto.Depth = 0;
+            cmbEstadoProyecto.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbEstadoProyecto.DropDownHeight = 174;
+            cmbEstadoProyecto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstadoProyecto.DropDownWidth = 121;
+            cmbEstadoProyecto.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbEstadoProyecto.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbEstadoProyecto.FormattingEnabled = true;
+            cmbEstadoProyecto.IntegralHeight = false;
+            cmbEstadoProyecto.ItemHeight = 43;
+            cmbEstadoProyecto.Location = new Point(506, 50);
+            cmbEstadoProyecto.MaxDropDownItems = 4;
+            cmbEstadoProyecto.MouseState = MaterialSkin.MouseState.OUT;
+            cmbEstadoProyecto.Name = "cmbEstadoProyecto";
+            cmbEstadoProyecto.Size = new Size(266, 49);
+            cmbEstadoProyecto.StartIndex = 0;
+            cmbEstadoProyecto.TabIndex = 67;
             // 
             // txtNombreProyecto
             // 
-            this.txtNombreProyecto.AnimateReadOnly = false;
-            this.txtNombreProyecto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtNombreProyecto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNombreProyecto.Depth = 0;
-            this.txtNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNombreProyecto.HideSelection = true;
-            this.txtNombreProyecto.LeadingIcon = null;
-            this.txtNombreProyecto.Location = new System.Drawing.Point(12, 50);
-            this.txtNombreProyecto.MaxLength = 32767;
-            this.txtNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtNombreProyecto.Name = "txtNombreProyecto";
-            this.txtNombreProyecto.PasswordChar = '\0';
-            this.txtNombreProyecto.PrefixSuffixText = null;
-            this.txtNombreProyecto.ReadOnly = false;
-            this.txtNombreProyecto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNombreProyecto.SelectedText = "";
-            this.txtNombreProyecto.SelectionLength = 0;
-            this.txtNombreProyecto.SelectionStart = 0;
-            this.txtNombreProyecto.ShortcutsEnabled = true;
-            this.txtNombreProyecto.Size = new System.Drawing.Size(475, 48);
-            this.txtNombreProyecto.TabIndex = 66;
-            this.txtNombreProyecto.TabStop = false;
-            this.txtNombreProyecto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreProyecto.TrailingIcon = null;
-            this.txtNombreProyecto.UseSystemPasswordChar = false;
+            txtNombreProyecto.AnimateReadOnly = false;
+            txtNombreProyecto.BackgroundImageLayout = ImageLayout.None;
+            txtNombreProyecto.CharacterCasing = CharacterCasing.Normal;
+            txtNombreProyecto.Depth = 0;
+            txtNombreProyecto.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNombreProyecto.HideSelection = true;
+            txtNombreProyecto.LeadingIcon = null;
+            txtNombreProyecto.Location = new Point(12, 50);
+            txtNombreProyecto.MaxLength = 32767;
+            txtNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
+            txtNombreProyecto.Name = "txtNombreProyecto";
+            txtNombreProyecto.PasswordChar = '\0';
+            txtNombreProyecto.PrefixSuffixText = null;
+            txtNombreProyecto.ReadOnly = false;
+            txtNombreProyecto.RightToLeft = RightToLeft.No;
+            txtNombreProyecto.SelectedText = "";
+            txtNombreProyecto.SelectionLength = 0;
+            txtNombreProyecto.SelectionStart = 0;
+            txtNombreProyecto.ShortcutsEnabled = true;
+            txtNombreProyecto.Size = new Size(475, 48);
+            txtNombreProyecto.TabIndex = 66;
+            txtNombreProyecto.TabStop = false;
+            txtNombreProyecto.TextAlign = HorizontalAlignment.Left;
+            txtNombreProyecto.TrailingIcon = null;
+            txtNombreProyecto.UseSystemPasswordChar = false;
             // 
             // btn_volver
             // 
-            this.btn_volver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_volver.Image")));
-            this.btn_volver.Location = new System.Drawing.Point(12, 375);
-            this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(45, 45);
-            this.btn_volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_volver.TabIndex = 77;
-            this.btn_volver.TabStop = false;
-            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            btn_volver.Cursor = Cursors.Hand;
+            btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
+            btn_volver.Location = new Point(12, 375);
+            btn_volver.Name = "btn_volver";
+            btn_volver.Size = new Size(45, 45);
+            btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_volver.TabIndex = 77;
+            btn_volver.TabStop = false;
+            btn_volver.Click += btn_volver_Click;
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
-            this.btn_guardar.Location = new System.Drawing.Point(727, 375);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(45, 45);
-            this.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_guardar.TabIndex = 78;
-            this.btn_guardar.TabStop = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click_1);
+            btn_guardar.Cursor = Cursors.Hand;
+            btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
+            btn_guardar.Location = new Point(727, 375);
+            btn_guardar.Name = "btn_guardar";
+            btn_guardar.Size = new Size(45, 45);
+            btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_guardar.TabIndex = 78;
+            btn_guardar.TabStop = false;
+            btn_guardar.Click += btn_guardar_Click_1;
             // 
             // txtDescripcionProyecto
             // 
-            this.txtDescripcionProyecto.AnimateReadOnly = false;
-            this.txtDescripcionProyecto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtDescripcionProyecto.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDescripcionProyecto.Depth = 0;
-            this.txtDescripcionProyecto.HideSelection = true;
-            this.txtDescripcionProyecto.Location = new System.Drawing.Point(12, 136);
-            this.txtDescripcionProyecto.MaxLength = 32767;
-            this.txtDescripcionProyecto.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDescripcionProyecto.Name = "txtDescripcionProyecto";
-            this.txtDescripcionProyecto.PasswordChar = '\0';
-            this.txtDescripcionProyecto.ReadOnly = false;
-            this.txtDescripcionProyecto.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescripcionProyecto.SelectedText = "";
-            this.txtDescripcionProyecto.SelectionLength = 0;
-            this.txtDescripcionProyecto.SelectionStart = 0;
-            this.txtDescripcionProyecto.ShortcutsEnabled = true;
-            this.txtDescripcionProyecto.Size = new System.Drawing.Size(760, 171);
-            this.txtDescripcionProyecto.TabIndex = 80;
-            this.txtDescripcionProyecto.TabStop = false;
-            this.txtDescripcionProyecto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDescripcionProyecto.UseSystemPasswordChar = false;
+            txtDescripcionProyecto.AnimateReadOnly = false;
+            txtDescripcionProyecto.BackgroundImageLayout = ImageLayout.None;
+            txtDescripcionProyecto.CharacterCasing = CharacterCasing.Normal;
+            txtDescripcionProyecto.Depth = 0;
+            txtDescripcionProyecto.HideSelection = true;
+            txtDescripcionProyecto.Location = new Point(12, 136);
+            txtDescripcionProyecto.MaxLength = 32767;
+            txtDescripcionProyecto.MouseState = MaterialSkin.MouseState.OUT;
+            txtDescripcionProyecto.Name = "txtDescripcionProyecto";
+            txtDescripcionProyecto.PasswordChar = '\0';
+            txtDescripcionProyecto.ReadOnly = false;
+            txtDescripcionProyecto.ScrollBars = ScrollBars.None;
+            txtDescripcionProyecto.SelectedText = "";
+            txtDescripcionProyecto.SelectionLength = 0;
+            txtDescripcionProyecto.SelectionStart = 0;
+            txtDescripcionProyecto.ShortcutsEnabled = true;
+            txtDescripcionProyecto.Size = new Size(760, 171);
+            txtDescripcionProyecto.TabIndex = 80;
+            txtDescripcionProyecto.TabStop = false;
+            txtDescripcionProyecto.TextAlign = HorizontalAlignment.Left;
+            txtDescripcionProyecto.UseSystemPasswordChar = false;
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpiar.Image")));
-            this.btn_limpiar.Location = new System.Drawing.Point(676, 375);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(45, 45);
-            this.btn_limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_limpiar.TabIndex = 79;
-            this.btn_limpiar.TabStop = false;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            btn_limpiar.Cursor = Cursors.Hand;
+            btn_limpiar.Image = (Image)resources.GetObject("btn_limpiar.Image");
+            btn_limpiar.Location = new Point(676, 375);
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.Size = new Size(45, 45);
+            btn_limpiar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_limpiar.TabIndex = 79;
+            btn_limpiar.TabStop = false;
+            btn_limpiar.Click += btn_limpiar_Click;
             // 
             // btnEquipoProyecto
             // 
-            this.btnEquipoProyecto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEquipoProyecto.Image = ((System.Drawing.Image)(resources.GetObject("btnEquipoProyecto.Image")));
-            this.btnEquipoProyecto.Location = new System.Drawing.Point(587, 346);
-            this.btnEquipoProyecto.Name = "btnEquipoProyecto";
-            this.btnEquipoProyecto.Size = new System.Drawing.Size(45, 45);
-            this.btnEquipoProyecto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEquipoProyecto.TabIndex = 81;
-            this.btnEquipoProyecto.TabStop = false;
-            this.btnEquipoProyecto.Click += new System.EventHandler(this.btnEquipoProyecto_Click);
+            btnEquipoProyecto.Cursor = Cursors.Hand;
+            btnEquipoProyecto.Image = (Image)resources.GetObject("btnEquipoProyecto.Image");
+            btnEquipoProyecto.Location = new Point(587, 346);
+            btnEquipoProyecto.Name = "btnEquipoProyecto";
+            btnEquipoProyecto.Size = new Size(45, 45);
+            btnEquipoProyecto.SizeMode = PictureBoxSizeMode.Zoom;
+            btnEquipoProyecto.TabIndex = 81;
+            btnEquipoProyecto.TabStop = false;
+            btnEquipoProyecto.Click += btnEquipoProyecto_Click;
             // 
             // materialLabel2
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(547, 324);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(140, 19);
-            this.materialLabel2.TabIndex = 82;
-            this.materialLabel2.Text = "Equipo del proyecto";
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(547, 324);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(140, 19);
+            materialLabel2.TabIndex = 82;
+            materialLabel2.Text = "Equipo del proyecto";
             // 
             // IdProyecto
             // 
-            this.IdProyecto.AutoSize = true;
-            this.IdProyecto.Location = new System.Drawing.Point(606, 405);
-            this.IdProyecto.Name = "IdProyecto";
-            this.IdProyecto.Size = new System.Drawing.Size(64, 15);
-            this.IdProyecto.TabIndex = 83;
-            this.IdProyecto.Text = "IdProyectp";
-            this.IdProyecto.Visible = false;
+            IdProyecto.AutoSize = true;
+            IdProyecto.Location = new Point(606, 405);
+            IdProyecto.Name = "IdProyecto";
+            IdProyecto.Size = new Size(64, 15);
+            IdProyecto.TabIndex = 83;
+            IdProyecto.Text = "IdProyectp";
+            IdProyecto.Visible = false;
             // 
             // Frm_NuevoProyecto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 429);
-            this.Controls.Add(this.IdProyecto);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.btnEquipoProyecto);
-            this.Controls.Add(this.txtDescripcionProyecto);
-            this.Controls.Add(this.btn_limpiar);
-            this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.btn_volver);
-            this.Controls.Add(this.labelDescripcionProyecto);
-            this.Controls.Add(this.dateTimePickerEntrega);
-            this.Controls.Add(this.dateTimePickerInicio);
-            this.Controls.Add(this.labelFechaEntrega);
-            this.Controls.Add(this.labelFechaInicio);
-            this.Controls.Add(this.materialLabel7);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.cmbEstadoProyecto);
-            this.Controls.Add(this.txtNombreProyecto);
-            this.Name = "Frm_NuevoProyecto";
-            this.Text = "Frm_NuevoProyecto";
-            this.Load += new System.EventHandler(this.Frm_NuevoProyecto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEquipoProyecto)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(784, 429);
+            Controls.Add(IdProyecto);
+            Controls.Add(materialLabel2);
+            Controls.Add(btnEquipoProyecto);
+            Controls.Add(txtDescripcionProyecto);
+            Controls.Add(btn_limpiar);
+            Controls.Add(btn_guardar);
+            Controls.Add(btn_volver);
+            Controls.Add(labelDescripcionProyecto);
+            Controls.Add(dateTimePickerEntrega);
+            Controls.Add(dateTimePickerInicio);
+            Controls.Add(labelFechaEntrega);
+            Controls.Add(labelFechaInicio);
+            Controls.Add(materialLabel7);
+            Controls.Add(materialLabel1);
+            Controls.Add(cmbEstadoProyecto);
+            Controls.Add(txtNombreProyecto);
+            Name = "Frm_NuevoProyecto";
+            Text = "Frm_NuevoProyecto";
+            Load += Frm_NuevoProyecto_Load;
+            MouseMove += Frm_NuevoProyecto_MouseDown;
+            ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnEquipoProyecto).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

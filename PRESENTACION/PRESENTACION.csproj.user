@@ -7,9 +7,6 @@
     <Compile Update="Administracion Usuarios\FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Administracion Usuarios\Frm_AgregarEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Administracion Usuarios\Frm_NuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
