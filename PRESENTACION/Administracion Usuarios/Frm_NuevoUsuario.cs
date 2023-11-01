@@ -44,90 +44,19 @@ namespace PRESENTACION.Administracion_Usuarios
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+        
+        #region botones
         private void btn_volver_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-        private void LimpiarCampos()
-        {
-            // Limpia los campos del formulario para futuras entradas
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            txtNombreUsuario.Text = "";
-            txtEmail.Text = "";
-            txtContraseña.Text = "";
-            txtContraseña2.Text = "";
-            cmbGenero.SelectedIndex = -1;
-            cmbRol.SelectedIndex = -1;
-            this.CheckActivo.Checked = false;
-        }
-
-        private void ListarRoles()
-        {
-            Usuario cargar = new Usuario();
-
-           cmbRol.DataSource = cargar.GetRoles();
-           cmbRol.DisplayMember = "Rol";
-           cmbRol.ValueMember = "IdUsuarioRol";
-        }
-        private void LLnearCombroboxGnero()
-        {
-            // Crear un diccionario de valores booleanos y sus representaciones de texto
-            Dictionary<bool, string> valoresBooleanos = new Dictionary<bool, string>{
-            { true, "Hombre" },
-            { false, "Mujer" }
-            };
-
-            // Enlazar el diccionario al ComboBox
-            cmbGenero.DataSource = new BindingSource(valoresBooleanos, null);
-            cmbGenero.DisplayMember = "Value"; // Mostrar el valor de texto en el ComboBox
-            cmbGenero.ValueMember = "Key"; // Obtener el valor booleano seleccionado
-        }
-        private void CargarUsuarios()
-        {
-            Frm_Usuarios form = new Frm_Usuarios();
-            Usuario cargar = new Usuario();
-            form.dataGridView1.AutoGenerateColumns = true;
-            form.dataGridView1.DataSource = cargar.GetUsuarios();
         }
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
         }
-
-        private void btn_limpiar_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_limpiar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
-        private void btn_guardar_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_guardar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
-        private void btn_volver_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_volver_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-           
+
             if (TipoOperacion == "Insertar")
             {
                 Usuario cargar = new Usuario();
@@ -193,15 +122,86 @@ namespace PRESENTACION.Administracion_Usuarios
                       txtContraseña.Text,
                       Convert.ToInt32(cmbRol.SelectedValue),
                       Convert.ToBoolean(CheckActivo.Checked)
-                  );              
+                  );
                 LimpiarCampos();
                 this.Hide();
-               CargarUsuarios();
+                CargarUsuarios();
             }
         }
+        #endregion
 
+        private void LimpiarCampos()
+        {
+            // Limpia los campos del formulario para futuras entradas
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtNombreUsuario.Text = "";
+            txtEmail.Text = "";
+            txtContraseña.Text = "";
+            txtContraseña2.Text = "";
+            cmbGenero.SelectedIndex = -1;
+            cmbRol.SelectedIndex = -1;
+            this.CheckActivo.Checked = false;
+        }
+        private void ListarRoles()
+        {
+            Usuario cargar = new Usuario();
 
+            cmbRol.DataSource = cargar.GetRoles();
+            cmbRol.DisplayMember = "Rol";
+            cmbRol.ValueMember = "IdUsuarioRol";
+        }
+        private void LLnearCombroboxGnero()
+        {
+            // Crear un diccionario de valores booleanos y sus representaciones de texto
+            Dictionary<bool, string> valoresBooleanos = new Dictionary<bool, string>{
+            { true, "Hombre" },
+            { false, "Mujer" }
+            };
 
+            // Enlazar el diccionario al ComboBox
+            cmbGenero.DataSource = new BindingSource(valoresBooleanos, null);
+            cmbGenero.DisplayMember = "Value"; // Mostrar el valor de texto en el ComboBox
+            cmbGenero.ValueMember = "Key"; // Obtener el valor booleano seleccionado
+        }
+        private void CargarUsuarios()
+        {
+            Frm_Usuarios form = new Frm_Usuarios();
+            Usuario cargar = new Usuario();
+            form.dataGridView1.AutoGenerateColumns = true;
+            form.dataGridView1.DataSource = cargar.GetUsuarios();
+        }
 
+        #region btn_hover
+        private void btn_limpiar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_limpiar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_guardar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_guardar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_volver_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_volver_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
     }
 }

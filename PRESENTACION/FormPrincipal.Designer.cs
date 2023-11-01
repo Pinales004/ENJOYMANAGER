@@ -29,341 +29,342 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panelFormularios = new System.Windows.Forms.Panel();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.pboxCerrarSesion = new System.Windows.Forms.PictureBox();
-            this.pboxTareas = new System.Windows.Forms.PictureBox();
-            this.pboxProyectos = new System.Windows.Forms.PictureBox();
-            this.pboxUsuarios = new System.Windows.Forms.PictureBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblRol = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnTareas = new System.Windows.Forms.Button();
-            this.btnProyectos = new System.Windows.Forms.Button();
-            this.panelBarraTitulo = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnMaximizar = new System.Windows.Forms.PictureBox();
-            this.btnRestaurar = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.panelContenedor.SuspendLayout();
-            this.panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCerrarSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxTareas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxProyectos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelBarraTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            this.SuspendLayout();
+            btnCerrarSesion = new Button();
+            panelContenedor = new Panel();
+            panelFormularios = new Panel();
+            panelMenu = new Panel();
+            pboxCerrarSesion = new PictureBox();
+            pboxTareas = new PictureBox();
+            pboxProyectos = new PictureBox();
+            pboxUsuarios = new PictureBox();
+            lblNombre = new Label();
+            lblApellido = new Label();
+            lblRol = new Label();
+            pictureBox1 = new PictureBox();
+            btnUsuarios = new Button();
+            btnTareas = new Button();
+            btnProyectos = new Button();
+            panelBarraTitulo = new Panel();
+            panel1 = new Panel();
+            btnMinimizar = new PictureBox();
+            btnMaximizar = new PictureBox();
+            btnRestaurar = new PictureBox();
+            btnCerrar = new PictureBox();
+            panelContenedor.SuspendLayout();
+            panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxTareas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxProyectos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelBarraTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
+            SuspendLayout();
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(54, 452);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(158, 30);
-            this.btnCerrarSesion.TabIndex = 6;
-            this.btnCerrarSesion.Text = "Cerrar sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            btnCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCerrarSesion.Cursor = Cursors.Hand;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarSesion.ForeColor = Color.Gainsboro;
+            btnCerrarSesion.Location = new Point(54, 452);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(158, 30);
+            btnCerrarSesion.TabIndex = 6;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // panelContenedor
             // 
-            this.panelContenedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelContenedor.Controls.Add(this.panelFormularios);
-            this.panelContenedor.Controls.Add(this.panelMenu);
-            this.panelContenedor.Controls.Add(this.panelBarraTitulo);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1150, 550);
-            this.panelContenedor.TabIndex = 1;
+            panelContenedor.BackColor = SystemColors.ActiveCaption;
+            panelContenedor.Controls.Add(panelFormularios);
+            panelContenedor.Controls.Add(panelMenu);
+            panelContenedor.Controls.Add(panelBarraTitulo);
+            panelContenedor.Dock = DockStyle.Fill;
+            panelContenedor.Location = new Point(0, 0);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(1150, 550);
+            panelContenedor.TabIndex = 1;
             // 
             // panelFormularios
             // 
-            this.panelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.panelFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormularios.Location = new System.Drawing.Point(233, 47);
-            this.panelFormularios.Name = "panelFormularios";
-            this.panelFormularios.Size = new System.Drawing.Size(917, 503);
-            this.panelFormularios.TabIndex = 0;
+            panelFormularios.BackColor = Color.FromArgb(15, 15, 15);
+            panelFormularios.Dock = DockStyle.Fill;
+            panelFormularios.Location = new Point(233, 47);
+            panelFormularios.Name = "panelFormularios";
+            panelFormularios.Size = new Size(917, 503);
+            panelFormularios.TabIndex = 0;
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelMenu.Controls.Add(this.pboxCerrarSesion);
-            this.panelMenu.Controls.Add(this.pboxTareas);
-            this.panelMenu.Controls.Add(this.pboxProyectos);
-            this.panelMenu.Controls.Add(this.pboxUsuarios);
-            this.panelMenu.Controls.Add(this.lblNombre);
-            this.panelMenu.Controls.Add(this.lblApellido);
-            this.panelMenu.Controls.Add(this.lblRol);
-            this.panelMenu.Controls.Add(this.pictureBox1);
-            this.panelMenu.Controls.Add(this.btnUsuarios);
-            this.panelMenu.Controls.Add(this.btnTareas);
-            this.panelMenu.Controls.Add(this.btnCerrarSesion);
-            this.panelMenu.Controls.Add(this.btnProyectos);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 47);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(233, 503);
-            this.panelMenu.TabIndex = 1;
+            panelMenu.BackColor = Color.FromArgb(0, 122, 204);
+            panelMenu.Controls.Add(pboxCerrarSesion);
+            panelMenu.Controls.Add(pboxTareas);
+            panelMenu.Controls.Add(pboxProyectos);
+            panelMenu.Controls.Add(pboxUsuarios);
+            panelMenu.Controls.Add(lblNombre);
+            panelMenu.Controls.Add(lblApellido);
+            panelMenu.Controls.Add(lblRol);
+            panelMenu.Controls.Add(pictureBox1);
+            panelMenu.Controls.Add(btnUsuarios);
+            panelMenu.Controls.Add(btnTareas);
+            panelMenu.Controls.Add(btnCerrarSesion);
+            panelMenu.Controls.Add(btnProyectos);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 47);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(233, 503);
+            panelMenu.TabIndex = 1;
             // 
             // pboxCerrarSesion
             // 
-            this.pboxCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pboxCerrarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.pboxCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboxCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("pboxCerrarSesion.Image")));
-            this.pboxCerrarSesion.Location = new System.Drawing.Point(25, 452);
-            this.pboxCerrarSesion.Name = "pboxCerrarSesion";
-            this.pboxCerrarSesion.Size = new System.Drawing.Size(30, 30);
-            this.pboxCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxCerrarSesion.TabIndex = 12;
-            this.pboxCerrarSesion.TabStop = false;
+            pboxCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pboxCerrarSesion.BackColor = Color.Transparent;
+            pboxCerrarSesion.Cursor = Cursors.Hand;
+            pboxCerrarSesion.Image = (Image)resources.GetObject("pboxCerrarSesion.Image");
+            pboxCerrarSesion.Location = new Point(25, 452);
+            pboxCerrarSesion.Name = "pboxCerrarSesion";
+            pboxCerrarSesion.Size = new Size(30, 30);
+            pboxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxCerrarSesion.TabIndex = 12;
+            pboxCerrarSesion.TabStop = false;
             // 
             // pboxTareas
             // 
-            this.pboxTareas.BackColor = System.Drawing.Color.Transparent;
-            this.pboxTareas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboxTareas.Image = ((System.Drawing.Image)(resources.GetObject("pboxTareas.Image")));
-            this.pboxTareas.Location = new System.Drawing.Point(25, 214);
-            this.pboxTareas.Name = "pboxTareas";
-            this.pboxTareas.Size = new System.Drawing.Size(30, 30);
-            this.pboxTareas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxTareas.TabIndex = 10;
-            this.pboxTareas.TabStop = false;
+            pboxTareas.BackColor = Color.Transparent;
+            pboxTareas.Cursor = Cursors.Hand;
+            pboxTareas.Image = (Image)resources.GetObject("pboxTareas.Image");
+            pboxTareas.Location = new Point(25, 214);
+            pboxTareas.Name = "pboxTareas";
+            pboxTareas.Size = new Size(30, 30);
+            pboxTareas.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxTareas.TabIndex = 10;
+            pboxTareas.TabStop = false;
             // 
             // pboxProyectos
             // 
-            this.pboxProyectos.BackColor = System.Drawing.Color.Transparent;
-            this.pboxProyectos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboxProyectos.Image = ((System.Drawing.Image)(resources.GetObject("pboxProyectos.Image")));
-            this.pboxProyectos.Location = new System.Drawing.Point(25, 165);
-            this.pboxProyectos.Name = "pboxProyectos";
-            this.pboxProyectos.Size = new System.Drawing.Size(30, 30);
-            this.pboxProyectos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxProyectos.TabIndex = 9;
-            this.pboxProyectos.TabStop = false;
+            pboxProyectos.BackColor = Color.Transparent;
+            pboxProyectos.Cursor = Cursors.Hand;
+            pboxProyectos.Image = (Image)resources.GetObject("pboxProyectos.Image");
+            pboxProyectos.Location = new Point(25, 165);
+            pboxProyectos.Name = "pboxProyectos";
+            pboxProyectos.Size = new Size(30, 30);
+            pboxProyectos.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxProyectos.TabIndex = 9;
+            pboxProyectos.TabStop = false;
             // 
             // pboxUsuarios
             // 
-            this.pboxUsuarios.BackColor = System.Drawing.Color.Transparent;
-            this.pboxUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pboxUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("pboxUsuarios.Image")));
-            this.pboxUsuarios.Location = new System.Drawing.Point(25, 115);
-            this.pboxUsuarios.Name = "pboxUsuarios";
-            this.pboxUsuarios.Size = new System.Drawing.Size(30, 30);
-            this.pboxUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxUsuarios.TabIndex = 8;
-            this.pboxUsuarios.TabStop = false;
+            pboxUsuarios.BackColor = Color.Transparent;
+            pboxUsuarios.Cursor = Cursors.Hand;
+            pboxUsuarios.Image = (Image)resources.GetObject("pboxUsuarios.Image");
+            pboxUsuarios.Location = new Point(25, 115);
+            pboxUsuarios.Name = "pboxUsuarios";
+            pboxUsuarios.Size = new Size(30, 30);
+            pboxUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
+            pboxUsuarios.TabIndex = 8;
+            pboxUsuarios.TabStop = false;
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNombre.Location = new System.Drawing.Point(103, 68);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 19);
-            this.lblNombre.TabIndex = 7;
-            this.lblNombre.Text = "nombre/s";
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(103, 68);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(68, 19);
+            lblNombre.TabIndex = 7;
+            lblNombre.Text = "nombre/s";
             // 
             // lblApellido
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblApellido.Location = new System.Drawing.Point(103, 36);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(62, 19);
-            this.lblApellido.TabIndex = 6;
-            this.lblApellido.Text = "apellidos";
+            lblApellido.AutoSize = true;
+            lblApellido.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.Location = new Point(103, 36);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(62, 19);
+            lblApellido.TabIndex = 6;
+            lblApellido.Text = "apellidos";
             // 
             // lblRol
             // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRol.Location = new System.Drawing.Point(103, 7);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(25, 19);
-            this.lblRol.TabIndex = 5;
-            this.lblRol.Text = "rol";
+            lblRol.AutoSize = true;
+            lblRol.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRol.Location = new Point(103, 7);
+            lblRol.Name = "lblRol";
+            lblRol.Size = new Size(25, 19);
+            lblRol.TabIndex = 5;
+            lblRol.Text = "rol";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 97);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(94, 97);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
             // 
             // btnUsuarios
             // 
-            this.btnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnUsuarios.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnUsuarios.Location = new System.Drawing.Point(54, 115);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(158, 30);
-            this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            btnUsuarios.Cursor = Cursors.Hand;
+            btnUsuarios.FlatAppearance.BorderSize = 0;
+            btnUsuarios.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.Gainsboro;
+            btnUsuarios.Location = new Point(54, 115);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(158, 30);
+            btnUsuarios.TabIndex = 2;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // btnTareas
             // 
-            this.btnTareas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTareas.FlatAppearance.BorderSize = 0;
-            this.btnTareas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnTareas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btnTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTareas.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnTareas.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnTareas.Location = new System.Drawing.Point(54, 214);
-            this.btnTareas.Name = "btnTareas";
-            this.btnTareas.Size = new System.Drawing.Size(158, 30);
-            this.btnTareas.TabIndex = 4;
-            this.btnTareas.Text = "Tareas";
-            this.btnTareas.UseVisualStyleBackColor = true;
-            this.btnTareas.Click += new System.EventHandler(this.btnTareas_Click);
+            btnTareas.Cursor = Cursors.Hand;
+            btnTareas.FlatAppearance.BorderSize = 0;
+            btnTareas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnTareas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnTareas.FlatStyle = FlatStyle.Flat;
+            btnTareas.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTareas.ForeColor = Color.Gainsboro;
+            btnTareas.Location = new Point(54, 214);
+            btnTareas.Name = "btnTareas";
+            btnTareas.Size = new Size(158, 30);
+            btnTareas.TabIndex = 4;
+            btnTareas.Text = "Tareas";
+            btnTareas.UseVisualStyleBackColor = true;
+            btnTareas.Click += btnTareas_Click;
             // 
             // btnProyectos
             // 
-            this.btnProyectos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProyectos.FlatAppearance.BorderSize = 0;
-            this.btnProyectos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.btnProyectos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.btnProyectos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProyectos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProyectos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnProyectos.Location = new System.Drawing.Point(54, 165);
-            this.btnProyectos.Name = "btnProyectos";
-            this.btnProyectos.Size = new System.Drawing.Size(158, 30);
-            this.btnProyectos.TabIndex = 3;
-            this.btnProyectos.Text = "Proyectos";
-            this.btnProyectos.UseVisualStyleBackColor = true;
-            this.btnProyectos.Click += new System.EventHandler(this.btnProyectos_Click);
+            btnProyectos.Cursor = Cursors.Hand;
+            btnProyectos.FlatAppearance.BorderSize = 0;
+            btnProyectos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnProyectos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnProyectos.FlatStyle = FlatStyle.Flat;
+            btnProyectos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProyectos.ForeColor = Color.Gainsboro;
+            btnProyectos.Location = new Point(54, 165);
+            btnProyectos.Name = "btnProyectos";
+            btnProyectos.Size = new Size(158, 30);
+            btnProyectos.TabIndex = 3;
+            btnProyectos.Text = "Proyectos";
+            btnProyectos.UseVisualStyleBackColor = true;
+            btnProyectos.Click += btnProyectos_Click;
             // 
             // panelBarraTitulo
             // 
-            this.panelBarraTitulo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panelBarraTitulo.Controls.Add(this.panel1);
-            this.panelBarraTitulo.Controls.Add(this.btnMinimizar);
-            this.panelBarraTitulo.Controls.Add(this.btnMaximizar);
-            this.panelBarraTitulo.Controls.Add(this.btnRestaurar);
-            this.panelBarraTitulo.Controls.Add(this.btnCerrar);
-            this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBarraTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(1150, 47);
-            this.panelBarraTitulo.TabIndex = 0;
+            panelBarraTitulo.BackColor = SystemColors.ControlLight;
+            panelBarraTitulo.Controls.Add(panel1);
+            panelBarraTitulo.Controls.Add(btnMinimizar);
+            panelBarraTitulo.Controls.Add(btnMaximizar);
+            panelBarraTitulo.Controls.Add(btnRestaurar);
+            panelBarraTitulo.Controls.Add(btnCerrar);
+            panelBarraTitulo.Dock = DockStyle.Top;
+            panelBarraTitulo.Location = new Point(0, 0);
+            panelBarraTitulo.Name = "panelBarraTitulo";
+            panelBarraTitulo.Size = new Size(1150, 47);
+            panelBarraTitulo.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(3, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 100);
-            this.panel1.TabIndex = 4;
+            panel1.Location = new Point(3, 47);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(230, 100);
+            panel1.TabIndex = 4;
             // 
             // btnMinimizar
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1066, 12);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(20, 20);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 7;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimizar.Cursor = Cursors.Hand;
+            btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
+            btnMinimizar.Location = new Point(1066, 12);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.Size = new Size(20, 20);
+            btnMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
+            btnMinimizar.TabIndex = 7;
+            btnMinimizar.TabStop = false;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // btnMaximizar
             // 
-            this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1092, 12);
-            this.btnMaximizar.Name = "btnMaximizar";
-            this.btnMaximizar.Size = new System.Drawing.Size(20, 20);
-            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizar.TabIndex = 6;
-            this.btnMaximizar.TabStop = false;
+            btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMaximizar.Cursor = Cursors.Hand;
+            btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
+            btnMaximizar.Location = new Point(1092, 12);
+            btnMaximizar.Name = "btnMaximizar";
+            btnMaximizar.Size = new Size(20, 20);
+            btnMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
+            btnMaximizar.TabIndex = 6;
+            btnMaximizar.TabStop = false;
+            btnMaximizar.Click += btnMaximizar_Click;
             // 
             // btnRestaurar
             // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1092, 12);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(20, 20);
-            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestaurar.TabIndex = 5;
-            this.btnRestaurar.TabStop = false;
-            this.btnRestaurar.Visible = false;
+            btnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRestaurar.Cursor = Cursors.Hand;
+            btnRestaurar.Image = (Image)resources.GetObject("btnRestaurar.Image");
+            btnRestaurar.Location = new Point(1092, 12);
+            btnRestaurar.Name = "btnRestaurar";
+            btnRestaurar.Size = new Size(20, 20);
+            btnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
+            btnRestaurar.TabIndex = 5;
+            btnRestaurar.TabStop = false;
+            btnRestaurar.Visible = false;
+            btnRestaurar.Click += btnRestaurar_Click;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1118, 12);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 20);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrar.TabIndex = 4;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
+            btnCerrar.Location = new Point(1118, 12);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(20, 20);
+            btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
+            btnCerrar.TabIndex = 4;
+            btnCerrar.TabStop = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // FormPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 550);
-            this.Controls.Add(this.panelContenedor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(1120, 450);
-            this.Name = "FormPrincipal";
-            this.Opacity = 0.9D;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormPrincipal";
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
-            this.panelContenedor.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
-            this.panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCerrarSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxTareas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxProyectos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelBarraTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1150, 550);
+            Controls.Add(panelContenedor);
+            FormBorderStyle = FormBorderStyle.None;
+            MinimumSize = new Size(1120, 450);
+            Name = "FormPrincipal";
+            Opacity = 0.9D;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FormPrincipal";
+            Load += FormPrincipal_Load;
+            panelContenedor.ResumeLayout(false);
+            panelMenu.ResumeLayout(false);
+            panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxTareas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxProyectos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelBarraTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnCerrar).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

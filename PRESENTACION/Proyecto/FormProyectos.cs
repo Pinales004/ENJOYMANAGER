@@ -17,25 +17,23 @@ namespace PRESENTACION
 {
     public partial class FormProyectos : Form
     {
-
         public FormProyectos()
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_agregar);
+            btn_icon_hover.AplicarFormaRedonda(btn_editar);
+            btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
         }
-
         private void FormProyectos_Load(object sender, EventArgs e)
         {
             CargarProyectos();
         }
-
-        private void CargarProyectos()
+        public void CargarProyectos()
         {
             Proyectos cargar = new Proyectos();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetProyectos();
         }
-
-
         private void EditarFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
             Form formulario;
@@ -53,8 +51,6 @@ namespace PRESENTACION
                 formulario.BringToFront();
             }
         }
-
-
         public void CargarEstadoProyecto(Frm_NuevoProyecto form)
         {
             Proyectos cargar = new Proyectos();
@@ -65,8 +61,7 @@ namespace PRESENTACION
             form.cmbEstadoProyecto.ValueMember = "EstadoProyectoid";
         }
 
-
-
+        #region botones
         private void btn_editar_Click(object sender, EventArgs e)
         {
 
@@ -97,27 +92,7 @@ namespace PRESENTACION
             {
                 MessageBox.Show("Debe Seleccionar una fila");
             }
-
         }
-
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.StartPosition = FormStartPosition.CenterScreen;
-                formulario.ShowDialog(); // Mostrar el formulario de manera modal
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
-
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Frm_NuevoProyecto>();
@@ -144,6 +119,56 @@ namespace PRESENTACION
                 MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un Proyecto");
             }
         }
+        #endregion
+
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
+
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+        #region btn_hover
+        private void btn_agregar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_agregar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_editar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_editar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
     }
 }
 

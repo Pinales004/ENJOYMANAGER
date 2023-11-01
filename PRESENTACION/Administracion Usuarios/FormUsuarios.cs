@@ -34,63 +34,8 @@ namespace PRESENTACION
             Usuario cargar = new Usuario();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetUsuarios();
-            
+
         }
-
-
-        private void panel1_Resize(object sender, EventArgs e)
-        {
-            CenterGroupBoxHorizontally();
-        }
-        private void CenterGroupBoxHorizontally()
-        {
-            //Para mantener el contenido centrado dentro del panel superior del formulario Usuarios
-            int panelWidth = panel1.Width;
-            int groupBoxWidth = groupBox1.Width;
-
-            int centerX = (panelWidth - groupBoxWidth) / 2;
-            if (centerX < 0)
-            {
-                centerX = 0;
-            }
-            groupBox1.Location = new Point(centerX, groupBox1.Location.Y);
-        }
-
-        private void btn_agregar_Click_1(object sender, EventArgs e)
-        {
-            AbrirFormulario<Frm_NuevoUsuario>();
-        }
-
-        private void btn_agregar_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_agregar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
-        private void btn_editar_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_editar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
-        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
-        {
-            btn_icon_hover.CambiarColorHover(sender, e);
-        }
-
-        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
-        {
-            btn_icon_hover.RestaurarColorOriginal(sender, e);
-        }
-
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
         {
             Form formulario;
@@ -107,6 +52,12 @@ namespace PRESENTACION
             {
                 formulario.BringToFront();
             }
+        }
+
+        #region botones
+        private void btn_agregar_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario<Frm_NuevoUsuario>();
         }
 
         private void btn_editar_Click_1(object sender, EventArgs e)
@@ -168,11 +119,40 @@ namespace PRESENTACION
                 MessageBox.Show("Error al buscar usuarios: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
+
         }
+        #endregion
+
+        #region btn_hover
+        private void btn_agregar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_agregar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_editar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_editar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
     }
- }
-
-
-
-
+}

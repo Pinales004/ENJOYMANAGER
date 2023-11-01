@@ -16,11 +16,15 @@ namespace PRESENTACION.Proyecto
 {
     public partial class Frm_NuevoProyecto : Form
     {
-       public String OperacionTipo = "Insertar";
+        public String OperacionTipo = "Insertar";
 
         public Frm_NuevoProyecto()
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_volver);
+            btn_icon_hover.AplicarFormaRedonda(btn_guardar);
+            btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
+            btn_icon_hover.AplicarFormaRedonda(btnEquipoProyecto);
         }
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
@@ -39,7 +43,6 @@ namespace PRESENTACION.Proyecto
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
         public void CargarEstadoProyecto()
         {
 
@@ -50,7 +53,6 @@ namespace PRESENTACION.Proyecto
             this.cmbEstadoProyecto.ValueMember = "EstadoProyectoid";
 
         }
-
 
         private void AgregarNuevoProyecto()
         {
@@ -85,9 +87,6 @@ namespace PRESENTACION.Proyecto
 
         }
 
-
-
-
         private void CargarProyectos()
         {
             Proyectos cargar = new Proyectos();
@@ -95,7 +94,6 @@ namespace PRESENTACION.Proyecto
             form.dataGridView1.AutoGenerateColumns = true;
             form.dataGridView1.DataSource = cargar.GetProyectos();
         }
-
 
         private void LimpiarCampos()
         {
@@ -106,12 +104,11 @@ namespace PRESENTACION.Proyecto
             dateTimePickerEntrega.Value = DateTime.Now;
             cmbEstadoProyecto.SelectedIndex = -1;
         }
-
+        #region botones
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
         }
-
         private void btn_volver_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -121,24 +118,6 @@ namespace PRESENTACION.Proyecto
         {
             AbrirFormulario<FrmEquipoProgramadores>();
         }
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.StartPosition = FormStartPosition.CenterScreen;
-                formulario.ShowDialog(); // Mostrar el formulario de manera modal
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
-
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {
 
@@ -171,20 +150,70 @@ namespace PRESENTACION.Proyecto
             {
                 UpdateNuevoProyecto();
             }
+        }
+        #endregion
 
+        #region btn_hover
+        private void btn_limpiar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
 
+        private void btn_limpiar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
 
+        private void btn_guardar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
 
+        private void btn_guardar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_volver_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_volver_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        private void btnEquipoProyecto_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+        private void btnEquipoProyecto_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
+
+        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
+
+            if (formulario == null)
+            {
+                formulario = new MiForm();
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
         }
 
         private void MostrarError(string mensaje)
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-
-
-
-
     }
 }

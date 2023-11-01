@@ -125,6 +125,8 @@
             btn_editar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_editar.TabIndex = 11;
             btn_editar.TabStop = false;
+            btn_editar.MouseEnter += btn_editar_MouseEnter;
+            btn_editar.MouseLeave += btn_editar_MouseLeave;
             // 
             // btn_eliminar
             // 
@@ -137,6 +139,8 @@
             btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_eliminar.TabIndex = 10;
             btn_eliminar.TabStop = false;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // btn_agregar
             // 
@@ -150,6 +154,8 @@
             btn_agregar.TabIndex = 9;
             btn_agregar.TabStop = false;
             btn_agregar.Click += btn_agregar_Click;
+            btn_agregar.MouseEnter += btn_agregar_MouseEnter;
+            btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
             // FormTareas
             // 

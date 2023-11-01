@@ -17,6 +17,9 @@ namespace PRESENTACION
         public FormTareas()
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_agregar);
+            btn_icon_hover.AplicarFormaRedonda(btn_editar);
+            btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -41,5 +44,38 @@ namespace PRESENTACION
                 formulario.BringToFront();
             }
         }
+
+        #region btn_hover
+        private void btn_agregar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_agregar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_editar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_editar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
+
     }
 }

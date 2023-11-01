@@ -186,6 +186,8 @@
             btn_volver.TabIndex = 77;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // btn_guardar
             // 
@@ -198,6 +200,8 @@
             btn_guardar.TabIndex = 78;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click_1;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // txtDescripcionProyecto
             // 
@@ -218,7 +222,7 @@
             txtDescripcionProyecto.SelectionStart = 0;
             txtDescripcionProyecto.ShortcutsEnabled = true;
             txtDescripcionProyecto.Size = new Size(760, 171);
-            txtDescripcionProyecto.TabIndex = 80;
+            txtDescripcionProyecto.TabIndex = 68;
             txtDescripcionProyecto.TabStop = false;
             txtDescripcionProyecto.TextAlign = HorizontalAlignment.Left;
             txtDescripcionProyecto.UseSystemPasswordChar = false;
@@ -234,6 +238,8 @@
             btn_limpiar.TabIndex = 79;
             btn_limpiar.TabStop = false;
             btn_limpiar.Click += btn_limpiar_Click;
+            btn_limpiar.MouseEnter += btn_limpiar_MouseEnter;
+            btn_limpiar.MouseLeave += btn_limpiar_MouseLeave;
             // 
             // btnEquipoProyecto
             // 
@@ -246,6 +252,8 @@
             btnEquipoProyecto.TabIndex = 81;
             btnEquipoProyecto.TabStop = false;
             btnEquipoProyecto.Click += btnEquipoProyecto_Click;
+            btnEquipoProyecto.MouseEnter += btnEquipoProyecto_MouseEnter;
+            btnEquipoProyecto.MouseLeave += btnEquipoProyecto_MouseLeave;
             // 
             // materialLabel2
             // 
