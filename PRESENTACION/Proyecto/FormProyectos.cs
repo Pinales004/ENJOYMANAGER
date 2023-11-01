@@ -35,15 +35,6 @@ namespace PRESENTACION
             this.dataGridView1.DataSource = cargar.GetProyectos();
         }
 
-        //private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    // Itera a través de todas las columnas y establece AutoSizeMode en AllCells
-        //    foreach (DataGridViewColumn column in dataGridView1.Columns)
-        //    {
-        //        column.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        //    }
-        //}
-
 
         private void EditarFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
@@ -85,9 +76,8 @@ namespace PRESENTACION
 
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
-
+                form.OperacionTipo = "Editar";
                 int idProyecto = (int)selectedRow["IdProyecto"];
-                MessageBox.Show($"ID del proyecto seleccionado: {idProyecto}");
 
                 // Configura los campos en el formulario
                 form.IdProyecto.Text = idProyecto.ToString();
@@ -131,6 +121,28 @@ namespace PRESENTACION
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Frm_NuevoProyecto>();
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Preguntar al usuario si está seguro de eliminar el proyecto
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este Proyecto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Continuar con la eliminación si el proyecto confirma
+                    Proyectos cargar = new Proyectos();
+                    cargar.EliminarProyecto(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdProyecto"].Value.ToString()));
+                    MessageBox.Show("Proyecto Eliminado Correctamente");
+                    CargarProyectos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un Proyecto");
+            }
         }
     }
 }

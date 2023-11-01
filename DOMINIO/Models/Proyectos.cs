@@ -54,6 +54,14 @@ namespace DOMINIO.Models
 
         }
 
+        public void EliminarProyecto(int IdProyecto)
+        {
+
+            project.EliminarProyecto(IdProyecto);
+
+
+        }
+
 
         public System.Data.DataTable GetProyectos()
         {

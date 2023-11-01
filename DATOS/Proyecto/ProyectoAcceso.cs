@@ -125,7 +125,7 @@ namespace DATOS.Proyecto
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "DELETE FROM Proyectos WHERE IdProyecto = @IdProyecto";
+                    command.CommandText = "UPDATE Proyectos SET Borrado = 1 WHERE IdProyecto = @IdProyecto";
                     command.CommandType = CommandType.Text;
 
                     // Agrega el parámetro para el IdProyecto

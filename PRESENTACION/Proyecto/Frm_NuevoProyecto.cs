@@ -16,7 +16,7 @@ namespace PRESENTACION.Proyecto
 {
     public partial class Frm_NuevoProyecto : Form
     {
-        String OperacionTipo = "Insertar";
+       public String OperacionTipo = "Insertar";
 
         public Frm_NuevoProyecto()
         {
@@ -169,8 +169,7 @@ namespace PRESENTACION.Proyecto
             }
             else if (OperacionTipo == "Editar")
             {
-                // Lógica para editar un proyecto
-                // (Puedes completar esta parte según tus necesidades)
+                UpdateNuevoProyecto();
             }
 
 
