@@ -8,10 +8,12 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DOMINIO.Models;
 using PRESENTACION;
 
 namespace PRESENTACION.Administracion_Usuarios
 {
+
     public partial class Frm_NuevoUsuario : Form
     {
         public Frm_NuevoUsuario()
@@ -20,6 +22,15 @@ namespace PRESENTACION.Administracion_Usuarios
             btn_icon_hover.AplicarFormaRedonda(btn_volver);
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
+        }
+
+        Frm_Usuarios form = new Frm_Usuarios();
+        public string TipoOperacion = "Insertar";
+        public string IdUsuario;
+        private void Frm_NuevoUsuario_Load(object sender, EventArgs e)
+        {
+            ListarRoles();
+            LLnearCombroboxGnero();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,7 +46,7 @@ namespace PRESENTACION.Administracion_Usuarios
         }
         private void btn_volver_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
         private void LimpiarCampos()
         {
@@ -49,6 +60,35 @@ namespace PRESENTACION.Administracion_Usuarios
             cmbGenero.SelectedIndex = -1;
             cmbRol.SelectedIndex = -1;
             this.CheckActivo.Checked = false;
+        }
+
+        private void ListarRoles()
+        {
+            Usuario cargar = new Usuario();
+
+           cmbRol.DataSource = cargar.GetRoles();
+           cmbRol.DisplayMember = "Rol";
+           cmbRol.ValueMember = "IdUsuarioRol";
+        }
+        private void LLnearCombroboxGnero()
+        {
+            // Crear un diccionario de valores booleanos y sus representaciones de texto
+            Dictionary<bool, string> valoresBooleanos = new Dictionary<bool, string>{
+            { true, "Hombre" },
+            { false, "Mujer" }
+            };
+
+            // Enlazar el diccionario al ComboBox
+            cmbGenero.DataSource = new BindingSource(valoresBooleanos, null);
+            cmbGenero.DisplayMember = "Value"; // Mostrar el valor de texto en el ComboBox
+            cmbGenero.ValueMember = "Key"; // Obtener el valor booleano seleccionado
+        }
+        private void CargarUsuarios()
+        {
+            Frm_Usuarios form = new Frm_Usuarios();
+            Usuario cargar = new Usuario();
+            form.dataGridView1.AutoGenerateColumns = true;
+            form.dataGridView1.DataSource = cargar.GetUsuarios();
         }
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
@@ -84,5 +124,84 @@ namespace PRESENTACION.Administracion_Usuarios
         {
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+           
+            if (TipoOperacion == "Insertar")
+            {
+                Usuario cargar = new Usuario();
+                if (string.IsNullOrWhiteSpace(this.txtNombreUsuario.Text))
+                {
+                    MessageBox.Show("Debe indicar un UsuarioNombre.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtNombre.Text))
+                {
+                    MessageBox.Show("Debe indicar los nombres del usuario.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtApellido.Text))
+                {
+                    MessageBox.Show("Debe indicar el apellido del usuario.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
+                {
+                    MessageBox.Show("Debe ingresar una contraseña.");
+                }
+                else if (this.txtContraseña.Text != this.txtContraseña2.Text)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.");
+                }
+                else if (cmbGenero.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar el sexo del usuario.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtEmail.Text))
+                {
+                    MessageBox.Show("Debe indicar un correo electrónico.");
+                }
+                else if (cmbRol.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un rol de usuario.");
+                }
+                else
+                {
+
+                    // Llamar al método para insertar el usuario si todas las validaciones pasan
+                    cargar.InsertarUsuarios(
+                        this.txtNombreUsuario.Text,
+                        this.txtNombre.Text,
+                        txtApellido.Text,
+                        Convert.ToBoolean(cmbGenero.SelectedValue),
+                        txtEmail.Text,
+                        txtContraseña.Text,
+                        Convert.ToInt32(cmbRol.SelectedValue),
+                        Convert.ToBoolean(CheckActivo.Checked)
+                    );
+                    form.CargarUsuarios();
+                    LimpiarCampos();
+                }
+            }
+            else if (TipoOperacion == "Editar")
+            {
+                Usuario cargar = new Usuario();
+                cargar.ActualizarUsuarios(Convert.ToInt32(IdUsuario),
+                      this.txtNombreUsuario.Text,
+                      this.txtNombre.Text,
+                      txtApellido.Text,
+                      Convert.ToBoolean(cmbGenero.SelectedValue),
+                      txtEmail.Text,
+                      txtContraseña.Text,
+                      Convert.ToInt32(cmbRol.SelectedValue),
+                      Convert.ToBoolean(CheckActivo.Checked)
+                  );              
+                LimpiarCampos();
+                this.Hide();
+               CargarUsuarios();
+            }
+        }
+
+
+
+
     }
 }

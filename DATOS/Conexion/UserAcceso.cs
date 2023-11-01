@@ -114,11 +114,7 @@ namespace DATOS.Conexion
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "SELECT IdUsuario, usu.UsuarioNombre, usu.Nombres, usu.Apellido, usu.EmailUsuario, " +
-                            "CASE WHEN Sexo = 1 THEN 'Hombre' ELSE 'Mujer' END AS Genero, rol.Rol, usu.ContrasenaUsuario, " +
-                            "CASE WHEN Activo = 1 THEN 'Activo' ELSE 'Bloqueado' END AS Estado " +
-                            "FROM Usuario usu " +
-                            "INNER JOIN UsuarioRol rol ON usu.RolUsuario = rol.IdUsuarioRol";
+                        command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY";
                         command.CommandType = CommandType.Text;
 
                         using (var reader = command.ExecuteReader())
@@ -193,5 +189,33 @@ namespace DATOS.Conexion
             }
         }
 
+        public DataTable BuscarUsuariosPorNombre(string nombre)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                command.Connection = connection;
+                command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY WHERE Nombres LIKE @Nombre";
+                command.CommandType = CommandType.Text;
+
+                // Agrega el parámetro para la búsqueda dinámica
+                command.Parameters.Add(new SqlParameter("@Nombre", "%" + nombre + "%"));
+
+                var results = new DataTable();
+
+                using (var adapter = new SqlDataAdapter(command))
+                {
+                    adapter.Fill(results);
+                }
+
+                return results;
+            }
+        }
     }
+
+}
+
 }
