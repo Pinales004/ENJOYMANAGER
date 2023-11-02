@@ -116,7 +116,9 @@ namespace PRESENTACION.Proyecto
 
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<FrmEquipoProgramadores>();
+            //AbrirFormulario<FrmEquipoProgramadores>();
+            FrmEquipoProgramadores frmEquipo = new FrmEquipoProgramadores();
+            frmEquipo.Show();
         }
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {

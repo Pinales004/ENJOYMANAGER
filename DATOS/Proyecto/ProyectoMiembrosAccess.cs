@@ -79,5 +79,29 @@ namespace DATOS.Proyecto
 
             return table;
         }
+        public DataTable CargarUsuarioProgramador()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Usuario where RolUsuario = 3";
+                    command.CommandType = CommandType.Text;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        table.Load(reader);
+                    }
+                }
+            }
+
+            return table;
+        }
+
     }
 }

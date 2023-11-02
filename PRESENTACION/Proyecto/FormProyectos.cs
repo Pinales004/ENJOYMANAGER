@@ -68,10 +68,11 @@ namespace PRESENTACION
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var form = new Frm_NuevoProyecto(); // Crear una instancia del formulario FrmNuevoProyecto
-
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
                 form.OperacionTipo = "Editar";
+                form.LblEquipoProyecto.Visible = true;
+                form.btnEquipoProyecto.Visible = true;
                 int idProyecto = (int)selectedRow["IdProyecto"];
 
                 // Configura los campos en el formulario
