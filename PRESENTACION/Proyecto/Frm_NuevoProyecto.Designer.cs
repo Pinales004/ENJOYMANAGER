@@ -269,7 +269,6 @@
             this.IdProyecto.Size = new System.Drawing.Size(64, 15);
             this.IdProyecto.TabIndex = 83;
             this.IdProyecto.Text = "IdProyectp";
-            this.IdProyecto.Visible = false;
             // 
             // Frm_NuevoProyecto
             // 

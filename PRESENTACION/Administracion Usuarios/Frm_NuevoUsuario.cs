@@ -106,8 +106,9 @@ namespace PRESENTACION.Administracion_Usuarios
                         Convert.ToInt32(cmbRol.SelectedValue),
                         Convert.ToBoolean(CheckActivo.Checked)
                     );
-                    form.CargarUsuarios();
+                    CargarUsuarios();
                     LimpiarCampos();
+                    this.Hide();
                 }
             }
             else if (TipoOperacion == "Editar")

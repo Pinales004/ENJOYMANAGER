@@ -17,7 +17,7 @@ namespace PRESENTACION.Proyecto
     public partial class Frm_NuevoProyecto : Form
     {
         public String OperacionTipo = "Insertar";
-
+        public String pROYECTOID;
         public Frm_NuevoProyecto()
         {
             InitializeComponent();
@@ -29,6 +29,7 @@ namespace PRESENTACION.Proyecto
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
             CargarEstadoProyecto();
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -116,9 +117,11 @@ namespace PRESENTACION.Proyecto
 
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
         {
+
             //AbrirFormulario<FrmEquipoProgramadores>();
-            FrmEquipoProgramadores frmEquipo = new FrmEquipoProgramadores();
+            FrmEquipoProgramadores frmEquipo = new FrmEquipoProgramadores(this.IdProyecto.Text);
             frmEquipo.Show();
+            
         }
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {

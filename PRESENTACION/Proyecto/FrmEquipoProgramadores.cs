@@ -14,12 +14,14 @@ namespace PRESENTACION.Proyecto
 {
     public partial class FrmEquipoProgramadores : Form
     {
-        public FrmEquipoProgramadores()
+
+        private string IdProyecto;
+        public FrmEquipoProgramadores(string idProyecto)
         {
             InitializeComponent();
+            IdProyecto = idProyecto;    
         }
 
-        Frm_NuevoProyecto newproyec = new Frm_NuevoProyecto();
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -29,6 +31,7 @@ namespace PRESENTACION.Proyecto
         private void FrmEquipoProgramadores_Load(object sender, EventArgs e)
         {
             CagarProgramadores();
+            CargarMiembros();
         }
 
         public void CagarProgramadores() {
@@ -46,7 +49,7 @@ namespace PRESENTACION.Proyecto
         {
             ProyectoMiembro miembro = new ProyectoMiembro();
             dataGridView1.AutoGenerateColumns = true;
-           // dataGridView1.DataSource =;
+            dataGridView1.DataSource = miembro.GetProyectoMiembro(Convert.ToInt32(IdProyecto.ToString()));
 
         }
 
@@ -70,13 +73,14 @@ namespace PRESENTACION.Proyecto
             else
             {
                 AgregarMiembro();
+                CargarMiembros();
             }
         }
 
         private void AgregarMiembro() {
 
             ProyectoMiembro miembro = new ProyectoMiembro();
-            miembro.InsertarMiembros(Convert.ToInt32(newproyec.IdProyecto.Text)
+            miembro.InsertarMiembros(Convert.ToInt32(IdProyecto)
                                     , Convert.ToInt32(this.CmbProgramadores.SelectedValue));
 
 

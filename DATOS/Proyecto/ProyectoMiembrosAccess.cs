@@ -65,7 +65,9 @@ namespace DATOS.Proyecto
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM ProyectoMiembros WHERE IdProyecto = @IdProyecto";
+                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres FROM ProyectoMiembros m INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario WHERE m.IdProyecto = @IdProyecto";
+
+
                     command.CommandType = CommandType.Text;
 
                     command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
