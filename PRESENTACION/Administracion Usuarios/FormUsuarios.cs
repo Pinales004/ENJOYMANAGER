@@ -1,6 +1,7 @@
 ﻿using DOMINIO.Models;
 using MaterialSkin.Controls;
 using PRESENTACION.Administracion_Usuarios;
+using PRESENTACION.Proyecto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,16 +35,15 @@ namespace PRESENTACION
             Usuario cargar = new Usuario();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetUsuarios();
-
         }
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
             Form formulario;
             formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
 
             if (formulario == null)
             {
-                formulario = new MiForm();
+                formulario = form; // Utiliza la instancia del formulario que pasaste como argumento
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.StartPosition = FormStartPosition.CenterScreen;
                 formulario.ShowDialog(); // Mostrar el formulario de manera modal
@@ -57,15 +57,19 @@ namespace PRESENTACION
         #region botones
         private void btn_agregar_Click_1(object sender, EventArgs e)
         {
-            AbrirFormulario<Frm_NuevoUsuario>();
+            var form = new Frm_NuevoUsuario();
+            form.TipoOperacion = "Insertar";
+
+            form.Frm_Usuarios = this; // Establece la propiedad FormProyectos
+
+            AbrirFormulario<Frm_NuevoUsuario>(form);
         }
 
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                Frm_NuevoUsuario frm = new Frm_NuevoUsuario();
-                frm.Show();
+                var frm = new Frm_NuevoUsuario();
                 frm.TipoOperacion = "Editar";
                 frm.IdUsuario = dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString();
 
@@ -77,6 +81,11 @@ namespace PRESENTACION
                 frm.cmbGenero.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 frm.cmbRol.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 //CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
+
+                // Establece la propiedad FormProyectos
+                frm.Frm_Usuarios = this;
+                // Llamar al método AbrirFormulario con el formulario FrmNuevoProyecto
+                AbrirFormulario<Frm_NuevoUsuario>(frm);
             }
             else
             {

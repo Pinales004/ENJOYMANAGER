@@ -29,123 +29,123 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEquipoProgramadores));
-            this.btn_guardar = new System.Windows.Forms.PictureBox();
-            this.btn_volver = new System.Windows.Forms.PictureBox();
-            this.materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.CmbProgramadores = new MaterialSkin.Controls.MaterialComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).BeginInit();
-            this.materialCheckedListBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            btn_guardar = new PictureBox();
+            btn_volver = new PictureBox();
+            materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            CmbProgramadores = new MaterialSkin.Controls.MaterialComboBox();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
+            materialCheckedListBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
-            this.btn_guardar.Location = new System.Drawing.Point(462, 404);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(45, 45);
-            this.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_guardar.TabIndex = 80;
-            this.btn_guardar.TabStop = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_guardar.Cursor = Cursors.Hand;
+            btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
+            btn_guardar.Location = new Point(462, 404);
+            btn_guardar.Name = "btn_guardar";
+            btn_guardar.Size = new Size(45, 45);
+            btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_guardar.TabIndex = 80;
+            btn_guardar.TabStop = false;
+            btn_guardar.Click += btn_guardar_Click;
             // 
             // btn_volver
             // 
-            this.btn_volver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_volver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_volver.Image")));
-            this.btn_volver.Location = new System.Drawing.Point(12, 404);
-            this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(45, 45);
-            this.btn_volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_volver.TabIndex = 79;
-            this.btn_volver.TabStop = false;
-            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_volver.Cursor = Cursors.Hand;
+            btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
+            btn_volver.Location = new Point(12, 404);
+            btn_volver.Name = "btn_volver";
+            btn_volver.Size = new Size(45, 45);
+            btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_volver.TabIndex = 79;
+            btn_volver.TabStop = false;
+            btn_volver.Click += btn_volver_Click;
             // 
             // materialCheckedListBox1
             // 
-            this.materialCheckedListBox1.AutoScroll = true;
-            this.materialCheckedListBox1.BackColor = System.Drawing.Color.Silver;
-            this.materialCheckedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.materialCheckedListBox1.Controls.Add(this.materialLabel1);
-            this.materialCheckedListBox1.Controls.Add(this.CmbProgramadores);
-            this.materialCheckedListBox1.Controls.Add(this.dataGridView1);
-            this.materialCheckedListBox1.Depth = 0;
-            this.materialCheckedListBox1.Location = new System.Drawing.Point(12, 12);
-            this.materialCheckedListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCheckedListBox1.Name = "materialCheckedListBox1";
-            this.materialCheckedListBox1.Size = new System.Drawing.Size(495, 337);
-            this.materialCheckedListBox1.Striped = false;
-            this.materialCheckedListBox1.StripeDarkColor = System.Drawing.Color.Empty;
-            this.materialCheckedListBox1.TabIndex = 81;
+            materialCheckedListBox1.AutoScroll = true;
+            materialCheckedListBox1.BackColor = Color.Silver;
+            materialCheckedListBox1.BorderStyle = BorderStyle.FixedSingle;
+            materialCheckedListBox1.Controls.Add(materialLabel1);
+            materialCheckedListBox1.Controls.Add(CmbProgramadores);
+            materialCheckedListBox1.Controls.Add(dataGridView1);
+            materialCheckedListBox1.Depth = 0;
+            materialCheckedListBox1.Location = new Point(12, 12);
+            materialCheckedListBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialCheckedListBox1.Name = "materialCheckedListBox1";
+            materialCheckedListBox1.Size = new Size(495, 337);
+            materialCheckedListBox1.Striped = false;
+            materialCheckedListBox1.StripeDarkColor = Color.Empty;
+            materialCheckedListBox1.TabIndex = 81;
             // 
             // materialLabel1
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(3, 20);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(193, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Agregar Miembro al Equipo";
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(3, 20);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(193, 19);
+            materialLabel1.TabIndex = 2;
+            materialLabel1.Text = "Agregar Miembro al Equipo";
             // 
             // CmbProgramadores
             // 
-            this.CmbProgramadores.AutoResize = false;
-            this.CmbProgramadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.CmbProgramadores.Depth = 0;
-            this.CmbProgramadores.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.CmbProgramadores.DropDownHeight = 174;
-            this.CmbProgramadores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbProgramadores.DropDownWidth = 121;
-            this.CmbProgramadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.CmbProgramadores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CmbProgramadores.FormattingEnabled = true;
-            this.CmbProgramadores.IntegralHeight = false;
-            this.CmbProgramadores.ItemHeight = 43;
-            this.CmbProgramadores.Location = new System.Drawing.Point(3, 42);
-            this.CmbProgramadores.MaxDropDownItems = 4;
-            this.CmbProgramadores.MouseState = MaterialSkin.MouseState.OUT;
-            this.CmbProgramadores.Name = "CmbProgramadores";
-            this.CmbProgramadores.Size = new System.Drawing.Size(349, 49);
-            this.CmbProgramadores.StartIndex = 0;
-            this.CmbProgramadores.TabIndex = 1;
+            CmbProgramadores.AutoResize = false;
+            CmbProgramadores.BackColor = Color.FromArgb(255, 255, 255);
+            CmbProgramadores.Depth = 0;
+            CmbProgramadores.DrawMode = DrawMode.OwnerDrawVariable;
+            CmbProgramadores.DropDownHeight = 174;
+            CmbProgramadores.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbProgramadores.DropDownWidth = 121;
+            CmbProgramadores.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            CmbProgramadores.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            CmbProgramadores.FormattingEnabled = true;
+            CmbProgramadores.IntegralHeight = false;
+            CmbProgramadores.ItemHeight = 43;
+            CmbProgramadores.Location = new Point(3, 42);
+            CmbProgramadores.MaxDropDownItems = 4;
+            CmbProgramadores.MouseState = MaterialSkin.MouseState.OUT;
+            CmbProgramadores.Name = "CmbProgramadores";
+            CmbProgramadores.Size = new Size(349, 49);
+            CmbProgramadores.StartIndex = 0;
+            CmbProgramadores.TabIndex = 1;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(487, 226);
-            this.dataGridView1.TabIndex = 0;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(3, 106);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(487, 226);
+            dataGridView1.TabIndex = 0;
             // 
             // FrmEquipoProgramadores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(519, 461);
-            this.Controls.Add(this.materialCheckedListBox1);
-            this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.btn_volver);
-            this.Name = "FrmEquipoProgramadores";
-            this.Text = "FrmEquipoProgramadores";
-            this.Load += new System.EventHandler(this.FrmEquipoProgramadores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).EndInit();
-            this.materialCheckedListBox1.ResumeLayout(false);
-            this.materialCheckedListBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Silver;
+            ClientSize = new Size(519, 461);
+            Controls.Add(materialCheckedListBox1);
+            Controls.Add(btn_guardar);
+            Controls.Add(btn_volver);
+            Name = "FrmEquipoProgramadores";
+            Text = "FrmEquipoProgramadores";
+            Load += FrmEquipoProgramadores_Load;
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
+            materialCheckedListBox1.ResumeLayout(false);
+            materialCheckedListBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

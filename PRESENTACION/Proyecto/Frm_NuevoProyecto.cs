@@ -16,6 +16,7 @@ namespace PRESENTACION.Proyecto
 {
     public partial class Frm_NuevoProyecto : Form
     {
+        public FormProyectos FormProyectos { get; set; }
         public String OperacionTipo = "Insertar";
         public String pROYECTOID;
         public Frm_NuevoProyecto()
@@ -29,7 +30,6 @@ namespace PRESENTACION.Proyecto
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
             CargarEstadoProyecto();
-            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -65,10 +65,13 @@ namespace PRESENTACION.Proyecto
                                     Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
                                     UserLoginCache.IdUsuario);
 
-            CargarProyectos();
+            if (FormProyectos != null)
+            {
+                // Se debe verificar si FormProyectos no es nulo y, si no lo es, llamar al método CargarProyectos en FormProyectos para actualizar el DataGridView.
+                FormProyectos.CargarProyectos();
+            }
             MessageBox.Show("Proyecto agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
-
         }
 
         private void UpdateNuevoProyecto()
@@ -85,7 +88,6 @@ namespace PRESENTACION.Proyecto
             CargarProyectos();
             MessageBox.Show("Proyecto actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
-
         }
 
         private void CargarProyectos()
@@ -100,7 +102,7 @@ namespace PRESENTACION.Proyecto
         {
             // Limpia los campos del formulario para futuras entradas
             txtNombreProyecto.Text = "";
-            labelDescripcionProyecto.Text = "";
+            txtDescripcionProyecto.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
             dateTimePickerEntrega.Value = DateTime.Now;
             cmbEstadoProyecto.SelectedIndex = -1;
@@ -121,11 +123,10 @@ namespace PRESENTACION.Proyecto
             //AbrirFormulario<FrmEquipoProgramadores>();
             FrmEquipoProgramadores frmEquipo = new FrmEquipoProgramadores(this.IdProyecto.Text);
             frmEquipo.Show();
-            
+
         }
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {
-
             if (OperacionTipo == "Insertar")
             {
                 // Validar los campos antes de agregar el proyecto
@@ -149,11 +150,23 @@ namespace PRESENTACION.Proyecto
                 {
                     // Si todas las validaciones pasan, puedes agregar el proyecto
                     AgregarNuevoProyecto();
+                    // Llama al método CargarProyectos del formulario FormProyectos para actualizar el DataGridView
+                    if (FormProyectos != null)
+                    {
+                        FormProyectos.CargarProyectos();
+                    }
+                    this.Hide();
                 }
             }
             else if (OperacionTipo == "Editar")
             {
                 UpdateNuevoProyecto();
+                // Llama al método CargarProyectos del formulario FormProyectos para actualizar el DataGridView
+                if (FormProyectos != null)
+                {
+                    FormProyectos.CargarProyectos();
+                }
+                this.Hide();
             }
         }
         #endregion
@@ -197,24 +210,6 @@ namespace PRESENTACION.Proyecto
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
         #endregion
-
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.StartPosition = FormStartPosition.CenterScreen;
-                formulario.ShowDialog(); // Mostrar el formulario de manera modal
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
 
         private void MostrarError(string mensaje)
         {

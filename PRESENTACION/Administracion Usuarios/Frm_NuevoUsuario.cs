@@ -23,6 +23,7 @@ namespace PRESENTACION.Administracion_Usuarios
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
         }
+        public Frm_Usuarios Frm_Usuarios { get; set; }
 
         Frm_Usuarios form = new Frm_Usuarios();
         public string TipoOperacion = "Insertar";
@@ -106,7 +107,12 @@ namespace PRESENTACION.Administracion_Usuarios
                         Convert.ToInt32(cmbRol.SelectedValue),
                         Convert.ToBoolean(CheckActivo.Checked)
                     );
-                    CargarUsuarios();
+                    form.CargarUsuarios();
+                    // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
+                    if (Frm_Usuarios != null)
+                    {
+                        Frm_Usuarios.CargarUsuarios();
+                    }
                     LimpiarCampos();
                     this.Hide();
                 }
@@ -124,9 +130,14 @@ namespace PRESENTACION.Administracion_Usuarios
                       Convert.ToInt32(cmbRol.SelectedValue),
                       Convert.ToBoolean(CheckActivo.Checked)
                   );
+                form.CargarUsuarios();
+                // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
+                if (Frm_Usuarios != null)
+                {
+                    Frm_Usuarios.CargarUsuarios();
+                }
                 LimpiarCampos();
                 this.Hide();
-                CargarUsuarios();
             }
         }
         #endregion
@@ -165,14 +176,6 @@ namespace PRESENTACION.Administracion_Usuarios
             cmbGenero.DisplayMember = "Value"; // Mostrar el valor de texto en el ComboBox
             cmbGenero.ValueMember = "Key"; // Obtener el valor booleano seleccionado
         }
-        private void CargarUsuarios()
-        {
-            Frm_Usuarios form = new Frm_Usuarios();
-            Usuario cargar = new Usuario();
-            form.dataGridView1.AutoGenerateColumns = true;
-            form.dataGridView1.DataSource = cargar.GetUsuarios();
-        }
-
         #region btn_hover
         private void btn_limpiar_MouseEnter(object sender, EventArgs e)
         {

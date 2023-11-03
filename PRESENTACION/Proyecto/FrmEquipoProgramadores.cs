@@ -19,7 +19,7 @@ namespace PRESENTACION.Proyecto
         public FrmEquipoProgramadores(string idProyecto)
         {
             InitializeComponent();
-            IdProyecto = idProyecto;    
+            IdProyecto = idProyecto;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -34,7 +34,8 @@ namespace PRESENTACION.Proyecto
             CargarMiembros();
         }
 
-        public void CagarProgramadores() {
+        public void CagarProgramadores()
+        {
 
             ProyectoMiembro miembro = new ProyectoMiembro();
 
@@ -77,7 +78,8 @@ namespace PRESENTACION.Proyecto
             }
         }
 
-        private void AgregarMiembro() {
+        private void AgregarMiembro()
+        {
 
             ProyectoMiembro miembro = new ProyectoMiembro();
             miembro.InsertarMiembros(Convert.ToInt32(IdProyecto)

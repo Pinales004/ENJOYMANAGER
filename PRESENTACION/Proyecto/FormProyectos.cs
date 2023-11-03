@@ -34,7 +34,8 @@ namespace PRESENTACION
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetProyectos();
         }
-        private void EditarFormulario<MiForm>(MiForm form) where MiForm : Form, new()
+
+        private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
             Form formulario;
             formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
@@ -84,10 +85,10 @@ namespace PRESENTACION
 
                 // Llamar al método CargarEstadoProyecto pasando el formulario como argumento
                 CargarEstadoProyecto(form);
-
+                // Establece la propiedad FormProyectos
+                form.FormProyectos = this;
                 // Llamar al método AbrirFormulario con el formulario FrmNuevoProyecto
-                EditarFormulario<Frm_NuevoProyecto>(form);
-
+                AbrirFormulario<Frm_NuevoProyecto>(form);
             }
             else
             {
@@ -96,9 +97,13 @@ namespace PRESENTACION
         }
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Frm_NuevoProyecto>();
-        }
+            var form = new Frm_NuevoProyecto();
+            form.OperacionTipo = "Insertar";
 
+            form.FormProyectos = this; // Establece la propiedad FormProyectos
+
+            AbrirFormulario<Frm_NuevoProyecto>(form);
+        }
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -122,23 +127,6 @@ namespace PRESENTACION
         }
         #endregion
 
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = new MiForm();
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.StartPosition = FormStartPosition.CenterScreen;
-                formulario.ShowDialog(); // Mostrar el formulario de manera modal
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
         #region btn_hover
         private void btn_agregar_MouseEnter(object sender, EventArgs e)
         {
