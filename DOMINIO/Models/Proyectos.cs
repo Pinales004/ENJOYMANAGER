@@ -73,6 +73,10 @@ namespace DOMINIO.Models
             return project.ProyectoEstado();
         }
 
+        public System.Data.DataTable BuscarPorNombreProyecto(String NombreUsuario)
+        {
+            return project.BuscarProyectoPorNombre(NombreUsuario);
+        }
 
 
     }

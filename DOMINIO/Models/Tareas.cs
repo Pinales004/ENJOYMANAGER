@@ -13,6 +13,39 @@ namespace DOMINIO.Models
     public class Tareas : ConexionSQL
     {
 
+        public DataTable CargarTareas()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select * from Tareas_vw_ENJOY";
+                        command.CommandType = CommandType.Text;
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar proyectos: " + ex.Message);
+            }
+
+            return table;
+        }
+
+
         public void InsertTarea(TareasProyecto tarea)
         {
             using (var connection = GETConexionSQL())
@@ -90,6 +123,129 @@ namespace DOMINIO.Models
                     command.ExecuteNonQuery();
                 }
             }
+        }
+        public DataTable TareaEstado()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select * from TareaEstado";
+                        command.CommandType = CommandType.Text;
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar proyectos: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable CargarListadoProyectos()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select * from Proyecto_vw_ENJOY";
+                        command.CommandType = CommandType.Text;
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar proyectos: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable CargarListadoMiembrosTarea()
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "select * from Proyecto_vw_ENJOY";
+                        command.CommandType = CommandType.Text;
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar proyectos: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable CargarMiembros(int idProyecto)
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres FROM ProyectoMiembros m INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario WHERE m.IdProyecto = @IdProyecto";
+
+
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        table.Load(reader);
+                    }
+                }
+            }
+
+            return table;
         }
 
     }

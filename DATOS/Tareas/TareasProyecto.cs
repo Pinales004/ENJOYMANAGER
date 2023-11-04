@@ -18,9 +18,8 @@ namespace DATOS.Tareas
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
 
-        public TareasProyecto(int tareaId, int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, DateTime fechaInicio, DateTime fechaFin)
+        public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, DateTime fechaInicio, DateTime fechaFin)
         {
-            TareaId = tareaId;
             IdProyecto = idProyecto;
             EstadoTareaid = estadoTareaid;
             IdProyectoMiembro = idProyectoMiembro;

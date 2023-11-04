@@ -107,7 +107,6 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormPrincipal.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Login.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Properties.Resources.resources
-C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormProyectos.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.FrmEquipoProgramadores.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.Frm_NuevoProyecto.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.GenerateResource.cache
@@ -163,3 +162,4 @@ C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-wi
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_NuevoUsuario.resources
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Form_Tareas.resources

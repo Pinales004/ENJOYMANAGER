@@ -172,7 +172,32 @@ namespace DATOS.Proyecto
         }
 
 
+        public DataTable BuscarProyectoPorNombre(string nombre)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
 
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Proyecto_vw_ENJOY WHERE NombreProyecto LIKE @Nombre";
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega el parámetro para la búsqueda dinámica
+                    command.Parameters.Add(new SqlParameter("@Nombre", "%" + nombre + "%"));
+
+                    var results = new DataTable();
+
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(results);
+                    }
+
+                    return results;
+                }
+            }
+        }
 
 
 

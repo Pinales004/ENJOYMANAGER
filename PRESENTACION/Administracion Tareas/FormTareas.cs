@@ -1,4 +1,5 @@
-﻿using PRESENTACION.Administracion_Tareas;
+﻿using DOMINIO.Models;
+using PRESENTACION.Administracion_Tareas;
 using PRESENTACION.Proyecto;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,11 @@ namespace PRESENTACION
             btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
         }
 
+        private void FormTareas_Load(object sender, EventArgs e)
+        {
+            CargarTareas();
+        }
+
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Frm_NuevaTarea>();
@@ -43,6 +49,13 @@ namespace PRESENTACION
             {
                 formulario.BringToFront();
             }
+        }
+
+        public void CargarTareas()
+        {
+            Tareas cargar = new Tareas();
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = cargar.CargarTareas();
         }
 
         #region btn_hover
@@ -75,7 +88,19 @@ namespace PRESENTACION
         {
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
+
         #endregion
 
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
     }
 }
