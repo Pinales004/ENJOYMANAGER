@@ -179,7 +179,7 @@ namespace PRESENTACION
 
         private void btnProyectos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Form_Tareas>();
+            AbrirFormulario<FormProyectos>();
         }
 
         private void btnTareas_Click(object sender, EventArgs e)
