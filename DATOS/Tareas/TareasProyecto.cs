@@ -10,23 +10,27 @@ namespace DATOS.Tareas
 {
     public  class TareasProyecto
     {
-        public int TareaId { get; set; }
-        public int IdProyecto { get; set; }
-        public int EstadoTareaid { get; set; }
-        public int IdProyectoMiembro { get; set; }
-        public string NombreTarea { get; set; }
-        public DateTime FechaInicio { get; set; }
-        public DateTime FechaFin { get; set; }
-
-        public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, DateTime fechaInicio, DateTime fechaFin)
+        public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
         {
             IdProyecto = idProyecto;
             EstadoTareaid = estadoTareaid;
             IdProyectoMiembro = idProyectoMiembro;
             NombreTarea = nombreTarea;
+            DescripcionTarea = descripcionTarea;
             FechaInicio = fechaInicio;
             FechaFin = fechaFin;
         }
+
+        public int TareaId { get; set; }
+        public int IdProyecto { get; set; }
+        public int EstadoTareaid { get; set; }
+        public int IdProyectoMiembro { get; set; }
+        public string NombreTarea { get; set; }
+        public string DescripcionTarea { get; set; }
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+
+
 
     }
 }

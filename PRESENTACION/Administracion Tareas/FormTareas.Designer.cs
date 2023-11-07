@@ -141,6 +141,7 @@
             this.btn_eliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_eliminar.TabIndex = 10;
             this.btn_eliminar.TabStop = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_agregar
             // 

@@ -347,14 +347,10 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionTarea;
         private PictureBox btn_limpiar;
         private PictureBox btn_guardar;
         private PictureBox btn_volver;
         private MaterialSkin.Controls.MaterialLabel labelDescripcionTarea;
-        private DateTimePicker dateTimePickerEntrega;
-        private DateTimePicker dateTimePickerInicio;
         private MaterialSkin.Controls.MaterialLabel labelFechaEntrega;
         private MaterialSkin.Controls.MaterialLabel labelFechaInicio;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
@@ -365,5 +361,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         public MaterialSkin.Controls.MaterialComboBox cmbResponsableTarea;
         public MaterialSkin.Controls.MaterialComboBox CmbNombreProyecto;
+        public DateTimePicker dateTimePickerEntrega;
+        public DateTimePicker dateTimePickerInicio;
+        public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionTarea;
     }
 }

@@ -95,11 +95,45 @@ namespace PRESENTACION
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
+                var frm = new Frm_NuevaTarea();
+                frm.TipoOperacion = "Editar";
+                frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
 
+                frm.txtNombreTarea.Text = dataGridView1.CurrentRow.Cells["NombreTarea"].Value.ToString();
+                frm.CmbNombreProyecto.Text = dataGridView1.CurrentRow.Cells["NombreProyecto"].Value.ToString();
+                frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
+                frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].Value.ToString();
+              //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
+                frm.dateTimePickerInicio.Text = dataGridView1.CurrentRow.Cells["FechaInicio"].Value.ToString();
+                frm.dateTimePickerEntrega.Text = dataGridView1.CurrentRow.Cells["FechaFin"].Value.ToString();
+
+                frm.Show();
             }
             else
             {
                 MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Preguntar al usuario si está seguro de eliminar el proyecto
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este Tarea?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Continuar con la eliminación si el proyecto confirma
+                    Tareas cargar = new Tareas();
+                    cargar.EliminarTarea(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString()));
+                    MessageBox.Show("Tarea Eliminada Correctamente");
+                    CargarTareas();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un Tarea");
             }
         }
     }

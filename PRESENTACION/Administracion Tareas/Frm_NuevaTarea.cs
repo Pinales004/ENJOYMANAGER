@@ -15,7 +15,8 @@ namespace PRESENTACION.Administracion_Tareas
 {
     public partial class Frm_NuevaTarea : Form
     {
-
+       public String TipoOperacion = "Agregar";
+       public string TareaId;
         public Frm_NuevaTarea()
         {
             InitializeComponent();
@@ -78,7 +79,7 @@ namespace PRESENTACION.Administracion_Tareas
         {
             // Limpia los campos del formulario para futuras entradas
             txtNombreTarea.Text = "";
-            //txtNombreProyecto.Text = "";
+            txtDescripcionTarea.Text = "";
             txtDescripcionTarea.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
             dateTimePickerEntrega.Value = DateTime.Now;
@@ -166,6 +167,7 @@ namespace PRESENTACION.Administracion_Tareas
                 Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
                 Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
                 txtNombreTarea.Text,
+                txtDescripcionTarea.Text,
                 dateTimePickerInicio.Value,
                 dateTimePickerEntrega.Value
             );
