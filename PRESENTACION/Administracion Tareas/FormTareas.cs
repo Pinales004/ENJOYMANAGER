@@ -1,5 +1,6 @@
 ﻿using DOMINIO.Models;
 using PRESENTACION.Administracion_Tareas;
+using PRESENTACION.Administracion_Usuarios;
 using PRESENTACION.Proyecto;
 using System;
 using System.Collections.Generic;
@@ -30,17 +31,22 @@ namespace PRESENTACION
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<Frm_NuevaTarea>();
+            var form = new Frm_NuevaTarea();
+            form.TipoOperacion = "Insertar";
+
+            form.FormTareas = this; // Establece la propiedad FormTareas
+
+            AbrirFormulario<Frm_NuevaTarea>(form);
         }
 
-        private void AbrirFormulario<MiForm>() where MiForm : Form, new()
+        private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
             Form formulario;
             formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
 
             if (formulario == null)
             {
-                formulario = new MiForm();
+                formulario = form; // Utiliza la instancia del formulario que pasaste como argumento
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.StartPosition = FormStartPosition.CenterScreen;
                 formulario.ShowDialog(); // Mostrar el formulario de manera modal
@@ -54,8 +60,8 @@ namespace PRESENTACION
         public void CargarTareas()
         {
             Tareas cargar = new Tareas();
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = cargar.CargarTareas();
+            this.dataGridView1.AutoGenerateColumns = true;
+            this.dataGridView1.DataSource = cargar.CargarTareas();
         }
 
         #region btn_hover
@@ -103,11 +109,14 @@ namespace PRESENTACION
                 frm.CmbNombreProyecto.Text = dataGridView1.CurrentRow.Cells["NombreProyecto"].Value.ToString();
                 frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
                 frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].Value.ToString();
-              //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
+                //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
                 frm.dateTimePickerInicio.Text = dataGridView1.CurrentRow.Cells["FechaInicio"].Value.ToString();
                 frm.dateTimePickerEntrega.Text = dataGridView1.CurrentRow.Cells["FechaFin"].Value.ToString();
 
-                frm.Show();
+                // Establece la propiedad FormTareas
+                frm.FormTareas = this;
+                // Llamar al método AbrirFormulario con el formulario Frm_NuevaTarea
+                AbrirFormulario<Frm_NuevaTarea>(frm);
             }
             else
             {

@@ -451,6 +451,7 @@
             Name = "Frm_NuevoUsuario";
             Text = "Frm_NuevoUsuario";
             Load += Frm_NuevoUsuario_Load;
+            MouseMove += Frm_NuevoUsuario_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();

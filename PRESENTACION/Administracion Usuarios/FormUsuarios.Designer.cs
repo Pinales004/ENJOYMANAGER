@@ -84,6 +84,7 @@
             btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_buscar.TabIndex = 58;
             btn_buscar.TabStop = false;
+            btn_buscar.Click += btn_buscar_Click;
             // 
             // label1
             // 

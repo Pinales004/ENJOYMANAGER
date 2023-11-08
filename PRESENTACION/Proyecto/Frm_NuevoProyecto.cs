@@ -107,6 +107,25 @@ namespace PRESENTACION.Proyecto
             dateTimePickerEntrega.Value = DateTime.Now;
             cmbEstadoProyecto.SelectedIndex = -1;
         }
+
+        private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
+        {
+            Form formulario;
+            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
+
+            if (formulario == null)
+            {
+                formulario = form; // Utiliza la instancia del formulario que pasaste como argumento
+                formulario.FormBorderStyle = FormBorderStyle.None;
+                formulario.StartPosition = FormStartPosition.CenterScreen;
+                formulario.ShowDialog(); // Mostrar el formulario de manera modal
+            }
+            else
+            {
+                formulario.BringToFront();
+            }
+        }
+
         #region botones
         private void btn_limpiar_Click(object sender, EventArgs e)
         {
@@ -119,11 +138,19 @@ namespace PRESENTACION.Proyecto
 
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
         {
+            Form frmEquipo = Application.OpenForms.OfType<FrmEquipoProgramadores>().FirstOrDefault();
 
-            //AbrirFormulario<FrmEquipoProgramadores>();
-            FrmEquipoProgramadores frmEquipo = new FrmEquipoProgramadores(this.IdProyecto.Text);
-            frmEquipo.Show();
-
+            if (frmEquipo == null)
+            {
+                frmEquipo = new FrmEquipoProgramadores(this.IdProyecto.Text);
+                frmEquipo.FormBorderStyle = FormBorderStyle.None;
+                frmEquipo.StartPosition = FormStartPosition.CenterScreen;
+                frmEquipo.ShowDialog();
+            }
+            else
+            {
+                frmEquipo.BringToFront();
+            }
         }
         private void btn_guardar_Click_1(object sender, EventArgs e)
         {

@@ -45,7 +45,7 @@ namespace PRESENTACION.Administracion_Usuarios
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        
+
         #region botones
         private void btn_volver_Click(object sender, EventArgs e)
         {

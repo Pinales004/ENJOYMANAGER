@@ -277,6 +277,7 @@
             panelBarraTitulo.Name = "panelBarraTitulo";
             panelBarraTitulo.Size = new Size(1150, 47);
             panelBarraTitulo.TabIndex = 0;
+            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
             // 
             // panel1
             // 

@@ -60,7 +60,7 @@ namespace PRESENTACION
             var form = new Frm_NuevoUsuario();
             form.TipoOperacion = "Insertar";
 
-            form.Frm_Usuarios = this; // Establece la propiedad FormProyectos
+            form.Frm_Usuarios = this; // Establece la propiedad Frm_Usuarios
 
             AbrirFormulario<Frm_NuevoUsuario>(form);
         }
@@ -82,9 +82,9 @@ namespace PRESENTACION
                 frm.cmbRol.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 //CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
 
-                // Establece la propiedad FormProyectos
+                // Establece la propiedad FormUsuarios
                 frm.Frm_Usuarios = this;
-                // Llamar al método AbrirFormulario con el formulario FrmNuevoProyecto
+                // Llamar al método AbrirFormulario con el formulario Frm_NuevoUsuario
                 AbrirFormulario<Frm_NuevoUsuario>(frm);
             }
             else

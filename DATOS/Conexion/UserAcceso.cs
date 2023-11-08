@@ -38,7 +38,6 @@ namespace DATOS.Conexion
                             UserLoginCache.ContrasenaUsuario = reader.GetString(6);
                             UserLoginCache.RolUsuario = reader.GetInt32(7);
                             UserLoginCache.Activo = reader.GetBoolean(8);
-
                         }
                         return true;
                     }

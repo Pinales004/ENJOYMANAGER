@@ -42,7 +42,7 @@ namespace PRESENTACION
 
             if (formulario == null)
             {
-                formulario = form; // Utiliza la instancia del formulario que pasaste como argumento
+                formulario = form; // Utiliza la instancia del formulario como argumento
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.StartPosition = FormStartPosition.CenterScreen;
                 formulario.ShowDialog(); // Mostrar el formulario de manera modal

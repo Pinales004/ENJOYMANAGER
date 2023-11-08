@@ -15,8 +15,8 @@ namespace PRESENTACION.Administracion_Tareas
 {
     public partial class Frm_NuevaTarea : Form
     {
-       public String TipoOperacion = "Agregar";
-       public string TareaId;
+        public String TipoOperacion = "Agregar";
+        public string TareaId;
         public Frm_NuevaTarea()
         {
             InitializeComponent();
@@ -24,6 +24,8 @@ namespace PRESENTACION.Administracion_Tareas
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
         }
+        public FormTareas FormTareas { get; set; }
+        FormTareas form = new FormTareas();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -65,7 +67,8 @@ namespace PRESENTACION.Administracion_Tareas
             this.CmbNombreProyecto.ValueMember = "IdProyecto";
         }
 
-        private void ListaMiembros(int IdProyecto) {
+        private void ListaMiembros(int IdProyecto)
+        {
 
             Tareas cargar = new Tareas();
 
@@ -176,12 +179,13 @@ namespace PRESENTACION.Administracion_Tareas
             Tareas cargar = new Tareas();
             cargar.InsertTarea(nuevaTarea);
 
-            //if (FormTareas != null)
-            //{
-            //    // Se debe verificar si FormProyectos no es nulo y, si no lo es, llamar al método CargarProyectos en FormProyectos para actualizar el DataGridView.
-            //    FormTareas.CargarTareas();
-            //}
 
+            form.CargarTareas();
+            // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
+            if (FormTareas != null)
+            {
+                FormTareas.CargarTareas();
+            }
             MessageBox.Show("La tarea se ha guardado correctamente.");
             this.Hide();
 

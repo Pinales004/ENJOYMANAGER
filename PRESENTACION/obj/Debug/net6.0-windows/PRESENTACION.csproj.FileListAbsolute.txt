@@ -70,7 +70,6 @@ C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.pdb
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Usuarios.resources
-C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_AgregarEdit.resources
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Proyecto.Frm_NuevoProyecto.resources
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_NuevaTarea.resources
