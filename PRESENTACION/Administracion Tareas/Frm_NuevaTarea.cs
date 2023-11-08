@@ -156,29 +156,55 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            // Realiza las validaciones necesarias en la capa de presentación
-            if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
+            if (TipoOperacion == "Agregar")
             {
-                MessageBox.Show("El nombre de la tarea es obligatorio.");
-                return; // Detener la operación de guardar
+
+                // Realiza las validaciones necesarias en la capa de presentación
+                if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
+                {
+                    MessageBox.Show("El nombre de la tarea es obligatorio.");
+                    return; // Detener la operación de guardar
+                }
+                else
+                {
+
+                    // Si todas las validaciones pasan, crea un objeto TareasProyecto y guarda la tarea
+                    TareasProyecto nuevaTarea = new TareasProyecto
+                    (
+                        Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
+                        Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
+                        Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
+                        txtNombreTarea.Text,
+                        txtDescripcionTarea.Text,
+                        dateTimePickerInicio.Value,
+                        dateTimePickerEntrega.Value
+                    );
+
+                    // Llama al método para guardar la tarea
+                    Tareas cargar = new Tareas();
+                    cargar.InsertTarea(nuevaTarea);
+                }
+
+            }else if (TipoOperacion == "Editar")
+            {
+                Tareas cargar = new Tareas();
+
+                TareasProyecto ActualizarTarea = new TareasProyecto
+                    (
+                        Convert.ToInt32(TareaId),
+                        Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
+                        Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
+                        Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
+                        txtNombreTarea.Text,
+                        txtDescripcionTarea.Text,
+                        dateTimePickerInicio.Value,
+                        dateTimePickerEntrega.Value
+                    ) ;
+
+                cargar.UpdateTarea(ActualizarTarea);
+
+
             }
-
-            // Si todas las validaciones pasan, crea un objeto TareasProyecto y guarda la tarea
-            TareasProyecto nuevaTarea = new TareasProyecto
-            (
-                Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
-                Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
-                Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
-                txtNombreTarea.Text,
-                txtDescripcionTarea.Text,
-                dateTimePickerInicio.Value,
-                dateTimePickerEntrega.Value
-            );
-
-            // Llama al método para guardar la tarea
-            Tareas cargar = new Tareas();
-            cargar.InsertTarea(nuevaTarea);
-
 
             form.CargarTareas();
             // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView

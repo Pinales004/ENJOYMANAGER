@@ -10,8 +10,22 @@ namespace DATOS.Tareas
 {
     public  class TareasProyecto
     {
-        public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
+
+ 
+            public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
         {
+            IdProyecto = idProyecto;
+            EstadoTareaid = estadoTareaid;
+            IdProyectoMiembro = idProyectoMiembro;
+            NombreTarea = nombreTarea;
+            DescripcionTarea = descripcionTarea;
+            FechaInicio = fechaInicio;
+            FechaFin = fechaFin;
+        }
+
+        public TareasProyecto(int tareaId, int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
+        {
+            TareaId = tareaId;
             IdProyecto = idProyecto;
             EstadoTareaid = estadoTareaid;
             IdProyectoMiembro = idProyectoMiembro;
