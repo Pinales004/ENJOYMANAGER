@@ -59,6 +59,8 @@ namespace PRESENTACION
                 button.BackColor = Color.Green;
             else if (button.Name == "btnEquipoProyecto")
                 button.BackColor = Color.Yellow;
+            else if (button.Name == "btn_realizar")
+                button.BackColor = Color.SkyBlue;
         }
 
         public static void RestaurarColorOriginal(object sender, EventArgs e)

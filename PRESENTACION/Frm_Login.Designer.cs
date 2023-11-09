@@ -63,7 +63,7 @@
             pictureBox3.Location = new Point(49, 80);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(158, 164);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
@@ -72,11 +72,12 @@
             txtUsuario.BackColor = Color.FromArgb(15, 15, 15);
             txtUsuario.BorderStyle = BorderStyle.None;
             txtUsuario.Cursor = Cursors.IBeam;
+            txtUsuario.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsuario.ForeColor = Color.DimGray;
             txtUsuario.Location = new Point(320, 80);
             txtUsuario.Margin = new Padding(5);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(415, 20);
+            txtUsuario.Size = new Size(415, 19);
             txtUsuario.TabIndex = 2;
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
@@ -87,11 +88,12 @@
             TxtContrasena.BackColor = Color.FromArgb(15, 15, 15);
             TxtContrasena.BorderStyle = BorderStyle.None;
             TxtContrasena.Cursor = Cursors.IBeam;
+            TxtContrasena.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TxtContrasena.ForeColor = Color.DimGray;
             TxtContrasena.Location = new Point(320, 136);
             TxtContrasena.Margin = new Padding(5);
             TxtContrasena.Name = "TxtContrasena";
-            TxtContrasena.Size = new Size(415, 20);
+            TxtContrasena.Size = new Size(415, 19);
             TxtContrasena.TabIndex = 3;
             TxtContrasena.Text = "CONTRASEÑA";
             TxtContrasena.Enter += TxtContrasena_Enter;
@@ -100,11 +102,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Georgia", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.LightGray;
             label1.Location = new Point(486, 9);
             label1.Name = "label1";
-            label1.Size = new Size(85, 33);
+            label1.Size = new Size(83, 31);
             label1.TabIndex = 1;
             label1.Text = "Login";
             // 
@@ -116,6 +118,7 @@
             BtnLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 28, 28);
             BtnLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(64, 64, 64);
             BtnLogin.FlatStyle = FlatStyle.Flat;
+            BtnLogin.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
             BtnLogin.ForeColor = Color.LightGray;
             BtnLogin.Location = new Point(320, 218);
             BtnLogin.Name = "BtnLogin";
@@ -152,13 +155,13 @@
             // blErrorMensaje
             // 
             blErrorMensaje.AutoSize = true;
-            blErrorMensaje.Font = new Font("MS Reference Sans Serif", 10.5F, FontStyle.Regular, GraphicsUnit.Point);
+            blErrorMensaje.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             blErrorMensaje.ForeColor = Color.DarkGray;
             blErrorMensaje.Image = (Image)resources.GetObject("blErrorMensaje.Image");
             blErrorMensaje.ImageAlign = ContentAlignment.MiddleLeft;
             blErrorMensaje.Location = new Point(320, 175);
             blErrorMensaje.Name = "blErrorMensaje";
-            blErrorMensaje.Size = new Size(106, 18);
+            blErrorMensaje.Size = new Size(103, 18);
             blErrorMensaje.TabIndex = 7;
             blErrorMensaje.Text = "Error Mensaje";
             blErrorMensaje.Visible = false;
@@ -181,7 +184,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "Frm_Login";
-            Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             MouseMove += Frm_Login_MouseMove;

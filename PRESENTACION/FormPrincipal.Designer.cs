@@ -45,6 +45,7 @@
             btnTareas = new Button();
             btnProyectos = new Button();
             panelBarraTitulo = new Panel();
+            label1 = new Label();
             panel1 = new Panel();
             btnMinimizar = new PictureBox();
             btnMaximizar = new PictureBox();
@@ -72,7 +73,7 @@
             btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-            btnCerrarSesion.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarSesion.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = Color.Gainsboro;
             btnCerrarSesion.Location = new Point(54, 452);
             btnCerrarSesion.Name = "btnCerrarSesion";
@@ -176,30 +177,30 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.Location = new Point(103, 68);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(68, 19);
+            lblNombre.Size = new Size(69, 16);
             lblNombre.TabIndex = 7;
             lblNombre.Text = "nombre/s";
             // 
             // lblApellido
             // 
             lblApellido.AutoSize = true;
-            lblApellido.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblApellido.Location = new Point(103, 36);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(62, 19);
+            lblApellido.Size = new Size(63, 16);
             lblApellido.TabIndex = 6;
             lblApellido.Text = "apellidos";
             // 
             // lblRol
             // 
             lblRol.AutoSize = true;
-            lblRol.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRol.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRol.Location = new Point(103, 7);
             lblRol.Name = "lblRol";
-            lblRol.Size = new Size(25, 19);
+            lblRol.Size = new Size(25, 16);
             lblRol.TabIndex = 5;
             lblRol.Text = "rol";
             // 
@@ -209,7 +210,7 @@
             pictureBox1.Location = new Point(0, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(94, 97);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
@@ -220,7 +221,7 @@
             btnUsuarios.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnUsuarios.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnUsuarios.FlatStyle = FlatStyle.Flat;
-            btnUsuarios.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnUsuarios.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsuarios.ForeColor = Color.Gainsboro;
             btnUsuarios.Location = new Point(54, 115);
             btnUsuarios.Name = "btnUsuarios";
@@ -237,7 +238,7 @@
             btnTareas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnTareas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnTareas.FlatStyle = FlatStyle.Flat;
-            btnTareas.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTareas.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnTareas.ForeColor = Color.Gainsboro;
             btnTareas.Location = new Point(54, 214);
             btnTareas.Name = "btnTareas";
@@ -254,7 +255,7 @@
             btnProyectos.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
             btnProyectos.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
             btnProyectos.FlatStyle = FlatStyle.Flat;
-            btnProyectos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnProyectos.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnProyectos.ForeColor = Color.Gainsboro;
             btnProyectos.Location = new Point(54, 165);
             btnProyectos.Name = "btnProyectos";
@@ -267,6 +268,7 @@
             // panelBarraTitulo
             // 
             panelBarraTitulo.BackColor = SystemColors.ControlLight;
+            panelBarraTitulo.Controls.Add(label1);
             panelBarraTitulo.Controls.Add(panel1);
             panelBarraTitulo.Controls.Add(btnMinimizar);
             panelBarraTitulo.Controls.Add(btnMaximizar);
@@ -278,6 +280,16 @@
             panelBarraTitulo.Size = new Size(1150, 47);
             panelBarraTitulo.TabIndex = 0;
             panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(12, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(240, 23);
+            label1.TabIndex = 8;
+            label1.Text = "ENJOY MANAGEMENT";
             // 
             // panel1
             // 
@@ -348,7 +360,6 @@
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(1120, 450);
             Name = "FormPrincipal";
-            Opacity = 0.9D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPrincipal";
             Load += FormPrincipal_Load;
@@ -361,6 +372,7 @@
             ((System.ComponentModel.ISupportInitialize)pboxUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraTitulo.ResumeLayout(false);
+            panelBarraTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
@@ -391,5 +403,6 @@
         private PictureBox pboxProyectos;
         private PictureBox pboxUsuarios;
         private PictureBox pboxCerrarSesion;
+        private Label label1;
     }
 }

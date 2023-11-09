@@ -32,6 +32,7 @@
             panelContenedor = new Panel();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
+            btn_realizar = new PictureBox();
             btn_buscar = new PictureBox();
             label1 = new Label();
             txtbox_buscar = new TextBox();
@@ -41,6 +42,7 @@
             panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_realizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
@@ -71,6 +73,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btn_realizar);
             panel1.Controls.Add(btn_buscar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(txtbox_buscar);
@@ -82,6 +85,21 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(884, 68);
             panel1.TabIndex = 0;
+            // 
+            // btn_realizar
+            // 
+            btn_realizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_realizar.Cursor = Cursors.Hand;
+            btn_realizar.Image = (Image)resources.GetObject("btn_realizar.Image");
+            btn_realizar.Location = new Point(674, 12);
+            btn_realizar.Name = "btn_realizar";
+            btn_realizar.Size = new Size(45, 45);
+            btn_realizar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_realizar.TabIndex = 15;
+            btn_realizar.TabStop = false;
+            btn_realizar.Click += btn_realizar_Click;
+            btn_realizar.MouseEnter += btn_realizar_MouseEnter;
+            btn_realizar.MouseLeave += btn_realizar_MouseLeave;
             // 
             // btn_buscar
             // 
@@ -173,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_realizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
@@ -191,5 +210,6 @@
         private PictureBox btn_eliminar;
         private PictureBox btn_agregar;
         private DataGridView dataGridView1;
+        private PictureBox btn_realizar;
     }
 }

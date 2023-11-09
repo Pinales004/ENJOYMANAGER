@@ -25,12 +25,7 @@ namespace PRESENTACION
             if (MessageBox.Show("Estas seguro que deceas cerrar la aplicacion", "Warning",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 this.Close();
-            {
-
-            }
         }
-
-
 
         private void LoadUserData()
         {

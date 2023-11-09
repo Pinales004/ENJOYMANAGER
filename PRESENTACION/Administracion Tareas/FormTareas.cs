@@ -1,4 +1,6 @@
-﻿using DOMINIO.Models;
+﻿using Comun.Biblioteca.Enums;
+using Comun.Cache;
+using DOMINIO.Models;
 using PRESENTACION.Administracion_Tareas;
 using PRESENTACION.Administracion_Usuarios;
 using PRESENTACION.Proyecto;
@@ -22,11 +24,31 @@ namespace PRESENTACION
             btn_icon_hover.AplicarFormaRedonda(btn_agregar);
             btn_icon_hover.AplicarFormaRedonda(btn_editar);
             btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
+            btn_icon_hover.AplicarFormaRedonda(btn_realizar);
+        }
+
+        private void rolUsuario()
+        {
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+            {
+                btn_agregar.Visible = true;
+                btn_editar.Visible = true;
+                btn_eliminar.Visible = true;
+                btn_realizar.Visible = false;
+            }
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
+            {
+                btn_agregar.Visible = false;
+                btn_editar.Visible = false;
+                btn_eliminar.Visible = false;
+                btn_realizar.Visible = true;
+            }
         }
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
             CargarTareas();
+            rolUsuario();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -95,6 +117,16 @@ namespace PRESENTACION
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
 
+        private void btn_realizar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_realizar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
         #endregion
 
         private void btn_editar_Click(object sender, EventArgs e)
@@ -117,6 +149,33 @@ namespace PRESENTACION
                 frm.FormTareas = this;
                 // Llamar al método AbrirFormulario con el formulario Frm_NuevaTarea
                 AbrirFormulario<Frm_NuevaTarea>(frm);
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
+
+        private void btn_realizar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var frm = new Frm_RealizarTarea();
+                frm.TipoOperacion = "Editar";
+                frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
+
+                frm.txtNombreTarea.Text = dataGridView1.CurrentRow.Cells["NombreTarea"].Value.ToString();
+                frm.CmbNombreProyecto.Text = dataGridView1.CurrentRow.Cells["NombreProyecto"].Value.ToString();
+                frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
+                frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].Value.ToString();
+                //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
+                frm.dateTimePickerInicio.Text = dataGridView1.CurrentRow.Cells["FechaInicio"].Value.ToString();
+                frm.dateTimePickerEntrega.Text = dataGridView1.CurrentRow.Cells["FechaFin"].Value.ToString();
+
+                // Establece la propiedad FormTareas
+                frm.FormTareas = this;
+                // Llamar al método AbrirFormulario con el formulario Frm_NuevaTarea
+                AbrirFormulario<Frm_RealizarTarea>(frm);
             }
             else
             {
