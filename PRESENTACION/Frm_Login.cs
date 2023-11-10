@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Security.Cryptography;
 using System.Linq;
 //using DOMINIO.Moldes;
 using System.Text;
@@ -79,20 +80,6 @@ namespace PRESENTACION
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-        //no esta funcionando esto no se porque se supone que debe de moverse la ventana
-        //private void Frm_Login_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x122, 0xf012, 0);
-        //}
-
-        //private void panel1_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    ReleaseCapture();
-        //    SendMessage(this.Handle, 0x122, 0xf012, 0);
-        //}
-
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             ValidacionDatos();
@@ -109,7 +96,9 @@ namespace PRESENTACION
                 {
 
                     Usuario user = new Usuario();
-                    var ValidLogin = user.LoginUser(txtUsuario.Text, TxtContrasena.Text);
+                    // Calcular el hash SHA-256 de la contraseña antes de enviarla a la base de datos
+                    string contraseñaHash = HashHelper.CalculateSHA256Hash(TxtContrasena.Text);
+                    var ValidLogin = user.LoginUser(txtUsuario.Text, contraseñaHash);
                     if (ValidLogin == true)
                     {
                         FormPrincipal menu = new FormPrincipal();
@@ -143,8 +132,6 @@ namespace PRESENTACION
         {
             blErrorMensaje.Text = "     " + msg;
             blErrorMensaje.Visible = true;
-
-
         }
 
 
@@ -156,7 +143,6 @@ namespace PRESENTACION
             blErrorMensaje.Visible = false;
             this.Show();
             txtUsuario.Focus();
-
         }
 
         private void Frm_Login_MouseMove(object sender, MouseEventArgs e)

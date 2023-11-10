@@ -159,7 +159,7 @@
             dataGridView1.Location = new Point(12, 74);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(860, 381);
+            dataGridView1.Size = new Size(860, 384);
             dataGridView1.TabIndex = 60;
             // 
             // Frm_Usuarios

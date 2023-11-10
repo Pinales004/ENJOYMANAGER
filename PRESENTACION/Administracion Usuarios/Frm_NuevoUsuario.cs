@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +29,7 @@ namespace PRESENTACION.Administracion_Usuarios
         Frm_Usuarios form = new Frm_Usuarios();
         public string TipoOperacion = "Insertar";
         public string IdUsuario;
+
         private void Frm_NuevoUsuario_Load(object sender, EventArgs e)
         {
             ListarRoles();
@@ -57,10 +59,10 @@ namespace PRESENTACION.Administracion_Usuarios
         }
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            Usuario cargar = new Usuario();
 
             if (TipoOperacion == "Insertar")
             {
-                Usuario cargar = new Usuario();
                 if (string.IsNullOrWhiteSpace(this.txtNombreUsuario.Text))
                 {
                     MessageBox.Show("Debe indicar un UsuarioNombre.");
@@ -95,6 +97,9 @@ namespace PRESENTACION.Administracion_Usuarios
                 }
                 else
                 {
+                    // Calcular el hash SHA-256 de la contraseña antes de almacenarla
+                    string contraseñaIngresada = this.txtContraseña.Text;
+                    string contraseñaHash = HashHelper.CalculateSHA256Hash(contraseñaIngresada);
 
                     // Llamar al método para insertar el usuario si todas las validaciones pasan
                     cargar.InsertarUsuarios(
@@ -103,7 +108,7 @@ namespace PRESENTACION.Administracion_Usuarios
                         txtApellido.Text,
                         Convert.ToBoolean(cmbGenero.SelectedValue),
                         txtEmail.Text,
-                        txtContraseña.Text,
+                        contraseñaHash,  // Almacenar el hash en la base de datos
                         Convert.ToInt32(cmbRol.SelectedValue),
                         Convert.ToBoolean(CheckActivo.Checked)
                     );
@@ -119,17 +124,20 @@ namespace PRESENTACION.Administracion_Usuarios
             }
             else if (TipoOperacion == "Editar")
             {
-                Usuario cargar = new Usuario();
+                // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
+                string nuevaContraseña = this.txtContraseña.Text;
+                string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
+
                 cargar.ActualizarUsuarios(Convert.ToInt32(IdUsuario),
-                      this.txtNombreUsuario.Text,
-                      this.txtNombre.Text,
-                      txtApellido.Text,
-                      Convert.ToBoolean(cmbGenero.SelectedValue),
-                      txtEmail.Text,
-                      txtContraseña.Text,
-                      Convert.ToInt32(cmbRol.SelectedValue),
-                      Convert.ToBoolean(CheckActivo.Checked)
-                  );
+                    this.txtNombreUsuario.Text,
+                    this.txtNombre.Text,
+                    txtApellido.Text,
+                    Convert.ToBoolean(cmbGenero.SelectedValue),
+                    txtEmail.Text,
+                    nuevaContraseñaHash,  // Almacenar el nuevo hash en la base de datos
+                    Convert.ToInt32(cmbRol.SelectedValue),
+                    Convert.ToBoolean(CheckActivo.Checked)
+                );
                 form.CargarUsuarios();
                 // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
                 if (Frm_Usuarios != null)

@@ -78,8 +78,8 @@ namespace PRESENTACION
                 frm.txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
                 frm.txtEmail.Text = dataGridView1.CurrentRow.Cells["EmailUsuario"].Value.ToString();
                 //frm.TxtContrasena.Text = dataGridView1.CurrentRow.Cells["ContrasenaUsuario"].Value.ToString();
-                frm.cmbGenero.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                frm.cmbRol.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                frm.cmbGenero.SelectedValue = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                frm.cmbRol.SelectedValue = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                 //CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
 
                 // Establece la propiedad FormUsuarios

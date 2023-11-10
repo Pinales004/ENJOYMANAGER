@@ -19,19 +19,23 @@ namespace DOMINIO.Models
         {
             return users.CargarRoles();
         }
-        public void InsertarUsuarios(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo) {
-
+        public void InsertarUsuarios(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+        {
             users.InsertUsuario(UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
         }
+
         public System.Data.DataTable GetUsuarios()
         {
             return users.CargarUsuarios();
         }
-        public void ActualizarUsuarios(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+        public void ActualizarUsuarios(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string NuevaContrasenaUsuario, int RolUsuario, bool Activo)
         {
+            // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
+            string nuevaContraseñaHash = NuevaContrasenaUsuario;
 
-            users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo);
+            users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, nuevaContraseñaHash, RolUsuario, Activo);
         }
+
         public void EliminarUusario(int IdUsuario) {
 
             users.EliminarUsuario(IdUsuario);
