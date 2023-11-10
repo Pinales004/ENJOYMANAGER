@@ -70,6 +70,8 @@ namespace PRESENTACION
             {
                 var form = new Frm_NuevoProyecto(); // Crear una instancia del formulario FrmNuevoProyecto
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
+                // Llamar al método CargarEstadoProyecto pasando el formulario como argumento
+                CargarEstadoProyecto(form);
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
                 form.OperacionTipo = "Editar";
                 form.LblEquipoProyecto.Visible = true;
@@ -80,11 +82,11 @@ namespace PRESENTACION
                 form.IdProyecto.Text = idProyecto.ToString();
                 form.txtNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
                 form.txtDescripcionProyecto.Text = selectedRow["Descripcion"].ToString();
+                form.cmbEstadoProyecto.Text = selectedRow["EstadoProyecto"].ToString();
                 form.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
 
-                // Llamar al método CargarEstadoProyecto pasando el formulario como argumento
-                CargarEstadoProyecto(form);
+               
                 // Establece la propiedad FormProyectos
                 form.FormProyectos = this;
                 // Llamar al método AbrirFormulario con el formulario FrmNuevoProyecto
@@ -99,7 +101,7 @@ namespace PRESENTACION
         {
             var form = new Frm_NuevoProyecto();
             form.OperacionTipo = "Insertar";
-
+            CargarEstadoProyecto(form);
             form.FormProyectos = this; // Establece la propiedad FormProyectos
 
             AbrirFormulario<Frm_NuevoProyecto>(form);

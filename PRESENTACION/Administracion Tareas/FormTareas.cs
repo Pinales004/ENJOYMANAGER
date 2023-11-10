@@ -55,7 +55,8 @@ namespace PRESENTACION
         {
             var form = new Frm_NuevaTarea();
             form.TipoOperacion = "Insertar";
-
+            CargarEstadoTarea(form);
+            ListadoProyectos(form);
             form.FormTareas = this; // Establece la propiedad FormTareas
 
             AbrirFormulario<Frm_NuevaTarea>(form);
@@ -129,21 +130,46 @@ namespace PRESENTACION
 
         #endregion
 
+        public void CargarEstadoTarea(Frm_NuevaTarea form)
+        {
+            Tareas cargar = new Tareas();
+
+            // Configura el ComboBox en el formulario pasado como argumento
+            form.cmbEstadoTarea.DataSource = cargar.TareaEstado();
+            form.cmbEstadoTarea.DisplayMember = "Estado";
+            form.cmbEstadoTarea.ValueMember = "EstadoTareaid";
+        }
+
+        private void ListadoProyectos(Frm_NuevaTarea form)
+        {
+
+            Tareas cargar = new Tareas();
+
+            form.CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
+            form.CmbNombreProyecto.DisplayMember = "NombreProyecto";
+            form.CmbNombreProyecto.ValueMember = "IdProyecto";
+        }
+
         private void btn_editar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var frm = new Frm_NuevaTarea();
+                DataTable dataTable = (DataTable)dataGridView1.DataSource;
+                CargarEstadoTarea(frm);
+                ListadoProyectos(frm);
                 frm.TipoOperacion = "Editar";
+                DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
+
                 frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
 
-                frm.txtNombreTarea.Text = dataGridView1.CurrentRow.Cells["NombreTarea"].Value.ToString();
-                frm.CmbNombreProyecto.Text = dataGridView1.CurrentRow.Cells["NombreProyecto"].Value.ToString();
-                frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
-                frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].Value.ToString();
-                //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
-                frm.dateTimePickerInicio.Text = dataGridView1.CurrentRow.Cells["FechaInicio"].Value.ToString();
-                frm.dateTimePickerEntrega.Text = dataGridView1.CurrentRow.Cells["FechaFin"].Value.ToString();
+                frm.txtNombreTarea.Text = selectedRow["NombreTarea"].ToString();
+                frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
+                frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
+                frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
+                frm.txtDescripcionTarea.Text = selectedRow["Descripcion"].ToString();
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
+                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
 
                 // Establece la propiedad FormTareas
                 frm.FormTareas = this;
@@ -166,9 +192,9 @@ namespace PRESENTACION
 
                 frm.txtNombreTarea.Text = dataGridView1.CurrentRow.Cells["NombreTarea"].Value.ToString();
                 frm.CmbNombreProyecto.Text = dataGridView1.CurrentRow.Cells["NombreProyecto"].Value.ToString();
-                frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].Value.ToString();
-                frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].Value.ToString();
-                //  frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
+                frm.cmbEstadoTarea.Text = dataGridView1.CurrentRow.Cells["Estado"].ToString();
+                frm.cmbResponsableTarea.Text = dataGridView1.CurrentRow.Cells["Responsable"].ToString();
+                frm.txtDescripcionTarea.Text = dataGridView1.CurrentRow.Cells["Descripcion"].ToString();
                 frm.dateTimePickerInicio.Text = dataGridView1.CurrentRow.Cells["FechaInicio"].Value.ToString();
                 frm.dateTimePickerEntrega.Text = dataGridView1.CurrentRow.Cells["FechaFin"].Value.ToString();
 

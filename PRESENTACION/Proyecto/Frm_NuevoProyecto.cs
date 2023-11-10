@@ -29,7 +29,7 @@ namespace PRESENTACION.Proyecto
         }
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
-            CargarEstadoProyecto();
+            
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -77,6 +77,8 @@ namespace PRESENTACION.Proyecto
         private void UpdateNuevoProyecto()
         {
             Proyectos cargar = new Proyectos();
+
+            CargarEstadoProyecto();
             cargar.UpdateProyecto(Convert.ToInt32(this.IdProyecto.Text),
                                     this.txtNombreProyecto.Text,
                                     this.txtDescripcionProyecto.Text,

@@ -25,6 +25,7 @@ namespace PRESENTACION.Administracion_Tareas
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
         }
         public FormTareas FormTareas { get; set; }
+
         FormTareas form = new FormTareas();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -35,8 +36,7 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_NuevaTarea_Load(object sender, EventArgs e)
         {
-            EstadoTareas();
-            ListadoProyectos();
+           
         }
 
 
@@ -167,6 +167,8 @@ namespace PRESENTACION.Administracion_Tareas
                 }
                 else
                 {
+                    EstadoTareas();
+                    ListadoProyectos();
 
                     // Si todas las validaciones pasan, crea un objeto TareasProyecto y guarda la tarea
                     TareasProyecto nuevaTarea = new TareasProyecto
@@ -187,8 +189,8 @@ namespace PRESENTACION.Administracion_Tareas
 
             }else if (TipoOperacion == "Editar")
             {
+              
                 Tareas cargar = new Tareas();
-
                 TareasProyecto ActualizarTarea = new TareasProyecto
                     (
                         Convert.ToInt32(TareaId),
