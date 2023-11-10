@@ -158,6 +158,28 @@ namespace PRESENTACION
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
         #endregion
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            Proyectos cargar = new Proyectos();
+            try
+            {
+                string nombreBusqueda = this.txtbox_buscar.Text;
+
+                // Llama a un método que realiza la búsqueda y obtiene los resultados
+                DataTable resultados = cargar.BuscarPorNombreProyecto(nombreBusqueda);
+
+                // Muestra los resultados en una cuadrícula o en otro control
+                this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
+
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier error que pueda ocurrir durante la búsqueda
+                MessageBox.Show("Error al buscar Proyecto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
     }
 }
 

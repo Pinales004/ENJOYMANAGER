@@ -204,5 +204,26 @@ namespace PRESENTACION
                 MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un Tarea");
             }
         }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            Tareas cargar = new Tareas();
+            try
+            {
+                string nombreBusqueda = this.txtbox_buscar.Text;
+
+                // Llama a un método que realiza la búsqueda y obtiene los resultados
+                DataTable resultados = cargar.BuscarTareaPorNombre(nombreBusqueda);
+
+                // Muestra los resultados en una cuadrícula o en otro control
+                this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
+
+            }
+            catch (Exception ex)
+            {
+                // Maneja cualquier error que pueda ocurrir durante la búsqueda
+                MessageBox.Show("Error al buscar Tarea: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
