@@ -240,10 +240,15 @@ namespace PRESENTACION.Administracion_Tareas
         //Anexo
         private void EditarAnexo_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void bntVerAnexo_Click(object sender, EventArgs e)
+        {
             if (datagridAnexo.SelectedRows.Count > 0)
             {
                 AnexoTarea Ver = new AnexoTarea();
-              
+
                 int id = Convert.ToInt32(datagridAnexo.CurrentRow.Cells[0].Value.ToString());
                 Anexos Anexar = new Anexos(id);
                 var Lista = new List<Anexos>();
@@ -261,7 +266,7 @@ namespace PRESENTACION.Administracion_Tareas
                     }
                     if (File.Exists(UbicacionCompleta))
                     {
-                        Directory.Delete(UbicacionCompleta);
+                        File.Delete(UbicacionCompleta);
 
                         File.WriteAllBytes(UbicacionCompleta, item.Documento);
                         Process.Start(UbicacionCompleta);
@@ -269,14 +274,13 @@ namespace PRESENTACION.Administracion_Tareas
                 }
             }
         }
+
+
+
+
+
+
         #endregion
-  
-
-
-
-
-
-
 
 
     }

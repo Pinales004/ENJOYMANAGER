@@ -382,6 +382,7 @@
             this.bntVerAnexo.TabIndex = 3;
             this.bntVerAnexo.Text = "Ver Archivo";
             this.bntVerAnexo.UseVisualStyleBackColor = true;
+            this.bntVerAnexo.Click += new System.EventHandler(this.bntVerAnexo_Click);
             // 
             // EditarAnexo
             // 
