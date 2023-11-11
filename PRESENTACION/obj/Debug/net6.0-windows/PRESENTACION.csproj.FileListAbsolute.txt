@@ -166,3 +166,4 @@ C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-wi
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources

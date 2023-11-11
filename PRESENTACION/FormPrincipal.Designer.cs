@@ -33,32 +33,31 @@
             panelContenedor = new Panel();
             panelFormularios = new Panel();
             panelMenu = new Panel();
-            pboxCerrarSesion = new PictureBox();
-            pboxTareas = new PictureBox();
-            pboxProyectos = new PictureBox();
-            pboxUsuarios = new PictureBox();
+            lblDGVtareas = new Label();
+            lblDGVequipo = new Label();
+            dataGridViewEquipoProgramadores = new DataGridView();
+            dataGridViewTareas = new DataGridView();
             lblNombre = new Label();
             lblApellido = new Label();
             lblRol = new Label();
             pictureBox1 = new PictureBox();
-            btnUsuarios = new Button();
-            btnTareas = new Button();
-            btnProyectos = new Button();
             panelBarraTitulo = new Panel();
+            panel2 = new Panel();
+            btnUsuarios = new Button();
+            btnProyectos = new Button();
+            btnTareas = new Button();
             label1 = new Label();
-            panel1 = new Panel();
             btnMinimizar = new PictureBox();
             btnMaximizar = new PictureBox();
             btnRestaurar = new PictureBox();
             btnCerrar = new PictureBox();
             panelContenedor.SuspendLayout();
             panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pboxTareas).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pboxProyectos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBarraTitulo.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -67,7 +66,7 @@
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrarSesion.Cursor = Cursors.Hand;
             btnCerrarSesion.FlatAppearance.BorderSize = 0;
             btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
@@ -75,9 +74,9 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnCerrarSesion.ForeColor = Color.Gainsboro;
-            btnCerrarSesion.Location = new Point(54, 452);
+            btnCerrarSesion.Location = new Point(1048, 0);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(158, 30);
+            btnCerrarSesion.Size = new Size(99, 30);
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "Cerrar sesión";
             btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -99,86 +98,73 @@
             // 
             panelFormularios.BackColor = Color.FromArgb(15, 15, 15);
             panelFormularios.Dock = DockStyle.Fill;
-            panelFormularios.Location = new Point(233, 47);
+            panelFormularios.Location = new Point(383, 60);
             panelFormularios.Name = "panelFormularios";
-            panelFormularios.Size = new Size(917, 503);
+            panelFormularios.Size = new Size(767, 490);
             panelFormularios.TabIndex = 0;
             // 
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(0, 122, 204);
-            panelMenu.Controls.Add(pboxCerrarSesion);
-            panelMenu.Controls.Add(pboxTareas);
-            panelMenu.Controls.Add(pboxProyectos);
-            panelMenu.Controls.Add(pboxUsuarios);
+            panelMenu.Controls.Add(lblDGVtareas);
+            panelMenu.Controls.Add(lblDGVequipo);
+            panelMenu.Controls.Add(dataGridViewEquipoProgramadores);
+            panelMenu.Controls.Add(dataGridViewTareas);
             panelMenu.Controls.Add(lblNombre);
             panelMenu.Controls.Add(lblApellido);
             panelMenu.Controls.Add(lblRol);
             panelMenu.Controls.Add(pictureBox1);
-            panelMenu.Controls.Add(btnUsuarios);
-            panelMenu.Controls.Add(btnTareas);
-            panelMenu.Controls.Add(btnCerrarSesion);
-            panelMenu.Controls.Add(btnProyectos);
             panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 47);
+            panelMenu.Location = new Point(0, 60);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(233, 503);
+            panelMenu.Size = new Size(383, 490);
             panelMenu.TabIndex = 1;
             // 
-            // pboxCerrarSesion
+            // lblDGVtareas
             // 
-            pboxCerrarSesion.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            pboxCerrarSesion.BackColor = Color.Transparent;
-            pboxCerrarSesion.Cursor = Cursors.Hand;
-            pboxCerrarSesion.Image = (Image)resources.GetObject("pboxCerrarSesion.Image");
-            pboxCerrarSesion.Location = new Point(25, 452);
-            pboxCerrarSesion.Name = "pboxCerrarSesion";
-            pboxCerrarSesion.Size = new Size(30, 30);
-            pboxCerrarSesion.SizeMode = PictureBoxSizeMode.Zoom;
-            pboxCerrarSesion.TabIndex = 12;
-            pboxCerrarSesion.TabStop = false;
+            lblDGVtareas.AutoSize = true;
+            lblDGVtareas.Location = new Point(12, 310);
+            lblDGVtareas.Name = "lblDGVtareas";
+            lblDGVtareas.Size = new Size(108, 15);
+            lblDGVtareas.TabIndex = 11;
+            lblDGVtareas.Text = "Tareas del proyecto";
+            lblDGVtareas.Visible = false;
             // 
-            // pboxTareas
+            // lblDGVequipo
             // 
-            pboxTareas.BackColor = Color.Transparent;
-            pboxTareas.Cursor = Cursors.Hand;
-            pboxTareas.Image = (Image)resources.GetObject("pboxTareas.Image");
-            pboxTareas.Location = new Point(25, 214);
-            pboxTareas.Name = "pboxTareas";
-            pboxTareas.Size = new Size(30, 30);
-            pboxTareas.SizeMode = PictureBoxSizeMode.Zoom;
-            pboxTareas.TabIndex = 10;
-            pboxTareas.TabStop = false;
+            lblDGVequipo.AutoSize = true;
+            lblDGVequipo.Location = new Point(12, 120);
+            lblDGVequipo.Name = "lblDGVequipo";
+            lblDGVequipo.Size = new Size(213, 15);
+            lblDGVequipo.TabIndex = 10;
+            lblDGVequipo.Text = "Equipo de programadores del proyecto";
+            lblDGVequipo.Visible = false;
             // 
-            // pboxProyectos
+            // dataGridViewEquipoProgramadores
             // 
-            pboxProyectos.BackColor = Color.Transparent;
-            pboxProyectos.Cursor = Cursors.Hand;
-            pboxProyectos.Image = (Image)resources.GetObject("pboxProyectos.Image");
-            pboxProyectos.Location = new Point(25, 165);
-            pboxProyectos.Name = "pboxProyectos";
-            pboxProyectos.Size = new Size(30, 30);
-            pboxProyectos.SizeMode = PictureBoxSizeMode.Zoom;
-            pboxProyectos.TabIndex = 9;
-            pboxProyectos.TabStop = false;
+            dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEquipoProgramadores.Location = new Point(12, 138);
+            dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
+            dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
+            dataGridViewEquipoProgramadores.Size = new Size(365, 150);
+            dataGridViewEquipoProgramadores.TabIndex = 9;
+            dataGridViewEquipoProgramadores.Visible = false;
             // 
-            // pboxUsuarios
+            // dataGridViewTareas
             // 
-            pboxUsuarios.BackColor = Color.Transparent;
-            pboxUsuarios.Cursor = Cursors.Hand;
-            pboxUsuarios.Image = (Image)resources.GetObject("pboxUsuarios.Image");
-            pboxUsuarios.Location = new Point(25, 115);
-            pboxUsuarios.Name = "pboxUsuarios";
-            pboxUsuarios.Size = new Size(30, 30);
-            pboxUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
-            pboxUsuarios.TabIndex = 8;
-            pboxUsuarios.TabStop = false;
+            dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTareas.Location = new Point(12, 328);
+            dataGridViewTareas.Name = "dataGridViewTareas";
+            dataGridViewTareas.RowTemplate.Height = 25;
+            dataGridViewTareas.Size = new Size(365, 150);
+            dataGridViewTareas.TabIndex = 8;
+            dataGridViewTareas.Visible = false;
             // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.Location = new Point(103, 68);
+            lblNombre.Location = new Point(124, 65);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(69, 16);
             lblNombre.TabIndex = 7;
@@ -188,7 +174,7 @@
             // 
             lblApellido.AutoSize = true;
             lblApellido.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblApellido.Location = new Point(103, 36);
+            lblApellido.Location = new Point(124, 38);
             lblApellido.Name = "lblApellido";
             lblApellido.Size = new Size(63, 16);
             lblApellido.TabIndex = 6;
@@ -198,7 +184,7 @@
             // 
             lblRol.AutoSize = true;
             lblRol.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRol.Location = new Point(103, 7);
+            lblRol.Location = new Point(124, 13);
             lblRol.Name = "lblRol";
             lblRol.Size = new Size(25, 16);
             lblRol.TabIndex = 5;
@@ -207,12 +193,41 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 3);
+            pictureBox1.Location = new Point(12, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(94, 97);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            // 
+            // panelBarraTitulo
+            // 
+            panelBarraTitulo.BackColor = SystemColors.ControlLight;
+            panelBarraTitulo.Controls.Add(panel2);
+            panelBarraTitulo.Controls.Add(label1);
+            panelBarraTitulo.Controls.Add(btnMinimizar);
+            panelBarraTitulo.Controls.Add(btnMaximizar);
+            panelBarraTitulo.Controls.Add(btnRestaurar);
+            panelBarraTitulo.Controls.Add(btnCerrar);
+            panelBarraTitulo.Dock = DockStyle.Top;
+            panelBarraTitulo.Location = new Point(0, 0);
+            panelBarraTitulo.Name = "panelBarraTitulo";
+            panelBarraTitulo.Size = new Size(1150, 60);
+            panelBarraTitulo.TabIndex = 0;
+            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ControlDarkDark;
+            panel2.Controls.Add(btnCerrarSesion);
+            panel2.Controls.Add(btnUsuarios);
+            panel2.Controls.Add(btnProyectos);
+            panel2.Controls.Add(btnTareas);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 30);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1150, 30);
+            panel2.TabIndex = 9;
             // 
             // btnUsuarios
             // 
@@ -223,30 +238,13 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsuarios.ForeColor = Color.Gainsboro;
-            btnUsuarios.Location = new Point(54, 115);
+            btnUsuarios.Location = new Point(3, 3);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(158, 30);
+            btnUsuarios.Size = new Size(99, 24);
             btnUsuarios.TabIndex = 2;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
             btnUsuarios.Click += btnUsuarios_Click;
-            // 
-            // btnTareas
-            // 
-            btnTareas.Cursor = Cursors.Hand;
-            btnTareas.FlatAppearance.BorderSize = 0;
-            btnTareas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnTareas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnTareas.FlatStyle = FlatStyle.Flat;
-            btnTareas.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTareas.ForeColor = Color.Gainsboro;
-            btnTareas.Location = new Point(54, 214);
-            btnTareas.Name = "btnTareas";
-            btnTareas.Size = new Size(158, 30);
-            btnTareas.TabIndex = 4;
-            btnTareas.Text = "Tareas";
-            btnTareas.UseVisualStyleBackColor = true;
-            btnTareas.Click += btnTareas_Click;
             // 
             // btnProyectos
             // 
@@ -257,53 +255,47 @@
             btnProyectos.FlatStyle = FlatStyle.Flat;
             btnProyectos.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnProyectos.ForeColor = Color.Gainsboro;
-            btnProyectos.Location = new Point(54, 165);
+            btnProyectos.Location = new Point(108, 3);
             btnProyectos.Name = "btnProyectos";
-            btnProyectos.Size = new Size(158, 30);
+            btnProyectos.Size = new Size(99, 24);
             btnProyectos.TabIndex = 3;
             btnProyectos.Text = "Proyectos";
             btnProyectos.UseVisualStyleBackColor = true;
             btnProyectos.Click += btnProyectos_Click;
             // 
-            // panelBarraTitulo
+            // btnTareas
             // 
-            panelBarraTitulo.BackColor = SystemColors.ControlLight;
-            panelBarraTitulo.Controls.Add(label1);
-            panelBarraTitulo.Controls.Add(panel1);
-            panelBarraTitulo.Controls.Add(btnMinimizar);
-            panelBarraTitulo.Controls.Add(btnMaximizar);
-            panelBarraTitulo.Controls.Add(btnRestaurar);
-            panelBarraTitulo.Controls.Add(btnCerrar);
-            panelBarraTitulo.Dock = DockStyle.Top;
-            panelBarraTitulo.Location = new Point(0, 0);
-            panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(1150, 47);
-            panelBarraTitulo.TabIndex = 0;
-            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
+            btnTareas.Cursor = Cursors.Hand;
+            btnTareas.FlatAppearance.BorderSize = 0;
+            btnTareas.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnTareas.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnTareas.FlatStyle = FlatStyle.Flat;
+            btnTareas.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTareas.ForeColor = Color.Gainsboro;
+            btnTareas.Location = new Point(3, 3);
+            btnTareas.Name = "btnTareas";
+            btnTareas.Size = new Size(99, 24);
+            btnTareas.TabIndex = 4;
+            btnTareas.Text = "Tareas";
+            btnTareas.UseVisualStyleBackColor = true;
+            btnTareas.Click += btnTareas_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 12);
+            label1.Location = new Point(12, 4);
             label1.Name = "label1";
             label1.Size = new Size(240, 23);
             label1.TabIndex = 8;
             label1.Text = "ENJOY MANAGEMENT";
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(3, 47);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(230, 100);
-            panel1.TabIndex = 4;
             // 
             // btnMinimizar
             // 
             btnMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMinimizar.Cursor = Cursors.Hand;
             btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
-            btnMinimizar.Location = new Point(1066, 12);
+            btnMinimizar.Location = new Point(1066, 7);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.Size = new Size(20, 20);
             btnMinimizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -316,7 +308,7 @@
             btnMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnMaximizar.Cursor = Cursors.Hand;
             btnMaximizar.Image = (Image)resources.GetObject("btnMaximizar.Image");
-            btnMaximizar.Location = new Point(1092, 12);
+            btnMaximizar.Location = new Point(1092, 7);
             btnMaximizar.Name = "btnMaximizar";
             btnMaximizar.Size = new Size(20, 20);
             btnMaximizar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -329,7 +321,7 @@
             btnRestaurar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRestaurar.Cursor = Cursors.Hand;
             btnRestaurar.Image = (Image)resources.GetObject("btnRestaurar.Image");
-            btnRestaurar.Location = new Point(1092, 12);
+            btnRestaurar.Location = new Point(1092, 7);
             btnRestaurar.Name = "btnRestaurar";
             btnRestaurar.Size = new Size(20, 20);
             btnRestaurar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -343,7 +335,7 @@
             btnCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCerrar.Cursor = Cursors.Hand;
             btnCerrar.Image = (Image)resources.GetObject("btnCerrar.Image");
-            btnCerrar.Location = new Point(1118, 12);
+            btnCerrar.Location = new Point(1118, 7);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(20, 20);
             btnCerrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -366,13 +358,12 @@
             panelContenedor.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pboxCerrarSesion).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pboxTareas).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pboxProyectos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pboxUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             panelBarraTitulo.PerformLayout();
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
@@ -398,11 +389,11 @@
         private Label lblApellido;
         private Label lblRol;
         private PictureBox pictureBox1;
-        private Panel panel1;
-        private PictureBox pboxTareas;
-        private PictureBox pboxProyectos;
-        private PictureBox pboxUsuarios;
-        private PictureBox pboxCerrarSesion;
         private Label label1;
+        private Panel panel2;
+        private DataGridView dataGridViewTareas;
+        private Label lblDGVtareas;
+        private Label lblDGVequipo;
+        private DataGridView dataGridViewEquipoProgramadores;
     }
 }

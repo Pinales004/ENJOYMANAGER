@@ -50,8 +50,8 @@
             // panelContenedor
             // 
             panelContenedor.BackColor = Color.Black;
-            panelContenedor.Controls.Add(panel1);
             panelContenedor.Controls.Add(dataGridView1);
+            panelContenedor.Controls.Add(panel1);
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(0, 0);
             panelContenedor.Name = "panelContenedor";
@@ -153,14 +153,18 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridView1.Location = new Point(12, 74);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(860, 384);
-            dataGridView1.TabIndex = 60;
+            dataGridView1.TabIndex = 62;
             // 
             // Frm_Usuarios
             // 
@@ -187,7 +191,6 @@
 
         private Panel panelContenedor;
         private Panel panel1;
-        public DataGridView dataGridView1;
         public Label TipoOperacion;
         public Label IdUsuario;
         private PictureBox btn_buscar;
@@ -196,5 +199,6 @@
         private PictureBox btn_editar;
         private PictureBox btn_eliminar;
         private PictureBox btn_agregar;
+        public DataGridView dataGridView1;
     }
 }

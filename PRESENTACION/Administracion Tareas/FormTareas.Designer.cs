@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTareas));
             panelContenedor = new Panel();
-            dataGridView1 = new DataGridView();
             panel1 = new Panel();
             btn_realizar = new PictureBox();
             btn_buscar = new PictureBox();
@@ -39,14 +38,15 @@
             btn_editar = new PictureBox();
             btn_eliminar = new PictureBox();
             btn_agregar = new PictureBox();
+            dataGridView1 = new DataGridView();
             panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btn_realizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panelContenedor
@@ -58,17 +58,6 @@
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(884, 461);
             panelContenedor.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 74);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(860, 384);
-            dataGridView1.TabIndex = 1;
             // 
             // panel1
             // 
@@ -179,6 +168,21 @@
             btn_agregar.MouseEnter += btn_agregar_MouseEnter;
             btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.Location = new Point(12, 74);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(860, 384);
+            dataGridView1.TabIndex = 62;
+            // 
             // FormTareas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -190,7 +194,6 @@
             Text = "FormTareas";
             Load += FormTareas_Load;
             panelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btn_realizar).EndInit();
@@ -198,6 +201,7 @@
             ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -211,7 +215,7 @@
         private PictureBox btn_editar;
         private PictureBox btn_eliminar;
         private PictureBox btn_agregar;
-        private DataGridView dataGridView1;
         private PictureBox btn_realizar;
+        public DataGridView dataGridView1;
     }
 }

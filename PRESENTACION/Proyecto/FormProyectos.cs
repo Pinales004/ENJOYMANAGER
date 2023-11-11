@@ -33,6 +33,8 @@ namespace PRESENTACION
             Proyectos cargar = new Proyectos();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetProyectos();
+            this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[2].Visible = false;
         }
 
         private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
@@ -86,7 +88,7 @@ namespace PRESENTACION
                 form.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
 
-               
+
                 // Establece la propiedad FormProyectos
                 form.FormProyectos = this;
                 // Llamar al método AbrirFormulario con el formulario FrmNuevoProyecto

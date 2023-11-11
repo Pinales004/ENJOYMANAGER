@@ -35,6 +35,8 @@ namespace PRESENTACION
             Usuario cargar = new Usuario();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetUsuarios();
+            this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[7].Visible = false;
         }
         private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {

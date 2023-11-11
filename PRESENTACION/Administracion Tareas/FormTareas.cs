@@ -74,8 +74,8 @@ namespace PRESENTACION
         {
             var form = new Frm_NuevaTarea();
             form.TipoOperacion = "Insertar";
-               CargarEstadoTarea(form);
-               ListadoProyectos(form);
+            CargarEstadoTarea(form);
+            ListadoProyectos(form);
             form.FormTareas = this; // Establece la propiedad FormTareas
 
             AbrirFormulario<Frm_NuevaTarea>(form);
@@ -104,6 +104,7 @@ namespace PRESENTACION
             Tareas cargar = new Tareas();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.CargarTareas();
+            this.dataGridView1.Columns[0].Visible=false;
         }
 
         #region btn_hover
@@ -149,7 +150,7 @@ namespace PRESENTACION
 
         #endregion
 
-       
+
 
         public void CargarEstadoTareaProgra(Frm_RealizarTarea form)
         {
@@ -210,9 +211,9 @@ namespace PRESENTACION
                 var frm = new Frm_RealizarTarea();
                 CargarEstadoTareaProgra(frm);
                 ListadoProyectosProgra(frm);
-               
+
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
-     
+
                 frm.TipoOperacion = "Editar";
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
 

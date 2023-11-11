@@ -36,37 +36,26 @@ namespace PRESENTACION
             {
                 lblRol.Text = "Administrador";
                 btnUsuarios.Visible = true;
-                pboxUsuarios.Visible = true;
-
                 btnProyectos.Visible = false;
-                pboxProyectos.Visible = false;
-
                 btnTareas.Visible = false;
-                pboxTareas.Visible = false;
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
             {
                 lblRol.Text = "Gerente";
                 btnUsuarios.Visible = false;
-                pboxUsuarios.Visible = false;
-
                 btnProyectos.Visible = true;
-                pboxProyectos.Visible = true;
-
                 btnTareas.Visible = true;
-                pboxTareas.Visible = true;
+                lblDGVequipo.Visible = true;
+                lblDGVtareas.Visible = true;
+                dataGridViewEquipoProgramadores.Visible = true;
+                dataGridViewTareas.Visible = true;
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
                 lblRol.Text = "Programador";
                 btnUsuarios.Visible = false;
-                pboxUsuarios.Visible = false;
-
                 btnProyectos.Visible = false;
-                pboxProyectos.Visible = false;
-
                 btnTareas.Visible = true;
-                pboxTareas.Visible = true;
             }
         }
 
