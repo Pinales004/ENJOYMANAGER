@@ -54,11 +54,13 @@
             this.EditarAnexo = new System.Windows.Forms.Button();
             this.bntNuevoAnexo = new System.Windows.Forms.Button();
             this.datagridAnexo = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescripcionTarea
@@ -96,6 +98,7 @@
             this.btn_limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_limpiar.TabIndex = 94;
             this.btn_limpiar.TabStop = false;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
             // btn_guardar
             // 
@@ -108,6 +111,7 @@
             this.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_guardar.TabIndex = 93;
             this.btn_guardar.TabStop = false;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_volver
             // 
@@ -120,6 +124,7 @@
             this.btn_volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btn_volver.TabIndex = 92;
             this.btn_volver.TabStop = false;
+            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
             // labelDescripcionTarea
             // 
@@ -355,7 +360,7 @@
             this.txtComentario.SelectionLength = 0;
             this.txtComentario.SelectionStart = 0;
             this.txtComentario.ShortcutsEnabled = true;
-            this.txtComentario.Size = new System.Drawing.Size(540, 234);
+            this.txtComentario.Size = new System.Drawing.Size(540, 66);
             this.txtComentario.TabIndex = 102;
             this.txtComentario.TabStop = false;
             this.txtComentario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -406,19 +411,30 @@
             // 
             // datagridAnexo
             // 
+            this.datagridAnexo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagridAnexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datagridAnexo.Location = new System.Drawing.Point(0, 13);
             this.datagridAnexo.Name = "datagridAnexo";
             this.datagridAnexo.RowTemplate.Height = 25;
-            this.datagridAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.datagridAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridAnexo.Size = new System.Drawing.Size(342, 179);
             this.datagridAnexo.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 486);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(540, 120);
+            this.dataGridView1.TabIndex = 104;
             // 
             // Frm_RealizarTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 711);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.materialLabel5);
@@ -442,11 +458,13 @@
             this.Controls.Add(this.txtNombreTarea);
             this.Name = "Frm_RealizarTarea";
             this.Text = "Frm_NuevaTarea";
+            this.Load += new System.EventHandler(this.Frm_RealizarTarea_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +496,6 @@
         private Button EditarAnexo;
         private Button bntNuevoAnexo;
         private DataGridView datagridAnexo;
+        private DataGridView dataGridView1;
     }
 }

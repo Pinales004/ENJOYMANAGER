@@ -21,12 +21,14 @@ namespace PRESENTACION.Administracion_Tareas
         public string TareaId;
         public Frm_RealizarTarea()
         {
+
             InitializeComponent();
             btn_icon_hover.AplicarFormaRedonda(btn_volver);
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
-            CargarAnexos();
+            
         }
+
         public FormTareas FormTareas { get; set; }
         FormTareas form = new FormTareas();
 
@@ -40,6 +42,7 @@ namespace PRESENTACION.Administracion_Tareas
         {
             EstadoTareas();
             ListadoProyectos();
+            CargarAnexos();
             txtNombreTarea.Enabled = false;
             txtDescripcionTarea.Enabled = false;
             CmbNombreProyecto.Enabled = false;
@@ -227,14 +230,25 @@ namespace PRESENTACION.Administracion_Tareas
         {
             AgregarAnexo fg = new AgregarAnexo(TareaId);
             fg.ShowDialog();
+            CargarAnexos();
         }
 
 
         public void CargarAnexos()
         {
             AnexoTarea cargar = new AnexoTarea();
-            this.datagridAnexo.AutoGenerateColumns = true;
+            this.datagridAnexo.AutoGenerateColumns = true; // Desactiva la generación automática de columnas
             this.datagridAnexo.DataSource = cargar.GetAnexosPorTarea(Convert.ToInt32(TareaId));
+
+            // Ocultar las columnas que no deseas mostrar
+            this.datagridAnexo.Columns["AnexoId"].Visible = true;
+            this.datagridAnexo.Columns["Documento"].Visible = false;
+
+            // Asegúrate de que las columnas "Nombre" y "Extension" estén visibles
+            this.datagridAnexo.Columns["Nombre"].Visible = true;
+            this.datagridAnexo.Columns["Extension"].Visible = true;
+            this.datagridAnexo.Columns["Borrado"].Visible = false;
+            this.datagridAnexo.Columns["TareaId"].Visible = false;
 
         }
         //Anexo
@@ -247,30 +261,46 @@ namespace PRESENTACION.Administracion_Tareas
         {
             if (datagridAnexo.SelectedRows.Count > 0)
             {
-                AnexoTarea Ver = new AnexoTarea();
-
-                int id = Convert.ToInt32(datagridAnexo.CurrentRow.Cells[0].Value.ToString());
-                Anexos Anexar = new Anexos(id);
-                var Lista = new List<Anexos>();
-                Lista = Ver.FiltroDocumentos(Anexar);
-                foreach (Anexos item in Lista)
+                try
                 {
-                    // carpeta temporal
-                    string direccion = AppDomain.CurrentDomain.BaseDirectory;
-                    string carpeta = direccion + "/temp/";
-                    string UbicacionCompleta = carpeta + item.Extension;
+                    AnexoTarea Ver = new AnexoTarea();
+                    int id = Convert.ToInt32(datagridAnexo.CurrentRow.Cells["AnexoId"].Value);
 
-                    if (!Directory.Exists(carpeta))
-                    {
-                        Directory.CreateDirectory(carpeta);
-                    }
-                    if (File.Exists(UbicacionCompleta))
-                    {
-                        File.Delete(UbicacionCompleta);
+                    Anexos Anexar = new Anexos(id);
+                    List<Anexos> Lista = Ver.FiltroDocumentos(Anexar);
 
+                    foreach (Anexos item in Lista)
+                    {
+                        // Carpeta temporal
+                        string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                        string carpeta = Path.Combine(direccion, "temp");
+                        string UbicacionCompleta = Path.Combine(carpeta, item.Extension);
+
+                        if (!Directory.Exists(carpeta))
+                        {
+                            Directory.CreateDirectory(carpeta);
+                        }
+
+                        // Verifica si el archivo ya existe y elimínalo si es necesario
+                        if (File.Exists(UbicacionCompleta))
+                        {
+                            File.Delete(UbicacionCompleta);
+                        }
+
+                        // Escribe el archivo
                         File.WriteAllBytes(UbicacionCompleta, item.Documento);
-                        Process.Start(UbicacionCompleta);
+
+                        // Abre el archivo con la aplicación predeterminada
+                        Process.Start(new ProcessStartInfo(UbicacionCompleta)
+                        {
+                            UseShellExecute = true
+                        });
                     }
+                }
+                catch (Exception ex)
+                {
+                    // Maneja las excepciones adecuadamente, por ejemplo, muestra un mensaje de error.
+                    MessageBox.Show("Error al abrir el archivo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

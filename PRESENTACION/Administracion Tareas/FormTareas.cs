@@ -18,6 +18,8 @@ namespace PRESENTACION
 {
     public partial class FormTareas : Form
     {
+
+        public string TareaId;
         public FormTareas()
         {
             InitializeComponent();
@@ -217,7 +219,9 @@ namespace PRESENTACION
                 frm.TipoOperacion = "Editar";
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
 
-                frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
+                TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
+
+                frm.TareaId = TareaId;
 
                 frm.txtNombreTarea.Text = selectedRow["NombreTarea"].ToString();
                 frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
