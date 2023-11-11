@@ -1,9 +1,11 @@
 ﻿using DATOS.Tareas;
 using DOMINIO.Models;
+using PRESENTACION.Administracion_Tareas.Anexo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -23,6 +25,7 @@ namespace PRESENTACION.Administracion_Tareas
             btn_icon_hover.AplicarFormaRedonda(btn_volver);
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
+            CargarAnexos();
         }
         public FormTareas FormTareas { get; set; }
         FormTareas form = new FormTareas();
@@ -218,5 +221,63 @@ namespace PRESENTACION.Administracion_Tareas
 
 
         }
+
+        #region Anexos
+        private void bntNuevoAnexo_Click(object sender, EventArgs e)
+        {
+            AgregarAnexo fg = new AgregarAnexo(TareaId);
+            fg.ShowDialog();
+        }
+
+
+        public void CargarAnexos()
+        {
+            AnexoTarea cargar = new AnexoTarea();
+            this.datagridAnexo.AutoGenerateColumns = true;
+            this.datagridAnexo.DataSource = cargar.GetAnexosPorTarea(Convert.ToInt32(TareaId));
+
+        }
+        //Anexo
+        private void EditarAnexo_Click(object sender, EventArgs e)
+        {
+            if (datagridAnexo.SelectedRows.Count > 0)
+            {
+                AnexoTarea Ver = new AnexoTarea();
+              
+                int id = Convert.ToInt32(datagridAnexo.CurrentRow.Cells[0].Value.ToString());
+                Anexos Anexar = new Anexos(id);
+                var Lista = new List<Anexos>();
+                Lista = Ver.FiltroDocumentos(Anexar);
+                foreach (Anexos item in Lista)
+                {
+                    // carpeta temporal
+                    string direccion = AppDomain.CurrentDomain.BaseDirectory;
+                    string carpeta = direccion + "/temp/";
+                    string UbicacionCompleta = carpeta + item.Extension;
+
+                    if (!Directory.Exists(carpeta))
+                    {
+                        Directory.CreateDirectory(carpeta);
+                    }
+                    if (File.Exists(UbicacionCompleta))
+                    {
+                        Directory.Delete(UbicacionCompleta);
+
+                        File.WriteAllBytes(UbicacionCompleta, item.Documento);
+                        Process.Start(UbicacionCompleta);
+                    }
+                }
+            }
+        }
+        #endregion
+  
+
+
+
+
+
+
+
+
     }
 }
