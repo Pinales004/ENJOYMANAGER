@@ -97,7 +97,7 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Anexo WHERE TareaId = @TareaId";
+                    command.CommandText = "SELECT * FROM Anexo WHERE TareaId = @TareaId and Borrado = 0";
                     command.CommandType = CommandType.Text;
 
                     // Agrega el parámetro y su valor

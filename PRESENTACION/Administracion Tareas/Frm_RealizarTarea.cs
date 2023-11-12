@@ -1,4 +1,5 @@
-﻿using DATOS.Tareas;
+﻿using Comun.Cache;
+using DATOS.Tareas;
 using DOMINIO.Models;
 using PRESENTACION.Administracion_Tareas.Anexo;
 using System;
@@ -19,6 +20,10 @@ namespace PRESENTACION.Administracion_Tareas
     {
         public String TipoOperacion = "Agregar";
         public string TareaId;
+
+        private bool modoEdicion = false;
+
+        public int ComentarioId;
         public Frm_RealizarTarea()
         {
 
@@ -43,6 +48,7 @@ namespace PRESENTACION.Administracion_Tareas
             EstadoTareas();
             ListadoProyectos();
             CargarAnexos();
+            CargarComentarios();
             txtNombreTarea.Enabled = false;
             txtDescripcionTarea.Enabled = false;
             CmbNombreProyecto.Enabled = false;
@@ -241,7 +247,7 @@ namespace PRESENTACION.Administracion_Tareas
             this.datagridAnexo.DataSource = cargar.GetAnexosPorTarea(Convert.ToInt32(TareaId));
 
             // Ocultar las columnas que no deseas mostrar
-            this.datagridAnexo.Columns["AnexoId"].Visible = true;
+            this.datagridAnexo.Columns["AnexoId"].Visible = false;
             this.datagridAnexo.Columns["Documento"].Visible = false;
 
             // Asegúrate de que las columnas "Nombre" y "Extension" estén visibles
@@ -252,10 +258,7 @@ namespace PRESENTACION.Administracion_Tareas
 
         }
         //Anexo
-        private void EditarAnexo_Click(object sender, EventArgs e)
-        {
-          
-        }
+
 
         private void bntVerAnexo_Click(object sender, EventArgs e)
         {
@@ -304,6 +307,150 @@ namespace PRESENTACION.Administracion_Tareas
                 }
             }
         }
+        private void EliminarAnexo_Click(object sender, EventArgs e)
+        {
+            AnexoTarea anexo = new AnexoTarea();
+            int anexoId = 0; 
+            if (datagridAnexo.SelectedRows.Count > 0)
+            {
+                // Obtén el anexo seleccionado
+                DataGridViewRow selectedRow = datagridAnexo.SelectedRows[0];
+                anexoId = (int)selectedRow.Cells["AnexoId"].Value; // Asume que "AnexoId" es el nombre de la columna con el ID del anexo
+
+                // Muestra un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este anexo?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Elimina el anexo
+                    anexo.SoftDeleteAnexo(anexoId);
+
+                    // Vuelve a cargar los anexos después de eliminar
+                    CargarAnexos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un anexo para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+
+
+
+
+        #endregion
+
+
+        #region Comentarios
+
+        public void CargarComentarios() {
+
+            ComentarioTarea comentarios = new ComentarioTarea();
+            this.dataGridComentarios.AutoGenerateColumns = true; // Desactiva la generación automática de columnas
+            this.dataGridComentarios.DataSource = comentarios.GetComentariosPorIdTarea(Convert.ToInt32(TareaId));
+
+            this.dataGridComentarios.Columns["Comentario"].Visible = true;
+            this.dataGridComentarios.Columns["IdUsuario"].Visible = false;
+            this.dataGridComentarios.Columns["FechaCreacion"].Visible = false;
+            this.dataGridComentarios.Columns["UsuarioCrea"].Visible = false;
+
+            this.dataGridComentarios.Columns["ComentarioTareaId"].Visible = false;
+            this.dataGridComentarios.Columns["TareaId"].Visible = false;
+            this.dataGridComentarios.Columns["Borrado"].Visible = false;
+
+        }
+
+        private void bntAgregarComentario_Click(object sender, EventArgs e)
+        {
+            ComentarioTarea comentario = new ComentarioTarea();
+            if (!string.IsNullOrWhiteSpace(this.txtComentario.Text))
+            {
+                if (modoEdicion && ComentarioId > 0)
+                {
+                    ComentariosTarea comentariosActualiza = new ComentariosTarea(Convert.ToInt32(ComentarioId),txtComentario.Text);
+                    // Estás en modo de edición, actualiza el comentario existente
+                    comentario.UpdateComentarioTarea(comentariosActualiza);
+                    CargarComentarios();
+
+                }
+                else
+                {
+                    ComentariosTarea comentarios = new ComentariosTarea(
+                         this.txtComentario.Text,
+                         Convert.ToInt32(TareaId),
+                         UserLoginCache.IdUsuario,
+                         DateTime.Now
+                         );
+
+                    comentario.InsertComentarioTarea(comentarios);
+                    CargarComentarios();
+
+
+                }
+                modoEdicion = false;
+                txtComentario.Text = "";
+
+            }
+
+        }
+
+
+        private void BtnEliminarComentario_Click(object sender, EventArgs e)
+        {
+            ComentarioTarea comentario = new ComentarioTarea();
+            if (dataGridComentarios.SelectedRows.Count > 0)
+            {
+                // Obtén el comentario seleccionado
+                DataGridViewRow selectedRow = dataGridComentarios.SelectedRows[0];
+                ComentarioId = (int)selectedRow.Cells["ComentarioTareaId"].Value; // Asume que "ComentarioTareaId" es el nombre de la columna con el ID del comentario
+
+                // Muestra un cuadro de diálogo de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas eliminar este comentario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Elimina el comentario
+                    comentario.SoftDeleteComentarioTarea(ComentarioId);
+
+                    // Vuelve a cargar los comentarios después de eliminar
+                    CargarComentarios();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un comentario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
+        private void bntEditarComentario_Click(object sender, EventArgs e)
+        {
+            if (dataGridComentarios.SelectedRows.Count > 0)
+            {
+                // Obtén la fila seleccionada
+                DataGridViewRow selectedRow = dataGridComentarios.SelectedRows[0];
+
+                // Asegúrate de que la columna "Comentario" existe en tu DataGridView y tiene el nombre correcto
+                if (selectedRow.Cells["Comentario"].Value != null)
+                {
+                    // Obtén el valor de la celda de la columna "Comentario"
+                    string comentario = selectedRow.Cells["Comentario"].Value.ToString();
+                    ComentarioId = (int)selectedRow.Cells["ComentarioTareaId"].Value;
+                    // Asigna el valor al TextBox
+                    txtComentario.Text = comentario;
+                    modoEdicion = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una fila en el DataGridView para llenar el TextBox.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+
 
 
 

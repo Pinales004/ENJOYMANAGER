@@ -51,16 +51,21 @@
             this.txtComentario = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bntVerAnexo = new System.Windows.Forms.Button();
-            this.EditarAnexo = new System.Windows.Forms.Button();
             this.bntNuevoAnexo = new System.Windows.Forms.Button();
             this.datagridAnexo = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnEliminarComentario = new System.Windows.Forms.Button();
+            this.bntEditarComentario = new System.Windows.Forms.Button();
+            this.bntAgregarComentario = new System.Windows.Forms.Button();
+            this.dataGridComentarios = new System.Windows.Forms.DataGridView();
+            this.EliminarAnexo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridComentarios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDescripcionTarea
@@ -118,7 +123,7 @@
             this.btn_volver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_volver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_volver.Image")));
-            this.btn_volver.Location = new System.Drawing.Point(12, 654);
+            this.btn_volver.Location = new System.Drawing.Point(12, 662);
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(45, 45);
             this.btn_volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -349,7 +354,7 @@
             this.txtComentario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtComentario.Depth = 0;
             this.txtComentario.HideSelection = true;
-            this.txtComentario.Location = new System.Drawing.Point(12, 414);
+            this.txtComentario.Location = new System.Drawing.Point(12, 22);
             this.txtComentario.MaxLength = 32767;
             this.txtComentario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtComentario.Name = "txtComentario";
@@ -360,7 +365,7 @@
             this.txtComentario.SelectionLength = 0;
             this.txtComentario.SelectionStart = 0;
             this.txtComentario.ShortcutsEnabled = true;
-            this.txtComentario.Size = new System.Drawing.Size(540, 66);
+            this.txtComentario.Size = new System.Drawing.Size(513, 61);
             this.txtComentario.TabIndex = 102;
             this.txtComentario.TabStop = false;
             this.txtComentario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -368,8 +373,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.EliminarAnexo);
             this.groupBox1.Controls.Add(this.bntVerAnexo);
-            this.groupBox1.Controls.Add(this.EditarAnexo);
             this.groupBox1.Controls.Add(this.bntNuevoAnexo);
             this.groupBox1.Controls.Add(this.datagridAnexo);
             this.groupBox1.Location = new System.Drawing.Point(570, 414);
@@ -381,23 +386,13 @@
             // 
             // bntVerAnexo
             // 
-            this.bntVerAnexo.Location = new System.Drawing.Point(173, 205);
+            this.bntVerAnexo.Location = new System.Drawing.Point(87, 205);
             this.bntVerAnexo.Name = "bntVerAnexo";
             this.bntVerAnexo.Size = new System.Drawing.Size(75, 23);
             this.bntVerAnexo.TabIndex = 3;
             this.bntVerAnexo.Text = "Ver Archivo";
             this.bntVerAnexo.UseVisualStyleBackColor = true;
             this.bntVerAnexo.Click += new System.EventHandler(this.bntVerAnexo_Click);
-            // 
-            // EditarAnexo
-            // 
-            this.EditarAnexo.Location = new System.Drawing.Point(87, 205);
-            this.EditarAnexo.Name = "EditarAnexo";
-            this.EditarAnexo.Size = new System.Drawing.Size(75, 23);
-            this.EditarAnexo.TabIndex = 2;
-            this.EditarAnexo.Text = "Editar";
-            this.EditarAnexo.UseVisualStyleBackColor = true;
-            this.EditarAnexo.Click += new System.EventHandler(this.EditarAnexo_Click);
             // 
             // bntNuevoAnexo
             // 
@@ -420,23 +415,78 @@
             this.datagridAnexo.Size = new System.Drawing.Size(342, 179);
             this.datagridAnexo.TabIndex = 0;
             // 
-            // dataGridView1
+            // groupBox2
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 486);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 120);
-            this.dataGridView1.TabIndex = 104;
+            this.groupBox2.Controls.Add(this.BtnEliminarComentario);
+            this.groupBox2.Controls.Add(this.bntEditarComentario);
+            this.groupBox2.Controls.Add(this.bntAgregarComentario);
+            this.groupBox2.Controls.Add(this.dataGridComentarios);
+            this.groupBox2.Controls.Add(this.txtComentario);
+            this.groupBox2.Location = new System.Drawing.Point(15, 414);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(525, 242);
+            this.groupBox2.TabIndex = 104;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // BtnEliminarComentario
+            // 
+            this.BtnEliminarComentario.Location = new System.Drawing.Point(186, 214);
+            this.BtnEliminarComentario.Name = "BtnEliminarComentario";
+            this.BtnEliminarComentario.Size = new System.Drawing.Size(75, 23);
+            this.BtnEliminarComentario.TabIndex = 106;
+            this.BtnEliminarComentario.Text = "Eliminar";
+            this.BtnEliminarComentario.UseVisualStyleBackColor = true;
+            this.BtnEliminarComentario.Click += new System.EventHandler(this.BtnEliminarComentario_Click);
+            // 
+            // bntEditarComentario
+            // 
+            this.bntEditarComentario.Location = new System.Drawing.Point(105, 214);
+            this.bntEditarComentario.Name = "bntEditarComentario";
+            this.bntEditarComentario.Size = new System.Drawing.Size(75, 23);
+            this.bntEditarComentario.TabIndex = 105;
+            this.bntEditarComentario.Text = "Editar";
+            this.bntEditarComentario.UseVisualStyleBackColor = true;
+            this.bntEditarComentario.Click += new System.EventHandler(this.bntEditarComentario_Click);
+            // 
+            // bntAgregarComentario
+            // 
+            this.bntAgregarComentario.Location = new System.Drawing.Point(16, 215);
+            this.bntAgregarComentario.Name = "bntAgregarComentario";
+            this.bntAgregarComentario.Size = new System.Drawing.Size(75, 23);
+            this.bntAgregarComentario.TabIndex = 104;
+            this.bntAgregarComentario.Text = "Agregar";
+            this.bntAgregarComentario.UseVisualStyleBackColor = true;
+            this.bntAgregarComentario.Click += new System.EventHandler(this.bntAgregarComentario_Click);
+            // 
+            // dataGridComentarios
+            // 
+            this.dataGridComentarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridComentarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridComentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridComentarios.Location = new System.Drawing.Point(12, 89);
+            this.dataGridComentarios.Name = "dataGridComentarios";
+            this.dataGridComentarios.RowTemplate.Height = 25;
+            this.dataGridComentarios.Size = new System.Drawing.Size(507, 120);
+            this.dataGridComentarios.TabIndex = 103;
+            // 
+            // EliminarAnexo
+            // 
+            this.EliminarAnexo.Location = new System.Drawing.Point(168, 205);
+            this.EliminarAnexo.Name = "EliminarAnexo";
+            this.EliminarAnexo.Size = new System.Drawing.Size(75, 23);
+            this.EliminarAnexo.TabIndex = 4;
+            this.EliminarAnexo.Text = "Eliminar";
+            this.EliminarAnexo.UseVisualStyleBackColor = true;
+            this.EliminarAnexo.Click += new System.EventHandler(this.EliminarAnexo_Click);
             // 
             // Frm_RealizarTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 711);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
             this.Controls.Add(this.CmbNombreProyecto);
@@ -464,7 +514,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridComentarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,9 +544,13 @@
         public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtComentario;
         private GroupBox groupBox1;
         private Button bntVerAnexo;
-        private Button EditarAnexo;
         private Button bntNuevoAnexo;
         private DataGridView datagridAnexo;
-        private DataGridView dataGridView1;
+        private GroupBox groupBox2;
+        private Button BtnEliminarComentario;
+        private Button bntEditarComentario;
+        private Button bntAgregarComentario;
+        private DataGridView dataGridComentarios;
+        private Button EliminarAnexo;
     }
 }

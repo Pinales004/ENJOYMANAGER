@@ -24,7 +24,7 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT ComentarioTareaId, Comentario FROM ComentarioTarea WHERE TareaId = @TareaId";
+                    command.CommandText = "SELECT * FROM ComentariosTASK_vw_ENJOY WHERE TareaId = @TareaId";
                     command.CommandType = CommandType.Text;
 
                     // Agrega el parámetro y su valor
@@ -38,6 +38,8 @@ namespace DOMINIO.Models
                             {
                                 ComentarioTareaId = (int)reader["ComentarioTareaId"],
                                 Comentario = reader["Comentario"].ToString(),
+                                FechaCreacion = (DateTime)reader["FechaCreacion"],
+                                UsuarioCrea = reader["UsuarioCrea"].ToString(),
                                 TareaId = (int)reader["TareaId"]
                             };
 
@@ -68,13 +70,15 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO ComentarioTarea (Comentario, TareaId) " +
-                                        "VALUES (@Comentario, @TareaId)";
+                    command.CommandText = "INSERT INTO ComentarioTarea (Comentario,FechaCreacion,TareaId,IdUsuario) " +
+                                        "VALUES (@Comentario,@FechaCreacion,@TareaId,@IdUsuario)";
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
                     command.Parameters.Add(new SqlParameter("@Comentario", comentarioTarea.Comentario));
+                    command.Parameters.Add(new SqlParameter("@FechaCreacion", comentarioTarea.FechaCreacion));
                     command.Parameters.Add(new SqlParameter("@TareaId", comentarioTarea.TareaId));
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", comentarioTarea.IdUsuario));
 
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
@@ -91,21 +95,20 @@ namespace DOMINIO.Models
                 {
                     command.Connection = connection;
                     command.CommandText = "UPDATE ComentarioTarea " +
-                                        "SET Comentario = @Comentario, TareaId = @TareaId, Borrado = @Borrado " +
+                                        "SET Comentario = @Comentario " + // Espacio agregado aquí
                                         "WHERE ComentarioTareaId = @ComentarioTareaId";
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
                     command.Parameters.Add(new SqlParameter("@ComentarioTareaId", comentarioTarea.ComentarioTareaId));
                     command.Parameters.Add(new SqlParameter("@Comentario", comentarioTarea.Comentario));
-                    command.Parameters.Add(new SqlParameter("@TareaId", comentarioTarea.TareaId));
-                    command.Parameters.Add(new SqlParameter("@Borrado", comentarioTarea.Borrado));
 
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
                 }
             }
         }
+
 
         public void SoftDeleteComentarioTarea(int comentarioTareaId)
         {
