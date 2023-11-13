@@ -34,12 +34,14 @@ namespace DATOS.Conexion
                             UserLoginCache.IdUsuario = reader.GetInt32(0);
                             UserLoginCache.UsuarioNombre = reader.GetString(1);
                             UserLoginCache.Nombres = reader.GetString(2);
-                            UserLoginCache.Apellido = reader.GetString(3);
+                            UserLoginCache.Apellidos = reader.GetString(3);
                             UserLoginCache.Sexo = reader.GetBoolean(4);
                             UserLoginCache.EmailUsuario = reader.GetString(5);
                             UserLoginCache.ContrasenaUsuario = reader.GetString(6);
-                            UserLoginCache.RolUsuario = reader.GetInt32(7);
-                            UserLoginCache.Activo = reader.GetBoolean(8);
+                            UserLoginCache.ResetPasword = reader.GetBoolean(7);
+                            UserLoginCache.RolUsuario = reader.GetInt32(8);
+                            UserLoginCache.EstadoUsuario = reader.GetInt32(9);
+                            UserLoginCache.Borrado = reader.GetBoolean(10);
                         }
 
                         int intento = GetFailedLoginAttempts(user);
@@ -120,7 +122,7 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE Usuario SET Activo = 0 WHERE UsuarioNombre = @user";
+                    command.CommandText = "UPDATE Usuario SET UsuarioEstado = 4 WHERE UsuarioNombre = @user";
                     command.Parameters.AddWithValue("@user", user);
                     command.ExecuteNonQuery();
                 }
@@ -154,7 +156,7 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT Activo FROM Usuario WHERE UsuarioNombre = @user";
+                    command.CommandText = "SELECT EstadoUsuario FROM Usuario WHERE UsuarioNombre = @user";
                     command.Parameters.AddWithValue("@user", user);
                     var result = command.ExecuteScalar();
 
