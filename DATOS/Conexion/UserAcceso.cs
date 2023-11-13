@@ -193,7 +193,31 @@ namespace DATOS.Conexion
 
             return table;
         }
-        public void InsertUsuario(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+
+        public DataTable CargarEstado()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM UsuarioEstado";
+                    command.CommandType = CommandType.Text;
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        table.Load(reader);
+                    }
+                }
+            }
+
+            return table;
+        }
+        public void InsertUsuario(string UsuarioNombre, string nombres, string apellidos, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario)
         {
             using (var connection = GETConexionSQL())
             {
@@ -202,19 +226,19 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO Usuario (UsuarioNombre, Nombres, Apellido, Sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, Activo) " +
-                                        "VALUES (@UsuarioNombre, @Nombres, @Apellido, @Sexo, @EmailUsuario, @ContrasenaUsuario, @RolUsuario, @Activo)";
+                    command.CommandText = "INSERT INTO Usuario (UsuarioNombre, Nombres, Apellidos, Sexo, EmailUsuario, ContrasenaUsuario, RolUsuario,EstadoUsuario) " +
+                                        "VALUES (@UsuarioNombre, @Nombres, @Apellidos, @Sexo, @EmailUsuario, @ContrasenaUsuario, @RolUsuario, @EstadoUsuario)";
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
                     command.Parameters.Add(new SqlParameter("@UsuarioNombre", UsuarioNombre));
                     command.Parameters.Add(new SqlParameter("@Nombres", nombres));
-                    command.Parameters.Add(new SqlParameter("@Apellido", apellido));
+                    command.Parameters.Add(new SqlParameter("@Apellidos", apellidos));
                     command.Parameters.Add(new SqlParameter("@Sexo", sexo));
                     command.Parameters.Add(new SqlParameter("@EmailUsuario", EmailUsuario));
                     command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
-                    command.Parameters.Add(new SqlParameter("@Activo", Activo));
+                    command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
 
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
@@ -250,7 +274,7 @@ namespace DATOS.Conexion
             }
             return table;
         }
-        public void EditarUsuario(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, bool Activo)
+        public void EditarUsuario(int IdUsuario, string UsuarioNombre, string nombres, string apellidos, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario)
         {
             using (var connection = GETConexionSQL())
             {
@@ -262,12 +286,12 @@ namespace DATOS.Conexion
                     command.CommandText = "UPDATE Usuario " +
                                         "SET UsuarioNombre = @UsuarioNombre, " +
                                         "Nombres = @Nombres, " +
-                                        "Apellido = @Apellido, " +
+                                        "Apellidos = @Apellidos, " +
                                         "Sexo = @Sexo, " +
                                         "EmailUsuario = @EmailUsuario, " +
                                         "ContrasenaUsuario = @ContrasenaUsuario, " +
                                         "RolUsuario = @RolUsuario, " +
-                                        "Activo = @Activo " +
+                                        "EstadoUsuario = @EstadoUsuario " +
                                         "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
                     command.CommandType = CommandType.Text;
 
@@ -275,12 +299,12 @@ namespace DATOS.Conexion
                     command.Parameters.Add(new SqlParameter("@IdUsuario", IdUsuario));
                     command.Parameters.Add(new SqlParameter("@UsuarioNombre", UsuarioNombre));
                     command.Parameters.Add(new SqlParameter("@Nombres", nombres));
-                    command.Parameters.Add(new SqlParameter("@Apellido", apellido));
+                    command.Parameters.Add(new SqlParameter("@Apellidos", apellidos));
                     command.Parameters.Add(new SqlParameter("@Sexo", sexo));
                     command.Parameters.Add(new SqlParameter("@EmailUsuario", EmailUsuario));
                     command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
-                    command.Parameters.Add(new SqlParameter("@Activo", Activo));
+                    command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
 
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
@@ -295,8 +319,9 @@ namespace DATOS.Conexion
 
                 using (var command = new SqlCommand())
                 {
+                    
                     command.Connection = connection;
-                    command.CommandText = "DELETE FROM Usuario WHERE IdUsuario = @IdUsuario";
+                    command.CommandText = "UPDATE Usuario SET Borrado = 1 WHERE IdUsuario = @IdUsuario";
                     command.CommandType = CommandType.Text;
 
                     // Agrega el parámetro para el IdUsuario

@@ -36,7 +36,9 @@ namespace PRESENTACION
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.GetUsuarios();
             this.dataGridView1.Columns[0].Visible = false;
-            this.dataGridView1.Columns[7].Visible = false;
+            this.dataGridView1.Columns[6].Visible = false;
+            this.dataGridView1.Columns[8].Visible = false;
+            this.dataGridView1.Columns[10].Visible = false;
         }
         private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
         {
@@ -73,15 +75,17 @@ namespace PRESENTACION
             {
                 var frm = new Frm_NuevoUsuario();
                 frm.TipoOperacion = "Editar";
-                frm.IdUsuario = dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString();
 
-                frm.txtNombreUsuario.Text = dataGridView1.CurrentRow.Cells["UsuarioNombre"].Value.ToString();
-                frm.txtNombre.Text = dataGridView1.CurrentRow.Cells["Nombres"].Value.ToString();
-                frm.txtApellido.Text = dataGridView1.CurrentRow.Cells["Apellido"].Value.ToString();
-                frm.txtEmail.Text = dataGridView1.CurrentRow.Cells["EmailUsuario"].Value.ToString();
-                //frm.TxtContrasena.Text = dataGridView1.CurrentRow.Cells["ContrasenaUsuario"].Value.ToString();
-                frm.cmbGenero.SelectedValue = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                frm.cmbRol.SelectedValue = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                // Obtén los valores de la fila seleccionada en el DataGridView
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                frm.IdUsuario = selectedRow.Cells["IdUsuario"].Value.ToString();
+                frm.txtNombreUsuario.Text = selectedRow.Cells["UsuarioNombre"].Value.ToString();
+                frm.txtNombre.Text = selectedRow.Cells["Nombres"].Value.ToString();
+                frm.txtApellido.Text = selectedRow.Cells["Apellidos"].Value.ToString();
+                frm.txtEmail.Text = selectedRow.Cells["EmailUsuario"].Value.ToString();
+                frm.cmbGenero.Text = selectedRow.Cells["Genero"].Value.ToString(); // Establecer el valor en el ComboBox
+                frm.cmbRol.SelectedValue = Convert.ToInt32(selectedRow.Cells["IdUsuarioRol"].Value.ToString());
+                frm.CboEstadoUsuario.SelectedValue = Convert.ToInt32(selectedRow.Cells["IdUsuarioEstado"].Value);
                 //CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
 
                 // Establece la propiedad FormUsuarios

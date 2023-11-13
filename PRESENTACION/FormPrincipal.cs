@@ -30,7 +30,7 @@ namespace PRESENTACION
         private void LoadUserData()
         {
             lblNombre.Text = UserLoginCache.Nombres;
-            lblApellido.Text = UserLoginCache.Apellido;
+            lblApellido.Text = UserLoginCache.Apellidos;
 
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Administrador)
             {

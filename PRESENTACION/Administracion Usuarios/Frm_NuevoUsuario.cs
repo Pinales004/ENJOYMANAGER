@@ -34,6 +34,7 @@ namespace PRESENTACION.Administracion_Usuarios
         {
             ListarRoles();
             LLnearCombroboxGnero();
+            ListarEstados();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -95,6 +96,10 @@ namespace PRESENTACION.Administracion_Usuarios
                 {
                     MessageBox.Show("Debe seleccionar un rol de usuario.");
                 }
+                else if (CboEstadoUsuario.SelectedItem == null)
+                {
+                    MessageBox.Show("Debe seleccionar un Estado de usuario.");
+                }
                 else
                 {
                     // Calcular el hash SHA-256 de la contraseña antes de almacenarla
@@ -110,7 +115,7 @@ namespace PRESENTACION.Administracion_Usuarios
                         txtEmail.Text,
                         contraseñaHash,  // Almacenar el hash en la base de datos
                         Convert.ToInt32(cmbRol.SelectedValue),
-                        Convert.ToBoolean(CheckActivo.Checked)
+                        Convert.ToInt32(CboEstadoUsuario.SelectedValue)
                     );
                     form.CargarUsuarios();
                     // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
@@ -136,7 +141,7 @@ namespace PRESENTACION.Administracion_Usuarios
                     txtEmail.Text,
                     nuevaContraseñaHash,  // Almacenar el nuevo hash en la base de datos
                     Convert.ToInt32(cmbRol.SelectedValue),
-                    Convert.ToBoolean(CheckActivo.Checked)
+                    Convert.ToInt32(CboEstadoUsuario.SelectedValue)
                 );
                 form.CargarUsuarios();
                 // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
@@ -159,8 +164,6 @@ namespace PRESENTACION.Administracion_Usuarios
             txtEmail.Text = "";
             txtContraseña.Text = "";
             txtContraseña2.Text = "";
-            cmbGenero.SelectedIndex = -1;
-            cmbRol.SelectedIndex = -1;
             this.CheckActivo.Checked = false;
         }
         private void ListarRoles()
@@ -170,6 +173,15 @@ namespace PRESENTACION.Administracion_Usuarios
             cmbRol.DataSource = cargar.GetRoles();
             cmbRol.DisplayMember = "Rol";
             cmbRol.ValueMember = "IdUsuarioRol";
+        }
+
+        private void ListarEstados()
+        {
+            Usuario cargar = new Usuario();
+
+            CboEstadoUsuario.DataSource = cargar.GetEstados();
+            CboEstadoUsuario.DisplayMember = "Estado";
+            CboEstadoUsuario.ValueMember = "IdUsuarioEstado";
         }
         private void LLnearCombroboxGnero()
         {
