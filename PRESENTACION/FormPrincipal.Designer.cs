@@ -37,12 +37,12 @@
             lblDGVequipo = new Label();
             dataGridViewEquipoProgramadores = new DataGridView();
             dataGridViewTareas = new DataGridView();
-            lblNombre = new Label();
-            lblApellido = new Label();
-            lblRol = new Label();
-            pictureBox1 = new PictureBox();
             panelBarraTitulo = new Panel();
             panel2 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            lblApellido = new Label();
+            lblNombre = new Label();
+            lblRol = new Label();
             btnUsuarios = new Button();
             btnProyectos = new Button();
             btnTareas = new Button();
@@ -55,9 +55,9 @@
             panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBarraTitulo.SuspendLayout();
             panel2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
@@ -105,15 +105,11 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(0, 122, 204);
+            panelMenu.BackColor = Color.Gainsboro;
             panelMenu.Controls.Add(lblDGVtareas);
             panelMenu.Controls.Add(lblDGVequipo);
             panelMenu.Controls.Add(dataGridViewEquipoProgramadores);
             panelMenu.Controls.Add(dataGridViewTareas);
-            panelMenu.Controls.Add(lblNombre);
-            panelMenu.Controls.Add(lblApellido);
-            panelMenu.Controls.Add(lblRol);
-            panelMenu.Controls.Add(pictureBox1);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 60);
             panelMenu.Name = "panelMenu";
@@ -123,7 +119,7 @@
             // lblDGVtareas
             // 
             lblDGVtareas.AutoSize = true;
-            lblDGVtareas.Location = new Point(12, 310);
+            lblDGVtareas.Location = new Point(12, 212);
             lblDGVtareas.Name = "lblDGVtareas";
             lblDGVtareas.Size = new Size(108, 15);
             lblDGVtareas.TabIndex = 11;
@@ -133,7 +129,7 @@
             // lblDGVequipo
             // 
             lblDGVequipo.AutoSize = true;
-            lblDGVequipo.Location = new Point(12, 120);
+            lblDGVequipo.Location = new Point(12, 13);
             lblDGVequipo.Name = "lblDGVequipo";
             lblDGVequipo.Size = new Size(213, 15);
             lblDGVequipo.TabIndex = 10;
@@ -143,7 +139,7 @@
             // dataGridViewEquipoProgramadores
             // 
             dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEquipoProgramadores.Location = new Point(12, 138);
+            dataGridViewEquipoProgramadores.Location = new Point(12, 31);
             dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
             dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
             dataGridViewEquipoProgramadores.Size = new Size(365, 150);
@@ -153,52 +149,12 @@
             // dataGridViewTareas
             // 
             dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTareas.Location = new Point(12, 328);
+            dataGridViewTareas.Location = new Point(12, 230);
             dataGridViewTareas.Name = "dataGridViewTareas";
             dataGridViewTareas.RowTemplate.Height = 25;
             dataGridViewTareas.Size = new Size(365, 150);
             dataGridViewTareas.TabIndex = 8;
             dataGridViewTareas.Visible = false;
-            // 
-            // lblNombre
-            // 
-            lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNombre.Location = new Point(124, 65);
-            lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(69, 16);
-            lblNombre.TabIndex = 7;
-            lblNombre.Text = "nombre/s";
-            // 
-            // lblApellido
-            // 
-            lblApellido.AutoSize = true;
-            lblApellido.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblApellido.Location = new Point(124, 38);
-            lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(63, 16);
-            lblApellido.TabIndex = 6;
-            lblApellido.Text = "apellidos";
-            // 
-            // lblRol
-            // 
-            lblRol.AutoSize = true;
-            lblRol.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblRol.Location = new Point(124, 13);
-            lblRol.Name = "lblRol";
-            lblRol.Size = new Size(25, 16);
-            lblRol.TabIndex = 5;
-            lblRol.Text = "rol";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(94, 97);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // panelBarraTitulo
             // 
@@ -219,6 +175,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.ControlDarkDark;
+            panel2.Controls.Add(flowLayoutPanel1);
             panel2.Controls.Add(btnCerrarSesion);
             panel2.Controls.Add(btnUsuarios);
             panel2.Controls.Add(btnProyectos);
@@ -228,6 +185,51 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1150, 30);
             panel2.TabIndex = 9;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(lblApellido);
+            flowLayoutPanel1.Controls.Add(lblNombre);
+            flowLayoutPanel1.Controls.Add(lblRol);
+            flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
+            flowLayoutPanel1.ForeColor = Color.Gainsboro;
+            flowLayoutPanel1.Location = new Point(383, 7);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(659, 24);
+            flowLayoutPanel1.TabIndex = 8;
+            // 
+            // lblApellido
+            // 
+            lblApellido.AutoSize = true;
+            lblApellido.BorderStyle = BorderStyle.FixedSingle;
+            lblApellido.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblApellido.Location = new Point(591, 0);
+            lblApellido.Name = "lblApellido";
+            lblApellido.Size = new Size(65, 18);
+            lblApellido.TabIndex = 6;
+            lblApellido.Text = "apellidos";
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.BorderStyle = BorderStyle.FixedSingle;
+            lblNombre.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Location = new Point(514, 0);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(71, 18);
+            lblNombre.TabIndex = 7;
+            lblNombre.Text = "nombre/s";
+            // 
+            // lblRol
+            // 
+            lblRol.AutoSize = true;
+            lblRol.BorderStyle = BorderStyle.FixedSingle;
+            lblRol.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRol.Location = new Point(481, 0);
+            lblRol.Name = "lblRol";
+            lblRol.Size = new Size(27, 18);
+            lblRol.TabIndex = 5;
+            lblRol.Text = "rol";
             // 
             // btnUsuarios
             // 
@@ -360,10 +362,11 @@
             panelMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             panelBarraTitulo.PerformLayout();
             panel2.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
@@ -388,12 +391,12 @@
         private Label lblNombre;
         private Label lblApellido;
         private Label lblRol;
-        private PictureBox pictureBox1;
         private Label label1;
         private Panel panel2;
         private DataGridView dataGridViewTareas;
         private Label lblDGVtareas;
         private Label lblDGVequipo;
         private DataGridView dataGridViewEquipoProgramadores;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

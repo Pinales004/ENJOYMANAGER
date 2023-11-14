@@ -110,24 +110,6 @@ namespace PRESENTACION.Proyecto
             cmbEstadoProyecto.SelectedIndex = -1;
         }
 
-        private void AbrirFormulario<MiForm>(MiForm form) where MiForm : Form, new()
-        {
-            Form formulario;
-            formulario = Application.OpenForms.OfType<MiForm>().FirstOrDefault();
-
-            if (formulario == null)
-            {
-                formulario = form; // Utiliza la instancia del formulario que pasaste como argumento
-                formulario.FormBorderStyle = FormBorderStyle.None;
-                formulario.StartPosition = FormStartPosition.CenterScreen;
-                formulario.ShowDialog(); // Mostrar el formulario de manera modal
-            }
-            else
-            {
-                formulario.BringToFront();
-            }
-        }
-
         #region botones
         private void btn_limpiar_Click(object sender, EventArgs e)
         {

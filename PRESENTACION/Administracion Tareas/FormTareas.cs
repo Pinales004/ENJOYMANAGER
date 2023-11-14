@@ -191,7 +191,7 @@ namespace PRESENTACION
                 frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
                 frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
-                frm.txtDescripcionTarea.Text = selectedRow["Descripcion"].ToString();
+                frm.txtDescripcionTarea.Text = selectedRow["DescripcionTarea"].ToString();
                 frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
 
@@ -227,7 +227,7 @@ namespace PRESENTACION
                 frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
                 frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
-                frm.txtDescripcionTarea.Text = selectedRow["Descripcion"].ToString();
+                frm.txtDescripcionTarea.Text = selectedRow["DescripcionTarea"].ToString();
                 frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
 

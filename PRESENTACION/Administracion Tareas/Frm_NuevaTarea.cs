@@ -15,7 +15,7 @@ namespace PRESENTACION.Administracion_Tareas
 {
     public partial class Frm_NuevaTarea : Form
     {
-        public String TipoOperacion = "Agregar";
+        public String TipoOperacion = "Insertar";
         public string TareaId;
         public Frm_NuevaTarea()
         {
@@ -82,7 +82,6 @@ namespace PRESENTACION.Administracion_Tareas
         {
             // Limpia los campos del formulario para futuras entradas
             txtNombreTarea.Text = "";
-            txtDescripcionTarea.Text = "";
             txtDescripcionTarea.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
             dateTimePickerEntrega.Value = DateTime.Now;
@@ -156,7 +155,7 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (TipoOperacion == "Agregar")
+            if (TipoOperacion == "Insertar")
             {
 
                 // Realiza las validaciones necesarias en la capa de presentación
