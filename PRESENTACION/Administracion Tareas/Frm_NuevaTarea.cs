@@ -85,6 +85,7 @@ namespace PRESENTACION.Administracion_Tareas
             txtDescripcionTarea.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
             dateTimePickerEntrega.Value = DateTime.Now;
+            CmbNombreProyecto.SelectedIndex = -1;
             cmbEstadoTarea.SelectedIndex = -1;
             cmbResponsableTarea.SelectedIndex = -1;
         }
@@ -157,12 +158,30 @@ namespace PRESENTACION.Administracion_Tareas
         {
             if (TipoOperacion == "Insertar")
             {
-
                 // Realiza las validaciones necesarias en la capa de presentación
                 if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
                 {
-                    MessageBox.Show("El nombre de la tarea es obligatorio.");
-                    return; // Detener la operación de guardar
+                    MostrarError("Debe ingresar un nombre para la tarea.");
+                }
+                else if (string.IsNullOrWhiteSpace(txtDescripcionTarea.Text))
+                {
+                    MostrarError("Debe ingresar una descripción de tarea.");
+                }
+                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+                {
+                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                }
+                else if (cmbEstadoTarea.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un estado para la tarea.");
+                }
+                else if (CmbNombreProyecto.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un proyecto para la tarea.");
+                }
+                else if (cmbResponsableTarea.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un responsable para la tarea.");
                 }
                 else
                 {
@@ -188,23 +207,39 @@ namespace PRESENTACION.Administracion_Tareas
 
             }else if (TipoOperacion == "Editar")
             {
-              
-                Tareas cargar = new Tareas();
-                TareasProyecto ActualizarTarea = new TareasProyecto
-                    (
-                        Convert.ToInt32(TareaId),
-                        Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
-                        Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
-                        Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
-                        txtNombreTarea.Text,
-                        txtDescripcionTarea.Text,
-                        dateTimePickerInicio.Value,
-                        dateTimePickerEntrega.Value
-                    ) ;
+                if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
+                {
+                    MostrarError("Debe ingresar un nombre para la tarea.");
+                }
+                else if (string.IsNullOrWhiteSpace(txtDescripcionTarea.Text))
+                {
+                    MostrarError("Debe ingresar una descripción de tarea.");
+                }
+                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+                {
+                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                }
+                else if (cmbEstadoTarea.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un estado para la tarea.");
+                }
+                else if (CmbNombreProyecto.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un proyecto para la tarea.");
+                }
+                else if (cmbResponsableTarea.SelectedIndex == -1)
+                {
+                    MostrarError("Debe seleccionar un responsable para la tarea.");
+                }
+                else
+                {
+                    Tareas cargar = new Tareas();
+                    int tareaId = Convert.ToInt32(TareaId);
+                    int nuevoEstadoTareaId = Convert.ToInt32(cmbEstadoTarea.SelectedValue);
 
-                cargar.UpdateTarea(ActualizarTarea);
+                    cargar.UpdateEstadoTarea(tareaId, nuevoEstadoTareaId);
 
-
+                }
             }
 
             form.CargarTareas();
@@ -217,6 +252,11 @@ namespace PRESENTACION.Administracion_Tareas
             this.Hide();
 
 
+        }
+
+        private void MostrarError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

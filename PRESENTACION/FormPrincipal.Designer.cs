@@ -32,11 +32,6 @@
             btnCerrarSesion = new Button();
             panelContenedor = new Panel();
             panelFormularios = new Panel();
-            panelMenu = new Panel();
-            lblDGVtareas = new Label();
-            lblDGVequipo = new Label();
-            dataGridViewEquipoProgramadores = new DataGridView();
-            dataGridViewTareas = new DataGridView();
             panelBarraTitulo = new Panel();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -52,9 +47,6 @@
             btnRestaurar = new PictureBox();
             btnCerrar = new PictureBox();
             panelContenedor.SuspendLayout();
-            panelMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
             panelBarraTitulo.SuspendLayout();
             panel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -86,7 +78,6 @@
             // 
             panelContenedor.BackColor = SystemColors.ActiveCaption;
             panelContenedor.Controls.Add(panelFormularios);
-            panelContenedor.Controls.Add(panelMenu);
             panelContenedor.Controls.Add(panelBarraTitulo);
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(0, 0);
@@ -98,63 +89,10 @@
             // 
             panelFormularios.BackColor = Color.FromArgb(15, 15, 15);
             panelFormularios.Dock = DockStyle.Fill;
-            panelFormularios.Location = new Point(383, 60);
+            panelFormularios.Location = new Point(0, 60);
             panelFormularios.Name = "panelFormularios";
-            panelFormularios.Size = new Size(767, 490);
+            panelFormularios.Size = new Size(1150, 490);
             panelFormularios.TabIndex = 0;
-            // 
-            // panelMenu
-            // 
-            panelMenu.BackColor = Color.Gainsboro;
-            panelMenu.Controls.Add(lblDGVtareas);
-            panelMenu.Controls.Add(lblDGVequipo);
-            panelMenu.Controls.Add(dataGridViewEquipoProgramadores);
-            panelMenu.Controls.Add(dataGridViewTareas);
-            panelMenu.Dock = DockStyle.Left;
-            panelMenu.Location = new Point(0, 60);
-            panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(383, 490);
-            panelMenu.TabIndex = 1;
-            // 
-            // lblDGVtareas
-            // 
-            lblDGVtareas.AutoSize = true;
-            lblDGVtareas.Location = new Point(12, 212);
-            lblDGVtareas.Name = "lblDGVtareas";
-            lblDGVtareas.Size = new Size(108, 15);
-            lblDGVtareas.TabIndex = 11;
-            lblDGVtareas.Text = "Tareas del proyecto";
-            lblDGVtareas.Visible = false;
-            // 
-            // lblDGVequipo
-            // 
-            lblDGVequipo.AutoSize = true;
-            lblDGVequipo.Location = new Point(12, 13);
-            lblDGVequipo.Name = "lblDGVequipo";
-            lblDGVequipo.Size = new Size(213, 15);
-            lblDGVequipo.TabIndex = 10;
-            lblDGVequipo.Text = "Equipo de programadores del proyecto";
-            lblDGVequipo.Visible = false;
-            // 
-            // dataGridViewEquipoProgramadores
-            // 
-            dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEquipoProgramadores.Location = new Point(12, 31);
-            dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
-            dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
-            dataGridViewEquipoProgramadores.Size = new Size(365, 150);
-            dataGridViewEquipoProgramadores.TabIndex = 9;
-            dataGridViewEquipoProgramadores.Visible = false;
-            // 
-            // dataGridViewTareas
-            // 
-            dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTareas.Location = new Point(12, 230);
-            dataGridViewTareas.Name = "dataGridViewTareas";
-            dataGridViewTareas.RowTemplate.Height = 25;
-            dataGridViewTareas.Size = new Size(365, 150);
-            dataGridViewTareas.TabIndex = 8;
-            dataGridViewTareas.Visible = false;
             // 
             // panelBarraTitulo
             // 
@@ -358,10 +296,6 @@
             Text = "FormPrincipal";
             Load += FormPrincipal_Load;
             panelContenedor.ResumeLayout(false);
-            panelMenu.ResumeLayout(false);
-            panelMenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
             panelBarraTitulo.ResumeLayout(false);
             panelBarraTitulo.PerformLayout();
             panel2.ResumeLayout(false);
@@ -379,7 +313,6 @@
         private Button btnCerrarSesion;
         private Panel panelContenedor;
         private Panel panelFormularios;
-        private Panel panelMenu;
         private Panel panelBarraTitulo;
         private Button btnProyectos;
         private Button btnUsuarios;
@@ -393,10 +326,6 @@
         private Label lblRol;
         private Label label1;
         private Panel panel2;
-        private DataGridView dataGridViewTareas;
-        private Label lblDGVtareas;
-        private Label lblDGVequipo;
-        private DataGridView dataGridViewEquipoProgramadores;
         private FlowLayoutPanel flowLayoutPanel1;
     }
 }

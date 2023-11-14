@@ -71,7 +71,7 @@ namespace PRESENTACION
 
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 var frm = new Frm_NuevoUsuario();
                 frm.TipoOperacion = "Editar";
@@ -101,7 +101,7 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 Usuario cargar = new Usuario();
                 cargar.EliminarUusario(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString()));

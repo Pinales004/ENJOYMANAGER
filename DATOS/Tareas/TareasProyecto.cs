@@ -10,9 +10,16 @@ namespace DATOS.Tareas
 {
     public  class TareasProyecto
     {
+        private int v1;
+        private int v2;
 
- 
-            public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
+        public TareasProyecto(int v1, int v2)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+        }
+
+        public TareasProyecto(int idProyecto, int estadoTareaid, int idProyectoMiembro, string nombreTarea, string descripcionTarea, DateTime fechaInicio, DateTime fechaFin)
         {
             IdProyecto = idProyecto;
             EstadoTareaid = estadoTareaid;
@@ -43,8 +50,5 @@ namespace DATOS.Tareas
         public string DescripcionTarea { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
-
-
-
     }
 }

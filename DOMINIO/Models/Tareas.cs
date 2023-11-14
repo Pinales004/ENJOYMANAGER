@@ -55,8 +55,8 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO TareasProyecto (IdProyecto, EstadoTareaid, IdProyectoMiembro, NombreTarea, FechaInicio, FechaFin) " +
-                                        "VALUES (@IdProyecto, @EstadoTareaid, @IdProyectoMiembro, @NombreTarea, @FechaInicio, @FechaFin)";
+                    command.CommandText = "INSERT INTO TareasProyecto (IdProyecto, EstadoTareaid, IdProyectoMiembro, NombreTarea, DescripcionTarea, FechaInicio, FechaFin) " +
+                                        "VALUES (@IdProyecto, @EstadoTareaid, @IdProyectoMiembro, @NombreTarea, @DescripcionTarea, @FechaInicio, @FechaFin)";
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
@@ -64,6 +64,7 @@ namespace DOMINIO.Models
                     command.Parameters.Add(new SqlParameter("@EstadoTareaid", tarea.EstadoTareaid));
                     command.Parameters.Add(new SqlParameter("@IdProyectoMiembro", tarea.IdProyectoMiembro));
                     command.Parameters.Add(new SqlParameter("@NombreTarea", tarea.NombreTarea));
+                    command.Parameters.Add(new SqlParameter("@DescripcionTarea", tarea.DescripcionTarea));
                     command.Parameters.Add(new SqlParameter("@FechaInicio", tarea.FechaInicio));
                     command.Parameters.Add(new SqlParameter("@FechaFin", tarea.FechaFin));
 
@@ -84,7 +85,7 @@ namespace DOMINIO.Models
                     command.Connection = connection;
                     command.CommandText = "UPDATE TareasProyecto " +
                                         "SET IdProyecto = @IdProyecto, EstadoTareaid = @EstadoTareaid, " +
-                                        "IdProyectoMiembro = @IdProyectoMiembro, NombreTarea = @NombreTarea, " +
+                                        "IdProyectoMiembro = @IdProyectoMiembro, NombreTarea = @NombreTarea, DescripcionTarea = @DescripcionTarea, " +
                                         "FechaInicio = @FechaInicio, FechaFin = @FechaFin " +
                                         "WHERE TareaId = @TareaId";
                     command.CommandType = CommandType.Text;
@@ -94,6 +95,7 @@ namespace DOMINIO.Models
                     command.Parameters.Add(new SqlParameter("@EstadoTareaid", tarea.EstadoTareaid));
                     command.Parameters.Add(new SqlParameter("@IdProyectoMiembro", tarea.IdProyectoMiembro));
                     command.Parameters.Add(new SqlParameter("@NombreTarea", tarea.NombreTarea));
+                    command.Parameters.Add(new SqlParameter("@DescripcionTarea", tarea.DescripcionTarea));
                     command.Parameters.Add(new SqlParameter("@FechaInicio", tarea.FechaInicio));
                     command.Parameters.Add(new SqlParameter("@FechaFin", tarea.FechaFin));
                     command.Parameters.Add(new SqlParameter("@TareaId", tarea.TareaId));
@@ -103,6 +105,31 @@ namespace DOMINIO.Models
                 }
             }
         }
+
+        public void UpdateEstadoTarea(int tareaId, int nuevoEstadoTareaId)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE TareasProyecto " +
+                                          "SET EstadoTareaid = @EstadoTareaid " +
+                                          "WHERE TareaId = @TareaId";
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega los parámetros y sus valores
+                    command.Parameters.Add(new SqlParameter("@EstadoTareaid", nuevoEstadoTareaId));
+                    command.Parameters.Add(new SqlParameter("@TareaId", tareaId));
+
+                    // Ejecuta la consulta
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
 
         public void EliminarTarea(int tareaId)
         {

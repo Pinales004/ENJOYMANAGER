@@ -68,7 +68,7 @@ namespace PRESENTACION
         private void btn_editar_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 var form = new Frm_NuevoProyecto(); // Crear una instancia del formulario FrmNuevoProyecto
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
@@ -110,7 +110,7 @@ namespace PRESENTACION
         }
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 0)
             {
                 // Preguntar al usuario si está seguro de eliminar el proyecto
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este Proyecto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

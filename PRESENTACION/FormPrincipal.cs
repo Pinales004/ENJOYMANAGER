@@ -45,10 +45,6 @@ namespace PRESENTACION
                 btnUsuarios.Visible = false;
                 btnProyectos.Visible = true;
                 btnTareas.Visible = true;
-                lblDGVequipo.Visible = true;
-                lblDGVtareas.Visible = true;
-                dataGridViewEquipoProgramadores.Visible = true;
-                dataGridViewTareas.Visible = true;
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {

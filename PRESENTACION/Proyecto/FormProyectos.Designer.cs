@@ -38,6 +38,11 @@
             btn_editar = new PictureBox();
             btn_eliminar = new PictureBox();
             btn_agregar = new PictureBox();
+            panelMenu = new Panel();
+            lblDGVtareas = new Label();
+            lblDGVequipo = new Label();
+            dataGridViewEquipoProgramadores = new DataGridView();
+            dataGridViewTareas = new DataGridView();
             panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -45,6 +50,9 @@
             ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
+            panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
             SuspendLayout();
             // 
             // panelContenedor
@@ -52,9 +60,9 @@
             panelContenedor.Controls.Add(dataGridView1);
             panelContenedor.Controls.Add(panel1);
             panelContenedor.Dock = DockStyle.Fill;
-            panelContenedor.Location = new Point(0, 0);
+            panelContenedor.Location = new Point(383, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(884, 461);
+            panelContenedor.Size = new Size(701, 461);
             panelContenedor.TabIndex = 2;
             // 
             // dataGridView1
@@ -69,7 +77,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(860, 384);
+            dataGridView1.Size = new Size(677, 384);
             dataGridView1.TabIndex = 61;
             // 
             // panel1
@@ -84,7 +92,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(884, 68);
+            panel1.Size = new Size(701, 68);
             panel1.TabIndex = 2;
             // 
             // btn_buscar
@@ -92,7 +100,7 @@
             btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_buscar.Cursor = Cursors.Hand;
             btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
-            btn_buscar.Location = new Point(449, 27);
+            btn_buscar.Location = new Point(266, 27);
             btn_buscar.Name = "btn_buscar";
             btn_buscar.Size = new Size(30, 30);
             btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -118,7 +126,7 @@
             txtbox_buscar.Location = new Point(27, 30);
             txtbox_buscar.Name = "txtbox_buscar";
             txtbox_buscar.PlaceholderText = "Buscar Proyecto por Nombre";
-            txtbox_buscar.Size = new Size(416, 23);
+            txtbox_buscar.Size = new Size(233, 23);
             txtbox_buscar.TabIndex = 6;
             // 
             // btn_editar
@@ -126,7 +134,7 @@
             btn_editar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_editar.Cursor = Cursors.Hand;
             btn_editar.Image = (Image)resources.GetObject("btn_editar.Image");
-            btn_editar.Location = new Point(776, 12);
+            btn_editar.Location = new Point(593, 12);
             btn_editar.Name = "btn_editar";
             btn_editar.Size = new Size(45, 45);
             btn_editar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -141,7 +149,7 @@
             btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_eliminar.Cursor = Cursors.Hand;
             btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
-            btn_eliminar.Location = new Point(827, 12);
+            btn_eliminar.Location = new Point(644, 12);
             btn_eliminar.Name = "btn_eliminar";
             btn_eliminar.Size = new Size(45, 45);
             btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -156,7 +164,7 @@
             btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_agregar.Cursor = Cursors.Hand;
             btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
-            btn_agregar.Location = new Point(725, 12);
+            btn_agregar.Location = new Point(542, 12);
             btn_agregar.Name = "btn_agregar";
             btn_agregar.Size = new Size(45, 45);
             btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -166,13 +174,67 @@
             btn_agregar.MouseEnter += btn_agregar_MouseEnter;
             btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
+            // panelMenu
+            // 
+            panelMenu.BackColor = Color.Gainsboro;
+            panelMenu.Controls.Add(lblDGVtareas);
+            panelMenu.Controls.Add(lblDGVequipo);
+            panelMenu.Controls.Add(dataGridViewEquipoProgramadores);
+            panelMenu.Controls.Add(dataGridViewTareas);
+            panelMenu.Dock = DockStyle.Left;
+            panelMenu.Location = new Point(0, 0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(383, 461);
+            panelMenu.TabIndex = 3;
+            // 
+            // lblDGVtareas
+            // 
+            lblDGVtareas.AutoSize = true;
+            lblDGVtareas.Location = new Point(12, 212);
+            lblDGVtareas.Name = "lblDGVtareas";
+            lblDGVtareas.Size = new Size(108, 15);
+            lblDGVtareas.TabIndex = 11;
+            lblDGVtareas.Text = "Tareas del proyecto";
+            lblDGVtareas.Visible = false;
+            // 
+            // lblDGVequipo
+            // 
+            lblDGVequipo.AutoSize = true;
+            lblDGVequipo.Location = new Point(12, 13);
+            lblDGVequipo.Name = "lblDGVequipo";
+            lblDGVequipo.Size = new Size(213, 15);
+            lblDGVequipo.TabIndex = 10;
+            lblDGVequipo.Text = "Equipo de programadores del proyecto";
+            lblDGVequipo.Visible = false;
+            // 
+            // dataGridViewEquipoProgramadores
+            // 
+            dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEquipoProgramadores.Location = new Point(12, 31);
+            dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
+            dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
+            dataGridViewEquipoProgramadores.Size = new Size(365, 150);
+            dataGridViewEquipoProgramadores.TabIndex = 9;
+            dataGridViewEquipoProgramadores.Visible = false;
+            // 
+            // dataGridViewTareas
+            // 
+            dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTareas.Location = new Point(12, 230);
+            dataGridViewTareas.Name = "dataGridViewTareas";
+            dataGridViewTareas.RowTemplate.Height = 25;
+            dataGridViewTareas.Size = new Size(365, 150);
+            dataGridViewTareas.TabIndex = 8;
+            dataGridViewTareas.Visible = false;
+            // 
             // FormProyectos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(884, 461);
+            ClientSize = new Size(1084, 461);
             Controls.Add(panelContenedor);
+            Controls.Add(panelMenu);
             ForeColor = SystemColors.ControlText;
             Name = "FormProyectos";
             Text = "FormProyectos";
@@ -185,6 +247,10 @@
             ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
+            panelMenu.ResumeLayout(false);
+            panelMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
             ResumeLayout(false);
         }
 
@@ -198,5 +264,10 @@
         private PictureBox btn_eliminar;
         private PictureBox btn_agregar;
         public DataGridView dataGridView1;
+        private Panel panelMenu;
+        private Label lblDGVtareas;
+        private Label lblDGVequipo;
+        private DataGridView dataGridViewEquipoProgramadores;
+        private DataGridView dataGridViewTareas;
     }
 }

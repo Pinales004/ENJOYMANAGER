@@ -163,7 +163,6 @@ namespace PRESENTACION.Administracion_Tareas
                     MessageBox.Show("No hay miembros disponibles para este proyecto.", "Mensaje");
                 }
             }
-
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -171,51 +170,14 @@ namespace PRESENTACION.Administracion_Tareas
             if (TipoOperacion == "Agregar")
             {
 
-                // Realiza las validaciones necesarias en la capa de presentación
-                if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
-                {
-                    MessageBox.Show("El nombre de la tarea es obligatorio.");
-                    return; // Detener la operación de guardar
-                }
-                else
-                {
-
-                    // Si todas las validaciones pasan, crea un objeto TareasProyecto y guarda la tarea
-                    TareasProyecto nuevaTarea = new TareasProyecto
-                    (
-                        Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
-                        Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
-                        Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
-                        txtNombreTarea.Text,
-                        txtDescripcionTarea.Text,
-                        dateTimePickerInicio.Value,
-                        dateTimePickerEntrega.Value
-                    );
-
-                    // Llama al método para guardar la tarea
-                    Tareas cargar = new Tareas();
-                    cargar.InsertTarea(nuevaTarea);
-                }
-
             }
             else if (TipoOperacion == "Editar")
             {
                 Tareas cargar = new Tareas();
+                int tareaId = Convert.ToInt32(TareaId);
+                int nuevoEstadoTareaId = Convert.ToInt32(cmbEstadoTarea.SelectedValue);
 
-                TareasProyecto ActualizarTarea = new TareasProyecto
-                    (
-                        Convert.ToInt32(TareaId),
-                        Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
-                        Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
-                        Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
-                        txtNombreTarea.Text,
-                        txtDescripcionTarea.Text,
-                        dateTimePickerInicio.Value,
-                        dateTimePickerEntrega.Value
-                    );
-
-                cargar.UpdateTarea(ActualizarTarea);
-
+                cargar.UpdateEstadoTarea(tareaId, nuevoEstadoTareaId);
 
             }
 
@@ -225,7 +187,7 @@ namespace PRESENTACION.Administracion_Tareas
             {
                 FormTareas.CargarTareas();
             }
-            MessageBox.Show("La tarea se ha guardado correctamente.");
+            MessageBox.Show("La tarea se ha realizado correctamente.");
             this.Hide();
 
 
@@ -359,7 +321,6 @@ namespace PRESENTACION.Administracion_Tareas
             this.dataGridComentarios.Columns["ComentarioTareaId"].Visible = false;
             this.dataGridComentarios.Columns["TareaId"].Visible = false;
             this.dataGridComentarios.Columns["Borrado"].Visible = false;
-
         }
 
         private void bntAgregarComentario_Click(object sender, EventArgs e)
@@ -386,16 +347,11 @@ namespace PRESENTACION.Administracion_Tareas
 
                     comentario.InsertComentarioTarea(comentarios);
                     CargarComentarios();
-
-
                 }
                 modoEdicion = false;
                 txtComentario.Text = "";
-
             }
-
         }
-
 
         private void BtnEliminarComentario_Click(object sender, EventArgs e)
         {
@@ -422,7 +378,6 @@ namespace PRESENTACION.Administracion_Tareas
             {
                 MessageBox.Show("Selecciona un comentario para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void bntEditarComentario_Click(object sender, EventArgs e)
@@ -448,17 +403,6 @@ namespace PRESENTACION.Administracion_Tareas
                 MessageBox.Show("Selecciona una fila en el DataGridView para llenar el TextBox.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-
-
-
-
-
-
-
-
         #endregion
-
-
     }
 }
