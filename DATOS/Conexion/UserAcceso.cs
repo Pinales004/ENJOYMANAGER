@@ -21,7 +21,7 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from Usuario where UsuarioNombre = @user and ContrasenaUsuario = @pass";
+                    command.CommandText = "select * from Usuario where UsuarioNombre = @user and ContrasenaUsuario = @pass and Borrado = 0";
                     command.Parameters.AddWithValue("@user", user);
                     command.Parameters.AddWithValue("@pass", pass);
                     command.CommandType = CommandType.Text;
@@ -36,12 +36,13 @@ namespace DATOS.Conexion
                             UserLoginCache.Nombres = reader.GetString(2);
                             UserLoginCache.Apellidos = reader.GetString(3);
                             UserLoginCache.Sexo = reader.GetBoolean(4);
-                            UserLoginCache.EmailUsuario = reader.GetString(7);
-                            UserLoginCache.ContrasenaUsuario = reader.GetString(8);
-                            UserLoginCache.ResetPasword = reader.GetBoolean(9);
-                            UserLoginCache.RolUsuario = reader.GetInt32(10);
-                            UserLoginCache.EstadoUsuario = reader.GetInt32(11);
-                            UserLoginCache.Borrado = reader.GetBoolean(13);
+                            UserLoginCache.EmailUsuario = reader.GetString(5);
+                            UserLoginCache.ContrasenaUsuario = reader.GetString(6);
+                            UserLoginCache.ResetPasword = reader.GetBoolean(7);
+                            UserLoginCache.RolUsuario = reader.GetInt32(8);
+                            UserLoginCache.EstadoUsuario = reader.GetInt32(9);
+                            UserLoginCache.IntentosFallidos = reader.GetInt32(10);
+                            UserLoginCache.Borrado = reader.GetBoolean(11);
                         }
 
                         int intento = GetFailedLoginAttempts(user);

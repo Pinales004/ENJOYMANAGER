@@ -18,7 +18,7 @@ namespace Comun.Cache
         public static bool ResetPasword { get; set; }
         public static int RolUsuario { get; set; }
         public static int EstadoUsuario { get; set; }
-        public static bool IntentosFallidos { get; set; }
+        public static int IntentosFallidos { get; set; }
         public static bool Borrado { get; set; }
 
 

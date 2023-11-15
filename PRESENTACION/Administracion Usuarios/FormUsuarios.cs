@@ -1,4 +1,5 @@
-﻿using DOMINIO.Models;
+﻿using Comun.Cache;
+using DOMINIO.Models;
 using MaterialSkin.Controls;
 using PRESENTACION.Administracion_Usuarios;
 using PRESENTACION.Proyecto;
@@ -63,19 +64,57 @@ namespace PRESENTACION
         {
             var form = new Frm_NuevoUsuario();
             form.TipoOperacion = "Insertar";
-
+            CargarEstado(form);
+            CargarRoles(form);
             form.Frm_Usuarios = this; // Establece la propiedad Frm_Usuarios
 
             AbrirFormulario<Frm_NuevoUsuario>(form);
         }
+        private void LLnearCombroboxGnero(Frm_NuevoUsuario form)
+        {
+            // Crear un diccionario de valores booleanos y sus representaciones de texto
+            Dictionary<bool, string> valoresBooleanos = new Dictionary<bool, string>{
+            { true, "Hombre" },
+            { false, "Mujer" }
+            };
+
+            // Enlazar el diccionario al ComboBox
+            form.cmbGenero.DataSource = new BindingSource(valoresBooleanos, null);
+            form.cmbGenero.DisplayMember = "Value"; // Mostrar el valor de texto en el ComboBox
+            form.cmbGenero.ValueMember = "Key"; // Obtener el valor booleano seleccionado
+        }
+
+
+
+        public void CargarEstado(Frm_NuevoUsuario form)
+        {
+            Usuario cargar = new Usuario();
+
+            // Configura el ComboBox en el formulario pasado como argumento
+            form.CboEstadoUsuario.DataSource = cargar.GetEstados();
+            form.CboEstadoUsuario.DisplayMember = "Estado";
+            form.CboEstadoUsuario.ValueMember = "IdUsuarioEstado";
+        }
+        public void CargarRoles(Frm_NuevoUsuario form)
+        {
+            Usuario cargar = new Usuario();
+
+            // Configura el ComboBox en el formulario pasado como argumento
+            form.cmbRol.DataSource = cargar.GetRoles();
+            form.cmbRol.DisplayMember = "Rol";
+            form.cmbRol.ValueMember = "IdUsuarioRol";
+        }
+
 
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 var frm = new Frm_NuevoUsuario();
                 frm.TipoOperacion = "Editar";
-
+                CargarEstado(frm);
+                CargarRoles(frm);
+                LLnearCombroboxGnero(frm);
                 // Obtén los valores de la fila seleccionada en el DataGridView
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 frm.IdUsuario = selectedRow.Cells["IdUsuario"].Value.ToString();
@@ -101,12 +140,26 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                Usuario cargar = new Usuario();
-                cargar.EliminarUusario(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString()));
-                CargarUsuarios();
-                MessageBox.Show("Usuario Eliminado Correctamente");
+                // Obtén el Id del usuario seleccionado en el DataGridView
+                int idUsuarioSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString());
+
+                // Obtén el Id del usuario logueado
+                int idUsuarioLogueado = UserLoginCache.IdUsuario;
+
+                if (idUsuarioSeleccionado == idUsuarioLogueado)
+                {
+                    MessageBox.Show("No puedes eliminar tu propio usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    // Usuario diferente al logueado, procede con la eliminación
+                    Usuario cargar = new Usuario();
+                    cargar.EliminarUusario(idUsuarioSeleccionado);
+                    CargarUsuarios();
+                    MessageBox.Show("Usuario Eliminado Correctamente");
+                }
             }
             else
             {
