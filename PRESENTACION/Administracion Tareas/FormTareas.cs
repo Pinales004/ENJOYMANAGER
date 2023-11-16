@@ -176,7 +176,7 @@ namespace PRESENTACION
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 var frm = new Frm_NuevaTarea();
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
@@ -208,7 +208,7 @@ namespace PRESENTACION
 
         private void btn_realizar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 var frm = new Frm_RealizarTarea();
                 CargarEstadoTareaProgra(frm);
@@ -244,7 +244,7 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 // Preguntar al usuario si está seguro de eliminar el proyecto
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este Tarea?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

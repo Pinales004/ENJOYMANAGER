@@ -29,496 +29,503 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RealizarTarea));
-            this.txtDescripcionTarea = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.btn_limpiar = new System.Windows.Forms.PictureBox();
-            this.btn_guardar = new System.Windows.Forms.PictureBox();
-            this.btn_volver = new System.Windows.Forms.PictureBox();
-            this.labelDescripcionTarea = new MaterialSkin.Controls.MaterialLabel();
-            this.dateTimePickerEntrega = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
-            this.labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
-            this.labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbEstadoTarea = new MaterialSkin.Controls.MaterialComboBox();
-            this.txtNombreTarea = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbResponsableTarea = new MaterialSkin.Controls.MaterialComboBox();
-            this.CmbNombreProyecto = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtComentario = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bntVerAnexo = new System.Windows.Forms.Button();
-            this.bntNuevoAnexo = new System.Windows.Forms.Button();
-            this.datagridAnexo = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnEliminarComentario = new System.Windows.Forms.Button();
-            this.bntEditarComentario = new System.Windows.Forms.Button();
-            this.bntAgregarComentario = new System.Windows.Forms.Button();
-            this.dataGridComentarios = new System.Windows.Forms.DataGridView();
-            this.EliminarAnexo = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridComentarios)).BeginInit();
-            this.SuspendLayout();
+            txtDescripcionTarea = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            btn_limpiar = new PictureBox();
+            btn_guardar = new PictureBox();
+            btn_volver = new PictureBox();
+            labelDescripcionTarea = new MaterialSkin.Controls.MaterialLabel();
+            dateTimePickerEntrega = new DateTimePicker();
+            dateTimePickerInicio = new DateTimePicker();
+            labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
+            labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            cmbEstadoTarea = new MaterialSkin.Controls.MaterialComboBox();
+            txtNombreTarea = new MaterialSkin.Controls.MaterialTextBox2();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            cmbResponsableTarea = new MaterialSkin.Controls.MaterialComboBox();
+            CmbNombreProyecto = new MaterialSkin.Controls.MaterialComboBox();
+            materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
+            txtComentario = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
+            groupBox1 = new GroupBox();
+            EliminarAnexo = new Button();
+            bntVerAnexo = new Button();
+            bntNuevoAnexo = new Button();
+            datagridAnexo = new DataGridView();
+            groupBox2 = new GroupBox();
+            BtnEliminarComentario = new Button();
+            bntEditarComentario = new Button();
+            bntAgregarComentario = new Button();
+            dataGridComentarios = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)datagridAnexo).BeginInit();
+            groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridComentarios).BeginInit();
+            SuspendLayout();
             // 
             // txtDescripcionTarea
             // 
-            this.txtDescripcionTarea.AnimateReadOnly = false;
-            this.txtDescripcionTarea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtDescripcionTarea.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtDescripcionTarea.Depth = 0;
-            this.txtDescripcionTarea.HideSelection = true;
-            this.txtDescripcionTarea.Location = new System.Drawing.Point(15, 199);
-            this.txtDescripcionTarea.MaxLength = 32767;
-            this.txtDescripcionTarea.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtDescripcionTarea.Name = "txtDescripcionTarea";
-            this.txtDescripcionTarea.PasswordChar = '\0';
-            this.txtDescripcionTarea.ReadOnly = false;
-            this.txtDescripcionTarea.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtDescripcionTarea.SelectedText = "";
-            this.txtDescripcionTarea.SelectionLength = 0;
-            this.txtDescripcionTarea.SelectionStart = 0;
-            this.txtDescripcionTarea.ShortcutsEnabled = true;
-            this.txtDescripcionTarea.Size = new System.Drawing.Size(903, 171);
-            this.txtDescripcionTarea.TabIndex = 84;
-            this.txtDescripcionTarea.TabStop = false;
-            this.txtDescripcionTarea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtDescripcionTarea.UseSystemPasswordChar = false;
+            txtDescripcionTarea.AnimateReadOnly = false;
+            txtDescripcionTarea.BackgroundImageLayout = ImageLayout.None;
+            txtDescripcionTarea.CharacterCasing = CharacterCasing.Normal;
+            txtDescripcionTarea.Depth = 0;
+            txtDescripcionTarea.HideSelection = true;
+            txtDescripcionTarea.Location = new Point(15, 199);
+            txtDescripcionTarea.MaxLength = 32767;
+            txtDescripcionTarea.MouseState = MaterialSkin.MouseState.OUT;
+            txtDescripcionTarea.Name = "txtDescripcionTarea";
+            txtDescripcionTarea.PasswordChar = '\0';
+            txtDescripcionTarea.ReadOnly = false;
+            txtDescripcionTarea.ScrollBars = ScrollBars.None;
+            txtDescripcionTarea.SelectedText = "";
+            txtDescripcionTarea.SelectionLength = 0;
+            txtDescripcionTarea.SelectionStart = 0;
+            txtDescripcionTarea.ShortcutsEnabled = true;
+            txtDescripcionTarea.Size = new Size(903, 171);
+            txtDescripcionTarea.TabIndex = 84;
+            txtDescripcionTarea.TabStop = false;
+            txtDescripcionTarea.TextAlign = HorizontalAlignment.Left;
+            txtDescripcionTarea.UseSystemPasswordChar = false;
             // 
             // btn_limpiar
             // 
-            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_limpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_limpiar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpiar.Image")));
-            this.btn_limpiar.Location = new System.Drawing.Point(822, 654);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(45, 45);
-            this.btn_limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_limpiar.TabIndex = 94;
-            this.btn_limpiar.TabStop = false;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            btn_limpiar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_limpiar.Cursor = Cursors.Hand;
+            btn_limpiar.Image = (Image)resources.GetObject("btn_limpiar.Image");
+            btn_limpiar.Location = new Point(822, 654);
+            btn_limpiar.Name = "btn_limpiar";
+            btn_limpiar.Size = new Size(45, 45);
+            btn_limpiar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_limpiar.TabIndex = 94;
+            btn_limpiar.TabStop = false;
+            btn_limpiar.Click += btn_limpiar_Click;
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
-            this.btn_guardar.Location = new System.Drawing.Point(873, 654);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(45, 45);
-            this.btn_guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_guardar.TabIndex = 93;
-            this.btn_guardar.TabStop = false;
-            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_guardar.Cursor = Cursors.Hand;
+            btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
+            btn_guardar.Location = new Point(873, 654);
+            btn_guardar.Name = "btn_guardar";
+            btn_guardar.Size = new Size(45, 45);
+            btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_guardar.TabIndex = 93;
+            btn_guardar.TabStop = false;
+            btn_guardar.Click += btn_guardar_Click;
             // 
             // btn_volver
             // 
-            this.btn_volver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_volver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_volver.Image = ((System.Drawing.Image)(resources.GetObject("btn_volver.Image")));
-            this.btn_volver.Location = new System.Drawing.Point(12, 662);
-            this.btn_volver.Name = "btn_volver";
-            this.btn_volver.Size = new System.Drawing.Size(45, 45);
-            this.btn_volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_volver.TabIndex = 92;
-            this.btn_volver.TabStop = false;
-            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
+            btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_volver.Cursor = Cursors.Hand;
+            btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
+            btn_volver.Location = new Point(12, 662);
+            btn_volver.Name = "btn_volver";
+            btn_volver.Size = new Size(45, 45);
+            btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_volver.TabIndex = 92;
+            btn_volver.TabStop = false;
+            btn_volver.Click += btn_volver_Click;
             // 
             // labelDescripcionTarea
             // 
-            this.labelDescripcionTarea.AutoSize = true;
-            this.labelDescripcionTarea.Depth = 0;
-            this.labelDescripcionTarea.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelDescripcionTarea.Location = new System.Drawing.Point(15, 177);
-            this.labelDescripcionTarea.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelDescripcionTarea.Name = "labelDescripcionTarea";
-            this.labelDescripcionTarea.Size = new System.Drawing.Size(162, 19);
-            this.labelDescripcionTarea.TabIndex = 91;
-            this.labelDescripcionTarea.Text = "Descripción de la tarea";
+            labelDescripcionTarea.AutoSize = true;
+            labelDescripcionTarea.Depth = 0;
+            labelDescripcionTarea.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelDescripcionTarea.Location = new Point(15, 177);
+            labelDescripcionTarea.MouseState = MaterialSkin.MouseState.HOVER;
+            labelDescripcionTarea.Name = "labelDescripcionTarea";
+            labelDescripcionTarea.Size = new Size(162, 19);
+            labelDescripcionTarea.TabIndex = 91;
+            labelDescripcionTarea.Text = "Descripción de la tarea";
             // 
             // dateTimePickerEntrega
             // 
-            this.dateTimePickerEntrega.Location = new System.Drawing.Point(689, 138);
-            this.dateTimePickerEntrega.Name = "dateTimePickerEntrega";
-            this.dateTimePickerEntrega.Size = new System.Drawing.Size(233, 23);
-            this.dateTimePickerEntrega.TabIndex = 86;
+            dateTimePickerEntrega.Location = new Point(689, 138);
+            dateTimePickerEntrega.Name = "dateTimePickerEntrega";
+            dateTimePickerEntrega.Size = new Size(233, 23);
+            dateTimePickerEntrega.TabIndex = 86;
             // 
             // dateTimePickerInicio
             // 
-            this.dateTimePickerInicio.Location = new System.Drawing.Point(685, 53);
-            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
-            this.dateTimePickerInicio.Size = new System.Drawing.Size(233, 23);
-            this.dateTimePickerInicio.TabIndex = 85;
+            dateTimePickerInicio.Location = new Point(685, 53);
+            dateTimePickerInicio.Name = "dateTimePickerInicio";
+            dateTimePickerInicio.Size = new Size(233, 23);
+            dateTimePickerInicio.TabIndex = 85;
             // 
             // labelFechaEntrega
             // 
-            this.labelFechaEntrega.AutoSize = true;
-            this.labelFechaEntrega.Depth = 0;
-            this.labelFechaEntrega.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelFechaEntrega.Location = new System.Drawing.Point(743, 116);
-            this.labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelFechaEntrega.Name = "labelFechaEntrega";
-            this.labelFechaEntrega.Size = new System.Drawing.Size(123, 19);
-            this.labelFechaEntrega.TabIndex = 88;
-            this.labelFechaEntrega.Text = "Fecha de Entrega";
+            labelFechaEntrega.AutoSize = true;
+            labelFechaEntrega.Depth = 0;
+            labelFechaEntrega.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelFechaEntrega.Location = new Point(743, 116);
+            labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
+            labelFechaEntrega.Name = "labelFechaEntrega";
+            labelFechaEntrega.Size = new Size(123, 19);
+            labelFechaEntrega.TabIndex = 88;
+            labelFechaEntrega.Text = "Fecha de Entrega";
             // 
             // labelFechaInicio
             // 
-            this.labelFechaInicio.AutoSize = true;
-            this.labelFechaInicio.Depth = 0;
-            this.labelFechaInicio.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.labelFechaInicio.Location = new System.Drawing.Point(743, 31);
-            this.labelFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
-            this.labelFechaInicio.Name = "labelFechaInicio";
-            this.labelFechaInicio.Size = new System.Drawing.Size(107, 19);
-            this.labelFechaInicio.TabIndex = 87;
-            this.labelFechaInicio.Text = "Fecha de Inicio";
+            labelFechaInicio.AutoSize = true;
+            labelFechaInicio.Depth = 0;
+            labelFechaInicio.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelFechaInicio.Location = new Point(743, 31);
+            labelFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
+            labelFechaInicio.Name = "labelFechaInicio";
+            labelFechaInicio.Size = new Size(107, 19);
+            labelFechaInicio.TabIndex = 87;
+            labelFechaInicio.Text = "Fecha de Inicio";
             // 
             // materialLabel7
             // 
-            this.materialLabel7.AutoSize = true;
-            this.materialLabel7.Depth = 0;
-            this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(477, 9);
-            this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(128, 19);
-            this.materialLabel7.TabIndex = 86;
-            this.materialLabel7.Text = "Estado de la tarea";
+            materialLabel7.AutoSize = true;
+            materialLabel7.Depth = 0;
+            materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel7.Location = new Point(477, 9);
+            materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel7.Name = "materialLabel7";
+            materialLabel7.Size = new Size(128, 19);
+            materialLabel7.TabIndex = 86;
+            materialLabel7.Text = "Estado de la tarea";
             // 
             // materialLabel1
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(15, 9);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(135, 19);
-            this.materialLabel1.TabIndex = 85;
-            this.materialLabel1.Text = "Nombre de la tarea";
+            materialLabel1.AutoSize = true;
+            materialLabel1.Depth = 0;
+            materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel1.Location = new Point(15, 9);
+            materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel1.Name = "materialLabel1";
+            materialLabel1.Size = new Size(135, 19);
+            materialLabel1.TabIndex = 85;
+            materialLabel1.Text = "Nombre de la tarea";
             // 
             // cmbEstadoTarea
             // 
-            this.cmbEstadoTarea.AutoResize = false;
-            this.cmbEstadoTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbEstadoTarea.Depth = 0;
-            this.cmbEstadoTarea.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbEstadoTarea.DropDownHeight = 174;
-            this.cmbEstadoTarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEstadoTarea.DropDownWidth = 121;
-            this.cmbEstadoTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbEstadoTarea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbEstadoTarea.FormattingEnabled = true;
-            this.cmbEstadoTarea.IntegralHeight = false;
-            this.cmbEstadoTarea.ItemHeight = 43;
-            this.cmbEstadoTarea.Location = new System.Drawing.Point(477, 31);
-            this.cmbEstadoTarea.MaxDropDownItems = 4;
-            this.cmbEstadoTarea.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbEstadoTarea.Name = "cmbEstadoTarea";
-            this.cmbEstadoTarea.Size = new System.Drawing.Size(195, 49);
-            this.cmbEstadoTarea.StartIndex = 0;
-            this.cmbEstadoTarea.TabIndex = 81;
+            cmbEstadoTarea.AutoResize = false;
+            cmbEstadoTarea.BackColor = Color.FromArgb(255, 255, 255);
+            cmbEstadoTarea.Depth = 0;
+            cmbEstadoTarea.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbEstadoTarea.DropDownHeight = 174;
+            cmbEstadoTarea.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEstadoTarea.DropDownWidth = 121;
+            cmbEstadoTarea.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbEstadoTarea.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbEstadoTarea.FormattingEnabled = true;
+            cmbEstadoTarea.IntegralHeight = false;
+            cmbEstadoTarea.ItemHeight = 43;
+            cmbEstadoTarea.Location = new Point(477, 31);
+            cmbEstadoTarea.MaxDropDownItems = 4;
+            cmbEstadoTarea.MouseState = MaterialSkin.MouseState.OUT;
+            cmbEstadoTarea.Name = "cmbEstadoTarea";
+            cmbEstadoTarea.Size = new Size(195, 49);
+            cmbEstadoTarea.StartIndex = 0;
+            cmbEstadoTarea.TabIndex = 81;
             // 
             // txtNombreTarea
             // 
-            this.txtNombreTarea.AnimateReadOnly = false;
-            this.txtNombreTarea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtNombreTarea.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtNombreTarea.Depth = 0;
-            this.txtNombreTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNombreTarea.HideSelection = true;
-            this.txtNombreTarea.LeadingIcon = null;
-            this.txtNombreTarea.Location = new System.Drawing.Point(15, 31);
-            this.txtNombreTarea.MaxLength = 32767;
-            this.txtNombreTarea.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtNombreTarea.Name = "txtNombreTarea";
-            this.txtNombreTarea.PasswordChar = '\0';
-            this.txtNombreTarea.PrefixSuffixText = null;
-            this.txtNombreTarea.ReadOnly = false;
-            this.txtNombreTarea.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNombreTarea.SelectedText = "";
-            this.txtNombreTarea.SelectionLength = 0;
-            this.txtNombreTarea.SelectionStart = 0;
-            this.txtNombreTarea.ShortcutsEnabled = true;
-            this.txtNombreTarea.Size = new System.Drawing.Size(447, 48);
-            this.txtNombreTarea.TabIndex = 80;
-            this.txtNombreTarea.TabStop = false;
-            this.txtNombreTarea.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNombreTarea.TrailingIcon = null;
-            this.txtNombreTarea.UseSystemPasswordChar = false;
+            txtNombreTarea.AnimateReadOnly = false;
+            txtNombreTarea.BackgroundImageLayout = ImageLayout.None;
+            txtNombreTarea.CharacterCasing = CharacterCasing.Normal;
+            txtNombreTarea.Depth = 0;
+            txtNombreTarea.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNombreTarea.HideSelection = true;
+            txtNombreTarea.LeadingIcon = null;
+            txtNombreTarea.Location = new Point(15, 31);
+            txtNombreTarea.MaxLength = 32767;
+            txtNombreTarea.MouseState = MaterialSkin.MouseState.OUT;
+            txtNombreTarea.Name = "txtNombreTarea";
+            txtNombreTarea.PasswordChar = '\0';
+            txtNombreTarea.PrefixSuffixText = null;
+            txtNombreTarea.ReadOnly = false;
+            txtNombreTarea.RightToLeft = RightToLeft.No;
+            txtNombreTarea.SelectedText = "";
+            txtNombreTarea.SelectionLength = 0;
+            txtNombreTarea.SelectionStart = 0;
+            txtNombreTarea.ShortcutsEnabled = true;
+            txtNombreTarea.Size = new Size(447, 48);
+            txtNombreTarea.TabIndex = 80;
+            txtNombreTarea.TabStop = false;
+            txtNombreTarea.TextAlign = HorizontalAlignment.Left;
+            txtNombreTarea.TrailingIcon = null;
+            txtNombreTarea.UseSystemPasswordChar = false;
             // 
             // materialLabel2
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(477, 94);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(170, 19);
-            this.materialLabel2.TabIndex = 99;
-            this.materialLabel2.Text = "Responsable de la tarea";
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(477, 94);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(170, 19);
+            materialLabel2.TabIndex = 99;
+            materialLabel2.Text = "Responsable de la tarea";
             // 
             // materialLabel3
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(15, 94);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(147, 19);
-            this.materialLabel3.TabIndex = 98;
-            this.materialLabel3.Text = "Nombre del proyecto";
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(15, 94);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(147, 19);
+            materialLabel3.TabIndex = 98;
+            materialLabel3.Text = "Nombre del proyecto";
             // 
             // cmbResponsableTarea
             // 
-            this.cmbResponsableTarea.AutoResize = false;
-            this.cmbResponsableTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbResponsableTarea.Depth = 0;
-            this.cmbResponsableTarea.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbResponsableTarea.DropDownHeight = 174;
-            this.cmbResponsableTarea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbResponsableTarea.DropDownWidth = 121;
-            this.cmbResponsableTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbResponsableTarea.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbResponsableTarea.FormattingEnabled = true;
-            this.cmbResponsableTarea.IntegralHeight = false;
-            this.cmbResponsableTarea.ItemHeight = 43;
-            this.cmbResponsableTarea.Location = new System.Drawing.Point(477, 116);
-            this.cmbResponsableTarea.MaxDropDownItems = 4;
-            this.cmbResponsableTarea.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbResponsableTarea.Name = "cmbResponsableTarea";
-            this.cmbResponsableTarea.Size = new System.Drawing.Size(195, 49);
-            this.cmbResponsableTarea.StartIndex = 0;
-            this.cmbResponsableTarea.TabIndex = 83;
+            cmbResponsableTarea.AutoResize = false;
+            cmbResponsableTarea.BackColor = Color.FromArgb(255, 255, 255);
+            cmbResponsableTarea.Depth = 0;
+            cmbResponsableTarea.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbResponsableTarea.DropDownHeight = 174;
+            cmbResponsableTarea.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbResponsableTarea.DropDownWidth = 121;
+            cmbResponsableTarea.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbResponsableTarea.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbResponsableTarea.FormattingEnabled = true;
+            cmbResponsableTarea.IntegralHeight = false;
+            cmbResponsableTarea.ItemHeight = 43;
+            cmbResponsableTarea.Location = new Point(477, 116);
+            cmbResponsableTarea.MaxDropDownItems = 4;
+            cmbResponsableTarea.MouseState = MaterialSkin.MouseState.OUT;
+            cmbResponsableTarea.Name = "cmbResponsableTarea";
+            cmbResponsableTarea.Size = new Size(195, 49);
+            cmbResponsableTarea.StartIndex = 0;
+            cmbResponsableTarea.TabIndex = 83;
             // 
             // CmbNombreProyecto
             // 
-            this.CmbNombreProyecto.AutoResize = false;
-            this.CmbNombreProyecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.CmbNombreProyecto.Depth = 0;
-            this.CmbNombreProyecto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.CmbNombreProyecto.DropDownHeight = 174;
-            this.CmbNombreProyecto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbNombreProyecto.DropDownWidth = 121;
-            this.CmbNombreProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.CmbNombreProyecto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CmbNombreProyecto.FormattingEnabled = true;
-            this.CmbNombreProyecto.IntegralHeight = false;
-            this.CmbNombreProyecto.ItemHeight = 43;
-            this.CmbNombreProyecto.Location = new System.Drawing.Point(15, 116);
-            this.CmbNombreProyecto.MaxDropDownItems = 4;
-            this.CmbNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
-            this.CmbNombreProyecto.Name = "CmbNombreProyecto";
-            this.CmbNombreProyecto.Size = new System.Drawing.Size(447, 49);
-            this.CmbNombreProyecto.StartIndex = 0;
-            this.CmbNombreProyecto.TabIndex = 82;
+            CmbNombreProyecto.AutoResize = false;
+            CmbNombreProyecto.BackColor = Color.FromArgb(255, 255, 255);
+            CmbNombreProyecto.Depth = 0;
+            CmbNombreProyecto.DrawMode = DrawMode.OwnerDrawVariable;
+            CmbNombreProyecto.DropDownHeight = 174;
+            CmbNombreProyecto.DropDownStyle = ComboBoxStyle.DropDownList;
+            CmbNombreProyecto.DropDownWidth = 121;
+            CmbNombreProyecto.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            CmbNombreProyecto.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            CmbNombreProyecto.FormattingEnabled = true;
+            CmbNombreProyecto.IntegralHeight = false;
+            CmbNombreProyecto.ItemHeight = 43;
+            CmbNombreProyecto.Location = new Point(15, 116);
+            CmbNombreProyecto.MaxDropDownItems = 4;
+            CmbNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
+            CmbNombreProyecto.Name = "CmbNombreProyecto";
+            CmbNombreProyecto.Size = new Size(447, 49);
+            CmbNombreProyecto.StartIndex = 0;
+            CmbNombreProyecto.TabIndex = 82;
+            CmbNombreProyecto.SelectedIndexChanged += CmbNombreProyecto_SelectedIndexChanged;
             // 
             // materialLabel4
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(15, 392);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(91, 19);
-            this.materialLabel4.TabIndex = 100;
-            this.materialLabel4.Text = "Comentarios";
+            materialLabel4.AutoSize = true;
+            materialLabel4.Depth = 0;
+            materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel4.Location = new Point(15, 392);
+            materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel4.Name = "materialLabel4";
+            materialLabel4.Size = new Size(91, 19);
+            materialLabel4.TabIndex = 100;
+            materialLabel4.Text = "Comentarios";
             // 
             // materialLabel5
             // 
-            this.materialLabel5.AutoSize = true;
-            this.materialLabel5.Depth = 0;
-            this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(725, 392);
-            this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(45, 19);
-            this.materialLabel5.TabIndex = 101;
-            this.materialLabel5.Text = "Anexo";
+            materialLabel5.AutoSize = true;
+            materialLabel5.Depth = 0;
+            materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel5.Location = new Point(725, 392);
+            materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel5.Name = "materialLabel5";
+            materialLabel5.Size = new Size(45, 19);
+            materialLabel5.TabIndex = 101;
+            materialLabel5.Text = "Anexo";
             // 
             // txtComentario
             // 
-            this.txtComentario.AnimateReadOnly = false;
-            this.txtComentario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtComentario.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtComentario.Depth = 0;
-            this.txtComentario.HideSelection = true;
-            this.txtComentario.Location = new System.Drawing.Point(12, 22);
-            this.txtComentario.MaxLength = 32767;
-            this.txtComentario.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtComentario.Name = "txtComentario";
-            this.txtComentario.PasswordChar = '\0';
-            this.txtComentario.ReadOnly = false;
-            this.txtComentario.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtComentario.SelectedText = "";
-            this.txtComentario.SelectionLength = 0;
-            this.txtComentario.SelectionStart = 0;
-            this.txtComentario.ShortcutsEnabled = true;
-            this.txtComentario.Size = new System.Drawing.Size(513, 61);
-            this.txtComentario.TabIndex = 102;
-            this.txtComentario.TabStop = false;
-            this.txtComentario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtComentario.UseSystemPasswordChar = false;
+            txtComentario.AnimateReadOnly = false;
+            txtComentario.BackgroundImageLayout = ImageLayout.None;
+            txtComentario.CharacterCasing = CharacterCasing.Normal;
+            txtComentario.Depth = 0;
+            txtComentario.HideSelection = true;
+            txtComentario.Location = new Point(12, 22);
+            txtComentario.MaxLength = 32767;
+            txtComentario.MouseState = MaterialSkin.MouseState.OUT;
+            txtComentario.Name = "txtComentario";
+            txtComentario.PasswordChar = '\0';
+            txtComentario.ReadOnly = false;
+            txtComentario.ScrollBars = ScrollBars.None;
+            txtComentario.SelectedText = "";
+            txtComentario.SelectionLength = 0;
+            txtComentario.SelectionStart = 0;
+            txtComentario.ShortcutsEnabled = true;
+            txtComentario.Size = new Size(513, 61);
+            txtComentario.TabIndex = 102;
+            txtComentario.TabStop = false;
+            txtComentario.TextAlign = HorizontalAlignment.Left;
+            txtComentario.UseSystemPasswordChar = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.EliminarAnexo);
-            this.groupBox1.Controls.Add(this.bntVerAnexo);
-            this.groupBox1.Controls.Add(this.bntNuevoAnexo);
-            this.groupBox1.Controls.Add(this.datagridAnexo);
-            this.groupBox1.Location = new System.Drawing.Point(570, 414);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(348, 234);
-            this.groupBox1.TabIndex = 103;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Documentos Anexados";
-            // 
-            // bntVerAnexo
-            // 
-            this.bntVerAnexo.Location = new System.Drawing.Point(87, 205);
-            this.bntVerAnexo.Name = "bntVerAnexo";
-            this.bntVerAnexo.Size = new System.Drawing.Size(75, 23);
-            this.bntVerAnexo.TabIndex = 3;
-            this.bntVerAnexo.Text = "Ver Archivo";
-            this.bntVerAnexo.UseVisualStyleBackColor = true;
-            this.bntVerAnexo.Click += new System.EventHandler(this.bntVerAnexo_Click);
-            // 
-            // bntNuevoAnexo
-            // 
-            this.bntNuevoAnexo.Location = new System.Drawing.Point(6, 205);
-            this.bntNuevoAnexo.Name = "bntNuevoAnexo";
-            this.bntNuevoAnexo.Size = new System.Drawing.Size(75, 23);
-            this.bntNuevoAnexo.TabIndex = 1;
-            this.bntNuevoAnexo.Text = "Agregar";
-            this.bntNuevoAnexo.UseVisualStyleBackColor = true;
-            this.bntNuevoAnexo.Click += new System.EventHandler(this.bntNuevoAnexo_Click);
-            // 
-            // datagridAnexo
-            // 
-            this.datagridAnexo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagridAnexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridAnexo.Location = new System.Drawing.Point(0, 13);
-            this.datagridAnexo.Name = "datagridAnexo";
-            this.datagridAnexo.RowTemplate.Height = 25;
-            this.datagridAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridAnexo.Size = new System.Drawing.Size(342, 179);
-            this.datagridAnexo.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BtnEliminarComentario);
-            this.groupBox2.Controls.Add(this.bntEditarComentario);
-            this.groupBox2.Controls.Add(this.bntAgregarComentario);
-            this.groupBox2.Controls.Add(this.dataGridComentarios);
-            this.groupBox2.Controls.Add(this.txtComentario);
-            this.groupBox2.Location = new System.Drawing.Point(15, 414);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(525, 242);
-            this.groupBox2.TabIndex = 104;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // BtnEliminarComentario
-            // 
-            this.BtnEliminarComentario.Location = new System.Drawing.Point(186, 214);
-            this.BtnEliminarComentario.Name = "BtnEliminarComentario";
-            this.BtnEliminarComentario.Size = new System.Drawing.Size(75, 23);
-            this.BtnEliminarComentario.TabIndex = 106;
-            this.BtnEliminarComentario.Text = "Eliminar";
-            this.BtnEliminarComentario.UseVisualStyleBackColor = true;
-            this.BtnEliminarComentario.Click += new System.EventHandler(this.BtnEliminarComentario_Click);
-            // 
-            // bntEditarComentario
-            // 
-            this.bntEditarComentario.Location = new System.Drawing.Point(105, 214);
-            this.bntEditarComentario.Name = "bntEditarComentario";
-            this.bntEditarComentario.Size = new System.Drawing.Size(75, 23);
-            this.bntEditarComentario.TabIndex = 105;
-            this.bntEditarComentario.Text = "Editar";
-            this.bntEditarComentario.UseVisualStyleBackColor = true;
-            this.bntEditarComentario.Click += new System.EventHandler(this.bntEditarComentario_Click);
-            // 
-            // bntAgregarComentario
-            // 
-            this.bntAgregarComentario.Location = new System.Drawing.Point(16, 215);
-            this.bntAgregarComentario.Name = "bntAgregarComentario";
-            this.bntAgregarComentario.Size = new System.Drawing.Size(75, 23);
-            this.bntAgregarComentario.TabIndex = 104;
-            this.bntAgregarComentario.Text = "Agregar";
-            this.bntAgregarComentario.UseVisualStyleBackColor = true;
-            this.bntAgregarComentario.Click += new System.EventHandler(this.bntAgregarComentario_Click);
-            // 
-            // dataGridComentarios
-            // 
-            this.dataGridComentarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridComentarios.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridComentarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridComentarios.Location = new System.Drawing.Point(12, 89);
-            this.dataGridComentarios.Name = "dataGridComentarios";
-            this.dataGridComentarios.RowTemplate.Height = 25;
-            this.dataGridComentarios.Size = new System.Drawing.Size(507, 120);
-            this.dataGridComentarios.TabIndex = 103;
+            groupBox1.Controls.Add(EliminarAnexo);
+            groupBox1.Controls.Add(bntVerAnexo);
+            groupBox1.Controls.Add(bntNuevoAnexo);
+            groupBox1.Controls.Add(datagridAnexo);
+            groupBox1.Location = new Point(570, 414);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(348, 234);
+            groupBox1.TabIndex = 103;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Documentos Anexados";
             // 
             // EliminarAnexo
             // 
-            this.EliminarAnexo.Location = new System.Drawing.Point(168, 205);
-            this.EliminarAnexo.Name = "EliminarAnexo";
-            this.EliminarAnexo.Size = new System.Drawing.Size(75, 23);
-            this.EliminarAnexo.TabIndex = 4;
-            this.EliminarAnexo.Text = "Eliminar";
-            this.EliminarAnexo.UseVisualStyleBackColor = true;
-            this.EliminarAnexo.Click += new System.EventHandler(this.EliminarAnexo_Click);
+            EliminarAnexo.Location = new Point(168, 205);
+            EliminarAnexo.Name = "EliminarAnexo";
+            EliminarAnexo.Size = new Size(75, 23);
+            EliminarAnexo.TabIndex = 4;
+            EliminarAnexo.Text = "Eliminar";
+            EliminarAnexo.UseVisualStyleBackColor = true;
+            EliminarAnexo.Click += EliminarAnexo_Click;
+            // 
+            // bntVerAnexo
+            // 
+            bntVerAnexo.Location = new Point(87, 205);
+            bntVerAnexo.Name = "bntVerAnexo";
+            bntVerAnexo.Size = new Size(75, 23);
+            bntVerAnexo.TabIndex = 3;
+            bntVerAnexo.Text = "Ver Archivo";
+            bntVerAnexo.UseVisualStyleBackColor = true;
+            bntVerAnexo.Click += bntVerAnexo_Click;
+            // 
+            // bntNuevoAnexo
+            // 
+            bntNuevoAnexo.Location = new Point(6, 205);
+            bntNuevoAnexo.Name = "bntNuevoAnexo";
+            bntNuevoAnexo.Size = new Size(75, 23);
+            bntNuevoAnexo.TabIndex = 1;
+            bntNuevoAnexo.Text = "Agregar";
+            bntNuevoAnexo.UseVisualStyleBackColor = true;
+            bntNuevoAnexo.Click += bntNuevoAnexo_Click;
+            // 
+            // datagridAnexo
+            // 
+            datagridAnexo.AllowUserToAddRows = false;
+            datagridAnexo.AllowUserToDeleteRows = false;
+            datagridAnexo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            datagridAnexo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            datagridAnexo.EditMode = DataGridViewEditMode.EditProgrammatically;
+            datagridAnexo.Location = new Point(0, 13);
+            datagridAnexo.Name = "datagridAnexo";
+            datagridAnexo.RowTemplate.Height = 25;
+            datagridAnexo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            datagridAnexo.Size = new Size(342, 179);
+            datagridAnexo.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(BtnEliminarComentario);
+            groupBox2.Controls.Add(bntEditarComentario);
+            groupBox2.Controls.Add(bntAgregarComentario);
+            groupBox2.Controls.Add(dataGridComentarios);
+            groupBox2.Controls.Add(txtComentario);
+            groupBox2.Location = new Point(15, 414);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(525, 242);
+            groupBox2.TabIndex = 104;
+            groupBox2.TabStop = false;
+            // 
+            // BtnEliminarComentario
+            // 
+            BtnEliminarComentario.Location = new Point(186, 214);
+            BtnEliminarComentario.Name = "BtnEliminarComentario";
+            BtnEliminarComentario.Size = new Size(75, 23);
+            BtnEliminarComentario.TabIndex = 106;
+            BtnEliminarComentario.Text = "Eliminar";
+            BtnEliminarComentario.UseVisualStyleBackColor = true;
+            BtnEliminarComentario.Click += BtnEliminarComentario_Click;
+            // 
+            // bntEditarComentario
+            // 
+            bntEditarComentario.Location = new Point(105, 214);
+            bntEditarComentario.Name = "bntEditarComentario";
+            bntEditarComentario.Size = new Size(75, 23);
+            bntEditarComentario.TabIndex = 105;
+            bntEditarComentario.Text = "Editar";
+            bntEditarComentario.UseVisualStyleBackColor = true;
+            bntEditarComentario.Click += bntEditarComentario_Click;
+            // 
+            // bntAgregarComentario
+            // 
+            bntAgregarComentario.Location = new Point(16, 215);
+            bntAgregarComentario.Name = "bntAgregarComentario";
+            bntAgregarComentario.Size = new Size(75, 23);
+            bntAgregarComentario.TabIndex = 104;
+            bntAgregarComentario.Text = "Agregar";
+            bntAgregarComentario.UseVisualStyleBackColor = true;
+            bntAgregarComentario.Click += bntAgregarComentario_Click;
+            // 
+            // dataGridComentarios
+            // 
+            dataGridComentarios.AllowUserToAddRows = false;
+            dataGridComentarios.AllowUserToDeleteRows = false;
+            dataGridComentarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridComentarios.BackgroundColor = SystemColors.ControlLight;
+            dataGridComentarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridComentarios.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridComentarios.Location = new Point(12, 89);
+            dataGridComentarios.Name = "dataGridComentarios";
+            dataGridComentarios.RowTemplate.Height = 25;
+            dataGridComentarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridComentarios.Size = new Size(507, 120);
+            dataGridComentarios.TabIndex = 103;
             // 
             // Frm_RealizarTarea
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 711);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.materialLabel4);
-            this.Controls.Add(this.CmbNombreProyecto);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.cmbResponsableTarea);
-            this.Controls.Add(this.txtDescripcionTarea);
-            this.Controls.Add(this.btn_limpiar);
-            this.Controls.Add(this.btn_guardar);
-            this.Controls.Add(this.btn_volver);
-            this.Controls.Add(this.labelDescripcionTarea);
-            this.Controls.Add(this.dateTimePickerEntrega);
-            this.Controls.Add(this.dateTimePickerInicio);
-            this.Controls.Add(this.labelFechaEntrega);
-            this.Controls.Add(this.labelFechaInicio);
-            this.Controls.Add(this.materialLabel7);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.cmbEstadoTarea);
-            this.Controls.Add(this.txtNombreTarea);
-            this.Name = "Frm_RealizarTarea";
-            this.Text = "Frm_NuevaTarea";
-            this.Load += new System.EventHandler(this.Frm_RealizarTarea_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_limpiar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_guardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_volver)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.datagridAnexo)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridComentarios)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(934, 711);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(materialLabel5);
+            Controls.Add(materialLabel4);
+            Controls.Add(CmbNombreProyecto);
+            Controls.Add(materialLabel2);
+            Controls.Add(materialLabel3);
+            Controls.Add(cmbResponsableTarea);
+            Controls.Add(txtDescripcionTarea);
+            Controls.Add(btn_limpiar);
+            Controls.Add(btn_guardar);
+            Controls.Add(btn_volver);
+            Controls.Add(labelDescripcionTarea);
+            Controls.Add(dateTimePickerEntrega);
+            Controls.Add(dateTimePickerInicio);
+            Controls.Add(labelFechaEntrega);
+            Controls.Add(labelFechaInicio);
+            Controls.Add(materialLabel7);
+            Controls.Add(materialLabel1);
+            Controls.Add(cmbEstadoTarea);
+            Controls.Add(txtNombreTarea);
+            Name = "Frm_RealizarTarea";
+            Text = "Frm_NuevaTarea";
+            Load += Frm_RealizarTarea_Load;
+            MouseMove += Frm_RealizarTarea_MouseMove;
+            ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)datagridAnexo).EndInit();
+            groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridComentarios).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

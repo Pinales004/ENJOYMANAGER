@@ -140,7 +140,7 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
                 // Obtén el Id del usuario seleccionado en el DataGridView
                 int idUsuarioSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString());

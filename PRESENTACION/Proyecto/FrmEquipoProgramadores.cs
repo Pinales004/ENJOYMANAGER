@@ -42,8 +42,7 @@ namespace PRESENTACION.Proyecto
             this.CmbProgramadores.DataSource = miembro.GetUsuarioMiembrosProgramador();
             this.CmbProgramadores.DisplayMember = "Nombres";
             this.CmbProgramadores.ValueMember = "IdUsuario";
-
-
+            //this.dataGridView1.Columns[0].Visible = false;
         }
 
         private void CargarMiembros()

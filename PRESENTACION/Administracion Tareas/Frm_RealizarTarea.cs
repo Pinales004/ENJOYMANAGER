@@ -31,7 +31,7 @@ namespace PRESENTACION.Administracion_Tareas
             btn_icon_hover.AplicarFormaRedonda(btn_volver);
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
-            
+
         }
 
         public FormTareas FormTareas { get; set; }
@@ -45,8 +45,6 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_RealizarTarea_Load(object sender, EventArgs e)
         {
-            EstadoTareas();
-            ListadoProyectos();
             CargarAnexos();
             CargarComentarios();
             txtNombreTarea.Enabled = false;
@@ -64,26 +62,6 @@ namespace PRESENTACION.Administracion_Tareas
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
-        private void EstadoTareas()
-        {
-
-            Tareas cargar = new Tareas();
-
-            this.cmbEstadoTarea.DataSource = cargar.TareaEstado();
-            this.cmbEstadoTarea.DisplayMember = "Estado";
-            this.cmbEstadoTarea.ValueMember = "EstadoTareaid";
-        }
-
-        private void ListadoProyectos()
-        {
-
-            Tareas cargar = new Tareas();
-
-            this.CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            this.CmbNombreProyecto.DisplayMember = "NombreProyecto";
-            this.CmbNombreProyecto.ValueMember = "IdProyecto";
-        }
 
         private void ListaMiembros(int IdProyecto)
         {
@@ -272,7 +250,7 @@ namespace PRESENTACION.Administracion_Tareas
         private void EliminarAnexo_Click(object sender, EventArgs e)
         {
             AnexoTarea anexo = new AnexoTarea();
-            int anexoId = 0; 
+            int anexoId = 0;
             if (datagridAnexo.SelectedRows.Count > 0)
             {
                 // Obtén el anexo seleccionado
@@ -307,7 +285,8 @@ namespace PRESENTACION.Administracion_Tareas
 
         #region Comentarios
 
-        public void CargarComentarios() {
+        public void CargarComentarios()
+        {
 
             ComentarioTarea comentarios = new ComentarioTarea();
             this.dataGridComentarios.AutoGenerateColumns = true; // Desactiva la generación automática de columnas
@@ -330,7 +309,7 @@ namespace PRESENTACION.Administracion_Tareas
             {
                 if (modoEdicion && ComentarioId > 0)
                 {
-                    ComentariosTarea comentariosActualiza = new ComentariosTarea(Convert.ToInt32(ComentarioId),txtComentario.Text);
+                    ComentariosTarea comentariosActualiza = new ComentariosTarea(Convert.ToInt32(ComentarioId), txtComentario.Text);
                     // Estás en modo de edición, actualiza el comentario existente
                     comentario.UpdateComentarioTarea(comentariosActualiza);
                     CargarComentarios();

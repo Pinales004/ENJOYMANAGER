@@ -36,13 +36,13 @@ namespace DATOS.Conexion
                             UserLoginCache.Nombres = reader.GetString(2);
                             UserLoginCache.Apellidos = reader.GetString(3);
                             UserLoginCache.Sexo = reader.GetBoolean(4);
-                            UserLoginCache.EmailUsuario = reader.GetString(5);
-                            UserLoginCache.ContrasenaUsuario = reader.GetString(6);
-                            UserLoginCache.ResetPasword = reader.GetBoolean(7);
-                            UserLoginCache.RolUsuario = reader.GetInt32(8);
-                            UserLoginCache.EstadoUsuario = reader.GetInt32(9);
-                            UserLoginCache.IntentosFallidos = reader.GetInt32(10);
-                            UserLoginCache.Borrado = reader.GetBoolean(11);
+                            UserLoginCache.EmailUsuario = reader.GetString(7);
+                            UserLoginCache.ContrasenaUsuario = reader.GetString(8);
+                            UserLoginCache.ResetPasword = reader.GetBoolean(9);
+                            UserLoginCache.RolUsuario = reader.GetInt32(10);
+                            UserLoginCache.EstadoUsuario = reader.GetInt32(11);
+                            UserLoginCache.IntentosFallidos = reader.GetInt32(12);
+                            UserLoginCache.Borrado = reader.GetBoolean(13);
                         }
 
                         int intento = GetFailedLoginAttempts(user);

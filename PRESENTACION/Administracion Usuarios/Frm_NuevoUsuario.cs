@@ -32,7 +32,12 @@ namespace PRESENTACION.Administracion_Usuarios
 
         private void Frm_NuevoUsuario_Load(object sender, EventArgs e)
         {
-
+            if (TipoOperacion == "Insertar")
+            {
+                ListarRoles();
+                LLnearCombroboxGnero();
+                ListarEstados();
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

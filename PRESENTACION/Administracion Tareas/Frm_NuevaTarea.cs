@@ -36,7 +36,12 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_NuevaTarea_Load(object sender, EventArgs e)
         {
-           
+            if (TipoOperacion == "Insertar")
+            {
+                EstadoTareas();
+                ListadoProyectos();
+            }
+
         }
 
 
@@ -185,8 +190,6 @@ namespace PRESENTACION.Administracion_Tareas
                 }
                 else
                 {
-                    EstadoTareas();
-                    ListadoProyectos();
 
                     // Si todas las validaciones pasan, crea un objeto TareasProyecto y guarda la tarea
                     TareasProyecto nuevaTarea = new TareasProyecto
@@ -194,10 +197,10 @@ namespace PRESENTACION.Administracion_Tareas
                         Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
                         Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
                         Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
-                        txtNombreTarea.Text,
-                        txtDescripcionTarea.Text,
-                        dateTimePickerInicio.Value,
-                        dateTimePickerEntrega.Value
+                        this.txtNombreTarea.Text,
+                        this.txtDescripcionTarea.Text,
+                        this.dateTimePickerInicio.Value,
+                        this.dateTimePickerEntrega.Value
                     );
 
                     // Llama al método para guardar la tarea
@@ -234,10 +237,21 @@ namespace PRESENTACION.Administracion_Tareas
                 else
                 {
                     Tareas cargar = new Tareas();
-                    int tareaId = Convert.ToInt32(TareaId);
-                    int nuevoEstadoTareaId = Convert.ToInt32(cmbEstadoTarea.SelectedValue);
 
-                    cargar.UpdateEstadoTarea(tareaId, nuevoEstadoTareaId);
+                    TareasProyecto ActualizarTarea = new TareasProyecto
+                        (
+                            Convert.ToInt32(TareaId),
+                            Convert.ToInt32(CmbNombreProyecto.SelectedValue), // Agrega una coma para separar las propiedades
+                            Convert.ToInt32(cmbEstadoTarea.SelectedValue), // Asigna el ID del estado de la tarea adecuado
+                            Convert.ToInt32(cmbResponsableTarea.SelectedValue), // Asigna el ID del miembro de proyecto adecuado
+                            this.txtNombreTarea.Text,
+                            this.txtDescripcionTarea.Text,
+                            this.dateTimePickerInicio.Value,
+                            this.dateTimePickerEntrega.Value
+                        );
+
+                    cargar.UpdateTarea(ActualizarTarea);
+
 
                 }
             }

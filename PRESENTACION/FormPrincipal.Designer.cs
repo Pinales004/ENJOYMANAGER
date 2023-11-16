@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            btnCerrarSesion = new Button();
             panelContenedor = new Panel();
             panelFormularios = new Panel();
-            panelBarraTitulo = new Panel();
-            panel2 = new Panel();
+            panel1 = new Panel();
+            btnCerrarSesion = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             lblApellido = new Label();
             lblNombre = new Label();
             lblRol = new Label();
+            panelBarraTitulo = new Panel();
+            panel2 = new Panel();
             btnUsuarios = new Button();
             btnProyectos = new Button();
             btnTareas = new Button();
@@ -47,32 +48,16 @@
             btnRestaurar = new PictureBox();
             btnCerrar = new PictureBox();
             panelContenedor.SuspendLayout();
+            panelFormularios.SuspendLayout();
+            panel1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             panelBarraTitulo.SuspendLayout();
             panel2.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnCerrar).BeginInit();
             SuspendLayout();
-            // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnCerrarSesion.Cursor = Cursors.Hand;
-            btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
-            btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
-            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
-            btnCerrarSesion.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCerrarSesion.ForeColor = Color.Gainsboro;
-            btnCerrarSesion.Location = new Point(1048, 0);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(99, 30);
-            btnCerrarSesion.TabIndex = 6;
-            btnCerrarSesion.Text = "Cerrar sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
-            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // panelContenedor
             // 
@@ -82,59 +67,59 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(0, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1150, 550);
+            panelContenedor.Size = new Size(1150, 590);
             panelContenedor.TabIndex = 1;
             // 
             // panelFormularios
             // 
             panelFormularios.BackColor = Color.FromArgb(15, 15, 15);
+            panelFormularios.Controls.Add(panel1);
             panelFormularios.Dock = DockStyle.Fill;
             panelFormularios.Location = new Point(0, 60);
             panelFormularios.Name = "panelFormularios";
-            panelFormularios.Size = new Size(1150, 490);
+            panelFormularios.Size = new Size(1150, 530);
             panelFormularios.TabIndex = 0;
             // 
-            // panelBarraTitulo
+            // panel1
             // 
-            panelBarraTitulo.BackColor = SystemColors.ControlLight;
-            panelBarraTitulo.Controls.Add(panel2);
-            panelBarraTitulo.Controls.Add(label1);
-            panelBarraTitulo.Controls.Add(btnMinimizar);
-            panelBarraTitulo.Controls.Add(btnMaximizar);
-            panelBarraTitulo.Controls.Add(btnRestaurar);
-            panelBarraTitulo.Controls.Add(btnCerrar);
-            panelBarraTitulo.Dock = DockStyle.Top;
-            panelBarraTitulo.Location = new Point(0, 0);
-            panelBarraTitulo.Name = "panelBarraTitulo";
-            panelBarraTitulo.Size = new Size(1150, 60);
-            panelBarraTitulo.TabIndex = 0;
-            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
+            panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(btnCerrarSesion);
+            panel1.Controls.Add(flowLayoutPanel1);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 500);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1150, 30);
+            panel1.TabIndex = 0;
             // 
-            // panel2
+            // btnCerrarSesion
             // 
-            panel2.BackColor = SystemColors.ControlDarkDark;
-            panel2.Controls.Add(flowLayoutPanel1);
-            panel2.Controls.Add(btnCerrarSesion);
-            panel2.Controls.Add(btnUsuarios);
-            panel2.Controls.Add(btnProyectos);
-            panel2.Controls.Add(btnTareas);
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 30);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1150, 30);
-            panel2.TabIndex = 9;
+            btnCerrarSesion.Cursor = Cursors.Hand;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatAppearance.MouseDownBackColor = Color.FromArgb(33, 50, 70);
+            btnCerrarSesion.FlatAppearance.MouseOverBackColor = Color.FromArgb(12, 61, 92);
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCerrarSesion.ForeColor = Color.Gainsboro;
+            btnCerrarSesion.Location = new Point(12, 0);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(99, 30);
+            btnCerrarSesion.TabIndex = 10;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             flowLayoutPanel1.Controls.Add(lblApellido);
             flowLayoutPanel1.Controls.Add(lblNombre);
             flowLayoutPanel1.Controls.Add(lblRol);
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
             flowLayoutPanel1.ForeColor = Color.Gainsboro;
-            flowLayoutPanel1.Location = new Point(383, 7);
+            flowLayoutPanel1.Location = new Point(479, 6);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(659, 24);
-            flowLayoutPanel1.TabIndex = 8;
+            flowLayoutPanel1.TabIndex = 9;
             // 
             // lblApellido
             // 
@@ -168,6 +153,34 @@
             lblRol.Size = new Size(27, 18);
             lblRol.TabIndex = 5;
             lblRol.Text = "rol";
+            // 
+            // panelBarraTitulo
+            // 
+            panelBarraTitulo.BackColor = SystemColors.ControlLight;
+            panelBarraTitulo.Controls.Add(panel2);
+            panelBarraTitulo.Controls.Add(label1);
+            panelBarraTitulo.Controls.Add(btnMinimizar);
+            panelBarraTitulo.Controls.Add(btnMaximizar);
+            panelBarraTitulo.Controls.Add(btnRestaurar);
+            panelBarraTitulo.Controls.Add(btnCerrar);
+            panelBarraTitulo.Dock = DockStyle.Top;
+            panelBarraTitulo.Location = new Point(0, 0);
+            panelBarraTitulo.Name = "panelBarraTitulo";
+            panelBarraTitulo.Size = new Size(1150, 60);
+            panelBarraTitulo.TabIndex = 0;
+            panelBarraTitulo.MouseMove += panelBarraTitulo_MouseMove;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ControlDarkDark;
+            panel2.Controls.Add(btnUsuarios);
+            panel2.Controls.Add(btnProyectos);
+            panel2.Controls.Add(btnTareas);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 30);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1150, 30);
+            panel2.TabIndex = 9;
             // 
             // btnUsuarios
             // 
@@ -287,20 +300,22 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 550);
+            ClientSize = new Size(1150, 590);
             Controls.Add(panelContenedor);
             FormBorderStyle = FormBorderStyle.None;
-            MinimumSize = new Size(1120, 450);
+            MinimumSize = new Size(1120, 590);
             Name = "FormPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormPrincipal";
             Load += FormPrincipal_Load;
             panelContenedor.ResumeLayout(false);
+            panelFormularios.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             panelBarraTitulo.ResumeLayout(false);
             panelBarraTitulo.PerformLayout();
             panel2.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnMaximizar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnRestaurar).EndInit();
@@ -309,8 +324,6 @@
         }
 
         #endregion
-
-        private Button btnCerrarSesion;
         private Panel panelContenedor;
         private Panel panelFormularios;
         private Panel panelBarraTitulo;
@@ -321,11 +334,13 @@
         private PictureBox btnMaximizar;
         private PictureBox btnRestaurar;
         private PictureBox btnCerrar;
-        private Label lblNombre;
-        private Label lblApellido;
-        private Label lblRol;
         private Label label1;
         private Panel panel2;
+        private Panel panel1;
+        private Button btnCerrarSesion;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label lblApellido;
+        private Label lblNombre;
+        private Label lblRol;
     }
 }

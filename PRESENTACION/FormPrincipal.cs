@@ -38,6 +38,8 @@ namespace PRESENTACION
                 btnUsuarios.Visible = true;
                 btnProyectos.Visible = false;
                 btnTareas.Visible = false;
+                AbrirFormulario<Frm_Usuarios>();
+
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
             {
@@ -45,6 +47,7 @@ namespace PRESENTACION
                 btnUsuarios.Visible = false;
                 btnProyectos.Visible = true;
                 btnTareas.Visible = true;
+                AbrirFormulario<FormProyectos>();
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
@@ -52,6 +55,7 @@ namespace PRESENTACION
                 btnUsuarios.Visible = false;
                 btnProyectos.Visible = false;
                 btnTareas.Visible = true;
+                AbrirFormulario<FormTareas>();
             }
         }
 
