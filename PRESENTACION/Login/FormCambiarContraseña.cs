@@ -1,4 +1,5 @@
-﻿using Comun.Cache;
+﻿using Comun.Biblioteca.Enums;
+using Comun.Cache;
 using DOMINIO.Models;
 using System;
 using System.Collections.Generic;
@@ -49,17 +50,24 @@ namespace PRESENTACION.Login
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            Usuario cargar = new Usuario();
+            if (txtContraseña.Text == txtContraseñaComprobar.Text)
+            {
+                Usuario cargar = new Usuario();
 
-            int IdUsuario = UserLoginCache.IdUsuario;
+                int IdUsuario = UserLoginCache.IdUsuario;
 
-            string nuevaContraseña = this.txtContraseña.Text;
-            string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
-            cargar.ActualizarContraseña(Convert.ToInt32(IdUsuario),
-                nuevaContraseñaHash, // Almacenar el nuevo hash en la base de datos
-                Convert.ToInt32(2)
-            );
-            this.Hide();
+                string nuevaContraseña = this.txtContraseña.Text;
+                string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
+                cargar.ActualizarContraseña(Convert.ToInt32(IdUsuario),
+                    nuevaContraseñaHash, // Almacenar el nuevo hash en la base de datos
+                    Convert.ToInt32(EnumEstadoUsuario.Estado.Activo)
+                );
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Compruebe que ambas contraseñas son iguales.");
+            }
 
         }
     }

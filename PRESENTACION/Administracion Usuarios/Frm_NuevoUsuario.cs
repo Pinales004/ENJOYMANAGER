@@ -65,46 +65,48 @@ namespace PRESENTACION.Administracion_Usuarios
         {
             Usuario cargar = new Usuario();
 
-            if (TipoOperacion == "Insertar")
+            if (string.IsNullOrWhiteSpace(this.txtNombreUsuario.Text))
             {
-                if (string.IsNullOrWhiteSpace(this.txtNombreUsuario.Text))
+                MessageBox.Show("Debe indicar un UsuarioNombre.");
+            }
+            else if (string.IsNullOrWhiteSpace(this.txtNombre.Text))
+            {
+                MessageBox.Show("Debe indicar los nombres del usuario.");
+            }
+            else if (string.IsNullOrWhiteSpace(this.txtApellido.Text))
+            {
+                MessageBox.Show("Debe indicar el apellido del usuario.");
+            }
+            else if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
+            {
+                MessageBox.Show("Debe ingresar una contraseña.");
+            }
+            else if (this.txtContraseña.Text != this.txtContraseña2.Text)
+            {
+                MessageBox.Show("Las contraseñas no coinciden.");
+            }
+            else if (cmbGenero.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar el sexo del usuario.");
+            }
+            else if (string.IsNullOrWhiteSpace(this.txtEmail.Text))
+            {
+                MessageBox.Show("Debe indicar un correo electrónico.");
+            }
+            else if (cmbRol.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un rol de usuario.");
+            }
+            else if (CboEstadoUsuario.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un Estado de usuario.");
+            }
+            else
+            {
+                if (TipoOperacion == "Insertar")
                 {
-                    MessageBox.Show("Debe indicar un UsuarioNombre.");
-                }
-                else if (string.IsNullOrWhiteSpace(this.txtNombre.Text))
-                {
-                    MessageBox.Show("Debe indicar los nombres del usuario.");
-                }
-                else if (string.IsNullOrWhiteSpace(this.txtApellido.Text))
-                {
-                    MessageBox.Show("Debe indicar el apellido del usuario.");
-                }
-                else if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
-                {
-                    MessageBox.Show("Debe ingresar una contraseña.");
-                }
-                else if (this.txtContraseña.Text != this.txtContraseña2.Text)
-                {
-                    MessageBox.Show("Las contraseñas no coinciden.");
-                }
-                else if (cmbGenero.SelectedItem == null)
-                {
-                    MessageBox.Show("Debe seleccionar el sexo del usuario.");
-                }
-                else if (string.IsNullOrWhiteSpace(this.txtEmail.Text))
-                {
-                    MessageBox.Show("Debe indicar un correo electrónico.");
-                }
-                else if (cmbRol.SelectedItem == null)
-                {
-                    MessageBox.Show("Debe seleccionar un rol de usuario.");
-                }
-                else if (CboEstadoUsuario.SelectedItem == null)
-                {
-                    MessageBox.Show("Debe seleccionar un Estado de usuario.");
-                }
-                else
-                {
+                    ResetPassword.Visible = false;
+
                     // Calcular el hash SHA-256 de la contraseña antes de almacenarla
                     string contraseñaIngresada = this.txtContraseña.Text;
                     string contraseñaHash = HashHelper.CalculateSHA256Hash(contraseñaIngresada);
@@ -129,31 +131,32 @@ namespace PRESENTACION.Administracion_Usuarios
                     LimpiarCampos();
                     this.Hide();
                 }
-            }
-            else if (TipoOperacion == "Editar")
-            {
-                // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
-                string nuevaContraseña = this.txtContraseña.Text;
-                string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
-
-                cargar.ActualizarUsuarios(Convert.ToInt32(IdUsuario),
-                    this.txtNombreUsuario.Text,
-                    this.txtNombre.Text,
-                    txtApellido.Text,
-                    Convert.ToBoolean(cmbGenero.SelectedValue),
-                    txtEmail.Text,
-                    nuevaContraseñaHash,  // Almacenar el nuevo hash en la base de datos
-                    Convert.ToInt32(cmbRol.SelectedValue),
-                    Convert.ToInt32(CboEstadoUsuario.SelectedValue)
-                );
-                form.CargarUsuarios();
-                // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
-                if (Frm_Usuarios != null)
+                else if (TipoOperacion == "Editar")
                 {
-                    Frm_Usuarios.CargarUsuarios();
+                    // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
+                    string nuevaContraseña = this.txtContraseña.Text;
+                    string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
+
+                    cargar.ActualizarUsuarios(Convert.ToInt32(IdUsuario),
+                        this.txtNombreUsuario.Text,
+                        this.txtNombre.Text,
+                        txtApellido.Text,
+                        Convert.ToBoolean(cmbGenero.SelectedValue),
+                        txtEmail.Text,
+                        nuevaContraseñaHash,  // Almacenar el nuevo hash en la base de datos
+                        Convert.ToInt32(cmbRol.SelectedValue),
+                        Convert.ToInt32(CboEstadoUsuario.SelectedValue),
+                        Convert.ToBoolean(ResetPassword.Checked)
+                    );
+                    form.CargarUsuarios();
+                    // Llama al método CargarUsuarios del formulario FormUsuarios para actualizar el DataGridView
+                    if (Frm_Usuarios != null)
+                    {
+                        Frm_Usuarios.CargarUsuarios();
+                    }
+                    LimpiarCampos();
+                    this.Hide();
                 }
-                LimpiarCampos();
-                this.Hide();
             }
         }
         #endregion
@@ -167,7 +170,7 @@ namespace PRESENTACION.Administracion_Usuarios
             txtEmail.Text = "";
             txtContraseña.Text = "";
             txtContraseña2.Text = "";
-            this.CheckActivo.Checked = false;
+            this.ResetPassword.Checked = false;
         }
         private void ListarRoles()
         {

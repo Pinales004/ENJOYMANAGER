@@ -32,12 +32,12 @@ namespace DOMINIO.Models
         {
             return users.CargarUsuarios();
         }
-        public void ActualizarUsuarios(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string NuevaContrasenaUsuario, int RolUsuario, int EstadoUsuario)
+        public void ActualizarUsuarios(int IdUsuario, string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string NuevaContrasenaUsuario, int RolUsuario, int EstadoUsuario, bool ResetPasword)
         {
             // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
             string nuevaContraseñaHash = NuevaContrasenaUsuario;
 
-            users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, nuevaContraseñaHash, RolUsuario, EstadoUsuario);
+            users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, nuevaContraseñaHash, RolUsuario, EstadoUsuario, ResetPasword);
         }
         public void ActualizarContraseña(int IdUsuario, string NuevaContrasenaUsuario, int EstadoUsuario)
         {

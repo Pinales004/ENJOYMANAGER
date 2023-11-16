@@ -35,6 +35,8 @@
             label1 = new Label();
             label2 = new Label();
             txtContraseña = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            txtContraseñaComprobar = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
@@ -90,7 +92,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(131, 77);
+            label2.Location = new Point(122, 49);
             label2.Name = "label2";
             label2.Size = new Size(300, 18);
             label2.TabIndex = 84;
@@ -110,7 +112,7 @@
             txtContraseña.HideSelection = true;
             txtContraseña.InsertKeyMode = InsertKeyMode.Default;
             txtContraseña.LeadingIcon = null;
-            txtContraseña.Location = new Point(131, 120);
+            txtContraseña.Location = new Point(122, 70);
             txtContraseña.Mask = "";
             txtContraseña.MaxLength = 32767;
             txtContraseña.MouseState = MaterialSkin.MouseState.OUT;
@@ -137,11 +139,64 @@
             txtContraseña.UseSystemPasswordChar = false;
             txtContraseña.ValidatingType = null;
             // 
+            // txtContraseñaComprobar
+            // 
+            txtContraseñaComprobar.AllowPromptAsInput = true;
+            txtContraseñaComprobar.AnimateReadOnly = false;
+            txtContraseñaComprobar.AsciiOnly = false;
+            txtContraseñaComprobar.BackgroundImageLayout = ImageLayout.None;
+            txtContraseñaComprobar.BeepOnError = false;
+            txtContraseñaComprobar.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
+            txtContraseñaComprobar.Depth = 0;
+            txtContraseñaComprobar.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtContraseñaComprobar.HidePromptOnLeave = false;
+            txtContraseñaComprobar.HideSelection = true;
+            txtContraseñaComprobar.InsertKeyMode = InsertKeyMode.Default;
+            txtContraseñaComprobar.LeadingIcon = null;
+            txtContraseñaComprobar.Location = new Point(122, 158);
+            txtContraseñaComprobar.Mask = "";
+            txtContraseñaComprobar.MaxLength = 32767;
+            txtContraseñaComprobar.MouseState = MaterialSkin.MouseState.OUT;
+            txtContraseñaComprobar.Name = "txtContraseñaComprobar";
+            txtContraseñaComprobar.PasswordChar = '\0';
+            txtContraseñaComprobar.PrefixSuffixText = null;
+            txtContraseñaComprobar.PromptChar = '_';
+            txtContraseñaComprobar.ReadOnly = false;
+            txtContraseñaComprobar.RejectInputOnFirstFailure = false;
+            txtContraseñaComprobar.ResetOnPrompt = true;
+            txtContraseñaComprobar.ResetOnSpace = true;
+            txtContraseñaComprobar.RightToLeft = RightToLeft.No;
+            txtContraseñaComprobar.SelectedText = "";
+            txtContraseñaComprobar.SelectionLength = 0;
+            txtContraseñaComprobar.SelectionStart = 0;
+            txtContraseñaComprobar.ShortcutsEnabled = true;
+            txtContraseñaComprobar.Size = new Size(300, 48);
+            txtContraseñaComprobar.SkipLiterals = true;
+            txtContraseñaComprobar.TabIndex = 86;
+            txtContraseñaComprobar.TabStop = false;
+            txtContraseñaComprobar.TextAlign = HorizontalAlignment.Left;
+            txtContraseñaComprobar.TextMaskFormat = MaskFormat.IncludeLiterals;
+            txtContraseñaComprobar.TrailingIcon = null;
+            txtContraseñaComprobar.UseSystemPasswordChar = false;
+            txtContraseñaComprobar.ValidatingType = null;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(136, 137);
+            label3.Name = "label3";
+            label3.Size = new Size(268, 18);
+            label3.TabIndex = 87;
+            label3.Text = "Por favor repita su nueva contraseña";
+            // 
             // FormCambiarContraseña
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 261);
+            Controls.Add(label3);
+            Controls.Add(txtContraseñaComprobar);
             Controls.Add(txtContraseña);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -166,5 +221,7 @@
         private Label label1;
         private Label label2;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtContraseña;
+        private MaterialSkin.Controls.MaterialMaskedTextBox txtContraseñaComprobar;
+        private Label label3;
     }
 }

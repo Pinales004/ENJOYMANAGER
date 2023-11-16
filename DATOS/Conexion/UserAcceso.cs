@@ -36,13 +36,13 @@ namespace DATOS.Conexion
                             UserLoginCache.Nombres = reader.GetString(2);
                             UserLoginCache.Apellidos = reader.GetString(3);
                             UserLoginCache.Sexo = reader.GetBoolean(4);
-                            UserLoginCache.EmailUsuario = reader.GetString(7);
-                            UserLoginCache.ContrasenaUsuario = reader.GetString(8);
-                            UserLoginCache.ResetPasword = reader.GetBoolean(9);
-                            UserLoginCache.RolUsuario = reader.GetInt32(10);
-                            UserLoginCache.EstadoUsuario = reader.GetInt32(11);
-                            UserLoginCache.IntentosFallidos = reader.GetInt32(12);
-                            UserLoginCache.Borrado = reader.GetBoolean(13);
+                            UserLoginCache.EmailUsuario = reader.GetString(5);
+                            UserLoginCache.ContrasenaUsuario = reader.GetString(6);
+                            UserLoginCache.ResetPasword = reader.GetBoolean(7);
+                            UserLoginCache.RolUsuario = reader.GetInt32(8);
+                            UserLoginCache.EstadoUsuario = reader.GetInt32(9);
+                            UserLoginCache.IntentosFallidos = reader.GetInt32(10);
+                            UserLoginCache.Borrado = reader.GetBoolean(11);
                         }
 
                         int intento = GetFailedLoginAttempts(user);
@@ -275,7 +275,7 @@ namespace DATOS.Conexion
             }
             return table;
         }
-        public void EditarUsuario(int IdUsuario, string UsuarioNombre, string nombres, string apellidos, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario)
+        public void EditarUsuario(int IdUsuario, string UsuarioNombre, string nombres, string apellidos, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario, bool ResetPasword)
         {
             using (var connection = GETConexionSQL())
             {
@@ -293,6 +293,7 @@ namespace DATOS.Conexion
                                         "ContrasenaUsuario = @ContrasenaUsuario, " +
                                         "RolUsuario = @RolUsuario, " +
                                         "EstadoUsuario = @EstadoUsuario " +
+                                        "ResetPasword = @ResetPasword " +
                                         "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
                     command.CommandType = CommandType.Text;
 
@@ -306,7 +307,7 @@ namespace DATOS.Conexion
                     command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
                     command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
-
+                    command.Parameters.Add(new SqlParameter("@ResetPasword", ResetPasword));
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
                 }
