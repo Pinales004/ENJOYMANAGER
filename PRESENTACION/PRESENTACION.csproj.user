@@ -16,13 +16,16 @@
     <Compile Update="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Login\FormCambiarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Proyecto\FormProyectos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Administracion Tareas\FormTareas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Frm_Login.cs">
+    <Compile Update="Login\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Proyecto\FrmEquipoProgramadores.cs">

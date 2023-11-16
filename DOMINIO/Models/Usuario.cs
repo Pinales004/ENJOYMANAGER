@@ -39,7 +39,13 @@ namespace DOMINIO.Models
 
             users.EditarUsuario(IdUsuario, UsuarioNombre, nombres, apellido, sexo, EmailUsuario, nuevaContraseñaHash, RolUsuario, EstadoUsuario);
         }
+        public void ActualizarContraseña(int IdUsuario, string NuevaContrasenaUsuario, int EstadoUsuario)
+        {
+            // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
+            string nuevaContraseñaHash = NuevaContrasenaUsuario;
 
+            users.ContraseñaUpdate(IdUsuario, nuevaContraseñaHash, EstadoUsuario);
+        }
         public void EliminarUusario(int IdUsuario) {
 
             users.EliminarUsuario(IdUsuario);

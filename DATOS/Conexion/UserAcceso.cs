@@ -21,7 +21,7 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "select * from Usuario where UsuarioNombre = @user and ContrasenaUsuario = @pass and Borrado = 0";
+                    command.CommandText = "select * from Usuario where UsuarioNombre = @user and ContrasenaUsuario = @pass";
                     command.Parameters.AddWithValue("@user", user);
                     command.Parameters.AddWithValue("@pass", pass);
                     command.CommandType = CommandType.Text;
@@ -305,6 +305,31 @@ namespace DATOS.Conexion
                     command.Parameters.Add(new SqlParameter("@EmailUsuario", EmailUsuario));
                     command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
+                    command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
+
+                    // Ejecuta la consulta
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public void ContraseñaUpdate (int IdUsuario, string ContrasenaUsuario, int EstadoUsuario)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Usuario " +
+                                        "SET ContrasenaUsuario = @ContrasenaUsuario, " +
+                                        "EstadoUsuario = @EstadoUsuario " +
+                                        "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega los parámetros y sus valores
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", IdUsuario));
+                    command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
 
                     // Ejecuta la consulta
