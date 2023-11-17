@@ -1,15 +1,7 @@
 ﻿using DATOS.Tareas;
 using DOMINIO.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PRESENTACION.Administracion_Tareas
 {
@@ -36,30 +28,9 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_NuevaTarea_Load(object sender, EventArgs e)
         {
-            if (TipoOperacion == "Insertar")
-            {
-                EstadoTareas();
-                ListadoProyectos();
-            }
+          
+              ListadoProyectos();
 
-        }
-
-
-        private void Frm_NuevaTarea_MouseMove(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-
-        private void EstadoTareas()
-        {
-
-            Tareas cargar = new Tareas();
-
-            this.cmbEstadoTarea.DataSource = cargar.TareaEstado();
-            this.cmbEstadoTarea.DisplayMember = "Estado";
-            this.cmbEstadoTarea.ValueMember = "EstadoTareaid";
         }
 
         private void ListadoProyectos()
@@ -67,9 +38,14 @@ namespace PRESENTACION.Administracion_Tareas
 
             Tareas cargar = new Tareas();
 
-            this.CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            this.CmbNombreProyecto.DisplayMember = "NombreProyecto";
-            this.CmbNombreProyecto.ValueMember = "IdProyecto";
+           CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
+            CmbNombreProyecto.DisplayMember = "NombreProyecto";
+            CmbNombreProyecto.ValueMember = "IdProyecto";
+        }
+        private void Frm_NuevaTarea_MouseMove(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void ListaMiembros(int IdProyecto)

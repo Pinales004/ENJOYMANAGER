@@ -51,6 +51,7 @@ namespace DOMINIO.Models
             users.EliminarUsuario(IdUsuario);
         }
 
+
         public System.Data.DataTable BuscarUsuariosPorNombre(String NombreUsuario)
         {
 

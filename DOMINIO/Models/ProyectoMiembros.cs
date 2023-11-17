@@ -40,6 +40,11 @@ namespace DOMINIO.Models
             miembros.InsertarMiembro(proyectoid, UsuarioID);
 
         }
+        public void BorrarMiembroProyect(int Miembro)
+        {
+            miembros.EliminarMiembro(Miembro);
+
+        }
 
 
     }

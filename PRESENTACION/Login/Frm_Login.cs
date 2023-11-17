@@ -134,6 +134,14 @@ namespace PRESENTACION
                             AbrirFormulario<FormCambiarContraseña>(form);
                             return;
                         }
+                        if (UserLoginCache.ResetPasword == true)
+                        {
+                            this.TxtContrasena.Clear();
+                            this.txtUsuario.Focus();
+                            FormCambiarContraseña form = new FormCambiarContraseña();
+                            AbrirFormulario<FormCambiarContraseña>(form);
+                            return;
+                        }
                         FormPrincipal menu = new FormPrincipal();
                         menu.FormClosed += Logout;
                         menu.Show();

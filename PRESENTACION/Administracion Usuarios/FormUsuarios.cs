@@ -108,7 +108,7 @@ namespace PRESENTACION
 
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 var frm = new Frm_NuevoUsuario();
                 frm.TipoOperacion = "Editar";
@@ -140,31 +140,45 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Obtén el Id del usuario seleccionado en el DataGridView
-                int idUsuarioSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString());
 
-                // Obtén el Id del usuario logueado
-                int idUsuarioLogueado = UserLoginCache.IdUsuario;
+                try
+                {
+                    // Obtén el Id del usuario seleccionado en el DataGridView
+                    int idUsuarioSeleccionado = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["IdUsuario"].Value.ToString());
 
-                if (idUsuarioSeleccionado == idUsuarioLogueado)
-                {
-                    MessageBox.Show("No puedes eliminar tu propio usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Obtén el Id del usuario logueado
+                    int idUsuarioLogueado = UserLoginCache.IdUsuario;
+
+                    if (idUsuarioSeleccionado == idUsuarioLogueado)
+                    {
+                        MessageBox.Show("No puedes eliminar tu propio usuario.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        // Usuario diferente al logueado, procede con la eliminación
+                        Usuario cargar = new Usuario();
+                        cargar.EliminarUusario(idUsuarioSeleccionado);
+                        CargarUsuarios();
+                        MessageBox.Show("Usuario Eliminado Correctamente");
+                    }
                 }
-                else
+                catch (InvalidOperationException ex)
                 {
-                    // Usuario diferente al logueado, procede con la eliminación
-                    Usuario cargar = new Usuario();
-                    cargar.EliminarUusario(idUsuarioSeleccionado);
-                    CargarUsuarios();
-                    MessageBox.Show("Usuario Eliminado Correctamente");
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+              
             }
             else
             {
                 MessageBox.Show("Debe Seleccionar una fila para poder Eliminar un usuario");
             }
+
+
+
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)

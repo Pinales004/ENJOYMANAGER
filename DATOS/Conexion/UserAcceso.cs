@@ -292,7 +292,7 @@ namespace DATOS.Conexion
                                         "EmailUsuario = @EmailUsuario, " +
                                         "ContrasenaUsuario = @ContrasenaUsuario, " +
                                         "RolUsuario = @RolUsuario, " +
-                                        "EstadoUsuario = @EstadoUsuario " +
+                                        "EstadoUsuario = @EstadoUsuario, " +
                                         "ResetPasword = @ResetPasword " +
                                         "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
                     command.CommandType = CommandType.Text;
@@ -340,6 +340,13 @@ namespace DATOS.Conexion
         }
         public void EliminarUsuario(int IdUsuario)
         {
+
+            if (UsuarioAsignadoAProyectos(IdUsuario))
+            {
+                // El miembro ya existe en el proyecto, puedes manejarlo según tus necesidades
+                // En este ejemplo, simplemente lanzamos una excepción
+                throw new InvalidOperationException("Este suario esta asignado aun proyecto.");
+            }
             using (var connection = GETConexionSQL())
             {
                 connection.Open();
@@ -359,6 +366,30 @@ namespace DATOS.Conexion
                 }
             }
         }
+
+        public bool UsuarioAsignadoAProyectos(int idUsuario)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT COUNT(*) FROM ProyectoMiembros WHERE IdUsuario = @IdUsuario";
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                    int count = (int)command.ExecuteScalar();
+
+                    // Si count es mayor a cero, significa que el usuario está asignado a algún proyecto
+                    return count > 0;
+                }
+            }
+        }
+
+      
 
         public DataTable BuscarUsuariosPorNombre(string nombre)
         {

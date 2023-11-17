@@ -303,7 +303,32 @@ namespace DOMINIO.Models
             }
         }
 
+        public DataTable BuscarTareaPorIdPoryecto(int IdProyecto)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
 
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Tareas_vw_ENJOY WHERE IdProyecto = @IdProyecto";
+                    command.CommandType = CommandType.Text;
+
+                    // Agrega el parámetro para la búsqueda dinámica
+                    command.Parameters.Add(new SqlParameter("@IdProyecto", IdProyecto));
+
+                    var results = new DataTable();
+
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(results);
+                    }
+
+                    return results;
+                }
+            }
+        }
 
 
 

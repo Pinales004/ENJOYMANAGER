@@ -77,7 +77,7 @@ namespace PRESENTACION
             var form = new Frm_NuevaTarea();
             form.TipoOperacion = "Insertar";
             CargarEstadoTarea(form);
-            ListadoProyectos(form);
+           // ListadoProyectos(form);
             form.FormTareas = this; // Establece la propiedad FormTareas
 
             AbrirFormulario<Frm_NuevaTarea>(form);
@@ -244,7 +244,7 @@ namespace PRESENTACION
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 // Preguntar al usuario si está seguro de eliminar el proyecto
                 DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este Tarea?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

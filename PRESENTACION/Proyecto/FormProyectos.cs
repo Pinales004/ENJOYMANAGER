@@ -184,6 +184,57 @@ namespace PRESENTACION
             }
 
         }
+
+        public void CargarTareas(int idproyecto)
+        {
+            Tareas cargar = new Tareas();
+            this.dataGridViewTareas.AutoGenerateColumns = true;
+            this.dataGridViewTareas.DataSource = cargar.BuscarTareaPorIdPoryecto(Convert.ToInt32(idproyecto));
+            this.dataGridViewTareas.Columns[0].Visible = false;
+            this.dataGridViewTareas.Columns[1].Visible = false;
+            this.dataGridViewTareas.Columns[3].Visible = false;
+            this.dataGridViewTareas.Columns[4].Visible = false;
+            this.dataGridViewTareas.Columns[6].Visible = false;
+            this.dataGridViewTareas.Columns[7].Visible = false;
+           
+
+
+        }
+
+        private void CargarMiembros(int idproyecto)
+        {
+            if (idproyecto != null)
+            {
+                ProyectoMiembro miembro = new ProyectoMiembro();
+                dataGridViewEquipoProgramadores.AutoGenerateColumns = true;
+                dataGridViewEquipoProgramadores.DataSource = miembro.GetProyectoMiembro(Convert.ToInt32(idproyecto));
+                this.dataGridViewEquipoProgramadores.Columns[0].Visible = false;
+                
+
+            }
+        }
+
+        
+
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            
+
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                // Obtén el Id del proyecto seleccionado
+                int idProyecto = Convert.ToInt32(dataGridView1.Rows[rowIndex].Cells["IdProyecto"].Value);
+
+                CargarTareas(idProyecto);
+                CargarMiembros(idProyecto);
+            }
+        }
+
+
+
+
     }
 }
 

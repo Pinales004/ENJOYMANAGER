@@ -50,6 +50,7 @@ namespace PRESENTACION.Proyecto
             ProyectoMiembro miembro = new ProyectoMiembro();
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = miembro.GetProyectoMiembro(Convert.ToInt32(IdProyecto.ToString()));
+            this.dataGridView1.Columns[0].Visible = false;
 
         }
 
@@ -81,9 +82,26 @@ namespace PRESENTACION.Proyecto
         {
 
             ProyectoMiembro miembro = new ProyectoMiembro();
-            miembro.InsertarMiembros(Convert.ToInt32(IdProyecto)
-                                    , Convert.ToInt32(this.CmbProgramadores.SelectedValue));
-
+            try
+            {
+                // Llamar al método que puede lanzar la excepción
+                miembro.InsertarMiembros(Convert.ToInt32(IdProyecto)
+                    , Convert.ToInt32(this.CmbProgramadores.SelectedValue));
+                // Si no se lanza ninguna excepción, significa que la inserción fue exitosa
+                MessageBox.Show("Miembro agregado exitosamente al proyecto.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Capturar la excepción específica lanzada por el método
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Puedes realizar otras acciones según tus necesidades aquí
+            }
+            catch (Exception ex)
+            {
+                // Capturar otras excepciones que no sean InvalidOperationException
+                MessageBox.Show("Se produjo un error al agregar el miembro al proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Puedes registrar o manejar de otra manera estas excepciones generales
+            }
 
         }
 

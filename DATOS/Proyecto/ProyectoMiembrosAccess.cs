@@ -12,9 +12,15 @@ namespace DATOS.Proyecto
     public class ProyectoMiembrosAccess: ConexionSQL
     {
 
-        // Método para insertar un nuevo miembro en un proyecto
         public void InsertarMiembro(int idProyecto, int idUsuario)
         {
+            if (ProyectoMiembroExiste(idProyecto, idUsuario))
+            {
+                // El miembro ya existe en el proyecto, puedes manejarlo según tus necesidades
+                // En este ejemplo, simplemente lanzamos una excepción
+                throw new InvalidOperationException("El miembro ya existe en el proyecto.");
+            }
+
             using (var connection = GETConexionSQL())
             {
                 connection.Open();
@@ -33,6 +39,36 @@ namespace DATOS.Proyecto
             }
         }
 
+        private bool ProyectoMiembroExiste(int idProyecto, int idUsuario)
+        {
+            // Lógica para verificar si el miembro ya existe en el proyecto
+            // Puedes ajustar esto según cómo almacenes la relación entre proyectos y miembros
+            // Podrías hacer una consulta a la base de datos, buscar en una lista, etc.
+            // Aquí, asumiré que existe un método en ProyectoMiembro para verificar esto
+
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT COUNT(*) FROM ProyectoMiembros WHERE IdProyecto = @IdProyecto AND IdUsuario = @IdUsuario";
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+
+
+
+
         // Método para eliminar un miembro de un proyecto
         public void EliminarMiembro(int idProyectoMiembro)
         {
@@ -43,7 +79,7 @@ namespace DATOS.Proyecto
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "DELETE FROM ProyectoMiembros WHERE IdProyectoMiembro = @IdProyectoMiembro";
+                    command.CommandText = "UPDATE  ProyectoMiembros SET Borrado =1 WHERE IdProyectoMiembro = @IdProyectoMiembro";
                     command.CommandType = CommandType.Text;
 
                     command.Parameters.Add(new SqlParameter("@IdProyectoMiembro", idProyectoMiembro));
