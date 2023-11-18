@@ -27,7 +27,7 @@ namespace DOMINIO.Models
                     {
                         command.Connection = connection;
                         // Utilizamos un parámetro para evitar posibles problemas de seguridad y para pasar el IdUsuario.
-                        command.CommandText = "SELECT task.TareaId, pro.Idproyecto, task.NombreTarea, pro.NombreProyecto, task.DescripcionTarea, est.Estado, task.FechaInicio, task.FechaFin, miem.IdUsuario AS estoy, usu.Nombres AS Responsable " +
+                        command.CommandText = "SELECT task.TareaId, pro.Idproyecto, task.NombreTarea, pro.NombreProyecto, task.DescripcionTarea, est.Estado, task.FechaInicio, task.FechaFin, usu.Nombres AS Responsable " +
                                               "FROM TareasProyecto task " +
                                               "INNER JOIN Proyectos pro ON task.IdProyecto = pro.IdProyecto " +
                                               "INNER JOIN TareaEstado est ON task.EstadoTareaid = est.EstadoTareaid " +
