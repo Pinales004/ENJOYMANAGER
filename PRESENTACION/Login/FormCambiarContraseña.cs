@@ -37,6 +37,7 @@ namespace PRESENTACION.Login
         private void LimpiarCampos()
         {
             txtContraseña.Text = "";
+            txtContraseñaComprobar.Text = "";
         }
 
         private void btn_limpiar_Click(object sender, EventArgs e)
@@ -54,21 +55,31 @@ namespace PRESENTACION.Login
             {
                 Usuario cargar = new Usuario();
 
+                UserLoginCache.ResetPasword = false;
+
                 int IdUsuario = UserLoginCache.IdUsuario;
 
                 string nuevaContraseña = this.txtContraseña.Text;
-                string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(nuevaContraseña);
-                cargar.ActualizarContraseña(Convert.ToInt32(IdUsuario),
-                    nuevaContraseñaHash, // Almacenar el nuevo hash en la base de datos
+
+                // Llamar a ActualizarContraseña sin proporcionar el valor de resetPassword
+                cargar.ActualizarContraseña(
+                    Convert.ToInt32(IdUsuario),
+                    nuevaContraseña,
                     Convert.ToInt32(EnumEstadoUsuario.Estado.Activo)
                 );
+
                 this.Hide();
             }
             else
             {
                 MessageBox.Show("Compruebe que ambas contraseñas son iguales.");
             }
+        }
 
+        private void FormCambiarContraseña_Load(object sender, EventArgs e)
+        {
+            txtContraseña.UseSystemPasswordChar = true;
+            txtContraseñaComprobar.UseSystemPasswordChar = true;
         }
     }
 }

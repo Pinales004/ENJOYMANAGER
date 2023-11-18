@@ -205,6 +205,7 @@
             Controls.Add(btn_volver);
             Name = "FormCambiarContraseña";
             Text = "FormCambiarContraseña";
+            Load += FormCambiarContraseña_Load;
             MouseMove += Frm_NuevoProyecto_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();

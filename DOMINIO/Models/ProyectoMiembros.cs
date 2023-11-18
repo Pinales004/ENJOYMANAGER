@@ -40,7 +40,7 @@ namespace DOMINIO.Models
             miembros.InsertarMiembro(proyectoid, UsuarioID);
 
         }
-        public void BorrarMiembroProyect(int Miembro)
+        public void BorrarMiembroProyecto(int Miembro)
         {
             miembros.EliminarMiembro(Miembro);
 

@@ -313,7 +313,7 @@ namespace DATOS.Conexion
                 }
             }
         }
-        public void ContraseñaUpdate (int IdUsuario, string ContrasenaUsuario, int EstadoUsuario)
+        public void ContraseñaUpdate(int IdUsuario, string ContrasenaUsuario, int EstadoUsuario, bool resetPassword = false)
         {
             using (var connection = GETConexionSQL())
             {
@@ -322,10 +322,14 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
+
+                    // Siempre actualizar las columnas ContrasenaUsuario y EstadoUsuario
                     command.CommandText = "UPDATE Usuario " +
-                                        "SET ContrasenaUsuario = @ContrasenaUsuario, " +
-                                        "EstadoUsuario = @EstadoUsuario " +
-                                        "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
+                                          "SET ContrasenaUsuario = @ContrasenaUsuario, " +
+                                          "EstadoUsuario = @EstadoUsuario, " +
+                                          "ResetPasword = @ResetPasword " +
+                                          "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
+
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
@@ -333,11 +337,15 @@ namespace DATOS.Conexion
                     command.Parameters.Add(new SqlParameter("@ContrasenaUsuario", ContrasenaUsuario));
                     command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
 
+                    // Agregar el valor de resetPassword sin importar su valor
+                    command.Parameters.Add(new SqlParameter("@ResetPasword", resetPassword));
+
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
                 }
             }
         }
+
         public void EliminarUsuario(int IdUsuario)
         {
 
@@ -376,20 +384,20 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT COUNT(*) FROM ProyectoMiembros WHERE IdUsuario = @IdUsuario";
+                    command.CommandText = "SELECT COUNT(*) FROM ProyectoMiembros WHERE IdUsuario = @IdUsuario AND Borrado = 0";
                     command.CommandType = CommandType.Text;
 
                     command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
 
                     int count = (int)command.ExecuteScalar();
 
-                    // Si count es mayor a cero, significa que el usuario está asignado a algún proyecto
+                    // Si count es mayor a cero, significa que el usuario está asignado a algún proyecto sin ser borrado
                     return count > 0;
                 }
             }
         }
 
-      
+
 
         public DataTable BuscarUsuariosPorNombre(string nombre)
         {

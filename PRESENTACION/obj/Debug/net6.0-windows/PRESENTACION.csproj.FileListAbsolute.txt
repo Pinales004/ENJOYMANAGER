@@ -171,3 +171,6 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.sourcelink.json

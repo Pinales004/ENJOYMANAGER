@@ -16,11 +16,44 @@ namespace DATOS.Proyecto
         {
             if (ProyectoMiembroExiste(idProyecto, idUsuario))
             {
-                // El miembro ya existe en el proyecto, puedes manejarlo según tus necesidades
-                // En este ejemplo, simplemente lanzamos una excepción
-                throw new InvalidOperationException("El miembro ya existe en el proyecto.");
-            }
+                // El miembro ya existe en el proyecto
+                // Verificar el estado de Borrado
+                bool borrado = ObtenerEstadoBorrado(idProyecto, idUsuario);
 
+                if (borrado)
+                {
+                    // Si Borrado es 1, cambiarlo a 0
+                    ActualizarEstadoBorrado(idProyecto, idUsuario, false);
+                }
+                else
+                {
+                    // Si Borrado es 0, lanzar una excepción
+                    throw new InvalidOperationException("El miembro ya existe en el proyecto.");
+                }
+            }
+            else
+            {
+                // El miembro no existe, insertarlo en la tabla
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "INSERT INTO ProyectoMiembros (IdProyecto, IdUsuario) VALUES (@IdProyecto, @IdUsuario)";
+                        command.CommandType = CommandType.Text;
+
+                        command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
+                        command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+        private bool ObtenerEstadoBorrado(int idProyecto, int idUsuario)
+        {
             using (var connection = GETConexionSQL())
             {
                 connection.Open();
@@ -28,11 +61,33 @@ namespace DATOS.Proyecto
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO ProyectoMiembros (IdProyecto, IdUsuario) VALUES (@IdProyecto, @IdUsuario)";
+                    command.CommandText = "SELECT Borrado FROM ProyectoMiembros WHERE IdProyecto = @IdProyecto AND IdUsuario = @IdUsuario";
                     command.CommandType = CommandType.Text;
 
                     command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
                     command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                    var resultado = command.ExecuteScalar();
+                    return resultado != null && (bool)resultado;
+                }
+            }
+        }
+
+        private void ActualizarEstadoBorrado(int idProyecto, int idUsuario, bool nuevoEstado)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE ProyectoMiembros SET Borrado = @NuevoEstado WHERE IdProyecto = @IdProyecto AND IdUsuario = @IdUsuario";
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+                    command.Parameters.Add(new SqlParameter("@NuevoEstado", nuevoEstado));
 
                     command.ExecuteNonQuery();
                 }
@@ -101,8 +156,10 @@ namespace DATOS.Proyecto
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres FROM ProyectoMiembros m INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario WHERE m.IdProyecto = @IdProyecto";
-
+                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres " +
+                                          "FROM ProyectoMiembros m " +
+                                          "INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario " +
+                                          "WHERE m.IdProyecto = @IdProyecto AND m.Borrado = 0";
 
                     command.CommandType = CommandType.Text;
 
@@ -117,6 +174,7 @@ namespace DATOS.Proyecto
 
             return table;
         }
+
         public DataTable CargarUsuarioProgramador()
         {
             DataTable table = new DataTable();

@@ -135,11 +135,6 @@ namespace PRESENTACION.Administracion_Tareas
                 // Llamamos al método ListaMiembros con el ID del proyecto seleccionado
                 ListaMiembros(idProyectoSeleccionado);
                 // Verifica si el ComboBox cmbResponsableTarea está vacío
-                if (cmbResponsableTarea.Items.Count == 0)
-                {
-                    // Mostrar un mensaje si está vacío
-                    MessageBox.Show("No hay miembros disponibles para este proyecto.", "Mensaje");
-                }
             }
         }
 
@@ -157,18 +152,14 @@ namespace PRESENTACION.Administracion_Tareas
 
                 cargar.UpdateEstadoTarea(tareaId, nuevoEstadoTareaId);
 
+                // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
+                if (FormTareas != null)
+                {
+                    FormTareas.CargarTareasProgrmadores();
+                }
+                MessageBox.Show("La tarea se ha realizado correctamente.");
+                this.Hide();
             }
-
-     
-            // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
-            if (FormTareas != null)
-            {
-                FormTareas.CargarTareasProgrmadores();
-            }
-            MessageBox.Show("La tarea se ha realizado correctamente.");
-            this.Hide();
-
-
         }
 
         #region Anexos

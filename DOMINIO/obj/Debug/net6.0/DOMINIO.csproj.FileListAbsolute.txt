@@ -66,3 +66,4 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOM
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.sourcelink.json

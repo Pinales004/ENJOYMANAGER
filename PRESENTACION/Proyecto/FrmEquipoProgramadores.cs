@@ -109,5 +109,27 @@ namespace PRESENTACION.Proyecto
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            ProyectoMiembro miembro = new ProyectoMiembro();
+
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                // Preguntar al usuario si está seguro de eliminar el proyecto
+                DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar este miembro del equipo?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    miembro.BorrarMiembroProyecto(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                    CargarMiembros();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila para poder eliminar al integrante");
+            }
+
+        }
     }
 }

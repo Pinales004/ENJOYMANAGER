@@ -301,8 +301,10 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres FROM ProyectoMiembros m INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario WHERE m.IdProyecto = @IdProyecto";
-
+                    command.CommandText = "SELECT m.IdProyectoMiembro as ID, u.Nombres " +
+                                          "FROM ProyectoMiembros m " +
+                                          "INNER JOIN Usuario u ON m.IdUsuario = u.IdUsuario " +
+                                          "WHERE m.IdProyecto = @IdProyecto AND m.Borrado = 0";
 
                     command.CommandType = CommandType.Text;
 
@@ -317,7 +319,6 @@ namespace DOMINIO.Models
 
             return table;
         }
-
 
         public DataTable BuscarTareaPorNombre(string nombre)
         {

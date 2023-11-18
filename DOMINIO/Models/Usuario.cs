@@ -1,4 +1,5 @@
-﻿using DATOS.Conexion;
+﻿using Comun.Cache;
+using DATOS.Conexion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,9 +43,13 @@ namespace DOMINIO.Models
         public void ActualizarContraseña(int IdUsuario, string NuevaContrasenaUsuario, int EstadoUsuario)
         {
             // Calcular el hash SHA-256 de la nueva contraseña antes de almacenarla
-            string nuevaContraseñaHash = NuevaContrasenaUsuario;
+            string nuevaContraseñaHash = HashHelper.CalculateSHA256Hash(NuevaContrasenaUsuario);
 
-            users.ContraseñaUpdate(IdUsuario, nuevaContraseñaHash, EstadoUsuario);
+            // Obtener el valor actual de ResetPasword desde el caché
+            bool resetPassword = UserLoginCache.ResetPasword;
+
+            // Llamar a ContraseñaUpdate con el valor de ResetPasword
+            users.ContraseñaUpdate(IdUsuario, nuevaContraseñaHash, EstadoUsuario, resetPassword);
         }
         public void EliminarUusario(int IdUsuario) {
 

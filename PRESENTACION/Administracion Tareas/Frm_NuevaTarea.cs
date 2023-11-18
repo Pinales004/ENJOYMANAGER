@@ -126,11 +126,6 @@ namespace PRESENTACION.Administracion_Tareas
                 // Llamamos al método ListaMiembros con el ID del proyecto seleccionado
                 ListaMiembros(idProyectoSeleccionado);
                 // Verifica si el ComboBox cmbResponsableTarea está vacío
-                if (cmbResponsableTarea.Items.Count == 0)
-                {
-                    // Mostrar un mensaje si está vacío
-                    MessageBox.Show("No hay miembros disponibles para este proyecto.", "Mensaje");
-                }
             }
 
         }

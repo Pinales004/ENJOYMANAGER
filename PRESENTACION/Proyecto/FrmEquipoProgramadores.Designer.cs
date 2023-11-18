@@ -35,10 +35,12 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             CmbProgramadores = new MaterialSkin.Controls.MaterialComboBox();
             dataGridView1 = new DataGridView();
+            btn_eliminar = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
             materialCheckedListBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             SuspendLayout();
             // 
             // btn_guardar
@@ -120,13 +122,30 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridView1.Location = new Point(3, 106);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(487, 226);
             dataGridView1.TabIndex = 0;
+            // 
+            // btn_eliminar
+            // 
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(411, 404);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 83;
+            btn_eliminar.TabStop = false;
+            btn_eliminar.Click += btn_eliminar_Click;
             // 
             // FrmEquipoProgramadores
             // 
@@ -134,6 +153,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(519, 461);
+            Controls.Add(btn_eliminar);
             Controls.Add(materialCheckedListBox1);
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
@@ -145,6 +165,7 @@
             materialCheckedListBox1.ResumeLayout(false);
             materialCheckedListBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ResumeLayout(false);
         }
 
@@ -156,5 +177,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialComboBox CmbProgramadores;
         private DataGridView dataGridView1;
+        private PictureBox btn_eliminar;
     }
 }
