@@ -70,7 +70,7 @@ namespace DATOS.Conexion
                         if (failedAttempts >= 3)
                         {
                             // Si se han excedido los 3 intentos fallidos, desactiva la cuenta.
-                            DeactivateAccount(user);
+                            CambiarEstado(user, 4);
                         }
                         return false;
                     }
@@ -98,7 +98,7 @@ namespace DATOS.Conexion
             return failedAttempts;
         }
 
-        private void ResetFailedLoginAttempts(string user)
+        public void ResetFailedLoginAttempts(string user)
         {
             // Restablece el contador de intentos fallidos a cero en la base de datos.
             using (var connection = GETConexionSQL())
@@ -114,7 +114,7 @@ namespace DATOS.Conexion
             }
         }
 
-        private void DeactivateAccount(string user)
+        public void CambiarEstado(string user, int EstadoUsuario)
         {
             // Desactiva la cuenta estableciendo el valor de "Activo" en 0 en la base de datos.
             using (var connection = GETConexionSQL())
@@ -123,8 +123,9 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "UPDATE Usuario SET UsuarioEstado = 4 WHERE UsuarioNombre = @user";
+                    command.CommandText = "UPDATE Usuario SET EstadoUsuario = @EstadoUsuario WHERE UsuarioNombre = @user";
                     command.Parameters.AddWithValue("@user", user);
+                    command.Parameters.AddWithValue("@EstadoUsuario", EstadoUsuario);
                     command.ExecuteNonQuery();
                 }
             }
@@ -148,8 +149,7 @@ namespace DATOS.Conexion
         }
 
 
-
-        public bool GetAccountStatus(string user)
+        public int GetAccountStatus(string user)
         {
             using (var connection = GETConexionSQL())
             {
@@ -163,12 +163,13 @@ namespace DATOS.Conexion
 
                     if (result != DBNull.Value && result != null)
                     {
-                        return (Convert.ToInt32(result) == 1); // Comprueba si el valor es igual a 1
+                        return Convert.ToInt32(result);
                     }
                 }
             }
 
-            return false; // Valor predeterminado si no se encuentra un resultado válido.
+            // Valor predeterminado si no se encuentra un resultado válido.
+            return -1; // Puedes elegir cualquier valor que represente la falta de resultado.
         }
         // En esta versión modificada de la función, se utiliza un valor booleano true o false para indicar si la cuenta está activa o no.La función devuelve true si el valor de Activo es igual a 1 y false en cualquier otro caso.Si no se encuentra un resultado válido, la función devuelve false como valor predeterminado.Asegúrate de que esta lógica coincida con la forma en que tu base de datos representa el estado activo de las cuentas.
         public DataTable CargarRoles()

@@ -23,6 +23,16 @@ namespace DOMINIO.Models
         {
             return users.CargarEstado();
         }
+        public int AccountStatus(String User)
+        {
+            return users.GetAccountStatus(User);
+        }
+        public void restall(String User, int valorEstado)
+        {
+            users.ResetFailedLoginAttempts(User);
+            users.CambiarEstado(User, valorEstado);
+        }
+
         public void InsertarUsuarios(string UsuarioNombre, string nombres, string apellido, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario)
         {
             users.InsertUsuario(UsuarioNombre, nombres, apellido, sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, EstadoUsuario);

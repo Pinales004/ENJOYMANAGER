@@ -14,7 +14,7 @@ namespace DATOS.Conexion
             connectionsstring;
 
         public ConexionSQL() {
-            connectionsstring = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
+            connectionsstring = @"Data Source=DESKTOP-TM469VG;Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
         }
 
 
