@@ -55,12 +55,14 @@ namespace DOMINIO.Models
 
             users.EliminarUsuario(IdUsuario);
         }
-
-
         public System.Data.DataTable BuscarUsuariosPorNombre(String NombreUsuario)
         {
 
             return users.BuscarUsuariosPorNombre(NombreUsuario);
+        }
+        public int AccountStatus(String User)
+        {
+            return users.GetAccountStatus(User);
         }
     }
 }

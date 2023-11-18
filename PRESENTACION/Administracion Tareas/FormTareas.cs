@@ -109,6 +109,7 @@ namespace PRESENTACION
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.CargarTareas(UserLoginCache.IdUsuario);
             this.dataGridView1.Columns[0].Visible=false;
+            this.dataGridView1.Columns[1].Visible = false;
         }
 
         public void CargarTareasGerentes()
@@ -117,6 +118,7 @@ namespace PRESENTACION
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.CargarTareasGeneral();
             this.dataGridView1.Columns[0].Visible = false;
+            this.dataGridView1.Columns[1].Visible = false;
         }
 
         #region btn_hover

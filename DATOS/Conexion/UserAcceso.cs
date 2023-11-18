@@ -78,6 +78,22 @@ namespace DATOS.Conexion
             }
         }
 
+        private void DeactivateAccount(string user)
+        {
+            // Desactiva la cuenta estableciendo el valor de "Activo" en 0 en la base de datos.
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "UPDATE Usuario SET EstadoUsuario = 4 WHERE UsuarioNombre = @user";
+                    command.Parameters.AddWithValue("@user", user);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public int IncrementFailedLoginAttempts(string user)
         {
             // Incrementa el contador de intentos fallidos en la base de datos.
@@ -98,7 +114,7 @@ namespace DATOS.Conexion
             return failedAttempts;
         }
 
-        private void ResetFailedLoginAttempts(string user)
+        public void ResetFailedLoginAttempts(string user)
         {
             // Restablece el contador de intentos fallidos a cero en la base de datos.
             using (var connection = GETConexionSQL())
@@ -113,23 +129,6 @@ namespace DATOS.Conexion
                 }
             }
         }
-
-        private void DeactivateAccount(string user)
-        {
-            // Desactiva la cuenta estableciendo el valor de "Activo" en 0 en la base de datos.
-            using (var connection = GETConexionSQL())
-            {
-                connection.Open();
-                using (var command = new SqlCommand())
-                {
-                    command.Connection = connection;
-                    command.CommandText = "UPDATE Usuario SET UsuarioEstado = 4 WHERE UsuarioNombre = @user";
-                    command.Parameters.AddWithValue("@user", user);
-                    command.ExecuteNonQuery();
-                }
-            }
-        }
-
         public int GetFailedLoginAttempts(string user)
         {
             // Obtiene el valor actual del contador de intentos fallidos desde la base de datos.
@@ -148,8 +147,7 @@ namespace DATOS.Conexion
         }
 
 
-
-        public bool GetAccountStatus(string user)
+        public int GetAccountStatus(string user)
         {
             using (var connection = GETConexionSQL())
             {
@@ -163,13 +161,17 @@ namespace DATOS.Conexion
 
                     if (result != DBNull.Value && result != null)
                     {
-                        return (Convert.ToInt32(result) == 1); // Comprueba si el valor es igual a 1
+                        return Convert.ToInt32(result);
                     }
                 }
             }
 
-            return false; // Valor predeterminado si no se encuentra un resultado válido.
+            // Valor predeterminado si no se encuentra un resultado válido.
+            return -1; // Puedes elegir cualquier valor que represente la falta de resultado.
         }
+        // En esta versión modificada de la función, se utiliza un valor booleano true o false para indicar si la cuenta está activa o no.La función devuelve true si el valor de Activo es igual a 1 y false en cualquier otro caso.Si no se encuentra un resultado válido, la función devuelve false como valor predeterminado.Asegúrate de que esta lógica coincida con la forma en que tu base de datos representa el estado activo de las cuentas.
+
+
         // En esta versión modificada de la función, se utiliza un valor booleano true o false para indicar si la cuenta está activa o no.La función devuelve true si el valor de Activo es igual a 1 y false en cualquier otro caso.Si no se encuentra un resultado válido, la función devuelve false como valor predeterminado.Asegúrate de que esta lógica coincida con la forma en que tu base de datos representa el estado activo de las cuentas.
         public DataTable CargarRoles()
         {
@@ -293,9 +295,13 @@ namespace DATOS.Conexion
                                         "ContrasenaUsuario = @ContrasenaUsuario, " +
                                         "RolUsuario = @RolUsuario, " +
                                         "EstadoUsuario = @EstadoUsuario, " +
-                                        "ResetPasword = @ResetPasword " +
+                                        "ResetPasword = @ResetPasword, " +
+                                        "IntentosFallidos = @IntentosFallidos " +  // Agregar esta línea
                                         "WHERE IdUsuario = @IdUsuario"; // Identifica el registro por IdUsuario
                     command.CommandType = CommandType.Text;
+
+                    // Establecer IntentosFallidos a 0 si ResetPasword es true
+                    int intentosFallidos = ResetPasword ? 0 : -1; // -1 indica que no se cambiará este valor
 
                     // Agrega los parámetros y sus valores
                     command.Parameters.Add(new SqlParameter("@IdUsuario", IdUsuario));
@@ -308,6 +314,8 @@ namespace DATOS.Conexion
                     command.Parameters.Add(new SqlParameter("@RolUsuario", RolUsuario));
                     command.Parameters.Add(new SqlParameter("@EstadoUsuario", EstadoUsuario));
                     command.Parameters.Add(new SqlParameter("@ResetPasword", ResetPasword));
+                    command.Parameters.Add(new SqlParameter("@IntentosFallidos", intentosFallidos));  // Agregar este parámetro
+
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
                 }

@@ -133,9 +133,19 @@ namespace PRESENTACION.Proyecto
         }
         private void btn_volver_Click(object sender, EventArgs e)
         {
+            // Ocultar el formulario actual
             this.Hide();
-        }
 
+            // Obtener el formulario FormProyectos desde la colección de formularios abiertos
+            FormProyectos formProyectos = Application.OpenForms.OfType<FormProyectos>().FirstOrDefault();
+
+            // Verificar si el formulario FormProyectos está abierto
+            if (formProyectos != null)
+            {
+                // Invocar el evento SelectionChanged de FormProyectos
+                formProyectos.dataGridView1_SelectionChanged(sender, e);
+            }
+        }
         private void btnEquipoProyecto_Click(object sender, EventArgs e)
         {
             Form frmEquipo = Application.OpenForms.OfType<FrmEquipoProgramadores>().FirstOrDefault();

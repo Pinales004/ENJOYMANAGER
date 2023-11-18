@@ -200,11 +200,9 @@ namespace PRESENTACION
                 this.dataGridViewTareas.Columns[6].Visible = false;
                 this.dataGridViewTareas.Columns[7].Visible = false;
             }
-
-
         }
 
-        private void CargarMiembros(int idproyecto)
+        public void CargarMiembros(int idproyecto)
         {
             if (idproyecto != null)
             {
@@ -215,7 +213,7 @@ namespace PRESENTACION
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        public void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             
             if (dataGridView1.SelectedCells.Count > 0)
@@ -228,10 +226,6 @@ namespace PRESENTACION
                 CargarMiembros(idProyecto);
             }
         }
-
-
-
-
     }
 }
 

@@ -67,7 +67,6 @@ namespace PRESENTACION.Login
                     nuevaContraseña,
                     Convert.ToInt32(EnumEstadoUsuario.Estado.Activo)
                 );
-
                 this.Hide();
             }
             else

@@ -37,6 +37,7 @@ namespace PRESENTACION.Administracion_Usuarios
                 ListarRoles();
                 LLnearCombroboxGnero();
                 ListarEstados();
+                ResetPassword.Visible=false;
             }
         }
 
