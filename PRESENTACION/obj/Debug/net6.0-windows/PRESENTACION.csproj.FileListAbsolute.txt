@@ -121,6 +121,12 @@ C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-wi
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_NuevoUsuario.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
+C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.exe
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.deps.json
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\PRESENTACION.runtimeconfig.json
@@ -141,11 +147,14 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\Comun.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\bin\Debug\net6.0-windows\DATOS.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.csproj.AssemblyReference.cache
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormTareas.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_NuevaTarea.resources
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Usuarios.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Usuarios.Frm_NuevoUsuario.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormPrincipal.resources
+C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Frm_Login.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Properties.Resources.resources
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.FormProyectos.resources
@@ -162,12 +171,3 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRE
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.genruntimeconfig.cache
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\ref\PRESENTACION.dll
-C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
-C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
-C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
-C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
-C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Anexo.AgregarAnexo.resources
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Administracion_Tareas.Frm_RealizarTarea.resources
-C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
-C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources

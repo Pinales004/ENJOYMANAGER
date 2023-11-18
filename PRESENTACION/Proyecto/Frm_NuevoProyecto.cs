@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DOMINIO.Models;
 using Comun.Cache;
+using static DATOS.Proyecto.ProyectoAcceso;
+
 namespace PRESENTACION.Proyecto
 {
     public partial class Frm_NuevoProyecto : Form
@@ -60,23 +62,35 @@ namespace PRESENTACION.Proyecto
 
         private void AgregarNuevoProyecto()
         {
-            Proyectos cargar = new Proyectos();
-            cargar.AgregarProyecto(this.txtNombreProyecto.Text,
-                                    this.txtDescripcionProyecto.Text,
-                                    this.dateTimePickerInicio.Value.Date,
-                                    this.dateTimePickerEntrega.Value.Date,
-                                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
-                                    UserLoginCache.IdUsuario);
+                Proyectos cargar = new Proyectos();
 
-            if (FormProyectos != null)
+            try
             {
-                // Se debe verificar si FormProyectos no es nulo y, si no lo es, llamar al método CargarProyectos en FormProyectos para actualizar el DataGridView.
-                FormProyectos.CargarProyectos();
-            }
-            MessageBox.Show("Proyecto agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LimpiarCampos();
-        }
+                cargar.AgregarProyecto(this.txtNombreProyecto.Text,
+                                           this.txtDescripcionProyecto.Text,
+                                           this.dateTimePickerInicio.Value.Date,
+                                           this.dateTimePickerEntrega.Value.Date,
+                                           this.dateTimeInicioPro.Value.Date,
+                                           this.dateTimeFinPro.Value.Date,
+                                           Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
+                                           UserLoginCache.IdUsuario);
 
+                MessageBox.Show("Proyecto agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Capturar la excepción específica lanzada por el método
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Puedes realizar otras acciones según tus necesidades aquí
+            }
+            catch (Exception ex)
+            {
+                // Capturar otras excepciones que no sean InvalidOperationException
+                MessageBox.Show("Se produjo un error al agregar el miembro al proyecto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Puedes registrar o manejar de otra manera estas excepciones generales
+            }
+        }
         private void UpdateNuevoProyecto()
         {
             Proyectos cargar = new Proyectos();
@@ -86,6 +100,8 @@ namespace PRESENTACION.Proyecto
                                     this.txtDescripcionProyecto.Text,
                                     this.dateTimePickerInicio.Value.Date,
                                     this.dateTimePickerEntrega.Value.Date,
+                                    this.dateTimeInicioPro.Value.Date,
+                                    this.dateTimeFinPro.Value.Date,
                                     Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
                                     UserLoginCache.IdUsuario);
 
@@ -108,8 +124,6 @@ namespace PRESENTACION.Proyecto
             txtNombreProyecto.Text = "";
             txtDescripcionProyecto.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
-            dateTimePickerEntrega.Value = DateTime.Now;
-            cmbEstadoProyecto.SelectedIndex = -1;
         }
 
         #region botones
@@ -154,6 +168,10 @@ namespace PRESENTACION.Proyecto
                 else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
                 {
                     MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
+                }
+                else if (dateTimeInicioPro.Value > dateTimeFinPro.Value)
+                {
+                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin programada.");
                 }
                 else if (cmbEstadoProyecto.SelectedIndex == -1)
                 {

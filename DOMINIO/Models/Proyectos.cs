@@ -38,18 +38,18 @@ namespace DOMINIO.Models
         }
 
 
-        public void AgregarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+        public void AgregarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime fechaFinProgramada, int estadoProyectoid, int idUsuario)
         {
 
-            project.InsertarProyecto(nombreProyecto, descripcion, fechaInicio, fechaFin, estadoProyectoid, idUsuario);
+            project.InsertarProyecto(nombreProyecto, descripcion, fechaInicio, fechaFin, fechaInicioProgramada, fechaFinProgramada, estadoProyectoid, idUsuario);
 
 
         }
 
-        public void UpdateProyecto(int IdProyecto,string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+        public void UpdateProyecto(int IdProyecto,string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime fechaFinProgramada, int estadoProyectoid, int idUsuario)
         {
 
-            project.EditarProyecto(IdProyecto, nombreProyecto, descripcion, fechaInicio, fechaFin, estadoProyectoid, idUsuario);
+            project.EditarProyecto(IdProyecto, nombreProyecto, descripcion, fechaInicio, fechaFin, fechaInicioProgramada, fechaFinProgramada, estadoProyectoid, idUsuario);
 
 
         }

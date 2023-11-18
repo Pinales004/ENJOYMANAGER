@@ -37,6 +37,7 @@ namespace PRESENTACION
                 btn_editar.Visible = true;
                 btn_eliminar.Visible = true;
                 btn_realizar.Visible = false;
+                CargarTareasGerentes();
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
@@ -44,12 +45,13 @@ namespace PRESENTACION
                 btn_editar.Visible = false;
                 btn_eliminar.Visible = false;
                 btn_realizar.Visible = true;
+                CargarTareasProgrmadores();
             }
         }
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
-            CargarTareas();
+           
             rolUsuario();
         }
         public void CargarEstadoTarea(Frm_NuevaTarea form)
@@ -101,12 +103,20 @@ namespace PRESENTACION
             }
         }
 
-        public void CargarTareas()
+        public void CargarTareasProgrmadores()
         {
             Tareas cargar = new Tareas();
             this.dataGridView1.AutoGenerateColumns = true;
-            this.dataGridView1.DataSource = cargar.CargarTareas();
+            this.dataGridView1.DataSource = cargar.CargarTareas(UserLoginCache.IdUsuario);
             this.dataGridView1.Columns[0].Visible=false;
+        }
+
+        public void CargarTareasGerentes()
+        {
+            Tareas cargar = new Tareas();
+            this.dataGridView1.AutoGenerateColumns = true;
+            this.dataGridView1.DataSource = cargar.CargarTareasGeneral();
+            this.dataGridView1.Columns[0].Visible = false;
         }
 
         #region btn_hover
@@ -255,7 +265,7 @@ namespace PRESENTACION
                     Tareas cargar = new Tareas();
                     cargar.EliminarTarea(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString()));
                     MessageBox.Show("Tarea Eliminada Correctamente");
-                    CargarTareas();
+                    CargarTareasGerentes();
                 }
             }
             else

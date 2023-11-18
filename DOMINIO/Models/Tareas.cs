@@ -13,7 +13,50 @@ namespace DOMINIO.Models
     public class Tareas : ConexionSQL
     {
 
-        public DataTable CargarTareas()
+        public DataTable CargarTareas(int idUsuario)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        // Utilizamos un parámetro para evitar posibles problemas de seguridad y para pasar el IdUsuario.
+                        command.CommandText = "SELECT task.TareaId, pro.Idproyecto, task.NombreTarea, pro.NombreProyecto, task.DescripcionTarea, est.Estado, task.FechaInicio, task.FechaFin, miem.IdUsuario AS estoy, usu.Nombres AS Responsable " +
+                                              "FROM TareasProyecto task " +
+                                              "INNER JOIN Proyectos pro ON task.IdProyecto = pro.IdProyecto " +
+                                              "INNER JOIN TareaEstado est ON task.EstadoTareaid = est.EstadoTareaid " +
+                                              "LEFT JOIN ProyectoMiembros miem ON task.IdProyectoMiembro = miem.IdProyectoMiembro " +
+                                              "INNER JOIN Usuario usu ON miem.IdUsuario = usu.IdUsuario " +
+                                              "WHERE task.Borrado = 0 AND pro.Borrado = 0 AND pro.IdProyecto IN (SELECT IdProyecto FROM ProyectoMiembros WHERE IdUsuario = @IdUsuario)";
+
+                        command.CommandType = CommandType.Text;
+
+                        // Agregamos el parámetro IdUsuario
+                        command.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Puedes manejar la excepción aquí, por ejemplo, mostrar un mensaje de error o registrar el error.
+                Console.WriteLine("Error al cargar tareas: " + ex.Message);
+            }
+
+            return table;
+        }
+
+        public DataTable CargarTareasGeneral()
         {
             DataTable table = new DataTable();
 

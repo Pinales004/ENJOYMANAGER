@@ -87,7 +87,8 @@ namespace PRESENTACION
                 form.cmbEstadoProyecto.Text = selectedRow["EstadoProyecto"].ToString();
                 form.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
-
+                form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
+                form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());
 
                 // Establece la propiedad FormProyectos
                 form.FormProyectos = this;
@@ -187,16 +188,18 @@ namespace PRESENTACION
 
         public void CargarTareas(int idproyecto)
         {
-            Tareas cargar = new Tareas();
-            this.dataGridViewTareas.AutoGenerateColumns = true;
-            this.dataGridViewTareas.DataSource = cargar.BuscarTareaPorIdPoryecto(Convert.ToInt32(idproyecto));
-            this.dataGridViewTareas.Columns[0].Visible = false;
-            this.dataGridViewTareas.Columns[1].Visible = false;
-            this.dataGridViewTareas.Columns[3].Visible = false;
-            this.dataGridViewTareas.Columns[4].Visible = false;
-            this.dataGridViewTareas.Columns[6].Visible = false;
-            this.dataGridViewTareas.Columns[7].Visible = false;
-           
+            if (idproyecto != null)
+            {
+                Tareas cargar = new Tareas();
+                this.dataGridViewTareas.AutoGenerateColumns = true;
+                this.dataGridViewTareas.DataSource = cargar.BuscarTareaPorIdPoryecto(Convert.ToInt32(idproyecto));
+                this.dataGridViewTareas.Columns[0].Visible = false;
+                this.dataGridViewTareas.Columns[1].Visible = false;
+                this.dataGridViewTareas.Columns[3].Visible = false;
+                this.dataGridViewTareas.Columns[4].Visible = false;
+                this.dataGridViewTareas.Columns[6].Visible = false;
+                this.dataGridViewTareas.Columns[7].Visible = false;
+            }
 
 
         }
@@ -209,18 +212,12 @@ namespace PRESENTACION
                 dataGridViewEquipoProgramadores.AutoGenerateColumns = true;
                 dataGridViewEquipoProgramadores.DataSource = miembro.GetProyectoMiembro(Convert.ToInt32(idproyecto));
                 this.dataGridViewEquipoProgramadores.Columns[0].Visible = false;
-                
-
             }
         }
-
-        
-
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             
-
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int rowIndex = dataGridView1.SelectedCells[0].RowIndex;

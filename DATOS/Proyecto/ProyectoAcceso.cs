@@ -49,10 +49,17 @@ namespace DATOS.Proyecto
 
 
 
-        public void InsertarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+        public void InsertarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime fechaFinProgramada, int estadoProyectoid, int idUsuario)
         {
             try
             {
+                // Verificar si el nombre del proyecto ya existe
+                if (ProyectoExistente(nombreProyecto))
+                {
+                    // Lanzar una excepción personalizada para manejarla desde la capa de presentación
+                    throw new InvalidOperationException("El nombre del proyecto ya existe. No se puede guardar.");
+                }
+
                 using (var connection = GETConexionSQL())
                 {
                     connection.Open();
@@ -60,8 +67,8 @@ namespace DATOS.Proyecto
                     using (var command = new SqlCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = "INSERT INTO Proyectos (NombreProyecto, Descripcion, FechaInicio, FechaFin, EstadoProyectoid, IdUsuario) " +
-                                            "VALUES (@NombreProyecto, @Descripcion, @FechaInicio, @FechaFin, @EstadoProyectoid, @IdUsuario)";
+                        command.CommandText = "INSERT INTO Proyectos (NombreProyecto, Descripcion, FechaInicio, FechaFin, FechaInicioProgramada, FechaFinReal, EstadoProyectoid, IdUsuario) " +
+                                            "VALUES (@NombreProyecto, @Descripcion, @FechaInicio, @FechaFin, @FechaInicioProgramada, @FechaFinReal, @EstadoProyectoid, @IdUsuario)";
                         command.CommandType = CommandType.Text;
 
                         // Agrega los parámetros y sus valores
@@ -69,6 +76,8 @@ namespace DATOS.Proyecto
                         command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
                         command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
                         command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));
+                        command.Parameters.Add(new SqlParameter("@FechaInicioProgramada", fechaInicioProgramada));
+                        command.Parameters.Add(new SqlParameter("@FechaFinReal", fechaFinProgramada));
                         command.Parameters.Add(new SqlParameter("@EstadoProyectoid", estadoProyectoid));
                         command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
 
@@ -79,13 +88,52 @@ namespace DATOS.Proyecto
             }
             catch (Exception ex)
             {
-                // En caso de error, puedes manejar la excepción aquí, mostrar un mensaje de error o registrar el error.
-                Console.WriteLine("Error al insertar el proyecto: " + ex.Message);
-                throw; // Puedes lanzar la excepción nuevamente si lo deseas.
+                // En caso de otros errores, puedes manejar la excepción aquí, mostrar un mensaje de error o registrar el error.
+                throw new InvalidOperationException("Error inesperado al insertar el proyecto: " + ex.Message);
+               
             }
         }
 
-        public void EditarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, int estadoProyectoid, int idUsuario)
+
+        // Método para verificar si el nombre del proyecto ya existe
+        private bool ProyectoExistente(string nombreProyecto)
+        {
+            try
+            {
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = "SELECT COUNT(*) FROM Proyectos WHERE NombreProyecto = @NombreProyecto";
+                        command.CommandType = CommandType.Text;
+
+                        // Agrega el parámetro y su valor
+                        command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
+
+                        // Obtiene el resultado de la consulta
+                        int count = (int)command.ExecuteScalar();
+
+                        // Si count es mayor que 0, el nombre del proyecto ya existe
+                        return count > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Lanza la excepción personalizada para ser manejada desde la capa de presentación
+                throw new InvalidOperationException("Error al verificar la existencia del proyecto: " + ex.Message);
+            }
+        }
+
+
+
+
+
+
+        public void EditarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime FechaFinReal, int estadoProyectoid, int idUsuario)
         {
             using (var connection = GETConexionSQL())
             {
@@ -96,7 +144,7 @@ namespace DATOS.Proyecto
                     command.Connection = connection;
                     command.CommandText = "UPDATE Proyectos " +
                                         "SET NombreProyecto = @NombreProyecto, Descripcion = @Descripcion, " +
-                                        "FechaInicio = @FechaInicio, FechaFin = @FechaFin, EstadoProyectoid = @EstadoProyectoid, " +
+                                        "FechaInicio = @FechaInicio, FechaFin = @FechaFin,FechaInicioProgramada = @FechaInicioProgramada, FechaFinReal = @FechaFinReal, EstadoProyectoid = @EstadoProyectoid, " +
                                         "IdUsuario = @IdUsuario " +
                                         "WHERE IdProyecto = @IdProyecto";
                     command.CommandType = CommandType.Text;
@@ -107,6 +155,8 @@ namespace DATOS.Proyecto
                     command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
                     command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
                     command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));
+                    command.Parameters.Add(new SqlParameter("@FechaInicioProgramada", fechaInicioProgramada));
+                    command.Parameters.Add(new SqlParameter("@FechaFinReal", FechaFinReal));
                     command.Parameters.Add(new SqlParameter("@EstadoProyectoid", estadoProyectoid));
                     command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
 

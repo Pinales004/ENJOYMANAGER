@@ -232,11 +232,11 @@ namespace PRESENTACION.Administracion_Tareas
                 }
             }
 
-            form.CargarTareas();
+            form.CargarTareasGerentes();
             // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
             if (FormTareas != null)
             {
-                FormTareas.CargarTareas();
+                FormTareas.CargarTareasGerentes();
             }
             MessageBox.Show("La tarea se ha guardado correctamente.");
             this.Hide();

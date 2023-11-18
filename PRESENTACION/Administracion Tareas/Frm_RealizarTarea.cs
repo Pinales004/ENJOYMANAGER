@@ -159,11 +159,11 @@ namespace PRESENTACION.Administracion_Tareas
 
             }
 
-            form.CargarTareas();
+     
             // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
             if (FormTareas != null)
             {
-                FormTareas.CargarTareas();
+                FormTareas.CargarTareasProgrmadores();
             }
             MessageBox.Show("La tarea se ha realizado correctamente.");
             this.Hide();
