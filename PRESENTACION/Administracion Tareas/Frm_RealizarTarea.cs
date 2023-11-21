@@ -125,17 +125,7 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void CmbNombreProyecto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CmbNombreProyecto.SelectedItem != null)
-            {
-                DataRowView selectedRow = (DataRowView)CmbNombreProyecto.SelectedItem;
 
-                // Accede al valor del campo "ID" de la fila seleccionada
-                int idProyectoSeleccionado = Convert.ToInt32(selectedRow["IdProyecto"]);
-
-                // Llamamos al método ListaMiembros con el ID del proyecto seleccionado
-                ListaMiembros(idProyectoSeleccionado);
-                // Verifica si el ComboBox cmbResponsableTarea está vacío
-            }
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -178,14 +168,15 @@ namespace PRESENTACION.Administracion_Tareas
             this.datagridAnexo.DataSource = cargar.GetAnexosPorTarea(Convert.ToInt32(TareaId));
 
             // Ocultar las columnas que no deseas mostrar
+            this.datagridAnexo.Columns["TareaId"].Visible = false;
             this.datagridAnexo.Columns["AnexoId"].Visible = false;
-            this.datagridAnexo.Columns["Documento"].Visible = false;
 
             // Asegúrate de que las columnas "Nombre" y "Extension" estén visibles
             this.datagridAnexo.Columns["Nombre"].Visible = true;
             this.datagridAnexo.Columns["Extension"].Visible = true;
-            this.datagridAnexo.Columns["Borrado"].Visible = false;
-            this.datagridAnexo.Columns["TareaId"].Visible = false;
+            this.datagridAnexo.Columns["Documento"].Visible = false;
+            this.datagridAnexo.Columns["FechaCreacion"].Visible = true;
+            this.datagridAnexo.Columns["NombreCompleto"].Visible = true;
 
         }
         //Anexo
@@ -285,8 +276,8 @@ namespace PRESENTACION.Administracion_Tareas
 
             this.dataGridComentarios.Columns["Comentario"].Visible = true;
             this.dataGridComentarios.Columns["IdUsuario"].Visible = false;
-            this.dataGridComentarios.Columns["FechaCreacion"].Visible = false;
-            this.dataGridComentarios.Columns["UsuarioCrea"].Visible = false;
+            this.dataGridComentarios.Columns["FechaCreacion"].Visible = true;
+            this.dataGridComentarios.Columns["UsuarioCrea"].Visible = true;
 
             this.dataGridComentarios.Columns["ComentarioTareaId"].Visible = false;
             this.dataGridComentarios.Columns["TareaId"].Visible = false;
@@ -373,6 +364,9 @@ namespace PRESENTACION.Administracion_Tareas
                 MessageBox.Show("Selecciona una fila en el DataGridView para llenar el TextBox.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         #endregion
+
+
     }
 }

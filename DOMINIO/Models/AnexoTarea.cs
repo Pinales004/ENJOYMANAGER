@@ -21,8 +21,8 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO Anexo (Nombre, Documento, Extension, TareaId) " +
-                                        "VALUES (@Nombre, @Documento, @Extension, @TareaId)";
+                    command.CommandText = "INSERT INTO Anexo (Nombre, Documento, Extension, TareaId,UsuarioId) " +
+                                        "VALUES (@Nombre, @Documento, @Extension, @TareaId,@UsuarioId)";
                     command.CommandType = CommandType.Text;
 
                     // Agrega los parámetros y sus valores
@@ -30,6 +30,7 @@ namespace DOMINIO.Models
                     command.Parameters.Add(new SqlParameter("@Documento", anexo.Documento));
                     command.Parameters.Add(new SqlParameter("@Extension", anexo.Extension));
                     command.Parameters.Add(new SqlParameter("@TareaId", anexo.TareaId));
+                    command.Parameters.Add(new SqlParameter("@UsuarioId", anexo.UsuarioId));
 
                     // Ejecuta la consulta
                     command.ExecuteNonQuery();
@@ -97,7 +98,7 @@ namespace DOMINIO.Models
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Anexo WHERE TareaId = @TareaId and Borrado = 0";
+                    command.CommandText = "SELECT * FROM Anexo_vw_ENJOY WHERE TareaId = @TareaId";
                     command.CommandType = CommandType.Text;
 
                     // Agrega el parámetro y su valor

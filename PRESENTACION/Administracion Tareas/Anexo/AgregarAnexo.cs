@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Comun.Cache;
 using DATOS.Tareas;
 using DOMINIO.Models;
 
@@ -54,8 +55,8 @@ namespace PRESENTACION.Administracion_Tareas.Anexo
                 TxtNombreArchivo.Text,
                 archivo,
                 openFileDialog1.SafeFileName,
-                Convert.ToInt32(IdTarea)              
-                
+                Convert.ToInt32(IdTarea),
+                UserLoginCache.IdUsuario              
                 );
             anexo.InsertAnexo(agregar);
             MessageBox.Show("Documento guardado");

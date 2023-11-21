@@ -68,7 +68,7 @@ namespace PRESENTACION.Proyecto
             {
                 cargar.AgregarProyecto(this.txtNombreProyecto.Text,
                                            this.txtDescripcionProyecto.Text,
-                                           this.dateTimePickerInicio.Value.Date,
+                                           DateTime.Now,
                                            this.dateTimePickerEntrega.Value.Date,
                                            this.dateTimeInicioPro.Value.Date,
                                            this.dateTimeFinPro.Value.Date,
@@ -98,7 +98,6 @@ namespace PRESENTACION.Proyecto
             cargar.UpdateProyecto(Convert.ToInt32(this.IdProyecto.Text),
                                     this.txtNombreProyecto.Text,
                                     this.txtDescripcionProyecto.Text,
-                                    this.dateTimePickerInicio.Value.Date,
                                     this.dateTimePickerEntrega.Value.Date,
                                     this.dateTimeInicioPro.Value.Date,
                                     this.dateTimeFinPro.Value.Date,
@@ -123,7 +122,6 @@ namespace PRESENTACION.Proyecto
             // Limpia los campos del formulario para futuras entradas
             txtNombreProyecto.Text = "";
             txtDescripcionProyecto.Text = "";
-            dateTimePickerInicio.Value = DateTime.Now;
         }
 
         #region botones
@@ -174,10 +172,6 @@ namespace PRESENTACION.Proyecto
                 else if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
                 {
                     MostrarError("Debe ingresar una descripción de proyecto.");
-                }
-                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
-                {
-                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
                 }
                 else if (dateTimeInicioPro.Value > dateTimeFinPro.Value)
                 {

@@ -79,13 +79,11 @@ namespace PRESENTACION
                 form.LblEquipoProyecto.Visible = true;
                 form.btnEquipoProyecto.Visible = true;
                 int idProyecto = (int)selectedRow["IdProyecto"];
-
                 // Configura los campos en el formulario
                 form.IdProyecto.Text = idProyecto.ToString();
                 form.txtNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
                 form.txtDescripcionProyecto.Text = selectedRow["Descripcion"].ToString();
                 form.cmbEstadoProyecto.Text = selectedRow["EstadoProyecto"].ToString();
-                form.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
                 form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
                 form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
                 form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());

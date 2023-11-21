@@ -14,6 +14,7 @@ namespace DATOS.Tareas
         public byte[] Documento { get; set; }
         public string Extension { get; set; }
         public int TareaId { get; set; }
+        public int UsuarioId { get; set; }
         public bool Borrado { get; set; }
 
         public Anexos()
@@ -31,12 +32,13 @@ namespace DATOS.Tareas
             Borrado = borrado;
         }
 
-        public Anexos(string nombre, byte[] documento, string extension, int tareaId)
+        public Anexos(string nombre, byte[] documento, string extension, int tareaId, int usuarioId)
         {
             Nombre = nombre;
             Documento = documento;
             Extension = extension;
             TareaId = tareaId;
+            UsuarioId = usuarioId;
         }
 
         public Anexos(int anexoId)

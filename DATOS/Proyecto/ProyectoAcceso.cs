@@ -133,7 +133,7 @@ namespace DATOS.Proyecto
 
 
 
-        public void EditarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime FechaFinReal, int estadoProyectoid, int idUsuario)
+        public void EditarProyecto(int idProyecto, string nombreProyecto, string descripcion, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime FechaFinReal, int estadoProyectoid, int idUsuario)
         {
             using (var connection = GETConexionSQL())
             {
@@ -144,7 +144,7 @@ namespace DATOS.Proyecto
                     command.Connection = connection;
                     command.CommandText = "UPDATE Proyectos " +
                                         "SET NombreProyecto = @NombreProyecto, Descripcion = @Descripcion, " +
-                                        "FechaInicio = @FechaInicio, FechaFin = @FechaFin,FechaInicioProgramada = @FechaInicioProgramada, FechaFinReal = @FechaFinReal, EstadoProyectoid = @EstadoProyectoid, " +
+                                        "FechaFin = @FechaFin,FechaInicioProgramada = @FechaInicioProgramada, FechaFinReal = @FechaFinReal, EstadoProyectoid = @EstadoProyectoid, " +
                                         "IdUsuario = @IdUsuario " +
                                         "WHERE IdProyecto = @IdProyecto";
                     command.CommandType = CommandType.Text;
@@ -153,7 +153,6 @@ namespace DATOS.Proyecto
                     command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));
                     command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
                     command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
-                    command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio));
                     command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin));
                     command.Parameters.Add(new SqlParameter("@FechaInicioProgramada", fechaInicioProgramada));
                     command.Parameters.Add(new SqlParameter("@FechaFinReal", FechaFinReal));
