@@ -118,13 +118,13 @@ namespace PRESENTACION
                 // Obtén los valores de la fila seleccionada en el DataGridView
                 DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
                 frm.IdUsuario = selectedRow.Cells["IdUsuario"].Value.ToString();
-                frm.txtNombreUsuario.Text = selectedRow.Cells["UsuarioNombre"].Value.ToString();
-                frm.txtNombre.Text = selectedRow.Cells["Nombres"].Value.ToString();
-                frm.txtApellido.Text = selectedRow.Cells["Apellidos"].Value.ToString();
-                frm.txtEmail.Text = selectedRow.Cells["EmailUsuario"].Value.ToString();
-                frm.cmbGenero.Text = selectedRow.Cells["Genero"].Value.ToString(); // Establecer el valor en el ComboBox
-                frm.cmbRol.SelectedValue = Convert.ToInt32(selectedRow.Cells["IdUsuarioRol"].Value.ToString());
-                frm.CboEstadoUsuario.SelectedValue = Convert.ToInt32(selectedRow.Cells["IdUsuarioEstado"].Value);
+                frm.txtNombreUsuario.Text = selectedRow.Cells[1].Value.ToString();
+                frm.txtNombre.Text = selectedRow.Cells[2].Value.ToString();
+                frm.txtApellido.Text = selectedRow.Cells[3].Value.ToString();
+                frm.txtEmail.Text = selectedRow.Cells[4].Value.ToString();
+                frm.cmbGenero.Text = selectedRow.Cells[5].Value.ToString(); // Establecer el valor en el ComboBox
+                frm.cmbRol.SelectedValue = Convert.ToInt32(selectedRow.Cells[6].Value.ToString());
+                frm.CboEstadoUsuario.SelectedValue = Convert.ToInt32(selectedRow.Cells[8].Value);
                 //CheckActivo.Checked = (bool)dataGridView1.CurrentRow.Cells[7].Value;
 
                 // Establece la propiedad FormUsuarios

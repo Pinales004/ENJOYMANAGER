@@ -11,6 +11,7 @@ using Comun.Cache;
 using DATOS.Conexion;
 using DOMINIO.Models;
 using PRESENTACION.Proyecto;
+using Comun;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace PRESENTACION
@@ -81,12 +82,12 @@ namespace PRESENTACION
                 int idProyecto = (int)selectedRow["IdProyecto"];
                 // Configura los campos en el formulario
                 form.IdProyecto.Text = idProyecto.ToString();
-                form.txtNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
-                form.txtDescripcionProyecto.Text = selectedRow["Descripcion"].ToString();
-                form.cmbEstadoProyecto.Text = selectedRow["EstadoProyecto"].ToString();
-                form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
-                form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
-                form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());
+                form.txtNombreProyecto.Text = selectedRow[1].ToString();
+                form.txtDescripcionProyecto.Text = selectedRow[2].ToString();
+                form.cmbEstadoProyecto.Text = selectedRow[7].ToString();
+                form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow[4].ToString());
+                //form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
+                //form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());
 
                 // Establece la propiedad FormProyectos
                 form.FormProyectos = this;

@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DOMINIO.Models;
-using Comun.Cache;
 using static DATOS.Proyecto.ProyectoAcceso;
 
 namespace PRESENTACION.Proyecto

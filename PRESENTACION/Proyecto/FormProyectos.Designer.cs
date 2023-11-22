@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProyectos));
             panelContenedor = new Panel();
+            groupBox1 = new GroupBox();
+            label3 = new Label();
+            dataGridViewEquipoProgramadores = new DataGridView();
+            dataGridViewTareas = new DataGridView();
+            lblDGVequipo = new Label();
+            lblDGVtareas = new Label();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             btn_buscar = new PictureBox();
@@ -38,22 +44,16 @@
             btn_editar = new PictureBox();
             btn_eliminar = new PictureBox();
             btn_agregar = new PictureBox();
-            groupBox1 = new GroupBox();
-            label3 = new Label();
-            dataGridViewEquipoProgramadores = new DataGridView();
-            dataGridViewTareas = new DataGridView();
-            lblDGVequipo = new Label();
-            lblDGVtareas = new Label();
             panelContenedor.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).BeginInit();
             SuspendLayout();
             // 
             // panelContenedor
@@ -66,6 +66,86 @@
             panelContenedor.Name = "panelContenedor";
             panelContenedor.Size = new Size(884, 461);
             panelContenedor.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(dataGridViewEquipoProgramadores);
+            groupBox1.Controls.Add(dataGridViewTareas);
+            groupBox1.Controls.Add(lblDGVequipo);
+            groupBox1.Controls.Add(lblDGVtareas);
+            groupBox1.ForeColor = Color.Black;
+            groupBox1.Location = new Point(485, 74);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(396, 384);
+            groupBox1.TabIndex = 62;
+            groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(176, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 15);
+            label3.TabIndex = 66;
+            label3.Text = "Detalle";
+            // 
+            // dataGridViewEquipoProgramadores
+            // 
+            dataGridViewEquipoProgramadores.AllowUserToAddRows = false;
+            dataGridViewEquipoProgramadores.AllowUserToDeleteRows = false;
+            dataGridViewEquipoProgramadores.AllowUserToOrderColumns = true;
+            dataGridViewEquipoProgramadores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            dataGridViewEquipoProgramadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewEquipoProgramadores.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridViewEquipoProgramadores.Location = new Point(9, 213);
+            dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
+            dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
+            dataGridViewEquipoProgramadores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewEquipoProgramadores.Size = new Size(381, 165);
+            dataGridViewEquipoProgramadores.TabIndex = 63;
+            // 
+            // dataGridViewTareas
+            // 
+            dataGridViewTareas.AllowUserToAddRows = false;
+            dataGridViewTareas.AllowUserToDeleteRows = false;
+            dataGridViewTareas.AllowUserToOrderColumns = true;
+            dataGridViewTareas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dataGridViewTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewTareas.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridViewTareas.Location = new Point(6, 36);
+            dataGridViewTareas.Name = "dataGridViewTareas";
+            dataGridViewTareas.RowTemplate.Height = 25;
+            dataGridViewTareas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewTareas.Size = new Size(384, 156);
+            dataGridViewTareas.TabIndex = 62;
+            // 
+            // lblDGVequipo
+            // 
+            lblDGVequipo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblDGVequipo.AutoSize = true;
+            lblDGVequipo.ForeColor = SystemColors.ButtonHighlight;
+            lblDGVequipo.Location = new Point(15, 195);
+            lblDGVequipo.Name = "lblDGVequipo";
+            lblDGVequipo.Size = new Size(213, 15);
+            lblDGVequipo.TabIndex = 64;
+            lblDGVequipo.Text = "Equipo de programadores del proyecto";
+            // 
+            // lblDGVtareas
+            // 
+            lblDGVtareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblDGVtareas.AutoSize = true;
+            lblDGVtareas.ForeColor = SystemColors.ButtonHighlight;
+            lblDGVtareas.Location = new Point(6, 18);
+            lblDGVtareas.Name = "lblDGVtareas";
+            lblDGVtareas.Size = new Size(108, 15);
+            lblDGVtareas.TabIndex = 65;
+            lblDGVtareas.Text = "Tareas del proyecto";
             // 
             // dataGridView1
             // 
@@ -170,86 +250,6 @@
             btn_agregar.TabStop = false;
             btn_agregar.Click += btn_agregar_Click;
             // 
-            // groupBox1
-            // 
-            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(dataGridViewEquipoProgramadores);
-            groupBox1.Controls.Add(dataGridViewTareas);
-            groupBox1.Controls.Add(lblDGVequipo);
-            groupBox1.Controls.Add(lblDGVtareas);
-            groupBox1.ForeColor = Color.Black;
-            groupBox1.Location = new Point(485, 74);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(396, 384);
-            groupBox1.TabIndex = 62;
-            groupBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(176, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 66;
-            label3.Text = "Detalle";
-            // 
-            // dataGridViewEquipoProgramadores
-            // 
-            dataGridViewEquipoProgramadores.AllowUserToAddRows = false;
-            dataGridViewEquipoProgramadores.AllowUserToDeleteRows = false;
-            dataGridViewEquipoProgramadores.AllowUserToOrderColumns = true;
-            dataGridViewEquipoProgramadores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dataGridViewEquipoProgramadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewEquipoProgramadores.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridViewEquipoProgramadores.Location = new Point(9, 213);
-            dataGridViewEquipoProgramadores.Name = "dataGridViewEquipoProgramadores";
-            dataGridViewEquipoProgramadores.RowTemplate.Height = 25;
-            dataGridViewEquipoProgramadores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewEquipoProgramadores.Size = new Size(381, 165);
-            dataGridViewEquipoProgramadores.TabIndex = 63;
-            // 
-            // dataGridViewTareas
-            // 
-            dataGridViewTareas.AllowUserToAddRows = false;
-            dataGridViewTareas.AllowUserToDeleteRows = false;
-            dataGridViewTareas.AllowUserToOrderColumns = true;
-            dataGridViewTareas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            dataGridViewTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewTareas.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridViewTareas.Location = new Point(6, 36);
-            dataGridViewTareas.Name = "dataGridViewTareas";
-            dataGridViewTareas.RowTemplate.Height = 25;
-            dataGridViewTareas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewTareas.Size = new Size(384, 156);
-            dataGridViewTareas.TabIndex = 62;
-            // 
-            // lblDGVequipo
-            // 
-            lblDGVequipo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            lblDGVequipo.AutoSize = true;
-            lblDGVequipo.ForeColor = SystemColors.ButtonHighlight;
-            lblDGVequipo.Location = new Point(15, 195);
-            lblDGVequipo.Name = "lblDGVequipo";
-            lblDGVequipo.Size = new Size(213, 15);
-            lblDGVequipo.TabIndex = 64;
-            lblDGVequipo.Text = "Equipo de programadores del proyecto";
-            // 
-            // lblDGVtareas
-            // 
-            lblDGVtareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            lblDGVtareas.AutoSize = true;
-            lblDGVtareas.ForeColor = SystemColors.ButtonHighlight;
-            lblDGVtareas.Location = new Point(6, 18);
-            lblDGVtareas.Name = "lblDGVtareas";
-            lblDGVtareas.Size = new Size(108, 15);
-            lblDGVtareas.TabIndex = 65;
-            lblDGVtareas.Text = "Tareas del proyecto";
-            // 
             // FormProyectos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -262,6 +262,10 @@
             Text = "FormProyectos";
             Load += FormProyectos_Load;
             panelContenedor.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -269,10 +273,6 @@
             ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewEquipoProgramadores).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewTareas).EndInit();
             ResumeLayout(false);
         }
 

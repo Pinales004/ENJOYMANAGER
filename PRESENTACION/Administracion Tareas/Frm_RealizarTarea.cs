@@ -45,6 +45,7 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_RealizarTarea_Load(object sender, EventArgs e)
         {
+            ListadoProyectos();
             CargarAnexos();
             CargarComentarios();
             txtNombreTarea.Enabled = false;
@@ -54,7 +55,15 @@ namespace PRESENTACION.Administracion_Tareas
             dateTimePickerInicio.Enabled = false;
             dateTimePickerEntrega.Enabled = false;
         }
+        private void ListadoProyectos()
+        {
 
+            Tareas cargar = new Tareas();
+
+            CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
+            CmbNombreProyecto.DisplayMember = "Nombre";
+            CmbNombreProyecto.ValueMember = "IdProyecto";
+        }
 
         private void Frm_RealizarTarea_MouseMove(object sender, MouseEventArgs e)
         {
@@ -125,7 +134,17 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void CmbNombreProyecto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (CmbNombreProyecto.SelectedItem != null)
+            {
+                DataRowView selectedRow = (DataRowView)CmbNombreProyecto.SelectedItem;
 
+                // Accede al valor del campo "ID" de la fila seleccionada
+                int idProyectoSeleccionado = Convert.ToInt32(selectedRow["IdProyecto"]);
+
+                // Llamamos al método ListaMiembros con el ID del proyecto seleccionado
+                ListaMiembros(idProyectoSeleccionado);
+                // Verifica si el ComboBox cmbResponsableTarea está vacío
+            }
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)

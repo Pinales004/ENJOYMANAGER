@@ -44,3 +44,4 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Com
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.pdb
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\Comun\obj\Debug\net6.0\ref\Comun.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.sourcelink.json
+C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\Comun\obj\Debug\net6.0\Comun.sourcelink.json

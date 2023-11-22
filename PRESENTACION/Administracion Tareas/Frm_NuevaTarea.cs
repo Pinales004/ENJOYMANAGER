@@ -39,7 +39,7 @@ namespace PRESENTACION.Administracion_Tareas
             Tareas cargar = new Tareas();
 
            CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            CmbNombreProyecto.DisplayMember = "NombreProyecto";
+            CmbNombreProyecto.DisplayMember = "Nombre";
             CmbNombreProyecto.ValueMember = "IdProyecto";
         }
         private void Frm_NuevaTarea_MouseMove(object sender, MouseEventArgs e)
@@ -127,7 +127,6 @@ namespace PRESENTACION.Administracion_Tareas
                 ListaMiembros(idProyectoSeleccionado);
                 // Verifica si el ComboBox cmbResponsableTarea está vacío
             }
-
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)

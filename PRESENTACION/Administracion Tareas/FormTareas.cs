@@ -199,13 +199,13 @@ namespace PRESENTACION
 
                 frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
 
-                frm.txtNombreTarea.Text = selectedRow["NombreTarea"].ToString();
-                frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
+                frm.txtNombreTarea.Text = selectedRow["Nombre de la tarea"].ToString();
+                frm.CmbNombreProyecto.Text = selectedRow["Nombre del proyecto"].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
                 frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
-                frm.txtDescripcionTarea.Text = selectedRow["DescripcionTarea"].ToString();
-                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
-                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
+                frm.txtDescripcionTarea.Text = selectedRow["Descripción"].ToString();
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha Inicial"].ToString());
+                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["Fecha Final"].ToString());
 
                 // Establece la propiedad FormTareas
                 frm.FormTareas = this;
@@ -235,13 +235,13 @@ namespace PRESENTACION
 
                 frm.TareaId = TareaId;
 
-                frm.txtNombreTarea.Text = selectedRow["NombreTarea"].ToString();
-                frm.CmbNombreProyecto.Text = selectedRow["NombreProyecto"].ToString();
+                frm.txtNombreTarea.Text = selectedRow["Nombre de la tarea"].ToString();
+                frm.CmbNombreProyecto.Text = selectedRow["Nombre del proyecto"].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
                 frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
-                frm.txtDescripcionTarea.Text = selectedRow["DescripcionTarea"].ToString();
-                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["FechaInicio"].ToString());
-                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["FechaFin"].ToString());
+                frm.txtDescripcionTarea.Text = selectedRow["Descripción"].ToString();
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha Inicial"].ToString());
+                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["Fecha Final"].ToString());
 
                 // Establece la propiedad FormTareas
                 frm.FormTareas = this;
