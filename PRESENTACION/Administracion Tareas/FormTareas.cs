@@ -188,7 +188,7 @@ namespace PRESENTACION
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count >0)
             {
                 var frm = new Frm_NuevaTarea();
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
