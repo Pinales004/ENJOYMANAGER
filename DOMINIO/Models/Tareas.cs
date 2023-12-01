@@ -34,8 +34,8 @@ namespace DOMINIO.Models
 							"pro.NombreProyecto AS \"Nombre del proyecto\", " +
 							"task.DescripcionTarea AS Descripción, " +
 							"est.Estado, " +
-							"task.FechaInicio AS \"Fecha Inicial\", " +
-							"task.FechaFin AS \"Fecha Final\", " +
+							"task.FechaInicio AS \"Fecha de inicio\", " +
+							"task.FechaFin AS \"Fecha final\", " +
 							"usu.Nombres AS Responsable " +
 							"FROM TareasProyecto task " +
 							"INNER JOIN Proyectos pro ON task.IdProyecto = pro.IdProyecto " +
@@ -340,7 +340,7 @@ namespace DOMINIO.Models
 				using (var command = new SqlCommand())
 				{
 					command.Connection = connection;
-					command.CommandText = "SELECT * FROM Tareas_vw_ENJOY WHERE NombreProyecto LIKE @Nombre";
+					command.CommandText = "SELECT * FROM Tareas_vw_ENJOY WHERE [Nombre del proyecto] LIKE @Nombre";
 					command.CommandType = CommandType.Text;
 
 					// Agrega el parámetro para la búsqueda dinámica

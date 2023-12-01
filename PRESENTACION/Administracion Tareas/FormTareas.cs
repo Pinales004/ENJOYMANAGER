@@ -36,7 +36,7 @@ namespace PRESENTACION
                 btn_agregar.Visible = true;
                 btn_editar.Visible = true;
                 btn_eliminar.Visible = true;
-                btn_realizar.Visible = false;
+                btn_realizar.Visible = true;
                 CargarTareasGerentes();
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
@@ -66,11 +66,9 @@ namespace PRESENTACION
 
         private void ListadoProyectos(Frm_NuevaTarea form)
         {
-
             Tareas cargar = new Tareas();
-
             form.CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            form.CmbNombreProyecto.DisplayMember = "NombreProyecto";
+            form.CmbNombreProyecto.DisplayMember = "Nombre";
             form.CmbNombreProyecto.ValueMember = "IdProyecto";
         }
 
@@ -176,16 +174,6 @@ namespace PRESENTACION
             form.cmbEstadoTarea.ValueMember = "EstadoTareaid";
         }
 
-        private void ListadoProyectosProgra(Frm_RealizarTarea form)
-        {
-
-            Tareas cargar = new Tareas();
-
-            form.CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            form.CmbNombreProyecto.DisplayMember = "NombreProyecto";
-            form.CmbNombreProyecto.ValueMember = "IdProyecto";
-        }
-
         private void btn_editar_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count >0)
@@ -200,12 +188,12 @@ namespace PRESENTACION
                 frm.TareaId = dataGridView1.SelectedRows[0].Cells["TareaId"].Value.ToString();
 
                 frm.txtNombreTarea.Text = selectedRow["Nombre de la tarea"].ToString();
-                frm.CmbNombreProyecto.Text = selectedRow["Nombre del proyecto"].ToString();
+                frm.CmbNombreProyecto.Text = selectedRow[3].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
                 frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
                 frm.txtDescripcionTarea.Text = selectedRow["Descripción"].ToString();
-                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha Inicial"].ToString());
-                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["Fecha Final"].ToString());
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha de inicio"].ToString());
+                frm.dateTimePickerFin.Value = DateTime.Parse(selectedRow["Fecha final"].ToString());
 
                 // Establece la propiedad FormTareas
                 frm.FormTareas = this;
@@ -224,7 +212,6 @@ namespace PRESENTACION
             {
                 var frm = new Frm_RealizarTarea();
                 CargarEstadoTareaProgra(frm);
-                ListadoProyectosProgra(frm);
 
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
 
@@ -236,12 +223,10 @@ namespace PRESENTACION
                 frm.TareaId = TareaId;
 
                 frm.txtNombreTarea.Text = selectedRow["Nombre de la tarea"].ToString();
-                frm.CmbNombreProyecto.Text = selectedRow["Nombre del proyecto"].ToString();
                 frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
-                frm.cmbResponsableTarea.Text = selectedRow["Responsable"].ToString();
                 frm.txtDescripcionTarea.Text = selectedRow["Descripción"].ToString();
-                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha Inicial"].ToString());
-                frm.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow["Fecha Final"].ToString());
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha de inicio"].ToString());
+                frm.dateTimePickerFin.Value = DateTime.Parse(selectedRow["Fecha final"].ToString());
 
                 // Establece la propiedad FormTareas
                 frm.FormTareas = this;

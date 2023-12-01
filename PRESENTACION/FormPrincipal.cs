@@ -198,6 +198,11 @@ namespace PRESENTACION
             //si el formulario/instancia existe
             else
             {
+                if (formulario is FormProyectos)
+                {
+                    (formulario as FormProyectos).FormProyectos_Load(this, EventArgs.Empty);
+                    (formulario as FormProyectos).dataGridView1_SelectionChanged(this, EventArgs.Empty);
+                }
                 formulario.BringToFront();
             }
             formulario.Parent = panelFormularios; // Establecer el formulario como hijo del panelFormularios

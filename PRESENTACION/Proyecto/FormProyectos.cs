@@ -25,7 +25,7 @@ namespace PRESENTACION
             btn_icon_hover.AplicarFormaRedonda(btn_editar);
             btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
         }
-        private void FormProyectos_Load(object sender, EventArgs e)
+        public void FormProyectos_Load(object sender, EventArgs e)
         {
             CargarProyectos();
         }
@@ -85,7 +85,7 @@ namespace PRESENTACION
                 form.txtNombreProyecto.Text = selectedRow[1].ToString();
                 form.txtDescripcionProyecto.Text = selectedRow[2].ToString();
                 form.cmbEstadoProyecto.Text = selectedRow[7].ToString();
-                form.dateTimePickerEntrega.Value = DateTime.Parse(selectedRow[4].ToString());
+                form.dateTimePickerFin.Value = DateTime.Parse(selectedRow[4].ToString());
                 //form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
                 //form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());
 

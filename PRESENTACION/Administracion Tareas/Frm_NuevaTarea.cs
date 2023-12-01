@@ -28,9 +28,10 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_NuevaTarea_Load(object sender, EventArgs e)
         {
-          
-              ListadoProyectos();
-
+            if (TipoOperacion == "Insertar")
+            {
+                ListadoProyectos();
+            }
         }
 
         private void ListadoProyectos()
@@ -65,7 +66,7 @@ namespace PRESENTACION.Administracion_Tareas
             txtNombreTarea.Text = "";
             txtDescripcionTarea.Text = "";
             dateTimePickerInicio.Value = DateTime.Now;
-            dateTimePickerEntrega.Value = DateTime.Now;
+            dateTimePickerFin.Value = DateTime.Now;
             CmbNombreProyecto.SelectedIndex = -1;
             cmbEstadoTarea.SelectedIndex = -1;
             cmbResponsableTarea.SelectedIndex = -1;
@@ -142,7 +143,7 @@ namespace PRESENTACION.Administracion_Tareas
                 {
                     MostrarError("Debe ingresar una descripción de tarea.");
                 }
-                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+                else if (dateTimePickerInicio.Value > dateTimePickerFin.Value)
                 {
                     MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
                 }
@@ -170,7 +171,7 @@ namespace PRESENTACION.Administracion_Tareas
                         this.txtNombreTarea.Text,
                         this.txtDescripcionTarea.Text,
                         this.dateTimePickerInicio.Value,
-                        this.dateTimePickerEntrega.Value
+                        this.dateTimePickerFin.Value
                     );
 
                     // Llama al método para guardar la tarea
@@ -188,7 +189,7 @@ namespace PRESENTACION.Administracion_Tareas
                 {
                     MostrarError("Debe ingresar una descripción de tarea.");
                 }
-                else if (dateTimePickerInicio.Value > dateTimePickerEntrega.Value)
+                else if (dateTimePickerInicio.Value > dateTimePickerFin.Value)
                 {
                     MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin.");
                 }
@@ -217,7 +218,7 @@ namespace PRESENTACION.Administracion_Tareas
                             this.txtNombreTarea.Text,
                             this.txtDescripcionTarea.Text,
                             this.dateTimePickerInicio.Value,
-                            this.dateTimePickerEntrega.Value
+                            this.dateTimePickerFin.Value
                         );
 
                     cargar.UpdateTarea(ActualizarTarea);

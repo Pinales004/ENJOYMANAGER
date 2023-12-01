@@ -175,3 +175,5 @@ C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.sourcelink.json
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.sourcelink.json
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.Login.FormCambiarContraseña.resources
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\PRESENTACION\obj\Debug\net6.0-windows\PRESENTACION.sourcelink.json

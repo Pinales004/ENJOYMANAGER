@@ -416,7 +416,7 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                 command.Connection = connection;
-                command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY WHERE Nombres LIKE @Nombre";
+                command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY WHERE [Nombre de Usuario] LIKE @Nombre";
                 command.CommandType = CommandType.Text;
 
                 // Agrega el parámetro para la búsqueda dinámica

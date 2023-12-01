@@ -97,7 +97,6 @@
             // 
             dataGridViewEquipoProgramadores.AllowUserToAddRows = false;
             dataGridViewEquipoProgramadores.AllowUserToDeleteRows = false;
-            dataGridViewEquipoProgramadores.AllowUserToOrderColumns = true;
             dataGridViewEquipoProgramadores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridViewEquipoProgramadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -113,7 +112,6 @@
             // 
             dataGridViewTareas.AllowUserToAddRows = false;
             dataGridViewTareas.AllowUserToDeleteRows = false;
-            dataGridViewTareas.AllowUserToOrderColumns = true;
             dataGridViewTareas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             dataGridViewTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -189,6 +187,7 @@
             btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_buscar.TabIndex = 8;
             btn_buscar.TabStop = false;
+            btn_buscar.Click += btn_buscar_Click;
             // 
             // label1
             // 
@@ -223,6 +222,8 @@
             btn_editar.TabIndex = 5;
             btn_editar.TabStop = false;
             btn_editar.Click += btn_editar_Click;
+            btn_editar.MouseEnter += btn_editar_MouseEnter;
+            btn_editar.MouseLeave += btn_editar_MouseLeave;
             // 
             // btn_eliminar
             // 
@@ -236,6 +237,8 @@
             btn_eliminar.TabIndex = 4;
             btn_eliminar.TabStop = false;
             btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // btn_agregar
             // 
@@ -249,6 +252,8 @@
             btn_agregar.TabIndex = 2;
             btn_agregar.TabStop = false;
             btn_agregar.Click += btn_agregar_Click;
+            btn_agregar.MouseEnter += btn_agregar_MouseEnter;
+            btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
             // FormProyectos
             // 

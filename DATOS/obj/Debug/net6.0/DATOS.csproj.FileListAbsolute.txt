@@ -60,3 +60,4 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DAT
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DATOS\obj\Debug\net6.0\ref\DATOS.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.sourcelink.json
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.sourcelink.json
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DATOS\obj\Debug\net6.0\DATOS.sourcelink.json

@@ -34,7 +34,7 @@
             btn_guardar = new PictureBox();
             btn_volver = new PictureBox();
             labelDescripcionTarea = new MaterialSkin.Controls.MaterialLabel();
-            dateTimePickerEntrega = new DateTimePicker();
+            dateTimePickerFin = new DateTimePicker();
             dateTimePickerInicio = new DateTimePicker();
             labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
             labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
@@ -53,7 +53,6 @@
             // 
             // txtDescripcionTarea
             // 
-            txtDescripcionTarea.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             txtDescripcionTarea.AnimateReadOnly = false;
             txtDescripcionTarea.BackgroundImageLayout = ImageLayout.None;
             txtDescripcionTarea.CharacterCasing = CharacterCasing.Normal;
@@ -70,7 +69,7 @@
             txtDescripcionTarea.SelectionLength = 0;
             txtDescripcionTarea.SelectionStart = 0;
             txtDescripcionTarea.ShortcutsEnabled = true;
-            txtDescripcionTarea.Size = new Size(760, 171);
+            txtDescripcionTarea.Size = new Size(760, 107);
             txtDescripcionTarea.TabIndex = 84;
             txtDescripcionTarea.TabStop = false;
             txtDescripcionTarea.TextAlign = HorizontalAlignment.Left;
@@ -78,10 +77,9 @@
             // 
             // btn_limpiar
             // 
-            btn_limpiar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_limpiar.Cursor = Cursors.Hand;
             btn_limpiar.Image = (Image)resources.GetObject("btn_limpiar.Image");
-            btn_limpiar.Location = new Point(692, 462);
+            btn_limpiar.Location = new Point(692, 394);
             btn_limpiar.Name = "btn_limpiar";
             btn_limpiar.Size = new Size(45, 45);
             btn_limpiar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -93,10 +91,9 @@
             // 
             // btn_guardar
             // 
-            btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_guardar.Cursor = Cursors.Hand;
             btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
-            btn_guardar.Location = new Point(743, 462);
+            btn_guardar.Location = new Point(743, 394);
             btn_guardar.Name = "btn_guardar";
             btn_guardar.Size = new Size(45, 45);
             btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -108,10 +105,9 @@
             // 
             // btn_volver
             // 
-            btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_volver.Cursor = Cursors.Hand;
             btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
-            btn_volver.Location = new Point(12, 462);
+            btn_volver.Location = new Point(12, 394);
             btn_volver.Name = "btn_volver";
             btn_volver.Size = new Size(45, 45);
             btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
@@ -123,7 +119,6 @@
             // 
             // labelDescripcionTarea
             // 
-            labelDescripcionTarea.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelDescripcionTarea.AutoSize = true;
             labelDescripcionTarea.Depth = 0;
             labelDescripcionTarea.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
@@ -134,47 +129,43 @@
             labelDescripcionTarea.TabIndex = 91;
             labelDescripcionTarea.Text = "Descripción de la tarea";
             // 
-            // dateTimePickerEntrega
+            // dateTimePickerFin
             // 
-            dateTimePickerEntrega.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            dateTimePickerEntrega.Location = new Point(379, 434);
-            dateTimePickerEntrega.Name = "dateTimePickerEntrega";
-            dateTimePickerEntrega.Size = new Size(233, 23);
-            dateTimePickerEntrega.TabIndex = 86;
+            dateTimePickerFin.Location = new Point(379, 366);
+            dateTimePickerFin.Name = "dateTimePickerFin";
+            dateTimePickerFin.Size = new Size(233, 23);
+            dateTimePickerFin.TabIndex = 86;
             // 
             // dateTimePickerInicio
             // 
-            dateTimePickerInicio.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            dateTimePickerInicio.Location = new Point(116, 434);
+            dateTimePickerInicio.Location = new Point(116, 366);
             dateTimePickerInicio.Name = "dateTimePickerInicio";
             dateTimePickerInicio.Size = new Size(233, 23);
             dateTimePickerInicio.TabIndex = 85;
             // 
             // labelFechaEntrega
             // 
-            labelFechaEntrega.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelFechaEntrega.AutoSize = true;
             labelFechaEntrega.Depth = 0;
             labelFechaEntrega.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            labelFechaEntrega.Location = new Point(433, 412);
+            labelFechaEntrega.Location = new Point(457, 344);
             labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
             labelFechaEntrega.Name = "labelFechaEntrega";
-            labelFechaEntrega.Size = new Size(123, 19);
+            labelFechaEntrega.Size = new Size(80, 19);
             labelFechaEntrega.TabIndex = 88;
-            labelFechaEntrega.Text = "Fecha de Entrega";
+            labelFechaEntrega.Text = "Fecha final";
             // 
             // labelFechaInicio
             // 
-            labelFechaInicio.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelFechaInicio.AutoSize = true;
             labelFechaInicio.Depth = 0;
             labelFechaInicio.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            labelFechaInicio.Location = new Point(174, 412);
+            labelFechaInicio.Location = new Point(174, 344);
             labelFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
             labelFechaInicio.Name = "labelFechaInicio";
             labelFechaInicio.Size = new Size(107, 19);
             labelFechaInicio.TabIndex = 87;
-            labelFechaInicio.Text = "Fecha de Inicio";
+            labelFechaInicio.Text = "Fecha de inicio";
             // 
             // materialLabel7
             // 
@@ -314,7 +305,7 @@
             CmbNombreProyecto.MaxDropDownItems = 4;
             CmbNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
             CmbNombreProyecto.Name = "CmbNombreProyecto";
-            CmbNombreProyecto.Size = new Size(447, 49);
+            CmbNombreProyecto.Size = new Size(480, 49);
             CmbNombreProyecto.StartIndex = 0;
             CmbNombreProyecto.TabIndex = 82;
             CmbNombreProyecto.SelectedIndexChanged += CmbNombreProyecto_SelectedIndexChanged;
@@ -323,7 +314,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 519);
+            ClientSize = new Size(800, 450);
             Controls.Add(CmbNombreProyecto);
             Controls.Add(materialLabel2);
             Controls.Add(materialLabel3);
@@ -333,7 +324,7 @@
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
             Controls.Add(labelDescripcionTarea);
-            Controls.Add(dateTimePickerEntrega);
+            Controls.Add(dateTimePickerFin);
             Controls.Add(dateTimePickerInicio);
             Controls.Add(labelFechaEntrega);
             Controls.Add(labelFechaInicio);
@@ -367,7 +358,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         public MaterialSkin.Controls.MaterialComboBox cmbResponsableTarea;
         public MaterialSkin.Controls.MaterialComboBox CmbNombreProyecto;
-        public DateTimePicker dateTimePickerEntrega;
+        public DateTimePicker dateTimePickerFin;
         public DateTimePicker dateTimePickerInicio;
         public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionTarea;
     }

@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_RealizarTarea));
-            txtDescripcionTarea = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             btn_limpiar = new PictureBox();
             btn_guardar = new PictureBox();
             btn_volver = new PictureBox();
             labelDescripcionTarea = new MaterialSkin.Controls.MaterialLabel();
-            dateTimePickerEntrega = new DateTimePicker();
+            dateTimePickerFin = new DateTimePicker();
             dateTimePickerInicio = new DateTimePicker();
             labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
             labelFechaInicio = new MaterialSkin.Controls.MaterialLabel();
@@ -42,10 +41,6 @@
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             cmbEstadoTarea = new MaterialSkin.Controls.MaterialComboBox();
             txtNombreTarea = new MaterialSkin.Controls.MaterialTextBox2();
-            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            cmbResponsableTarea = new MaterialSkin.Controls.MaterialComboBox();
-            CmbNombreProyecto = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             txtComentario = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
@@ -59,6 +54,7 @@
             bntEditarComentario = new Button();
             bntAgregarComentario = new Button();
             dataGridComentarios = new DataGridView();
+            txtDescripcionTarea = new MaterialSkin.Controls.MaterialMultiLineTextBox2();
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
@@ -68,87 +64,69 @@
             ((System.ComponentModel.ISupportInitialize)dataGridComentarios).BeginInit();
             SuspendLayout();
             // 
-            // txtDescripcionTarea
-            // 
-            txtDescripcionTarea.AnimateReadOnly = false;
-            txtDescripcionTarea.BackgroundImageLayout = ImageLayout.None;
-            txtDescripcionTarea.CharacterCasing = CharacterCasing.Normal;
-            txtDescripcionTarea.Depth = 0;
-            txtDescripcionTarea.HideSelection = true;
-            txtDescripcionTarea.Location = new Point(15, 199);
-            txtDescripcionTarea.MaxLength = 32767;
-            txtDescripcionTarea.MouseState = MaterialSkin.MouseState.OUT;
-            txtDescripcionTarea.Name = "txtDescripcionTarea";
-            txtDescripcionTarea.PasswordChar = '\0';
-            txtDescripcionTarea.ReadOnly = false;
-            txtDescripcionTarea.ScrollBars = ScrollBars.None;
-            txtDescripcionTarea.SelectedText = "";
-            txtDescripcionTarea.SelectionLength = 0;
-            txtDescripcionTarea.SelectionStart = 0;
-            txtDescripcionTarea.ShortcutsEnabled = true;
-            txtDescripcionTarea.Size = new Size(903, 171);
-            txtDescripcionTarea.TabIndex = 84;
-            txtDescripcionTarea.TabStop = false;
-            txtDescripcionTarea.TextAlign = HorizontalAlignment.Left;
-            txtDescripcionTarea.UseSystemPasswordChar = false;
-            // 
             // btn_limpiar
             // 
             btn_limpiar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_limpiar.Cursor = Cursors.Hand;
             btn_limpiar.Image = (Image)resources.GetObject("btn_limpiar.Image");
-            btn_limpiar.Location = new Point(822, 654);
+            btn_limpiar.Location = new Point(826, 654);
             btn_limpiar.Name = "btn_limpiar";
             btn_limpiar.Size = new Size(45, 45);
             btn_limpiar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_limpiar.TabIndex = 94;
             btn_limpiar.TabStop = false;
             btn_limpiar.Click += btn_limpiar_Click;
+            btn_limpiar.MouseEnter += btn_limpiar_MouseEnter;
+            btn_limpiar.MouseLeave += btn_limpiar_MouseLeave;
             // 
             // btn_guardar
             // 
             btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_guardar.Cursor = Cursors.Hand;
             btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
-            btn_guardar.Location = new Point(873, 654);
+            btn_guardar.Location = new Point(877, 654);
             btn_guardar.Name = "btn_guardar";
             btn_guardar.Size = new Size(45, 45);
             btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
             btn_guardar.TabIndex = 93;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // btn_volver
             // 
             btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btn_volver.Cursor = Cursors.Hand;
             btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
-            btn_volver.Location = new Point(12, 662);
+            btn_volver.Location = new Point(12, 654);
             btn_volver.Name = "btn_volver";
             btn_volver.Size = new Size(45, 45);
             btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
             btn_volver.TabIndex = 92;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // labelDescripcionTarea
             // 
             labelDescripcionTarea.AutoSize = true;
             labelDescripcionTarea.Depth = 0;
             labelDescripcionTarea.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            labelDescripcionTarea.Location = new Point(15, 177);
+            labelDescripcionTarea.Location = new Point(15, 94);
             labelDescripcionTarea.MouseState = MaterialSkin.MouseState.HOVER;
             labelDescripcionTarea.Name = "labelDescripcionTarea";
             labelDescripcionTarea.Size = new Size(162, 19);
             labelDescripcionTarea.TabIndex = 91;
             labelDescripcionTarea.Text = "Descripción de la tarea";
             // 
-            // dateTimePickerEntrega
+            // dateTimePickerFin
             // 
-            dateTimePickerEntrega.Location = new Point(689, 138);
-            dateTimePickerEntrega.Name = "dateTimePickerEntrega";
-            dateTimePickerEntrega.Size = new Size(233, 23);
-            dateTimePickerEntrega.TabIndex = 86;
+            dateTimePickerFin.Location = new Point(689, 138);
+            dateTimePickerFin.Name = "dateTimePickerFin";
+            dateTimePickerFin.Size = new Size(233, 23);
+            dateTimePickerFin.TabIndex = 86;
             // 
             // dateTimePickerInicio
             // 
@@ -162,12 +140,12 @@
             labelFechaEntrega.AutoSize = true;
             labelFechaEntrega.Depth = 0;
             labelFechaEntrega.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            labelFechaEntrega.Location = new Point(743, 116);
+            labelFechaEntrega.Location = new Point(756, 116);
             labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
             labelFechaEntrega.Name = "labelFechaEntrega";
-            labelFechaEntrega.Size = new Size(123, 19);
+            labelFechaEntrega.Size = new Size(80, 19);
             labelFechaEntrega.TabIndex = 88;
-            labelFechaEntrega.Text = "Fecha de Entrega";
+            labelFechaEntrega.Text = "Fecha final";
             // 
             // labelFechaInicio
             // 
@@ -179,7 +157,7 @@
             labelFechaInicio.Name = "labelFechaInicio";
             labelFechaInicio.Size = new Size(107, 19);
             labelFechaInicio.TabIndex = 87;
-            labelFechaInicio.Text = "Fecha de Inicio";
+            labelFechaInicio.Text = "Fecha de inicio";
             // 
             // materialLabel7
             // 
@@ -255,81 +233,12 @@
             txtNombreTarea.TrailingIcon = null;
             txtNombreTarea.UseSystemPasswordChar = false;
             // 
-            // materialLabel2
-            // 
-            materialLabel2.AutoSize = true;
-            materialLabel2.Depth = 0;
-            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel2.Location = new Point(477, 94);
-            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel2.Name = "materialLabel2";
-            materialLabel2.Size = new Size(170, 19);
-            materialLabel2.TabIndex = 99;
-            materialLabel2.Text = "Responsable de la tarea";
-            // 
-            // materialLabel3
-            // 
-            materialLabel3.AutoSize = true;
-            materialLabel3.Depth = 0;
-            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel3.Location = new Point(15, 94);
-            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            materialLabel3.Name = "materialLabel3";
-            materialLabel3.Size = new Size(147, 19);
-            materialLabel3.TabIndex = 98;
-            materialLabel3.Text = "Nombre del proyecto";
-            // 
-            // cmbResponsableTarea
-            // 
-            cmbResponsableTarea.AutoResize = false;
-            cmbResponsableTarea.BackColor = Color.FromArgb(255, 255, 255);
-            cmbResponsableTarea.Depth = 0;
-            cmbResponsableTarea.DrawMode = DrawMode.OwnerDrawVariable;
-            cmbResponsableTarea.DropDownHeight = 174;
-            cmbResponsableTarea.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbResponsableTarea.DropDownWidth = 121;
-            cmbResponsableTarea.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cmbResponsableTarea.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cmbResponsableTarea.FormattingEnabled = true;
-            cmbResponsableTarea.IntegralHeight = false;
-            cmbResponsableTarea.ItemHeight = 43;
-            cmbResponsableTarea.Location = new Point(477, 116);
-            cmbResponsableTarea.MaxDropDownItems = 4;
-            cmbResponsableTarea.MouseState = MaterialSkin.MouseState.OUT;
-            cmbResponsableTarea.Name = "cmbResponsableTarea";
-            cmbResponsableTarea.Size = new Size(195, 49);
-            cmbResponsableTarea.StartIndex = 0;
-            cmbResponsableTarea.TabIndex = 83;
-            // 
-            // CmbNombreProyecto
-            // 
-            CmbNombreProyecto.AutoResize = false;
-            CmbNombreProyecto.BackColor = Color.FromArgb(255, 255, 255);
-            CmbNombreProyecto.Depth = 0;
-            CmbNombreProyecto.DrawMode = DrawMode.OwnerDrawVariable;
-            CmbNombreProyecto.DropDownHeight = 174;
-            CmbNombreProyecto.DropDownStyle = ComboBoxStyle.DropDownList;
-            CmbNombreProyecto.DropDownWidth = 121;
-            CmbNombreProyecto.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            CmbNombreProyecto.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            CmbNombreProyecto.FormattingEnabled = true;
-            CmbNombreProyecto.IntegralHeight = false;
-            CmbNombreProyecto.ItemHeight = 43;
-            CmbNombreProyecto.Location = new Point(15, 116);
-            CmbNombreProyecto.MaxDropDownItems = 4;
-            CmbNombreProyecto.MouseState = MaterialSkin.MouseState.OUT;
-            CmbNombreProyecto.Name = "CmbNombreProyecto";
-            CmbNombreProyecto.Size = new Size(447, 49);
-            CmbNombreProyecto.StartIndex = 0;
-            CmbNombreProyecto.TabIndex = 82;
-            CmbNombreProyecto.SelectedIndexChanged += CmbNombreProyecto_SelectedIndexChanged;
-            // 
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel4.Location = new Point(15, 392);
+            materialLabel4.Location = new Point(15, 275);
             materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel4.Name = "materialLabel4";
             materialLabel4.Size = new Size(91, 19);
@@ -341,7 +250,7 @@
             materialLabel5.AutoSize = true;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel5.Location = new Point(725, 392);
+            materialLabel5.Location = new Point(437, 275);
             materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel5.Name = "materialLabel5";
             materialLabel5.Size = new Size(45, 19);
@@ -366,7 +275,7 @@
             txtComentario.SelectionLength = 0;
             txtComentario.SelectionStart = 0;
             txtComentario.ShortcutsEnabled = true;
-            txtComentario.Size = new Size(513, 61);
+            txtComentario.Size = new Size(375, 181);
             txtComentario.TabIndex = 102;
             txtComentario.TabStop = false;
             txtComentario.TextAlign = HorizontalAlignment.Left;
@@ -378,16 +287,16 @@
             groupBox1.Controls.Add(bntVerAnexo);
             groupBox1.Controls.Add(bntNuevoAnexo);
             groupBox1.Controls.Add(datagridAnexo);
-            groupBox1.Location = new Point(570, 414);
+            groupBox1.Location = new Point(437, 297);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(348, 234);
+            groupBox1.Size = new Size(481, 345);
             groupBox1.TabIndex = 103;
             groupBox1.TabStop = false;
             groupBox1.Text = "Documentos Anexados";
             // 
             // EliminarAnexo
             // 
-            EliminarAnexo.Location = new Point(168, 205);
+            EliminarAnexo.Location = new Point(168, 312);
             EliminarAnexo.Name = "EliminarAnexo";
             EliminarAnexo.Size = new Size(75, 23);
             EliminarAnexo.TabIndex = 4;
@@ -397,7 +306,7 @@
             // 
             // bntVerAnexo
             // 
-            bntVerAnexo.Location = new Point(87, 205);
+            bntVerAnexo.Location = new Point(87, 312);
             bntVerAnexo.Name = "bntVerAnexo";
             bntVerAnexo.Size = new Size(75, 23);
             bntVerAnexo.TabIndex = 3;
@@ -407,7 +316,7 @@
             // 
             // bntNuevoAnexo
             // 
-            bntNuevoAnexo.Location = new Point(6, 205);
+            bntNuevoAnexo.Location = new Point(6, 312);
             bntNuevoAnexo.Name = "bntNuevoAnexo";
             bntNuevoAnexo.Size = new Size(75, 23);
             bntNuevoAnexo.TabIndex = 1;
@@ -419,14 +328,15 @@
             // 
             datagridAnexo.AllowUserToAddRows = false;
             datagridAnexo.AllowUserToDeleteRows = false;
+            datagridAnexo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             datagridAnexo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             datagridAnexo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             datagridAnexo.EditMode = DataGridViewEditMode.EditProgrammatically;
-            datagridAnexo.Location = new Point(0, 13);
+            datagridAnexo.Location = new Point(6, 22);
             datagridAnexo.Name = "datagridAnexo";
             datagridAnexo.RowTemplate.Height = 25;
             datagridAnexo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            datagridAnexo.Size = new Size(342, 179);
+            datagridAnexo.Size = new Size(469, 284);
             datagridAnexo.TabIndex = 0;
             // 
             // groupBox2
@@ -436,15 +346,15 @@
             groupBox2.Controls.Add(bntAgregarComentario);
             groupBox2.Controls.Add(dataGridComentarios);
             groupBox2.Controls.Add(txtComentario);
-            groupBox2.Location = new Point(15, 414);
+            groupBox2.Location = new Point(15, 297);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(525, 242);
+            groupBox2.Size = new Size(399, 345);
             groupBox2.TabIndex = 104;
             groupBox2.TabStop = false;
             // 
             // BtnEliminarComentario
             // 
-            BtnEliminarComentario.Location = new Point(186, 214);
+            BtnEliminarComentario.Location = new Point(182, 312);
             BtnEliminarComentario.Name = "BtnEliminarComentario";
             BtnEliminarComentario.Size = new Size(75, 23);
             BtnEliminarComentario.TabIndex = 106;
@@ -454,7 +364,7 @@
             // 
             // bntEditarComentario
             // 
-            bntEditarComentario.Location = new Point(105, 214);
+            bntEditarComentario.Location = new Point(101, 312);
             bntEditarComentario.Name = "bntEditarComentario";
             bntEditarComentario.Size = new Size(75, 23);
             bntEditarComentario.TabIndex = 105;
@@ -464,7 +374,7 @@
             // 
             // bntAgregarComentario
             // 
-            bntAgregarComentario.Location = new Point(16, 215);
+            bntAgregarComentario.Location = new Point(12, 313);
             bntAgregarComentario.Name = "bntAgregarComentario";
             bntAgregarComentario.Size = new Size(75, 23);
             bntAgregarComentario.TabIndex = 104;
@@ -480,32 +390,52 @@
             dataGridComentarios.BackgroundColor = SystemColors.ControlLight;
             dataGridComentarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridComentarios.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridComentarios.Location = new Point(12, 89);
+            dataGridComentarios.Location = new Point(12, 209);
             dataGridComentarios.Name = "dataGridComentarios";
             dataGridComentarios.RowTemplate.Height = 25;
             dataGridComentarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridComentarios.Size = new Size(507, 120);
+            dataGridComentarios.Size = new Size(375, 98);
             dataGridComentarios.TabIndex = 103;
+            // 
+            // txtDescripcionTarea
+            // 
+            txtDescripcionTarea.AnimateReadOnly = false;
+            txtDescripcionTarea.BackgroundImageLayout = ImageLayout.None;
+            txtDescripcionTarea.CharacterCasing = CharacterCasing.Normal;
+            txtDescripcionTarea.Depth = 0;
+            txtDescripcionTarea.HideSelection = true;
+            txtDescripcionTarea.Location = new Point(15, 116);
+            txtDescripcionTarea.MaxLength = 32767;
+            txtDescripcionTarea.MouseState = MaterialSkin.MouseState.OUT;
+            txtDescripcionTarea.Name = "txtDescripcionTarea";
+            txtDescripcionTarea.PasswordChar = '\0';
+            txtDescripcionTarea.ReadOnly = false;
+            txtDescripcionTarea.ScrollBars = ScrollBars.None;
+            txtDescripcionTarea.SelectedText = "";
+            txtDescripcionTarea.SelectionLength = 0;
+            txtDescripcionTarea.SelectionStart = 0;
+            txtDescripcionTarea.ShortcutsEnabled = true;
+            txtDescripcionTarea.Size = new Size(665, 146);
+            txtDescripcionTarea.TabIndex = 107;
+            txtDescripcionTarea.TabStop = false;
+            txtDescripcionTarea.TextAlign = HorizontalAlignment.Left;
+            txtDescripcionTarea.UseSystemPasswordChar = false;
             // 
             // Frm_RealizarTarea
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(934, 711);
+            Controls.Add(txtDescripcionTarea);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(materialLabel5);
             Controls.Add(materialLabel4);
-            Controls.Add(CmbNombreProyecto);
-            Controls.Add(materialLabel2);
-            Controls.Add(materialLabel3);
-            Controls.Add(cmbResponsableTarea);
-            Controls.Add(txtDescripcionTarea);
             Controls.Add(btn_limpiar);
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
             Controls.Add(labelDescripcionTarea);
-            Controls.Add(dateTimePickerEntrega);
+            Controls.Add(dateTimePickerFin);
             Controls.Add(dateTimePickerInicio);
             Controls.Add(labelFechaEntrega);
             Controls.Add(labelFechaInicio);
@@ -539,13 +469,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public MaterialSkin.Controls.MaterialComboBox cmbEstadoTarea;
         public MaterialSkin.Controls.MaterialTextBox2 txtNombreTarea;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        public MaterialSkin.Controls.MaterialComboBox cmbResponsableTarea;
-        public MaterialSkin.Controls.MaterialComboBox CmbNombreProyecto;
-        public DateTimePicker dateTimePickerEntrega;
+        public DateTimePicker dateTimePickerFin;
         public DateTimePicker dateTimePickerInicio;
-        public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionTarea;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtComentario;
@@ -559,5 +484,6 @@
         private Button bntAgregarComentario;
         private DataGridView dataGridComentarios;
         private Button EliminarAnexo;
+        public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionTarea;
     }
 }

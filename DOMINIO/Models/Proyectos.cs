@@ -77,8 +77,6 @@ namespace DOMINIO.Models
         {
             return project.BuscarProyectoPorNombre(NombreUsuario);
         }
-
-
     }
     
 

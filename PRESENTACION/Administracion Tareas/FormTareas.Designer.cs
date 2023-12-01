@@ -102,6 +102,8 @@
             btn_realizar.TabIndex = 15;
             btn_realizar.TabStop = false;
             btn_realizar.Click += btn_realizar_Click;
+            btn_realizar.MouseEnter += btn_realizar_MouseEnter;
+            btn_realizar.MouseLeave += btn_realizar_MouseLeave;
             // 
             // btn_buscar
             // 
@@ -132,7 +134,7 @@
             txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txtbox_buscar.Location = new Point(27, 30);
             txtbox_buscar.Name = "txtbox_buscar";
-            txtbox_buscar.PlaceholderText = "Buscar Tarea por proyecto";
+            txtbox_buscar.PlaceholderText = "Buscar tarea por proyecto";
             txtbox_buscar.Size = new Size(416, 23);
             txtbox_buscar.TabIndex = 12;
             // 
@@ -148,6 +150,8 @@
             btn_editar.TabIndex = 11;
             btn_editar.TabStop = false;
             btn_editar.Click += btn_editar_Click;
+            btn_editar.MouseEnter += btn_editar_MouseEnter;
+            btn_editar.MouseLeave += btn_editar_MouseLeave;
             // 
             // btn_eliminar
             // 
@@ -161,6 +165,8 @@
             btn_eliminar.TabIndex = 10;
             btn_eliminar.TabStop = false;
             btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // btn_agregar
             // 
@@ -174,6 +180,8 @@
             btn_agregar.TabIndex = 9;
             btn_agregar.TabStop = false;
             btn_agregar.Click += btn_agregar_Click;
+            btn_agregar.MouseEnter += btn_agregar_MouseEnter;
+            btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
             // FormTareas
             // 

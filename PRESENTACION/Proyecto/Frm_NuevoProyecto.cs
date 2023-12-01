@@ -33,6 +33,15 @@ namespace PRESENTACION.Proyecto
             if (OperacionTipo == "Insertar")
             {
                 CargarEstadoProyecto();
+
+                lblFechaInicio.Visible = false;
+                lblFechaFin.Visible = false;
+                dateTimePickerInicio.Visible = false;
+                dateTimePickerFin.Visible = false;
+                lblFechaInicioPro.Visible = false;
+                lblFechaFinPro.Visible = false;
+                dateTimeInicioPro.Visible = false;
+                dateTimeFinPro.Visible = false;
             }
         }
 
@@ -68,7 +77,7 @@ namespace PRESENTACION.Proyecto
                 cargar.AgregarProyecto(this.txtNombreProyecto.Text,
                                            this.txtDescripcionProyecto.Text,
                                            DateTime.Now,
-                                           this.dateTimePickerEntrega.Value.Date,
+                                           this.dateTimePickerFin.Value.Date,
                                            this.dateTimeInicioPro.Value.Date,
                                            this.dateTimeFinPro.Value.Date,
                                            Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
@@ -97,7 +106,7 @@ namespace PRESENTACION.Proyecto
             cargar.UpdateProyecto(Convert.ToInt32(this.IdProyecto.Text),
                                     this.txtNombreProyecto.Text,
                                     this.txtDescripcionProyecto.Text,
-                                    this.dateTimePickerEntrega.Value.Date,
+                                    this.dateTimePickerFin.Value.Date,
                                     this.dateTimeInicioPro.Value.Date,
                                     this.dateTimeFinPro.Value.Date,
                                     Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
@@ -121,6 +130,11 @@ namespace PRESENTACION.Proyecto
             // Limpia los campos del formulario para futuras entradas
             txtNombreProyecto.Text = "";
             txtDescripcionProyecto.Text = "";
+            dateTimePickerInicio.Value = DateTime.Now;
+            dateTimePickerFin.Value = DateTime.Now;
+            dateTimeInicioPro.Value = DateTime.Now;
+            dateTimeFinPro.Value = DateTime.Now;
+
         }
 
         #region botones

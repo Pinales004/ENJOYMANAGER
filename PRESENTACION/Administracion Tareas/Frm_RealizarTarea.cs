@@ -1,4 +1,5 @@
-﻿using Comun.Cache;
+﻿using Comun.Biblioteca.Enums;
+using Comun.Cache;
 using DATOS.Tareas;
 using DOMINIO.Models;
 using PRESENTACION.Administracion_Tareas.Anexo;
@@ -45,24 +46,12 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_RealizarTarea_Load(object sender, EventArgs e)
         {
-            ListadoProyectos();
             CargarAnexos();
             CargarComentarios();
             txtNombreTarea.Enabled = false;
             txtDescripcionTarea.Enabled = false;
-            CmbNombreProyecto.Enabled = false;
-            cmbResponsableTarea.Enabled = false;
             dateTimePickerInicio.Enabled = false;
-            dateTimePickerEntrega.Enabled = false;
-        }
-        private void ListadoProyectos()
-        {
-
-            Tareas cargar = new Tareas();
-
-            CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
-            CmbNombreProyecto.DisplayMember = "Nombre";
-            CmbNombreProyecto.ValueMember = "IdProyecto";
+            dateTimePickerFin.Enabled = false;
         }
 
         private void Frm_RealizarTarea_MouseMove(object sender, MouseEventArgs e)
@@ -70,18 +59,6 @@ namespace PRESENTACION.Administracion_Tareas
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-
-        private void ListaMiembros(int IdProyecto)
-        {
-
-            Tareas cargar = new Tareas();
-
-            this.cmbResponsableTarea.DataSource = cargar.CargarMiembros(IdProyecto);
-            this.cmbResponsableTarea.DisplayMember = "Nombres";
-            this.cmbResponsableTarea.ValueMember = "ID";
-        }
-
 
         private void LimpiarCampos()
         {
@@ -132,21 +109,6 @@ namespace PRESENTACION.Administracion_Tareas
 
         #endregion
 
-        private void CmbNombreProyecto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CmbNombreProyecto.SelectedItem != null)
-            {
-                DataRowView selectedRow = (DataRowView)CmbNombreProyecto.SelectedItem;
-
-                // Accede al valor del campo "ID" de la fila seleccionada
-                int idProyectoSeleccionado = Convert.ToInt32(selectedRow["IdProyecto"]);
-
-                // Llamamos al método ListaMiembros con el ID del proyecto seleccionado
-                ListaMiembros(idProyectoSeleccionado);
-                // Verifica si el ComboBox cmbResponsableTarea está vacío
-            }
-        }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             if (TipoOperacion == "Agregar")
@@ -161,11 +123,23 @@ namespace PRESENTACION.Administracion_Tareas
 
                 cargar.UpdateEstadoTarea(tareaId, nuevoEstadoTareaId);
 
-                // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
-                if (FormTareas != null)
+                if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
                 {
-                    FormTareas.CargarTareasProgrmadores();
+                    // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
+                    if (FormTareas != null)
+                    {
+                        FormTareas.CargarTareasGerentes();
+                    }
                 }
+                if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
+                {
+                    // Llama al método CargarTareas del formulario FormTareas para actualizar el DataGridView
+                    if (FormTareas != null)
+                    {
+                        FormTareas.CargarTareasProgrmadores();
+                    }
+                }
+
                 MessageBox.Show("La tarea se ha realizado correctamente.");
                 this.Hide();
             }
@@ -192,10 +166,10 @@ namespace PRESENTACION.Administracion_Tareas
 
             // Asegúrate de que las columnas "Nombre" y "Extension" estén visibles
             this.datagridAnexo.Columns["Nombre"].Visible = true;
-            this.datagridAnexo.Columns["Extension"].Visible = true;
-            this.datagridAnexo.Columns["Documento"].Visible = false;
-            this.datagridAnexo.Columns["FechaCreacion"].Visible = true;
-            this.datagridAnexo.Columns["NombreCompleto"].Visible = true;
+            this.datagridAnexo.Columns[4].Visible = true;
+            this.datagridAnexo.Columns[3].Visible = false;
+            this.datagridAnexo.Columns[5].Visible = true;
+            this.datagridAnexo.Columns[6].Visible = true;
 
         }
         //Anexo

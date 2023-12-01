@@ -38,7 +38,7 @@ namespace DOMINIO.Models
                             {
                                 ComentarioTareaId = (int)reader["ComentarioTareaId"],
                                 Comentario = reader["Comentario"].ToString(),
-                                FechaCreacion = (DateTime)reader["FechaCreacion"],
+                                FechaCreacion = (DateTime)reader["Fecha de creación"],
                                 UsuarioCrea = reader["Nombre de Usuario"].ToString(),
                                 TareaId = (int)reader["TareaId"]
                             };

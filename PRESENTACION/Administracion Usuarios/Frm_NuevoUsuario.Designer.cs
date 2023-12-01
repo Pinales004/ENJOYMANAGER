@@ -392,6 +392,8 @@
             btn_limpiar.TabIndex = 118;
             btn_limpiar.TabStop = false;
             btn_limpiar.Click += btn_limpiar_Click;
+            btn_limpiar.MouseEnter += btn_limpiar_MouseEnter;
+            btn_limpiar.MouseLeave += btn_limpiar_MouseLeave;
             // 
             // btn_guardar
             // 
@@ -405,6 +407,8 @@
             btn_guardar.TabIndex = 117;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // btn_volver
             // 
@@ -418,6 +422,8 @@
             btn_volver.TabIndex = 116;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // CboEstadoUsuario
             // 
@@ -483,6 +489,7 @@
             Name = "Frm_NuevoUsuario";
             Text = "Frm_NuevoUsuario";
             Load += Frm_NuevoUsuario_Load;
+            MouseMove += Frm_NuevoUsuario_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
