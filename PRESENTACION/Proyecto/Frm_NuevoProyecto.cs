@@ -33,15 +33,6 @@ namespace PRESENTACION.Proyecto
             if (OperacionTipo == "Insertar")
             {
                 CargarEstadoProyecto();
-
-                lblFechaInicio.Visible = false;
-                lblFechaFin.Visible = false;
-                dateTimePickerInicio.Visible = false;
-                dateTimePickerFin.Visible = false;
-                lblFechaInicioPro.Visible = false;
-                lblFechaFinPro.Visible = false;
-                dateTimeInicioPro.Visible = false;
-                dateTimeFinPro.Visible = false;
             }
         }
 
@@ -74,14 +65,21 @@ namespace PRESENTACION.Proyecto
 
             try
             {
-                cargar.AgregarProyecto(this.txtNombreProyecto.Text,
-                                           this.txtDescripcionProyecto.Text,
-                                           DateTime.Now,
-                                           this.dateTimePickerFin.Value.Date,
-                                           this.dateTimeInicioPro.Value.Date,
-                                           this.dateTimeFinPro.Value.Date,
-                                           Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
-                                           UserLoginCache.IdUsuario);
+                DateTime? fechaFinReal = CheckFechaFinRealIndefinidad.Checked ? (DateTime?)null : dateTimePickerEntrega.Value.Date;
+                DateTime? fechaInicioProgramada = CheckDesaBiliInicioProgramada.Checked ? (DateTime?)null : dateTimeInicioPro.Value.Date;
+                DateTime? fechaFinProgramada = CheckFechaFinIndifinida.Checked ? (DateTime?)null : dateTimeFinPro.Value.Date;
+
+                cargar.AgregarProyecto(
+                    this.txtNombreProyecto.Text,
+                    this.txtDescripcionProyecto.Text,
+                    DateTime.Now,
+                    fechaFinProgramada,
+                    fechaInicioProgramada,
+                    fechaFinReal,
+                    
+                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
+                    UserLoginCache.IdUsuario
+                );
 
                 MessageBox.Show("Proyecto agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
@@ -103,14 +101,16 @@ namespace PRESENTACION.Proyecto
         {
             Proyectos cargar = new Proyectos();
 
-            cargar.UpdateProyecto(Convert.ToInt32(this.IdProyecto.Text),
-                                    this.txtNombreProyecto.Text,
-                                    this.txtDescripcionProyecto.Text,
-                                    this.dateTimePickerFin.Value.Date,
-                                    this.dateTimeInicioPro.Value.Date,
-                                    this.dateTimeFinPro.Value.Date,
-                                    Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
-                                    UserLoginCache.IdUsuario);
+            cargar.UpdateProyecto(
+                Convert.ToInt32(this.IdProyecto.Text),
+                this.txtNombreProyecto.Text,
+                this.txtDescripcionProyecto.Text,
+                this.dateTimePickerEntrega.Value.Date, // FechaFin
+                this.dateTimeInicioPro.Value.Date, // FechaInicioProgramada
+                this.dateTimeFinPro.Value.Date, // FechaFinProgramada
+                Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
+                UserLoginCache.IdUsuario
+            );
 
             CargarProyectos();
             MessageBox.Show("Proyecto actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -130,11 +130,6 @@ namespace PRESENTACION.Proyecto
             // Limpia los campos del formulario para futuras entradas
             txtNombreProyecto.Text = "";
             txtDescripcionProyecto.Text = "";
-            dateTimePickerInicio.Value = DateTime.Now;
-            dateTimePickerFin.Value = DateTime.Now;
-            dateTimeInicioPro.Value = DateTime.Now;
-            dateTimeFinPro.Value = DateTime.Now;
-
         }
 
         #region botones
@@ -186,10 +181,10 @@ namespace PRESENTACION.Proyecto
                 {
                     MostrarError("Debe ingresar una descripción de proyecto.");
                 }
-                else if (dateTimeInicioPro.Value > dateTimeFinPro.Value)
-                {
-                    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin programada.");
-                }
+                //else if (dateTimeInicioPro.Value > dateTimeFinPro.Value)
+                //{
+                //    MostrarError("La fecha de inicio no puede ser posterior a la fecha de fin programada.");
+                //}
                 else if (cmbEstadoProyecto.SelectedIndex == -1)
                 {
                     MostrarError("Debe seleccionar un estado para el proyecto.");
@@ -262,6 +257,48 @@ namespace PRESENTACION.Proyecto
         private void MostrarError(string mensaje)
         {
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void CheckDesaBiliInicioProgramada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckDesaBiliInicioProgramada.Checked)
+            {
+                dateTimeInicioPro.Enabled = false;
+                dateTimeInicioPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
+            else
+            {
+                dateTimeInicioPro.Enabled = true;
+                dateTimeInicioPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
+        }
+
+        private void CheckFechaFinIndifinida_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckFechaFinIndifinida.Checked)
+            {
+                dateTimeFinPro.Enabled = false;
+                dateTimeFinPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
+            else
+            {
+                dateTimeFinPro.Enabled = true;
+                dateTimeFinPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
+        }
+
+        private void CheckFechaFinRealIndefinidad_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckFechaFinRealIndefinidad.Checked)
+            {
+                dateTimePickerEntrega.Enabled = false;
+                dateTimePickerEntrega.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
+            else
+            {
+                dateTimePickerEntrega.Enabled = true;
+                dateTimePickerEntrega.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
+            }
         }
     }
 }

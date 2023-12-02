@@ -160,7 +160,6 @@
             Name = "FrmEquipoProgramadores";
             Text = "FrmEquipoProgramadores";
             Load += FrmEquipoProgramadores_Load;
-            MouseMove += FrmEquipoProgramadores_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
             materialCheckedListBox1.ResumeLayout(false);

@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_NuevoProyecto));
             labelDescripcionProyecto = new MaterialSkin.Controls.MaterialLabel();
-            dateTimePickerFin = new DateTimePicker();
-            lblFechaFin = new MaterialSkin.Controls.MaterialLabel();
+            dateTimePickerEntrega = new DateTimePicker();
+            labelFechaEntrega = new MaterialSkin.Controls.MaterialLabel();
             materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             cmbEstadoProyecto = new MaterialSkin.Controls.MaterialComboBox();
@@ -45,10 +45,11 @@
             IdProyecto = new Label();
             dateTimeFinPro = new DateTimePicker();
             dateTimeInicioPro = new DateTimePicker();
-            lblFechaFinPro = new MaterialSkin.Controls.MaterialLabel();
-            lblFechaInicioPro = new MaterialSkin.Controls.MaterialLabel();
-            dateTimePickerInicio = new DateTimePicker();
-            lblFechaInicio = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            CheckDesaBiliInicioProgramada = new CheckBox();
+            CheckFechaFinIndifinida = new CheckBox();
+            CheckFechaFinRealIndefinidad = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
@@ -67,24 +68,24 @@
             labelDescripcionProyecto.TabIndex = 75;
             labelDescripcionProyecto.Text = "Descripción del proyecto";
             // 
-            // dateTimePickerFin
+            // dateTimePickerEntrega
             // 
-            dateTimePickerFin.Location = new Point(275, 411);
-            dateTimePickerFin.Name = "dateTimePickerFin";
-            dateTimePickerFin.Size = new Size(233, 23);
-            dateTimePickerFin.TabIndex = 73;
+            dateTimePickerEntrega.Location = new Point(285, 409);
+            dateTimePickerEntrega.Name = "dateTimePickerEntrega";
+            dateTimePickerEntrega.Size = new Size(233, 23);
+            dateTimePickerEntrega.TabIndex = 73;
             // 
-            // lblFechaFin
+            // labelFechaEntrega
             // 
-            lblFechaFin.AutoSize = true;
-            lblFechaFin.Depth = 0;
-            lblFechaFin.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblFechaFin.Location = new Point(352, 389);
-            lblFechaFin.MouseState = MaterialSkin.MouseState.HOVER;
-            lblFechaFin.Name = "lblFechaFin";
-            lblFechaFin.Size = new Size(80, 19);
-            lblFechaFin.TabIndex = 71;
-            lblFechaFin.Text = "Fecha final";
+            labelFechaEntrega.AutoSize = true;
+            labelFechaEntrega.Depth = 0;
+            labelFechaEntrega.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            labelFechaEntrega.Location = new Point(323, 387);
+            labelFechaEntrega.MouseState = MaterialSkin.MouseState.HOVER;
+            labelFechaEntrega.Name = "labelFechaEntrega";
+            labelFechaEntrega.Size = new Size(105, 19);
+            labelFechaEntrega.TabIndex = 71;
+            labelFechaEntrega.Text = "Fecha Fin Real";
             // 
             // materialLabel7
             // 
@@ -171,8 +172,6 @@
             btn_volver.TabIndex = 77;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
-            btn_volver.MouseEnter += btn_volver_MouseEnter;
-            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // btn_guardar
             // 
@@ -185,8 +184,6 @@
             btn_guardar.TabIndex = 78;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click_1;
-            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
-            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // txtDescripcionProyecto
             // 
@@ -223,14 +220,12 @@
             btn_limpiar.TabIndex = 79;
             btn_limpiar.TabStop = false;
             btn_limpiar.Click += btn_limpiar_Click;
-            btn_limpiar.MouseEnter += btn_limpiar_MouseEnter;
-            btn_limpiar.MouseLeave += btn_limpiar_MouseLeave;
             // 
             // btnEquipoProyecto
             // 
             btnEquipoProyecto.Cursor = Cursors.Hand;
             btnEquipoProyecto.Image = (Image)resources.GetObject("btnEquipoProyecto.Image");
-            btnEquipoProyecto.Location = new Point(617, 346);
+            btnEquipoProyecto.Location = new Point(594, 346);
             btnEquipoProyecto.Name = "btnEquipoProyecto";
             btnEquipoProyecto.Size = new Size(45, 45);
             btnEquipoProyecto.SizeMode = PictureBoxSizeMode.Zoom;
@@ -238,15 +233,13 @@
             btnEquipoProyecto.TabStop = false;
             btnEquipoProyecto.Visible = false;
             btnEquipoProyecto.Click += btnEquipoProyecto_Click;
-            btnEquipoProyecto.MouseEnter += btnEquipoProyecto_MouseEnter;
-            btnEquipoProyecto.MouseLeave += btnEquipoProyecto_MouseLeave;
             // 
             // LblEquipoProyecto
             // 
             LblEquipoProyecto.AutoSize = true;
             LblEquipoProyecto.Depth = 0;
             LblEquipoProyecto.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            LblEquipoProyecto.Location = new Point(569, 324);
+            LblEquipoProyecto.Location = new Point(546, 324);
             LblEquipoProyecto.MouseState = MaterialSkin.MouseState.HOVER;
             LblEquipoProyecto.Name = "LblEquipoProyecto";
             LblEquipoProyecto.Size = new Size(140, 19);
@@ -266,72 +259,87 @@
             // 
             // dateTimeFinPro
             // 
-            dateTimeFinPro.Location = new Point(275, 346);
+            dateTimeFinPro.Location = new Point(11, 409);
             dateTimeFinPro.Name = "dateTimeFinPro";
             dateTimeFinPro.Size = new Size(233, 23);
             dateTimeFinPro.TabIndex = 87;
             // 
             // dateTimeInicioPro
             // 
-            dateTimeInicioPro.Location = new Point(12, 346);
+            dateTimeInicioPro.Location = new Point(8, 346);
             dateTimeInicioPro.Name = "dateTimeInicioPro";
             dateTimeInicioPro.Size = new Size(233, 23);
             dateTimeInicioPro.TabIndex = 86;
             // 
-            // lblFechaFinPro
+            // materialLabel2
             // 
-            lblFechaFinPro.AutoSize = true;
-            lblFechaFinPro.Depth = 0;
-            lblFechaFinPro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblFechaFinPro.Location = new Point(302, 324);
-            lblFechaFinPro.MouseState = MaterialSkin.MouseState.HOVER;
-            lblFechaFinPro.Name = "lblFechaFinPro";
-            lblFechaFinPro.Size = new Size(171, 19);
-            lblFechaFinPro.TabIndex = 85;
-            lblFechaFinPro.Text = "Fecha final programada";
+            materialLabel2.AutoSize = true;
+            materialLabel2.Depth = 0;
+            materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel2.Location = new Point(49, 387);
+            materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel2.Name = "materialLabel2";
+            materialLabel2.Size = new Size(162, 19);
+            materialLabel2.TabIndex = 85;
+            materialLabel2.Text = "Fecha Fin Programada";
             // 
-            // lblFechaInicioPro
+            // materialLabel3
             // 
-            lblFechaInicioPro.AutoSize = true;
-            lblFechaInicioPro.Depth = 0;
-            lblFechaInicioPro.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblFechaInicioPro.Location = new Point(33, 324);
-            lblFechaInicioPro.MouseState = MaterialSkin.MouseState.HOVER;
-            lblFechaInicioPro.Name = "lblFechaInicioPro";
-            lblFechaInicioPro.Size = new Size(198, 19);
-            lblFechaInicioPro.TabIndex = 84;
-            lblFechaInicioPro.Text = "Fecha de inicio programada";
+            materialLabel3.AutoSize = true;
+            materialLabel3.Depth = 0;
+            materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            materialLabel3.Location = new Point(29, 324);
+            materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            materialLabel3.Name = "materialLabel3";
+            materialLabel3.Size = new Size(199, 19);
+            materialLabel3.TabIndex = 84;
+            materialLabel3.Text = "Fecha de Inicio Programada";
             // 
-            // dateTimePickerInicio
+            // CheckDesaBiliInicioProgramada
             // 
-            dateTimePickerInicio.Location = new Point(12, 411);
-            dateTimePickerInicio.Name = "dateTimePickerInicio";
-            dateTimePickerInicio.Size = new Size(233, 23);
-            dateTimePickerInicio.TabIndex = 89;
+            CheckDesaBiliInicioProgramada.AutoSize = true;
+            CheckDesaBiliInicioProgramada.Location = new Point(247, 351);
+            CheckDesaBiliInicioProgramada.Name = "CheckDesaBiliInicioProgramada";
+            CheckDesaBiliInicioProgramada.Size = new Size(79, 19);
+            CheckDesaBiliInicioProgramada.TabIndex = 88;
+            CheckDesaBiliInicioProgramada.Text = "Indefinida";
+            CheckDesaBiliInicioProgramada.UseVisualStyleBackColor = true;
+            CheckDesaBiliInicioProgramada.CheckedChanged += CheckDesaBiliInicioProgramada_CheckedChanged;
             // 
-            // lblFechaInicio
+            // CheckFechaFinIndifinida
             // 
-            lblFechaInicio.AutoSize = true;
-            lblFechaInicio.Depth = 0;
-            lblFechaInicio.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblFechaInicio.Location = new Point(70, 389);
-            lblFechaInicio.MouseState = MaterialSkin.MouseState.HOVER;
-            lblFechaInicio.Name = "lblFechaInicio";
-            lblFechaInicio.Size = new Size(107, 19);
-            lblFechaInicio.TabIndex = 88;
-            lblFechaInicio.Text = "Fecha de inicio";
+            CheckFechaFinIndifinida.AutoSize = true;
+            CheckFechaFinIndifinida.Location = new Point(107, 438);
+            CheckFechaFinIndifinida.Name = "CheckFechaFinIndifinida";
+            CheckFechaFinIndifinida.Size = new Size(79, 19);
+            CheckFechaFinIndifinida.TabIndex = 89;
+            CheckFechaFinIndifinida.Text = "Indefinida";
+            CheckFechaFinIndifinida.UseVisualStyleBackColor = true;
+            CheckFechaFinIndifinida.CheckedChanged += CheckFechaFinIndifinida_CheckedChanged;
+            // 
+            // CheckFechaFinRealIndefinidad
+            // 
+            CheckFechaFinRealIndefinidad.AutoSize = true;
+            CheckFechaFinRealIndefinidad.Location = new Point(524, 414);
+            CheckFechaFinRealIndefinidad.Name = "CheckFechaFinRealIndefinidad";
+            CheckFechaFinRealIndefinidad.Size = new Size(79, 19);
+            CheckFechaFinRealIndefinidad.TabIndex = 90;
+            CheckFechaFinRealIndefinidad.Text = "Indefinida";
+            CheckFechaFinRealIndefinidad.UseVisualStyleBackColor = true;
+            CheckFechaFinRealIndefinidad.CheckedChanged += CheckFechaFinRealIndefinidad_CheckedChanged;
             // 
             // Frm_NuevoProyecto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 508);
-            Controls.Add(dateTimePickerInicio);
-            Controls.Add(lblFechaInicio);
+            Controls.Add(CheckFechaFinRealIndefinidad);
+            Controls.Add(CheckFechaFinIndifinida);
+            Controls.Add(CheckDesaBiliInicioProgramada);
             Controls.Add(dateTimeFinPro);
             Controls.Add(dateTimeInicioPro);
-            Controls.Add(lblFechaFinPro);
-            Controls.Add(lblFechaInicioPro);
+            Controls.Add(materialLabel2);
+            Controls.Add(materialLabel3);
             Controls.Add(IdProyecto);
             Controls.Add(LblEquipoProyecto);
             Controls.Add(btnEquipoProyecto);
@@ -340,8 +348,8 @@
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
             Controls.Add(labelDescripcionProyecto);
-            Controls.Add(dateTimePickerFin);
-            Controls.Add(lblFechaFin);
+            Controls.Add(dateTimePickerEntrega);
+            Controls.Add(labelFechaEntrega);
             Controls.Add(materialLabel7);
             Controls.Add(materialLabel1);
             Controls.Add(cmbEstadoProyecto);
@@ -349,7 +357,6 @@
             Name = "Frm_NuevoProyecto";
             Text = "Frm_NuevoProyecto";
             Load += Frm_NuevoProyecto_Load;
-            MouseMove += Frm_NuevoProyecto_MouseDown;
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
@@ -360,7 +367,7 @@
 
         #endregion
         private MaterialSkin.Controls.MaterialLabel labelDescripcionProyecto;
-        private MaterialSkin.Controls.MaterialLabel lblFechaFin;
+        private MaterialSkin.Controls.MaterialLabel labelFechaEntrega;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         public MaterialSkin.Controls.MaterialComboBox cmbEstadoProyecto;
@@ -368,16 +375,17 @@
         private PictureBox btn_volver;
         private PictureBox btn_guardar;
         private PictureBox btn_limpiar;
-        public DateTimePicker dateTimePickerFin;
+        public DateTimePicker dateTimePickerEntrega;
         public MaterialSkin.Controls.MaterialMultiLineTextBox2 txtDescripcionProyecto;
         public Label IdProyecto;
         public PictureBox btnEquipoProyecto;
         public MaterialSkin.Controls.MaterialLabel LblEquipoProyecto;
         public DateTimePicker dateTimeFinPro;
         public DateTimePicker dateTimeInicioPro;
-        private MaterialSkin.Controls.MaterialLabel lblFechaFinPro;
-        private MaterialSkin.Controls.MaterialLabel lblFechaInicioPro;
-        public DateTimePicker dateTimePickerInicio;
-        private MaterialSkin.Controls.MaterialLabel lblFechaInicio;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private CheckBox CheckDesaBiliInicioProgramada;
+        private CheckBox CheckFechaFinIndifinida;
+        private CheckBox CheckFechaFinRealIndefinidad;
     }
 }

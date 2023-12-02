@@ -69,25 +69,43 @@ namespace PRESENTACION
         private void btn_editar_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 var form = new Frm_NuevoProyecto(); // Crear una instancia del formulario FrmNuevoProyecto
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
+
                 // Llamar al método CargarEstadoProyecto pasando el formulario como argumento
                 CargarEstadoProyecto(form);
+
                 DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
                 form.OperacionTipo = "Editar";
                 form.LblEquipoProyecto.Visible = true;
                 form.btnEquipoProyecto.Visible = true;
+
                 int idProyecto = (int)selectedRow["IdProyecto"];
                 // Configura los campos en el formulario
                 form.IdProyecto.Text = idProyecto.ToString();
                 form.txtNombreProyecto.Text = selectedRow[1].ToString();
                 form.txtDescripcionProyecto.Text = selectedRow[2].ToString();
                 form.cmbEstadoProyecto.Text = selectedRow[7].ToString();
-                form.dateTimePickerFin.Value = DateTime.Parse(selectedRow[4].ToString());
-                //form.dateTimeInicioPro.Value = DateTime.Parse(selectedRow["FechaInicioProgramada"].ToString());
-                //form.dateTimeFinPro.Value = DateTime.Parse(selectedRow["FechaFinReal"].ToString());
+
+                // Valida y asigna la fecha de entrega
+                if (DateTime.TryParse(selectedRow[4].ToString(), out DateTime fechaEntrega))
+                {
+                    form.dateTimePickerEntrega.Value = fechaEntrega;
+                }
+
+                // Valida y asigna la fecha de inicio programada
+                if (DateTime.TryParse(selectedRow["Fecha de inicio programado"].ToString(), out DateTime fechaInicioProgramada))
+                {
+                    form.dateTimeInicioPro.Value = fechaInicioProgramada;
+                }
+
+                // Valida y asigna la fecha de fin real
+                if (DateTime.TryParse(selectedRow["Fecha final programada"].ToString(), out DateTime fechaFinReal))
+                {
+                    form.dateTimeFinPro.Value = fechaFinReal;
+                }
 
                 // Establece la propiedad FormProyectos
                 form.FormProyectos = this;
@@ -98,6 +116,7 @@ namespace PRESENTACION
             {
                 MessageBox.Show("Debe Seleccionar una fila");
             }
+
         }
         private void btn_agregar_Click(object sender, EventArgs e)
         {

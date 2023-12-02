@@ -38,20 +38,67 @@ namespace DOMINIO.Models
         }
 
 
-        public void AgregarProyecto(string nombreProyecto, string descripcion, DateTime fechaInicio, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime fechaFinProgramada, int estadoProyectoid, int idUsuario)
+        public void AgregarProyecto(
+             string nombreProyecto,
+             string descripcion,
+             DateTime FechaCreacion,
+             DateTime? fechaFin,
+             DateTime? fechaInicioProgramada,
+             DateTime? fechaFinProgramada,
+             int estadoProyectoid,
+             int idUsuario)
         {
+            // Lógica para convertir DateTime? a DBNull.Value si es nulo
+            object fechaInicioProgramadaParam = (object)fechaInicioProgramada ?? DBNull.Value;
+            object fechaFinProgramadaParam = (object)fechaFinProgramada ?? DBNull.Value;
 
-            project.InsertarProyecto(nombreProyecto, descripcion, fechaInicio, fechaFin, fechaInicioProgramada, fechaFinProgramada, estadoProyectoid, idUsuario);
-
-
+            project.InsertarProyecto(
+                nombreProyecto,
+                descripcion,
+                FechaCreacion,
+                fechaFin,
+                fechaInicioProgramadaParam,
+                fechaFinProgramadaParam,
+                estadoProyectoid,
+                idUsuario
+            );
         }
 
-        public void UpdateProyecto(int IdProyecto,string nombreProyecto, string descripcion, DateTime fechaFin, DateTime fechaInicioProgramada, DateTime fechaFinProgramada, int estadoProyectoid, int idUsuario)
+
+        public void UpdateProyecto(
+            int idProyecto,
+            string nombreProyecto,
+            string descripcion,
+             DateTime? fechaFin,
+             DateTime? fechaInicioProgramada,
+             DateTime? fechaFinProgramada,
+             int estadoProyectoid,
+             int idUsuario)
         {
+            // Lógica para convertir DateTime? a DBNull.Value si es nulo
+            object fechaFinParam = (object)fechaFin ?? DBNull.Value;
+            object fechaInicioProgramadaParam = (object)fechaInicioProgramada ?? DBNull.Value;
+            object fechaFinProgramadaParam = (object)fechaFinProgramada ?? DBNull.Value;
 
-            project.EditarProyecto(IdProyecto, nombreProyecto, descripcion, fechaFin, fechaInicioProgramada, fechaFinProgramada, estadoProyectoid, idUsuario);
-
-
+            try
+            {
+                // Llamada al método en la capa de dominio
+                project.UpdateProyecto(
+                    idProyecto,
+                    nombreProyecto,
+                    descripcion,
+                    (DateTime)fechaFinParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    (DateTime)fechaInicioProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    (DateTime)fechaFinProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    estadoProyectoid,
+                    idUsuario
+                );
+            }
+            catch (Exception ex)
+            {
+                // En caso de otros errores, puedes manejar la excepción aquí, mostrar un mensaje de error o registrar el error.
+                throw new InvalidOperationException("Error inesperado al actualizar el proyecto: " + ex.Message);
+            }
         }
 
         public void EliminarProyecto(int IdProyecto)
@@ -77,6 +124,8 @@ namespace DOMINIO.Models
         {
             return project.BuscarProyectoPorNombre(NombreUsuario);
         }
+
+
     }
     
 

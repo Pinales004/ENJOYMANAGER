@@ -13,23 +13,6 @@ C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.deps.json
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.pdb
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.pdb
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.pdb
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.AssemblyReference.cache
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfoInputs.cache
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfo.cs
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CoreCompileInputs.cache
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CopyComplete
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
-C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.pdb
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.deps.json
@@ -68,4 +51,21 @@ C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOM
 C:\Users\pinal\OneDrive\Escritorio\Nueva carpeta\ENJOYMANAGERV1\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
 C:\Users\darkj\OneDrive\Documentos\Proyecto final\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.sourcelink.json
 C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.sourcelink.json
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.deps.json
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DOMINIO.pdb
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.dll
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.dll
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\DATOS.pdb
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\bin\Debug\net6.0\Comun.pdb
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.AssemblyReference.cache
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfoInputs.cache
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.AssemblyInfo.cs
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CoreCompileInputs.cache
 C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.sourcelink.json
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.csproj.CopyComplete
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\refint\DOMINIO.dll
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\DOMINIO.pdb
+C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\obj\Debug\net6.0\ref\DOMINIO.dll
