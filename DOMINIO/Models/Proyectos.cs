@@ -87,9 +87,9 @@ namespace DOMINIO.Models
                     idProyecto,
                     nombreProyecto,
                     descripcion,
-                    (DateTime)fechaFinParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
-                    (DateTime)fechaInicioProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
-                    (DateTime)fechaFinProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    fechaFinParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    fechaInicioProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
+                    fechaFinProgramadaParam, // Convierte a DateTime, ya que el método EditarProyecto espera un DateTime
                     estadoProyectoid,
                     idUsuario
                 );

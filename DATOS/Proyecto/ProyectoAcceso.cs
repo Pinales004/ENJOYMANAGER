@@ -149,16 +149,12 @@ namespace DATOS.Proyecto
              int idProyecto,
              string nombreProyecto,
              string descripcion,
-             DateTime? fechaFin,
-             DateTime? fechaInicioProgramada,
-             DateTime? fechaFinProgramada,
+             object fechaFin,
+             object fechaInicioProgramada,
+             object fechaFinProgramada,
             int estadoProyectoid,
             int idUsuario)
         {
-            // Lógica para convertir DateTime? a DBNull.Value si es nulo
-            object fechaFinParam = (object)fechaFin ?? DBNull.Value;
-            object fechaInicioProgramadaParam = (object)fechaInicioProgramada ?? DBNull.Value;
-            object fechaFinProgramadaParam = (object)fechaFinProgramada ?? DBNull.Value;
 
             try
             {
@@ -179,9 +175,9 @@ namespace DATOS.Proyecto
                         // Agrega los parámetros y sus valores
                         command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
                         command.Parameters.Add(new SqlParameter("@Descripcion", descripcion));
-                        command.Parameters.Add(new SqlParameter("@FechaFin", fechaFinParam));
-                        command.Parameters.Add(new SqlParameter("@FechaInicioProgramada", fechaInicioProgramadaParam));
-                        command.Parameters.Add(new SqlParameter("@FechaFinReal", fechaFinProgramadaParam));
+                        command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin ?? DBNull.Value));
+                        command.Parameters.Add(new SqlParameter("@FechaInicioProgramada", fechaInicioProgramada ?? DBNull.Value));
+                        command.Parameters.Add(new SqlParameter("@FechaFinReal", fechaFinProgramada ?? DBNull.Value));
                         command.Parameters.Add(new SqlParameter("@EstadoProyectoid", estadoProyectoid));
                         command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
                         command.Parameters.Add(new SqlParameter("@IdProyecto", idProyecto));

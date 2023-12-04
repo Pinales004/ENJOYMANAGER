@@ -27,6 +27,12 @@ namespace PRESENTACION
             btn_icon_hover.AplicarFormaRedonda(btn_editar);
             btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
             btn_icon_hover.AplicarFormaRedonda(btn_realizar);
+            dateFechaInicio.ShowCheckBox = true;
+            dateFechaInicio.Checked = false; // Inicialmente no hay fecha seleccionada
+
+            // Configura el DateTimePicker de fin
+            DateFechFin.ShowCheckBox = true;
+            DateFechFin.Checked = false; // Inic
         }
 
         private void rolUsuario()
@@ -38,6 +44,7 @@ namespace PRESENTACION
                 btn_eliminar.Visible = true;
                 btn_realizar.Visible = true;
                 CargarTareasGerentes();
+                CargarEstadoTareaFiltro();
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
@@ -46,12 +53,13 @@ namespace PRESENTACION
                 btn_eliminar.Visible = false;
                 btn_realizar.Visible = true;
                 CargarTareasProgrmadores();
+                CargarEstadoTareaFiltro();
             }
         }
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
-           
+
             rolUsuario();
         }
         public void CargarEstadoTarea(Frm_NuevaTarea form)
@@ -77,7 +85,7 @@ namespace PRESENTACION
             var form = new Frm_NuevaTarea();
             form.TipoOperacion = "Insertar";
             CargarEstadoTarea(form);
-           // ListadoProyectos(form);
+            // ListadoProyectos(form);
             form.FormTareas = this; // Establece la propiedad FormTareas
 
             AbrirFormulario<Frm_NuevaTarea>(form);
@@ -106,8 +114,9 @@ namespace PRESENTACION
             Tareas cargar = new Tareas();
             this.dataGridView1.AutoGenerateColumns = true;
             this.dataGridView1.DataSource = cargar.CargarTareas(UserLoginCache.IdUsuario);
-            this.dataGridView1.Columns[0].Visible=false;
+            this.dataGridView1.Columns[0].Visible = false;
             this.dataGridView1.Columns[1].Visible = false;
+            this.dataGridView1.Columns[2].Visible = false;
         }
 
         public void CargarTareasGerentes()
@@ -117,6 +126,7 @@ namespace PRESENTACION
             this.dataGridView1.DataSource = cargar.CargarTareasGeneral();
             this.dataGridView1.Columns[0].Visible = false;
             this.dataGridView1.Columns[1].Visible = false;
+            this.dataGridView1.Columns[2].Visible = false;
         }
 
         #region btn_hover
@@ -174,9 +184,19 @@ namespace PRESENTACION
             form.cmbEstadoTarea.ValueMember = "EstadoTareaid";
         }
 
+        public void CargarEstadoTareaFiltro()
+        {
+            Tareas cargar = new Tareas();
+
+            // Configura el ComboBox en el formulario pasado como argumento
+            cbmFiltroEstado.DataSource = cargar.TareaEstado();
+            cbmFiltroEstado.DisplayMember = "Estado";
+            cbmFiltroEstado.ValueMember = "EstadoTareaid";
+        }
+
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count >0)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
                 var frm = new Frm_NuevaTarea();
                 DataTable dataTable = (DataTable)dataGridView1.DataSource;
@@ -266,20 +286,65 @@ namespace PRESENTACION
             Tareas cargar = new Tareas();
             try
             {
-                string nombreBusqueda = this.txtbox_buscar.Text;
-
-                // Llama a un método que realiza la búsqueda y obtiene los resultados
-                DataTable resultados = cargar.BuscarTareaPorNombre(nombreBusqueda);
+                // Obtén los valores de los filtros desde tus controles de interfaz de usuario
+                string nombreProyecto = this.txtbox_buscar.Text;
+                string responsable = this.TxtResponsable.Text;
+                DateTime? fechaInicio = dateFechaInicio.Checked ? dateFechaInicio.Value : (DateTime?)null;
+                DateTime? fechaFin = DateFechFin.Checked ? DateFechFin.Value : (DateTime?)null;
+                int? estadoTareaId = Convert.ToInt32(cbmFiltroEstado.SelectedValue);
+                 // Llama al nuevo método que realiza la búsqueda con filtros
+                 DataTable resultados = cargar.BuscarTareaPorFiltros(nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
 
                 // Muestra los resultados en una cuadrícula o en otro control
                 this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
-
             }
             catch (Exception ex)
             {
                 // Maneja cualquier error que pueda ocurrir durante la búsqueda
                 MessageBox.Show("Error al buscar Tarea: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private DateTime? ObtenerFechaDesdeControl(DateTimePicker datePicker)
+        {
+            if (datePicker.Checked)
+            {
+                return datePicker.Value;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            txtbox_buscar.Text = string.Empty;  // Reemplaza con el control correcto
+            TxtResponsable.Text = string.Empty;      // Reemplaza con el control correcto
+            dateFechaInicio.Value = DateTime.Today;    // Reemplaza con el control correcto
+            DateFechFin.Value = DateTime.Today;       // Reemplaza con el control correcto
+            dateFechaInicio.ShowCheckBox = true;
+            dateFechaInicio.Checked = false; // Inicialmente no hay fecha seleccionada
+            CargarEstadoTareaFiltro();
+            // Configura el DateTimePicker de fin
+            DateFechFin.ShowCheckBox = true;
+            DateFechFin.Checked = false;
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+            {
+
+                CargarTareasGerentes();
+            }
+            if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
+            {
+
+                CargarTareasProgrmadores();
+            }
+
         }
     }
 }

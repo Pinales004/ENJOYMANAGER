@@ -27,12 +27,33 @@ namespace PRESENTACION.Proyecto
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
             btn_icon_hover.AplicarFormaRedonda(btnEquipoProyecto);
+          
+
         }
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
             if (OperacionTipo == "Insertar")
             {
                 CargarEstadoProyecto();
+                dateTimePickerEntrega.ShowCheckBox = true;
+                dateTimePickerEntrega.Checked = false;
+
+                dateTimeInicioPro.ShowCheckBox = true;
+                dateTimeInicioPro.Checked = false; 
+
+                dateTimeFinPro.ShowCheckBox = true;
+                dateTimeFinPro.Checked = false; // Inic
+            }
+            if (OperacionTipo == "Editar")
+            {
+                dateTimePickerEntrega.ShowCheckBox = true;
+                dateTimePickerEntrega.Checked = true;
+
+                dateTimeInicioPro.ShowCheckBox = true;
+                dateTimeInicioPro.Checked = true;
+
+                dateTimeFinPro.ShowCheckBox = true;
+                dateTimeFinPro.Checked = true;
             }
         }
 
@@ -65,9 +86,9 @@ namespace PRESENTACION.Proyecto
 
             try
             {
-                DateTime? fechaFinReal = CheckFechaFinRealIndefinidad.Checked ? (DateTime?)null : dateTimePickerEntrega.Value.Date;
-                DateTime? fechaInicioProgramada = CheckDesaBiliInicioProgramada.Checked ? (DateTime?)null : dateTimeInicioPro.Value.Date;
-                DateTime? fechaFinProgramada = CheckFechaFinIndifinida.Checked ? (DateTime?)null : dateTimeFinPro.Value.Date;
+                DateTime? fechaFinReal = dateTimePickerEntrega.Checked ? dateTimePickerEntrega.Value : (DateTime?)null;
+                DateTime? fechaInicioProgramada = dateTimeInicioPro.Checked ? dateTimeInicioPro.Value : (DateTime?)null;
+                DateTime? fechaFinProgramada = dateTimeFinPro.Checked ? dateTimeFinPro.Value : (DateTime?)null;
 
                 cargar.AgregarProyecto(
                     this.txtNombreProyecto.Text,
@@ -100,14 +121,17 @@ namespace PRESENTACION.Proyecto
         private void UpdateNuevoProyecto()
         {
             Proyectos cargar = new Proyectos();
+            DateTime? fechaFinReal = dateTimePickerEntrega.Checked ? dateTimePickerEntrega.Value : (DateTime?)null;
+            DateTime? fechaInicioProgramada = dateTimeInicioPro.Checked ? dateTimeInicioPro.Value : (DateTime?)null;
+            DateTime? fechaFinProgramada = dateTimeFinPro.Checked ? dateTimeFinPro.Value : (DateTime?)null;
 
             cargar.UpdateProyecto(
                 Convert.ToInt32(this.IdProyecto.Text),
                 this.txtNombreProyecto.Text,
                 this.txtDescripcionProyecto.Text,
-                this.dateTimePickerEntrega.Value.Date, // FechaFin
-                this.dateTimeInicioPro.Value.Date, // FechaInicioProgramada
-                this.dateTimeFinPro.Value.Date, // FechaFinProgramada
+                fechaFinReal, // FechaFin
+                fechaInicioProgramada, // FechaInicioProgramada
+                fechaFinProgramada, // FechaFinProgramada
                 Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
                 UserLoginCache.IdUsuario
             );
@@ -259,46 +283,6 @@ namespace PRESENTACION.Proyecto
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void CheckDesaBiliInicioProgramada_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckDesaBiliInicioProgramada.Checked)
-            {
-                dateTimeInicioPro.Enabled = false;
-                dateTimeInicioPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-            else
-            {
-                dateTimeInicioPro.Enabled = true;
-                dateTimeInicioPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-        }
-
-        private void CheckFechaFinIndifinida_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckFechaFinIndifinida.Checked)
-            {
-                dateTimeFinPro.Enabled = false;
-                dateTimeFinPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-            else
-            {
-                dateTimeFinPro.Enabled = true;
-                dateTimeFinPro.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-        }
-
-        private void CheckFechaFinRealIndefinidad_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CheckFechaFinRealIndefinidad.Checked)
-            {
-                dateTimePickerEntrega.Enabled = false;
-                dateTimePickerEntrega.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-            else
-            {
-                dateTimePickerEntrega.Enabled = true;
-                dateTimePickerEntrega.Value = DateTime.Now; // Opcional: Puedes asignar cualquier valor por defecto
-            }
-        }
+     
     }
 }

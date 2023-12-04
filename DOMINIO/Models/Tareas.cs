@@ -331,7 +331,7 @@ namespace DOMINIO.Models
 			return table;
 		}
 
-		public DataTable BuscarTareaPorNombre(string nombre)
+		public DataTable BuscarTareaPorFiltros(string nombreProyecto, string responsable, DateTime? fechaInicio, DateTime? fechaFin, int? estadoTareaId)
 		{
 			using (var connection = GETConexionSQL())
 			{
@@ -340,11 +340,20 @@ namespace DOMINIO.Models
 				using (var command = new SqlCommand())
 				{
 					command.Connection = connection;
-					command.CommandText = "SELECT * FROM Tareas_vw_ENJOY WHERE [Nombre del proyecto] LIKE @Nombre";
+					command.CommandText = "SELECT * FROM Tareas_vw_ENJOY WHERE " +
+										  "(@NombreProyecto IS NULL OR [Nombre del proyecto] LIKE '%' + @NombreProyecto + '%') AND " +
+										  "(@Responsable IS NULL OR Responsable LIKE '%' + @Responsable + '%') AND " +
+										  "(@FechaInicio IS NULL OR [Fecha de inicio] >= @FechaInicio) AND " +
+										  "(@FechaFin IS NULL OR [Fecha final] <= @FechaFin) AND " +
+										  "(@EstadoTareaId IS NULL OR EstadoTareaid = @EstadoTareaId)";
 					command.CommandType = CommandType.Text;
 
-					// Agrega el parámetro para la búsqueda dinámica
-					command.Parameters.Add(new SqlParameter("@Nombre", "%" + nombre + "%"));
+					// Agrega los parámetros para la búsqueda dinámica
+					command.Parameters.Add(new SqlParameter("@NombreProyecto", nombreProyecto));
+					command.Parameters.Add(new SqlParameter("@Responsable", responsable));
+					command.Parameters.Add(new SqlParameter("@FechaInicio", fechaInicio != null ? fechaInicio : (object)DBNull.Value));
+					command.Parameters.Add(new SqlParameter("@FechaFin", fechaFin != null ? fechaFin : (object)DBNull.Value));
+					command.Parameters.Add(new SqlParameter("@EstadoTareaId", estadoTareaId != null ? estadoTareaId : (object)DBNull.Value));
 
 					var results = new DataTable();
 
@@ -357,6 +366,7 @@ namespace DOMINIO.Models
 				}
 			}
 		}
+
 
 		public DataTable BuscarTareaPorIdPoryecto(int IdProyecto)
 		{

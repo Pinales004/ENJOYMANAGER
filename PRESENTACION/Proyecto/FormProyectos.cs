@@ -24,6 +24,7 @@ namespace PRESENTACION
             btn_icon_hover.AplicarFormaRedonda(btn_agregar);
             btn_icon_hover.AplicarFormaRedonda(btn_editar);
             btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
+
         }
         public void FormProyectos_Load(object sender, EventArgs e)
         {
@@ -90,21 +91,21 @@ namespace PRESENTACION
                 form.cmbEstadoProyecto.Text = selectedRow[7].ToString();
 
                 // Valida y asigna la fecha de entrega
-                if (DateTime.TryParse(selectedRow[4].ToString(), out DateTime fechaEntrega))
-                {
-                    form.dateTimePickerEntrega.Value = fechaEntrega;
-                }
-
-                // Valida y asigna la fecha de inicio programada
                 if (DateTime.TryParse(selectedRow["Fecha de inicio programado"].ToString(), out DateTime fechaInicioProgramada))
                 {
                     form.dateTimeInicioPro.Value = fechaInicioProgramada;
                 }
 
-                // Valida y asigna la fecha de fin real
-                if (DateTime.TryParse(selectedRow["Fecha final programada"].ToString(), out DateTime fechaFinReal))
+                // Valida y asigna la fecha de inicio programada
+                if (DateTime.TryParse(selectedRow["Fecha final programada"].ToString(), out DateTime fechaFinProgrammada))
                 {
-                    form.dateTimeFinPro.Value = fechaFinReal;
+                    form.dateTimeFinPro.Value = fechaFinProgrammada;
+                }
+
+                // Valida y asigna la fecha de fin real
+                if (DateTime.TryParse(selectedRow["Fecha final"].ToString(), out DateTime fechaFinReal))
+                {
+                    form.dateTimePickerEntrega.Value = fechaFinReal;
                 }
 
                 // Establece la propiedad FormProyectos
