@@ -97,8 +97,7 @@
             // 
             dataGridViewEquipoProgramadores.AllowUserToAddRows = false;
             dataGridViewEquipoProgramadores.AllowUserToDeleteRows = false;
-            dataGridViewEquipoProgramadores.AllowUserToOrderColumns = true;
-            dataGridViewEquipoProgramadores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            dataGridViewEquipoProgramadores.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridViewEquipoProgramadores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewEquipoProgramadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewEquipoProgramadores.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -113,8 +112,7 @@
             // 
             dataGridViewTareas.AllowUserToAddRows = false;
             dataGridViewTareas.AllowUserToDeleteRows = false;
-            dataGridViewTareas.AllowUserToOrderColumns = true;
-            dataGridViewTareas.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dataGridViewTareas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dataGridViewTareas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTareas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTareas.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -127,7 +125,7 @@
             // 
             // lblDGVequipo
             // 
-            lblDGVequipo.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lblDGVequipo.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblDGVequipo.AutoSize = true;
             lblDGVequipo.ForeColor = SystemColors.ButtonHighlight;
             lblDGVequipo.Location = new Point(15, 195);

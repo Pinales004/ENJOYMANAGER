@@ -317,12 +317,7 @@ namespace PRESENTACION
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btn_refrescar_Click(object sender, EventArgs e)
         {
             txtbox_buscar.Text = string.Empty;  // Reemplaza con el control correcto
             TxtResponsable.Text = string.Empty;      // Reemplaza con el control correcto
@@ -334,14 +329,15 @@ namespace PRESENTACION
             // Configura el DateTimePicker de fin
             DateFechFin.ShowCheckBox = true;
             DateFechFin.Checked = false;
+
+            this.txtbox_buscar.Focus();
+
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
             {
-
                 CargarTareasGerentes();
             }
             if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
             {
-
                 CargarTareasProgrmadores();
             }
 

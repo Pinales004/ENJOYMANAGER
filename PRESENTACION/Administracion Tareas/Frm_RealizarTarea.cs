@@ -321,6 +321,8 @@ namespace PRESENTACION.Administracion_Tareas
 
                 if (result == DialogResult.Yes)
                 {
+                    LimpiarCampos();
+
                     // Elimina el comentario
                     comentario.SoftDeleteComentarioTarea(ComentarioId);
 
