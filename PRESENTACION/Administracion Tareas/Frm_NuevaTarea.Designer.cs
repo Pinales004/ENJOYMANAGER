@@ -332,6 +332,7 @@
             Controls.Add(materialLabel1);
             Controls.Add(cmbEstadoTarea);
             Controls.Add(txtNombreTarea);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevaTarea";
             Text = "Frm_NuevaTarea";
             Load += Frm_NuevaTarea_Load;

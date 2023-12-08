@@ -443,6 +443,7 @@
             Controls.Add(materialLabel1);
             Controls.Add(cmbEstadoTarea);
             Controls.Add(txtNombreTarea);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_RealizarTarea";
             Text = "Frm_NuevaTarea";
             Load += Frm_RealizarTarea_Load;

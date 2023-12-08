@@ -203,6 +203,7 @@
             Controls.Add(btn_limpiar);
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCambiarContraseña";
             Text = "FormCambiarContraseña";
             Load += FormCambiarContraseña_Load;

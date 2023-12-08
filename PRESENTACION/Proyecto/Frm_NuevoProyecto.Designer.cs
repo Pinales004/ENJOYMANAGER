@@ -315,6 +315,7 @@
             Controls.Add(materialLabel1);
             Controls.Add(cmbEstadoProyecto);
             Controls.Add(txtNombreProyecto);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevoProyecto";
             Text = "Frm_NuevoProyecto";
             Load += Frm_NuevoProyecto_Load;

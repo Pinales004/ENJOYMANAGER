@@ -486,6 +486,7 @@
             Controls.Add(materialLabel1);
             Controls.Add(cmbRol);
             Controls.Add(txtNombre);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevoUsuario";
             Text = "Frm_NuevoUsuario";
             Load += Frm_NuevoUsuario_Load;

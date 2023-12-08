@@ -157,6 +157,7 @@
             Controls.Add(materialCheckedListBox1);
             Controls.Add(btn_guardar);
             Controls.Add(btn_volver);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmEquipoProgramadores";
             Text = "FrmEquipoProgramadores";
             Load += FrmEquipoProgramadores_Load;

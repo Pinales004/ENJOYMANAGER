@@ -182,6 +182,7 @@
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
             Name = "Frm_Login";
             StartPosition = FormStartPosition.CenterScreen;

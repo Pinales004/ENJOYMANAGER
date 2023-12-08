@@ -37,7 +37,9 @@ namespace PRESENTACION.Administracion_Usuarios
                 ListarRoles();
                 LLnearCombroboxGnero();
                 ListarEstados();
-                ResetPassword.Visible=false;
+                ResetPassword.Visible = false;
+                materialLabel9.Visible = false;
+                CboEstadoUsuario.Visible = false;
             }
         }
 
@@ -234,5 +236,6 @@ namespace PRESENTACION.Administracion_Usuarios
             btn_icon_hover.RestaurarColorOriginal(sender, e);
         }
         #endregion
+
     }
 }
