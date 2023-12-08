@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DATOS.Conexion;
 using System.Data;
 using System.Data.SqlClient;
-using Comun.Cache;
-using DATOS.Conexion;
 
 namespace DATOS.Proyecto
 {
 
     //manejo de logica
-    public class ProyectoAcceso  : ConexionSQL
+    public class ProyectoAcceso : ConexionSQL
     {
 
         public DataTable CargarProyectos()

@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using DOMINIO.Models;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DOMINIO.Models;
-using PRESENTACION;
 
 namespace PRESENTACION.Administracion_Usuarios
 {

@@ -39,7 +39,7 @@ namespace PRESENTACION.Administracion_Tareas
 
             Tareas cargar = new Tareas();
 
-           CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
+            CmbNombreProyecto.DataSource = cargar.CargarListadoProyectos();
             CmbNombreProyecto.DisplayMember = "Nombre";
             CmbNombreProyecto.ValueMember = "IdProyecto";
         }
@@ -179,7 +179,8 @@ namespace PRESENTACION.Administracion_Tareas
                     cargar.InsertTarea(nuevaTarea);
                 }
 
-            }else if (TipoOperacion == "Editar")
+            }
+            else if (TipoOperacion == "Editar")
             {
                 if (string.IsNullOrWhiteSpace(txtNombreTarea.Text))
                 {

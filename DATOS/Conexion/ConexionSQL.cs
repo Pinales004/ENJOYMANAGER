@@ -1,21 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace DATOS.Conexion
 {
     public abstract class ConexionSQL
     {
 
-        private readonly string 
+        private readonly string
             connectionsstring;
 
-        public ConexionSQL() {
-            connectionsstring = @"Data Source=(local);Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
+        public ConexionSQL()
+        {
+            //connectionsstring = @"Data Source=(local);Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
+            connectionsstring = @"Data Source=tcp:DESKTOP-JEREMY;Initial Catalog=ENJOYMANNAGER; User Id=AppAccess ; Password=admin123";
+
         }
+
 
 
         protected SqlConnection GETConexionSQL()

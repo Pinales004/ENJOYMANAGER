@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DATOS.Tareas
+﻿namespace DATOS.Tareas
 {
     public class ComentariosTarea
     {
@@ -37,7 +31,7 @@ namespace DATOS.Tareas
             FechaCreacion = fechaCreacion;
         }
 
-        public ComentariosTarea(string comentario, int tareaId, int idUsuario, DateTime fechaCreacion,string usuarioCrea)
+        public ComentariosTarea(string comentario, int tareaId, int idUsuario, DateTime fechaCreacion, string usuarioCrea)
         {
             Comentario = comentario;
             TareaId = tareaId;

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Comun.Cache;
+﻿using Comun.Cache;
 using DATOS.Tareas;
 using DOMINIO.Models;
 
@@ -30,9 +21,9 @@ namespace PRESENTACION.Administracion_Tareas.Anexo
             openFileDialog1.Filter = "Todos los archivos (*.*)|*.*";
             openFileDialog1.FilterIndex = 1;
 
-            if (openFileDialog1.ShowDialog()==DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                txtRuta.Text =openFileDialog1.FileName;
+                txtRuta.Text = openFileDialog1.FileName;
 
             }
 
@@ -45,18 +36,18 @@ namespace PRESENTACION.Administracion_Tareas.Anexo
             MemoryStream obj = new MemoryStream();
             MyStream.CopyTo(obj);
             archivo = obj.ToArray();
-            if (TxtNombreArchivo.Text=="")
+            if (TxtNombreArchivo.Text == "")
             {
                 MostrarError("Dbe indicar un nombre para el documento");
 
-            }      
+            }
             //Agregar
             Anexos agregar = new Anexos(
                 TxtNombreArchivo.Text,
                 archivo,
                 openFileDialog1.SafeFileName,
                 Convert.ToInt32(IdTarea),
-                UserLoginCache.IdUsuario              
+                UserLoginCache.IdUsuario
                 );
             anexo.InsertAnexo(agregar);
             MessageBox.Show("Documento guardado");

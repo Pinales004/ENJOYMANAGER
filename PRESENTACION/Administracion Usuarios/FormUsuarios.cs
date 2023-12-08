@@ -1,17 +1,7 @@
 ﻿using Comun.Cache;
 using DOMINIO.Models;
-using MaterialSkin.Controls;
 using PRESENTACION.Administracion_Usuarios;
-using PRESENTACION.Proyecto;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PRESENTACION
 {
@@ -170,7 +160,7 @@ namespace PRESENTACION
 
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-              
+
             }
             else
             {

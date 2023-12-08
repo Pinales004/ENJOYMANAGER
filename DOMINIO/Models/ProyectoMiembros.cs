@@ -1,9 +1,4 @@
 ﻿using DATOS.Proyecto;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DOMINIO.Models
 {
@@ -35,7 +30,8 @@ namespace DOMINIO.Models
             return miembros.CargarMiembros(ProyectoID);
         }
 
-        public void InsertarMiembros(int proyectoid , int UsuarioID) {
+        public void InsertarMiembros(int proyectoid, int UsuarioID)
+        {
 
             miembros.InsertarMiembro(proyectoid, UsuarioID);
 

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Comun.Cache;
 using System.Data;
 using System.Data.SqlClient;
-using Comun.Cache;
 
 
 namespace DATOS.Conexion
@@ -369,7 +364,7 @@ namespace DATOS.Conexion
 
                 using (var command = new SqlCommand())
                 {
-                    
+
                     command.Connection = connection;
                     command.CommandText = "UPDATE Usuario SET Borrado = 1 WHERE IdUsuario = @IdUsuario";
                     command.CommandType = CommandType.Text;
@@ -415,20 +410,20 @@ namespace DATOS.Conexion
 
                 using (var command = new SqlCommand())
                 {
-                command.Connection = connection;
-                command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY WHERE [Nombre de Usuario] LIKE @Nombre";
-                command.CommandType = CommandType.Text;
+                    command.Connection = connection;
+                    command.CommandText = "SELECT * FROM Usuarios_vw_ENJOY WHERE [Nombre de Usuario] LIKE @Nombre";
+                    command.CommandType = CommandType.Text;
 
-                // Agrega el parámetro para la búsqueda dinámica
-                command.Parameters.Add(new SqlParameter("@Nombre", "%" + nombre + "%"));
+                    // Agrega el parámetro para la búsqueda dinámica
+                    command.Parameters.Add(new SqlParameter("@Nombre", "%" + nombre + "%"));
 
-                var results = new DataTable();
+                    var results = new DataTable();
 
-                using (var adapter = new SqlDataAdapter(command))
-                {
-                    adapter.Fill(results);
-                }
-                return results;
+                    using (var adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(results);
+                    }
+                    return results;
                 }
             }
         }

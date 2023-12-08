@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Security.Cryptography;
-using System.Linq;
-//using DOMINIO.Moldes;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using DOMINIO.Models;
+﻿//using DOMINIO.Moldes;
 using Comun.Cache;
+using DOMINIO.Models;
 using PRESENTACION.Login;
+using System.Runtime.InteropServices;
 
 namespace PRESENTACION
 {

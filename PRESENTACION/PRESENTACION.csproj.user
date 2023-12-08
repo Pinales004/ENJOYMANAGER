@@ -31,9 +31,6 @@
     <Compile Update="Login\Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Proyecto\FrmEquipoProgramadores.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Proyecto\Frm_NuevoProyecto.cs">
       <SubType>Form</SubType>
     </Compile>

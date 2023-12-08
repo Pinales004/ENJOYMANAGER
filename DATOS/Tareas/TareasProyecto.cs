@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DATOS.Tareas
+﻿namespace DATOS.Tareas
 {
-    public  class TareasProyecto
+    public class TareasProyecto
     {
         private int v1;
         private int v2;

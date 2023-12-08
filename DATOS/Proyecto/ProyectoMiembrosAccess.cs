@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DATOS.Conexion;
 using System.Data;
 using System.Data.SqlClient;
-using Comun.Cache;
-using DATOS.Conexion;
 namespace DATOS.Proyecto
 {
-    public class ProyectoMiembrosAccess: ConexionSQL
+    public class ProyectoMiembrosAccess : ConexionSQL
     {
 
         public void InsertarMiembro(int idProyecto, int idUsuario)

@@ -2,12 +2,13 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>ENJOYMANAGEMENT</AssemblyName>
     <ApplicationIcon>ENJOY-MANAGEMENT-logo.ico</ApplicationIcon>
+    <IsPublishable>True</IsPublishable>
   </PropertyGroup>
 
   <ItemGroup>

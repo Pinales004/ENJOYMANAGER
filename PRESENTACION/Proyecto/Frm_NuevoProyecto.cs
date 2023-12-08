@@ -1,17 +1,6 @@
 ﻿using Comun.Cache;
-using DATOS.Proyecto;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DOMINIO.Models;
-using static DATOS.Proyecto.ProyectoAcceso;
+using System.Runtime.InteropServices;
 
 namespace PRESENTACION.Proyecto
 {
@@ -27,7 +16,7 @@ namespace PRESENTACION.Proyecto
             btn_icon_hover.AplicarFormaRedonda(btn_guardar);
             btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
             btn_icon_hover.AplicarFormaRedonda(btnEquipoProyecto);
-          
+
 
         }
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
@@ -39,7 +28,7 @@ namespace PRESENTACION.Proyecto
                 dateTimePickerEntrega.Checked = false;
 
                 dateTimeInicioPro.ShowCheckBox = true;
-                dateTimeInicioPro.Checked = false; 
+                dateTimeInicioPro.Checked = false;
 
                 dateTimeFinPro.ShowCheckBox = true;
                 dateTimeFinPro.Checked = false; // Inic
@@ -82,7 +71,7 @@ namespace PRESENTACION.Proyecto
 
         private void AgregarNuevoProyecto()
         {
-                Proyectos cargar = new Proyectos();
+            Proyectos cargar = new Proyectos();
 
             try
             {
@@ -97,13 +86,13 @@ namespace PRESENTACION.Proyecto
                     fechaFinProgramada,
                     fechaInicioProgramada,
                     fechaFinReal,
-                    
+
                     Convert.ToInt32(cmbEstadoProyecto.SelectedValue),
                     UserLoginCache.IdUsuario
                 );
 
                 MessageBox.Show("Proyecto agregado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
+                LimpiarCampos();
             }
             catch (InvalidOperationException ex)
             {
@@ -283,6 +272,6 @@ namespace PRESENTACION.Proyecto
             MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-     
+
     }
 }

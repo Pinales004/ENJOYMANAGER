@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Comun.Cache;
-using DATOS.Conexion;
-using DOMINIO.Models;
+﻿using DOMINIO.Models;
 using PRESENTACION.Proyecto;
-using Comun;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Data;
 
 namespace PRESENTACION
 {
@@ -234,7 +222,7 @@ namespace PRESENTACION
 
         public void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            
+
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int rowIndex = dataGridView1.SelectedCells[0].RowIndex;

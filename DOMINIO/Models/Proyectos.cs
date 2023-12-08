@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DATOS.Conexion;
-using DATOS.Proyecto;
+﻿using DATOS.Proyecto;
 
 namespace DOMINIO.Models
 {
@@ -127,7 +121,7 @@ namespace DOMINIO.Models
 
 
     }
-    
+
 
     public class ProyectoEstado
     {

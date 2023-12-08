@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DATOS.Conexion;
-using System.Data.SqlClient;
-using System.Data;
+﻿using DATOS.Conexion;
 using DATOS.Tareas;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace DOMINIO.Models
 {
-    public  class ComentarioTarea : ConexionSQL
+    public class ComentarioTarea : ConexionSQL
     {
 
         public List<ComentariosTarea> GetComentariosPorIdTarea(int tareaId)

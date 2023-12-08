@@ -2,17 +2,7 @@
 using Comun.Cache;
 using DOMINIO.Models;
 using PRESENTACION.Administracion_Tareas;
-using PRESENTACION.Administracion_Usuarios;
-using PRESENTACION.Proyecto;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PRESENTACION
 {
@@ -292,8 +282,8 @@ namespace PRESENTACION
                 DateTime? fechaInicio = dateFechaInicio.Checked ? dateFechaInicio.Value : (DateTime?)null;
                 DateTime? fechaFin = DateFechFin.Checked ? DateFechFin.Value : (DateTime?)null;
                 int? estadoTareaId = Convert.ToInt32(cbmFiltroEstado.SelectedValue);
-                 // Llama al nuevo método que realiza la búsqueda con filtros
-                 DataTable resultados = cargar.BuscarTareaPorFiltros(nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
+                // Llama al nuevo método que realiza la búsqueda con filtros
+                DataTable resultados = cargar.BuscarTareaPorFiltros(nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
 
                 // Muestra los resultados en una cuadrícula o en otro control
                 this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView

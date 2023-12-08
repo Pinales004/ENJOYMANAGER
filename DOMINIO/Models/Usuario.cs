@@ -1,10 +1,5 @@
 ﻿using Comun.Cache;
 using DATOS.Conexion;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace DOMINIO.Models
@@ -12,9 +7,9 @@ namespace DOMINIO.Models
     public class Usuario
     {
         UserAcceso users = new UserAcceso();
-        public bool LoginUser(String User , string pass)
+        public bool LoginUser(String User, string pass)
         {
-            return users.Login(User , pass);
+            return users.Login(User, pass);
         }
         public System.Data.DataTable GetRoles()
         {
@@ -51,7 +46,8 @@ namespace DOMINIO.Models
             // Llamar a ContraseñaUpdate con el valor de ResetPasword
             users.ContraseñaUpdate(IdUsuario, nuevaContraseñaHash, EstadoUsuario, resetPassword);
         }
-        public void EliminarUusario(int IdUsuario) {
+        public void EliminarUusario(int IdUsuario)
+        {
 
             users.EliminarUsuario(IdUsuario);
         }
