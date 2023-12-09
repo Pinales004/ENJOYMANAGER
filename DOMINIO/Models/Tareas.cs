@@ -62,6 +62,72 @@ namespace DOMINIO.Models
             return table;
         }
 
+        public DataTable CargarTareasFiltrOpROGRAMADOR(int idUsuario, string nombreTarea, string nombreProyecto, DateTime? fechaInicio, DateTime? fechaFin, int? estadoTareaId)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {   
+                using (var connection = GETConexionSQL())
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand())
+                    {
+                        command.Connection = connection;
+
+                        // Utilizamos parámetros con nombres descriptivos
+                        command.CommandText =
+                            "SELECT task.TareaId, " +
+                            "pro.Idproyecto, " +
+                            "task.NombreTarea AS \"Nombre de la tarea\", " +
+                            "pro.NombreProyecto AS \"Nombre del proyecto\", " +
+                            "task.DescripcionTarea AS Descripción, " +
+                            "est.Estado, " +
+                            "task.FechaInicio AS \"Fecha de inicio\", " +
+                            "task.FechaFin  AS \"Fecha final\", " +
+                            "usu.Nombres AS Responsable " +
+                            "FROM TareasProyecto task " +
+                            "INNER JOIN Proyectos pro ON task.IdProyecto = pro.IdProyecto " +
+                            "INNER JOIN TareaEstado est ON task.EstadoTareaid = est.EstadoTareaid " +
+                            "LEFT JOIN ProyectoMiembros miem ON task.IdProyectoMiembro = miem.IdProyectoMiembro " +
+                            "INNER JOIN Usuario usu ON miem.IdUsuario = usu.IdUsuario " +
+                            "WHERE task.Borrado = 0 " +
+                            "  AND pro.Borrado = 0 " +
+                            "  AND pro.IdProyecto IN (SELECT IdProyecto FROM ProyectoMiembros WHERE IdUsuario = @IdUsuario) " +
+                            "  AND (@NombreTarea IS NULL OR task.NombreTarea LIKE '%' + @NombreTarea + '%') " +
+                            "  AND (@NombreProyecto IS NULL OR pro.NombreProyecto LIKE '%' + @NombreProyecto + '%') " +
+                            "  AND (@FechaInicio IS NULL OR task.FechaInicio >= @FechaInicio) " +
+                            "  AND (@FechaFin IS NULL OR task.FechaFin <= @FechaFin) " +
+                            "  AND (@EstadoTareaId IS NULL OR est.EstadoTareaId = @EstadoTareaId)";
+
+                        command.CommandType = CommandType.Text;
+
+                        // Agregamos los parámetros
+                        command.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        command.Parameters.AddWithValue("@NombreTarea", nombreTarea);
+                        command.Parameters.AddWithValue("@NombreProyecto", nombreProyecto);
+                        command.Parameters.AddWithValue("@FechaInicio", fechaInicio != null ? fechaInicio : (object)DBNull.Value);
+                        command.Parameters.AddWithValue("@FechaFin", fechaFin != null ? fechaFin : (object)DBNull.Value);
+                        command.Parameters.AddWithValue("@EstadoTareaId", estadoTareaId != null ? estadoTareaId : (object)DBNull.Value);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            table.Load(reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes personalizar esto según tus necesidades
+                Console.WriteLine("Error al cargar tareas: " + ex.Message);
+            }
+
+            return table;
+        }
+
+
         public DataTable CargarTareasGeneral()
         {
             DataTable table = new DataTable();

@@ -202,10 +202,13 @@ namespace PRESENTACION
                 this.dataGridViewTareas.DataSource = cargar.BuscarTareaPorIdPoryecto(Convert.ToInt32(idproyecto));
                 this.dataGridViewTareas.Columns[0].Visible = false;
                 this.dataGridViewTareas.Columns[1].Visible = false;
-                this.dataGridViewTareas.Columns[3].Visible = false;
+                this.dataGridViewTareas.Columns[2].Visible = false;
                 this.dataGridViewTareas.Columns[4].Visible = false;
-                this.dataGridViewTareas.Columns[6].Visible = false;
+                this.dataGridViewTareas.Columns[5].Visible = false;
+                this.dataGridViewTareas.Columns[6].Visible = true;
                 this.dataGridViewTareas.Columns[7].Visible = false;
+                this.dataGridViewTareas.Columns[8].Visible = false;
+                this.dataGridViewTareas.Columns[9].Visible = true;
             }
         }
 
@@ -231,6 +234,33 @@ namespace PRESENTACION
 
                 CargarTareas(idProyecto);
                 CargarMiembros(idProyecto);
+            }
+        }
+
+        private void dataGridViewTareas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridViewTareas.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (Convert.ToString(e.Value) == "Nueva")
+                {
+                    e.CellStyle.ForeColor = Color.Green;
+                }
+                if (Convert.ToString(e.Value) == "Iniciada")
+                {
+                    e.CellStyle.ForeColor = Color.GreenYellow;
+                }
+                if (Convert.ToString(e.Value) == "QA")
+                {
+                    e.CellStyle.ForeColor = Color.Blue;
+                }
+                if (Convert.ToString(e.Value) == "Terminada")
+                {
+                    e.CellStyle.ForeColor = Color.LawnGreen;
+                }
+                if (Convert.ToString(e.Value) == "Cancelada")
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                }
             }
         }
     }

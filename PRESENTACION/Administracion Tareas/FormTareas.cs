@@ -106,7 +106,8 @@ namespace PRESENTACION
             this.dataGridView1.DataSource = cargar.CargarTareas(UserLoginCache.IdUsuario);
             this.dataGridView1.Columns[0].Visible = false;
             this.dataGridView1.Columns[1].Visible = false;
-            this.dataGridView1.Columns[2].Visible = false;
+            //this.dataGridView1.Columns[2].Visible = false;
+
         }
 
         public void CargarTareasGerentes()
@@ -276,17 +277,37 @@ namespace PRESENTACION
             Tareas cargar = new Tareas();
             try
             {
-                // Obtén los valores de los filtros desde tus controles de interfaz de usuario
-                string nombreProyecto = this.txtbox_buscar.Text;
-                string responsable = this.TxtResponsable.Text;
-                DateTime? fechaInicio = dateFechaInicio.Checked ? dateFechaInicio.Value : (DateTime?)null;
-                DateTime? fechaFin = DateFechFin.Checked ? DateFechFin.Value : (DateTime?)null;
-                int? estadoTareaId = Convert.ToInt32(cbmFiltroEstado.SelectedValue);
-                // Llama al nuevo método que realiza la búsqueda con filtros
-                DataTable resultados = cargar.BuscarTareaPorFiltros(nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
+                 if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Gerente)
+                    {
 
-                // Muestra los resultados en una cuadrícula o en otro control
-                this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
+                    // Obtén los valores de los filtros desde tus controles de interfaz de usuario
+                    string nombreProyecto = this.txtbox_buscar.Text;
+                    string responsable = this.TxtResponsable.Text;
+                    DateTime? fechaInicio = dateFechaInicio.Checked ? dateFechaInicio.Value : (DateTime?)null;
+                    DateTime? fechaFin = DateFechFin.Checked ? DateFechFin.Value : (DateTime?)null;
+                    int? estadoTareaId = Convert.ToInt32(cbmFiltroEstado.SelectedValue);
+                    // Llama al nuevo método que realiza la búsqueda con filtros
+
+                    DataTable resultados = cargar.BuscarTareaPorFiltros(nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
+                    // Muestra los resultados en una cuadrícula o en otro control
+                    this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
+
+                }
+                if (UserLoginCache.RolUsuario == (int)EnumRolUsuario.Puesto.Programador)
+                {
+                    // Obtén los valores de los filtros desde tus controles de interfaz de usuario
+                    string nombreProyecto = this.txtbox_buscar.Text;
+                    string responsable = this.TxtResponsable.Text;
+                    DateTime? fechaInicio = dateFechaInicio.Checked ? dateFechaInicio.Value : (DateTime?)null;
+                    DateTime? fechaFin = DateFechFin.Checked ? DateFechFin.Value : (DateTime?)null;
+                    int? estadoTareaId = Convert.ToInt32(cbmFiltroEstado.SelectedValue);
+                    // Llama al nuevo método que realiza la búsqueda con filtros
+                    DataTable resultados = cargar.CargarTareasFiltrOpROGRAMADOR(UserLoginCache.IdUsuario, nombreProyecto, responsable, fechaInicio, fechaFin, estadoTareaId);
+                    this.dataGridView1.DataSource = resultados; // Ejemplo con DataGridView
+                    this.dataGridView1.Columns[0].Visible = false;
+                    this.dataGridView1.Columns[1].Visible = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -331,6 +352,33 @@ namespace PRESENTACION
                 CargarTareasProgrmadores();
             }
 
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                if (Convert.ToString(e.Value) == "Nueva")
+                {
+                    e.CellStyle.ForeColor = Color.Green;
+                }
+                if (Convert.ToString(e.Value) == "Iniciada")
+                {
+                    e.CellStyle.ForeColor = Color.GreenYellow;
+                }
+                if (Convert.ToString(e.Value) == "QA")
+                {
+                    e.CellStyle.ForeColor = Color.Blue;
+                }
+                if (Convert.ToString(e.Value) == "Terminada")
+                {
+                    e.CellStyle.ForeColor = Color.LawnGreen;
+                }
+                if (Convert.ToString(e.Value) == "Cancelada")
+                {
+                    e.CellStyle.ForeColor = Color.Red;
+                }
+            }
         }
     }
 }

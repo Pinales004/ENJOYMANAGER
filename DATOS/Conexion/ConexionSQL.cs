@@ -10,8 +10,8 @@ namespace DATOS.Conexion
 
         public ConexionSQL()
         {
-            //connectionsstring = @"Data Source=(local);Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
-            connectionsstring = @"Data Source=tcp:DESKTOP-JEREMY;Initial Catalog=ENJOYMANNAGER; User Id=AppAccess ; Password=admin123";
+            connectionsstring = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=ENJOYMANNAGER;Integrated Security=True;";
+           // connectionsstring = @"Data Source=tcp:DESKTOP-JEREMY;Initial Catalog=ENJOYMANNAGER; User Id=AppAccess ; Password=admin123";
 
         }
 
