@@ -10,6 +10,9 @@ namespace PRESENTACION.Login
         public FormCambiarContraseña()
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_guardar);
+            btn_icon_hover.AplicarFormaRedonda(btn_limpiar);
+            btn_icon_hover.AplicarFormaRedonda(btn_volver);
         }
         public string IdUsuario;
 
@@ -71,5 +74,37 @@ namespace PRESENTACION.Login
             txtContraseña.UseSystemPasswordChar = true;
             txtContraseñaComprobar.UseSystemPasswordChar = true;
         }
+        #region btn_hover
+        private void btn_guardar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_guardar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_limpiar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_limpiar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_volver_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_volver_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
+
     }
 }

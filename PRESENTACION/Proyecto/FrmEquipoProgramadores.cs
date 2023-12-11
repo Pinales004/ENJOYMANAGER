@@ -10,6 +10,9 @@ namespace PRESENTACION.Proyecto
         public FrmEquipoProgramadores(string idProyecto)
         {
             InitializeComponent();
+            btn_icon_hover.AplicarFormaRedonda(btn_volver);
+            btn_icon_hover.AplicarFormaRedonda(btn_guardar);
+            btn_icon_hover.AplicarFormaRedonda(btn_eliminar);
             IdProyecto = idProyecto;
         }
 
@@ -122,5 +125,46 @@ namespace PRESENTACION.Proyecto
             }
 
         }
+
+        #region btn_hover
+        private void btn_eliminar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_eliminar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_guardar_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_guardar_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+
+        private void btn_volver_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+
+        private void btn_volver_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        private void btnEquipoProyecto_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_hover.CambiarColorHover(sender, e);
+        }
+        private void btnEquipoProyecto_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_hover.RestaurarColorOriginal(sender, e);
+        }
+        #endregion
+
     }
 }

@@ -53,6 +53,8 @@
             btn_limpiar.TabIndex = 82;
             btn_limpiar.TabStop = false;
             btn_limpiar.Click += btn_limpiar_Click;
+            btn_limpiar.MouseEnter += btn_limpiar_MouseEnter;
+            btn_limpiar.MouseLeave += btn_limpiar_MouseLeave;
             // 
             // btn_guardar
             // 
@@ -65,6 +67,8 @@
             btn_guardar.TabIndex = 81;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // btn_volver
             // 
@@ -77,6 +81,8 @@
             btn_volver.TabIndex = 80;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // label1
             // 

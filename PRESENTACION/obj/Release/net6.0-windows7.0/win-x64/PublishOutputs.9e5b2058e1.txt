@@ -1,0 +1,11 @@
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\ENJOYMANAGEMENT.pdb
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\D3DCompiler_47_cor3.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\PenImc_cor3.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\PresentationNative_cor3.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\vcruntime140_cor3.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\wpfgfx_cor3.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\sni.dll
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\DOMINIO.pdb
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\Comun.pdb
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\DATOS.pdb
+C:\Users\darkj\OneDrive\Escritorio\ENJOYMANAGEMENT\ENJOYMANAGEMENT.exe

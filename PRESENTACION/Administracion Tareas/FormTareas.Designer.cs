@@ -29,259 +29,263 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTareas));
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_refrescar = new System.Windows.Forms.PictureBox();
-            this.cbmFiltroEstado = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.DateFechFin = new System.Windows.Forms.DateTimePicker();
-            this.dateFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.TxtResponsable = new System.Windows.Forms.TextBox();
-            this.btn_realizar = new System.Windows.Forms.PictureBox();
-            this.btn_buscar = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtbox_buscar = new System.Windows.Forms.TextBox();
-            this.btn_editar = new System.Windows.Forms.PictureBox();
-            this.btn_eliminar = new System.Windows.Forms.PictureBox();
-            this.btn_agregar = new System.Windows.Forms.PictureBox();
-            this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_refrescar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_realizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_editar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_eliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_agregar)).BeginInit();
-            this.SuspendLayout();
+            panelContenedor = new Panel();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            btn_refrescar = new PictureBox();
+            cbmFiltroEstado = new ComboBox();
+            label3 = new Label();
+            label2 = new Label();
+            DateFechFin = new DateTimePicker();
+            dateFechaInicio = new DateTimePicker();
+            TxtResponsable = new TextBox();
+            btn_realizar = new PictureBox();
+            btn_buscar = new PictureBox();
+            label1 = new Label();
+            txtbox_buscar = new TextBox();
+            btn_editar = new PictureBox();
+            btn_eliminar = new PictureBox();
+            btn_agregar = new PictureBox();
+            panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_refrescar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_realizar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).BeginInit();
+            SuspendLayout();
             // 
             // panelContenedor
             // 
-            this.panelContenedor.Controls.Add(this.dataGridView1);
-            this.panelContenedor.Controls.Add(this.panel1);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(0, 0);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(884, 461);
-            this.panelContenedor.TabIndex = 0;
+            panelContenedor.Controls.Add(dataGridView1);
+            panelContenedor.Controls.Add(panel1);
+            panelContenedor.Dock = DockStyle.Fill;
+            panelContenedor.Location = new Point(0, 0);
+            panelContenedor.Name = "panelContenedor";
+            panelContenedor.Size = new Size(884, 461);
+            panelContenedor.TabIndex = 0;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 146);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 312);
-            this.dataGridView1.TabIndex = 62;
-            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dataGridView1.Location = new Point(12, 146);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(860, 312);
+            dataGridView1.TabIndex = 62;
+            dataGridView1.CellFormatting += dataGridView1_CellFormatting;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel1.Controls.Add(this.btn_refrescar);
-            this.panel1.Controls.Add(this.cbmFiltroEstado);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.DateFechFin);
-            this.panel1.Controls.Add(this.dateFechaInicio);
-            this.panel1.Controls.Add(this.TxtResponsable);
-            this.panel1.Controls.Add(this.btn_realizar);
-            this.panel1.Controls.Add(this.btn_buscar);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtbox_buscar);
-            this.panel1.Controls.Add(this.btn_editar);
-            this.panel1.Controls.Add(this.btn_eliminar);
-            this.panel1.Controls.Add(this.btn_agregar);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 140);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.Gainsboro;
+            panel1.Controls.Add(btn_refrescar);
+            panel1.Controls.Add(cbmFiltroEstado);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(DateFechFin);
+            panel1.Controls.Add(dateFechaInicio);
+            panel1.Controls.Add(TxtResponsable);
+            panel1.Controls.Add(btn_realizar);
+            panel1.Controls.Add(btn_buscar);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(txtbox_buscar);
+            panel1.Controls.Add(btn_editar);
+            panel1.Controls.Add(btn_eliminar);
+            panel1.Controls.Add(btn_agregar);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(884, 140);
+            panel1.TabIndex = 0;
             // 
             // btn_refrescar
             // 
-            this.btn_refrescar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_refrescar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_refrescar.Image = ((System.Drawing.Image)(resources.GetObject("btn_refrescar.Image")));
-            this.btn_refrescar.Location = new System.Drawing.Point(485, 27);
-            this.btn_refrescar.Name = "btn_refrescar";
-            this.btn_refrescar.Size = new System.Drawing.Size(30, 30);
-            this.btn_refrescar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_refrescar.TabIndex = 23;
-            this.btn_refrescar.TabStop = false;
-            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
+            btn_refrescar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_refrescar.Cursor = Cursors.Hand;
+            btn_refrescar.Image = (Image)resources.GetObject("btn_refrescar.Image");
+            btn_refrescar.Location = new Point(485, 27);
+            btn_refrescar.Name = "btn_refrescar";
+            btn_refrescar.Size = new Size(30, 30);
+            btn_refrescar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_refrescar.TabIndex = 23;
+            btn_refrescar.TabStop = false;
+            btn_refrescar.Click += btn_refrescar_Click;
             // 
             // cbmFiltroEstado
             // 
-            this.cbmFiltroEstado.BackColor = System.Drawing.Color.White;
-            this.cbmFiltroEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmFiltroEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbmFiltroEstado.FormattingEnabled = true;
-            this.cbmFiltroEstado.Location = new System.Drawing.Point(243, 59);
-            this.cbmFiltroEstado.Name = "cbmFiltroEstado";
-            this.cbmFiltroEstado.Size = new System.Drawing.Size(200, 23);
-            this.cbmFiltroEstado.TabIndex = 14;
+            cbmFiltroEstado.BackColor = Color.White;
+            cbmFiltroEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbmFiltroEstado.FlatStyle = FlatStyle.Flat;
+            cbmFiltroEstado.FormattingEnabled = true;
+            cbmFiltroEstado.Location = new Point(243, 59);
+            cbmFiltroEstado.Name = "cbmFiltroEstado";
+            cbmFiltroEstado.Size = new Size(200, 23);
+            cbmFiltroEstado.TabIndex = 14;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(317, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Fecha final";
+            label3.AutoSize = true;
+            label3.Location = new Point(317, 92);
+            label3.Name = "label3";
+            label3.Size = new Size(64, 15);
+            label3.TabIndex = 20;
+            label3.Text = "Fecha final";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 15);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Fecha de inicio";
+            label2.AutoSize = true;
+            label2.Location = new Point(89, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 15);
+            label2.TabIndex = 19;
+            label2.Text = "Fecha de inicio";
             // 
             // DateFechFin
             // 
-            this.DateFechFin.Checked = false;
-            this.DateFechFin.Location = new System.Drawing.Point(243, 110);
-            this.DateFechFin.Name = "DateFechFin";
-            this.DateFechFin.Size = new System.Drawing.Size(200, 23);
-            this.DateFechFin.TabIndex = 16;
+            DateFechFin.Checked = false;
+            DateFechFin.Location = new Point(243, 110);
+            DateFechFin.Name = "DateFechFin";
+            DateFechFin.Size = new Size(200, 23);
+            DateFechFin.TabIndex = 16;
             // 
             // dateFechaInicio
             // 
-            this.dateFechaInicio.Checked = false;
-            this.dateFechaInicio.Location = new System.Drawing.Point(27, 110);
-            this.dateFechaInicio.Name = "dateFechaInicio";
-            this.dateFechaInicio.Size = new System.Drawing.Size(200, 23);
-            this.dateFechaInicio.TabIndex = 15;
+            dateFechaInicio.Checked = false;
+            dateFechaInicio.Location = new Point(27, 110);
+            dateFechaInicio.Name = "dateFechaInicio";
+            dateFechaInicio.Size = new Size(200, 23);
+            dateFechaInicio.TabIndex = 15;
             // 
             // TxtResponsable
             // 
-            this.TxtResponsable.Location = new System.Drawing.Point(27, 59);
-            this.TxtResponsable.Name = "TxtResponsable";
-            this.TxtResponsable.PlaceholderText = "Responsable";
-            this.TxtResponsable.Size = new System.Drawing.Size(200, 23);
-            this.TxtResponsable.TabIndex = 13;
+            TxtResponsable.Location = new Point(27, 59);
+            TxtResponsable.Name = "TxtResponsable";
+            TxtResponsable.PlaceholderText = "Responsable";
+            TxtResponsable.Size = new Size(200, 23);
+            TxtResponsable.TabIndex = 13;
             // 
             // btn_realizar
             // 
-            this.btn_realizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_realizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_realizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_realizar.Image")));
-            this.btn_realizar.Location = new System.Drawing.Point(674, 12);
-            this.btn_realizar.Name = "btn_realizar";
-            this.btn_realizar.Size = new System.Drawing.Size(45, 45);
-            this.btn_realizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_realizar.TabIndex = 15;
-            this.btn_realizar.TabStop = false;
-            this.btn_realizar.Click += new System.EventHandler(this.btn_realizar_Click);
+            btn_realizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_realizar.Cursor = Cursors.Hand;
+            btn_realizar.Image = (Image)resources.GetObject("btn_realizar.Image");
+            btn_realizar.Location = new Point(674, 12);
+            btn_realizar.Name = "btn_realizar";
+            btn_realizar.Size = new Size(45, 45);
+            btn_realizar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_realizar.TabIndex = 15;
+            btn_realizar.TabStop = false;
+            btn_realizar.Click += btn_realizar_Click;
+            btn_realizar.MouseEnter += btn_realizar_MouseEnter;
+            btn_realizar.MouseLeave += btn_realizar_MouseLeave;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
-            this.btn_buscar.Location = new System.Drawing.Point(449, 27);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(30, 30);
-            this.btn_buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_buscar.TabIndex = 14;
-            this.btn_buscar.TabStop = false;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            btn_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_buscar.Cursor = Cursors.Hand;
+            btn_buscar.Image = (Image)resources.GetObject("btn_buscar.Image");
+            btn_buscar.Location = new Point(449, 27);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new Size(30, 30);
+            btn_buscar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_buscar.TabIndex = 14;
+            btn_buscar.TabStop = false;
+            btn_buscar.Click += btn_buscar_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(27, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 20);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Busqueda de tareas";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(27, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 20);
+            label1.TabIndex = 13;
+            label1.Text = "Busqueda de tareas";
             // 
             // txtbox_buscar
             // 
-            this.txtbox_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbox_buscar.Location = new System.Drawing.Point(27, 30);
-            this.txtbox_buscar.Name = "txtbox_buscar";
-            this.txtbox_buscar.PlaceholderText = "Buscar tarea por proyecto";
-            this.txtbox_buscar.Size = new System.Drawing.Size(416, 23);
-            this.txtbox_buscar.TabIndex = 12;
+            txtbox_buscar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtbox_buscar.Location = new Point(27, 30);
+            txtbox_buscar.Name = "txtbox_buscar";
+            txtbox_buscar.PlaceholderText = "Buscar tarea por proyecto";
+            txtbox_buscar.Size = new Size(416, 23);
+            txtbox_buscar.TabIndex = 12;
             // 
             // btn_editar
             // 
-            this.btn_editar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_editar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
-            this.btn_editar.Location = new System.Drawing.Point(776, 12);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(45, 45);
-            this.btn_editar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_editar.TabIndex = 11;
-            this.btn_editar.TabStop = false;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            btn_editar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_editar.Cursor = Cursors.Hand;
+            btn_editar.Image = (Image)resources.GetObject("btn_editar.Image");
+            btn_editar.Location = new Point(776, 12);
+            btn_editar.Name = "btn_editar";
+            btn_editar.Size = new Size(45, 45);
+            btn_editar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_editar.TabIndex = 11;
+            btn_editar.TabStop = false;
+            btn_editar.Click += btn_editar_Click;
+            btn_editar.MouseEnter += btn_editar_MouseEnter;
+            btn_editar.MouseLeave += btn_editar_MouseLeave;
             // 
             // btn_eliminar
             // 
-            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
-            this.btn_eliminar.Location = new System.Drawing.Point(827, 12);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(45, 45);
-            this.btn_eliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_eliminar.TabIndex = 10;
-            this.btn_eliminar.TabStop = false;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(827, 12);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 10;
+            btn_eliminar.TabStop = false;
+            btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // btn_agregar
             // 
-            this.btn_agregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregar.Image")));
-            this.btn_agregar.Location = new System.Drawing.Point(725, 12);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(45, 45);
-            this.btn_agregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_agregar.TabIndex = 9;
-            this.btn_agregar.TabStop = false;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            btn_agregar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_agregar.Cursor = Cursors.Hand;
+            btn_agregar.Image = (Image)resources.GetObject("btn_agregar.Image");
+            btn_agregar.Location = new Point(725, 12);
+            btn_agregar.Name = "btn_agregar";
+            btn_agregar.Size = new Size(45, 45);
+            btn_agregar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_agregar.TabIndex = 9;
+            btn_agregar.TabStop = false;
+            btn_agregar.Click += btn_agregar_Click;
+            btn_agregar.MouseEnter += btn_agregar_MouseEnter;
+            btn_agregar.MouseLeave += btn_agregar_MouseLeave;
             // 
             // FormTareas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.panelContenedor);
-            this.Name = "FormTareas";
-            this.Text = "FormTareas";
-            this.Load += new System.EventHandler(this.FormTareas_Load);
-            this.panelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_refrescar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_realizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_editar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_eliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_agregar)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(15, 15, 15);
+            ClientSize = new Size(884, 461);
+            Controls.Add(panelContenedor);
+            Name = "FormTareas";
+            Text = "FormTareas";
+            Load += FormTareas_Load;
+            panelContenedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_refrescar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_realizar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_buscar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_editar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_agregar).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

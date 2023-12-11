@@ -55,6 +55,8 @@
             btn_guardar.TabIndex = 80;
             btn_guardar.TabStop = false;
             btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
             // btn_volver
             // 
@@ -68,6 +70,8 @@
             btn_volver.TabIndex = 79;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // materialCheckedListBox1
             // 
@@ -146,6 +150,8 @@
             btn_eliminar.TabIndex = 83;
             btn_eliminar.TabStop = false;
             btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // FrmEquipoProgramadores
             // 

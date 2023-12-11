@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DOMINIO
-build_property.ProjectDir = C:\Users\darkj\OneDrive\Documentos\ENJOYMANAGER\DOMINIO\
+build_property.ProjectDir = C:\Users\darkj\OneDrive\Documentos\GitHub\ENJOYMANAGER\DOMINIO\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
