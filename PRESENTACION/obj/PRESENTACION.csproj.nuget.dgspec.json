@@ -1,20 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj": {}
+    "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj": {}
   },
   "projects": {
-    "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj": {
+    "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj",
+        "projectUniqueName": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj",
         "projectName": "Comun",
-        "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj",
-        "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\obj\\",
+        "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj",
+        "packagesPath": "C:\\Users\\pinal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +27,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\pinal\\source\\repos\\GymLite\\GymLite": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,8 +51,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -55,21 +60,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.320\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj": {
+    "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\DATOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
+        "projectUniqueName": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
         "projectName": "DATOS",
-        "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
-        "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\obj\\",
+        "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
+        "packagesPath": "C:\\Users\\pinal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,14 +87,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\pinal\\source\\repos\\GymLite\\GymLite": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj": {
-                "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj"
+              "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj": {
+                "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj"
               }
             }
           }
@@ -110,8 +121,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -120,21 +130,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.320\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
+    "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj",
+        "projectUniqueName": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj",
         "projectName": "DOMINIO",
-        "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj",
-        "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\obj\\",
+        "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj",
+        "packagesPath": "C:\\Users\\pinal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -142,14 +157,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\pinal\\source\\repos\\GymLite\\GymLite": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj": {
-                "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj"
+              "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\DATOS.csproj": {
+                "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DATOS\\DATOS.csproj"
               }
             }
           }
@@ -169,8 +185,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -179,21 +194,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.320\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj": {
+    "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+        "projectUniqueName": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
         "projectName": "ENJOYMANAGEMENT",
-        "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
-        "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\obj\\",
+        "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+        "packagesPath": "C:\\Users\\pinal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\PRESENTACION\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pinal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -201,14 +221,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\pinal\\source\\repos\\GymLite\\GymLite": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows7.0",
             "projectReferences": {
-              "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
-                "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
+              "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
+                "projectPath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
               }
             }
           }
@@ -238,8 +259,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -251,7 +271,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.320\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,6 @@
 ﻿using DOMINIO.Models;
 using System.Runtime.InteropServices;
-
+using System.Text.RegularExpressions;
 namespace PRESENTACION.Administracion_Usuarios
 {
 
@@ -85,6 +85,10 @@ namespace PRESENTACION.Administracion_Usuarios
             {
                 MessageBox.Show("Debe indicar un correo electrónico.");
             }
+            else if (!EsCorreoElectronicoValido(this.txtEmail.Text))
+            {
+                MessageBox.Show("El formato del correo electrónico no es válido.");
+            }
             else if (cmbRol.SelectedItem == null)
             {
                 MessageBox.Show("Debe seleccionar un rol de usuario.");
@@ -153,6 +157,14 @@ namespace PRESENTACION.Administracion_Usuarios
         }
         #endregion
 
+        private bool EsCorreoElectronicoValido(string email)
+        {
+            // Patrón de expresión regular para validar el formato del correo electrónico
+            string patron = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+            // Verifica si el correo electrónico coincide con el patrón
+            return Regex.IsMatch(email, patron);
+        }
         private void LimpiarCampos()
         {
             // Limpia los campos del formulario para futuras entradas

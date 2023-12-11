@@ -10,6 +10,9 @@ namespace DATOS.Conexion
 
         public bool Login(string user, string pass)
         {
+            try
+            {
+      
             using (var connection = GETConexionSQL())
             {
                 connection.Open();
@@ -70,6 +73,12 @@ namespace DATOS.Conexion
                         return false;
                     }
                 }
+            }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -356,7 +365,12 @@ namespace DATOS.Conexion
             {
                 // El miembro ya existe en el proyecto, puedes manejarlo según tus necesidades
                 // En este ejemplo, simplemente lanzamos una excepción
-                throw new InvalidOperationException("Este suario esta asignado aun proyecto.");
+                throw new InvalidOperationException("Este Usuario esta asignado aun proyecto.");
+            }
+
+            if (UsuarioAsignadoAProyectosNoTerminadosGerente(IdUsuario))
+            {
+                throw new InvalidOperationException("Este Gerente tiene un proyecto sin completar no puede eliminarlo.");
             }
             using (var connection = GETConexionSQL())
             {
@@ -399,7 +413,30 @@ namespace DATOS.Conexion
                 }
             }
         }
+        public bool UsuarioAsignadoAProyectosNoTerminadosGerente(int idUsuario)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
 
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+
+                    // Modifica la consulta para incluir la condición de estado del proyecto
+                    command.CommandText = "SELECT COUNT(*) FROM Proyectos P " +
+                                          " WHERE P.IdUsuario = @IdUsuario AND P.Borrado = 0 AND P.EstadoProyectoid <> 3";
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@IdUsuario", idUsuario));
+
+                    int count = (int)command.ExecuteScalar();
+
+                    // Si count es mayor a cero, significa que el usuario está asignado a algún proyecto no terminado
+                    return count > 0;
+                }
+            }
+        }
 
 
         public DataTable BuscarUsuariosPorNombre(string nombre)
