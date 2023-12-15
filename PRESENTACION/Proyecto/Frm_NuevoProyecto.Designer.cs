@@ -325,7 +325,7 @@
             Controls.Add(txtNombreProyecto);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevoProyecto";
-            Text = "Frm_NuevoProyecto";
+            Text = "ENJOYMANAGEMENT-Proyectos";
             Load += Frm_NuevoProyecto_Load;
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();

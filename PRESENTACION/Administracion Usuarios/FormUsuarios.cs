@@ -19,6 +19,8 @@ namespace PRESENTACION
         public string UsuarioId;
         private void FormUsuarios_Load(object sender, EventArgs e)
         {
+            txtbox_buscar.MaxLength = 100;
+
             CargarUsuarios();
         }
         public void CargarUsuarios()

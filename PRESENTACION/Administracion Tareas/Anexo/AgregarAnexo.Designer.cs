@@ -28,112 +28,111 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblAgregarAnexo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtRuta = new System.Windows.Forms.TextBox();
-            this.TxtNombreArchivo = new System.Windows.Forms.TextBox();
-            this.BntAnexoGuardar = new System.Windows.Forms.Button();
-            this.BtnCancelar = new System.Windows.Forms.Button();
-            this.BtnExaminar = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.SuspendLayout();
+            lblAgregarAnexo = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            txtRuta = new TextBox();
+            TxtNombreArchivo = new TextBox();
+            BntAnexoGuardar = new Button();
+            BtnCancelar = new Button();
+            BtnExaminar = new Button();
+            openFileDialog1 = new OpenFileDialog();
+            SuspendLayout();
             // 
             // lblAgregarAnexo
             // 
-            this.lblAgregarAnexo.AutoSize = true;
-            this.lblAgregarAnexo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAgregarAnexo.Location = new System.Drawing.Point(88, 9);
-            this.lblAgregarAnexo.Name = "lblAgregarAnexo";
-            this.lblAgregarAnexo.Size = new System.Drawing.Size(266, 17);
-            this.lblAgregarAnexo.TabIndex = 0;
-            this.lblAgregarAnexo.Text = "Busque y seleccione el documento a subir";
+            lblAgregarAnexo.AutoSize = true;
+            lblAgregarAnexo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAgregarAnexo.Location = new Point(88, 9);
+            lblAgregarAnexo.Name = "lblAgregarAnexo";
+            lblAgregarAnexo.Size = new Size(266, 17);
+            lblAgregarAnexo.TabIndex = 0;
+            lblAgregarAnexo.Text = "Busque y seleccione el documento a subir";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Titulo del archivo:";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 90);
+            label1.Name = "label1";
+            label1.Size = new Size(101, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Titulo del archivo:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Ruta del archivo:";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 54);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Ruta del archivo:";
             // 
             // txtRuta
             // 
-            this.txtRuta.Location = new System.Drawing.Point(110, 51);
-            this.txtRuta.Name = "txtRuta";
-            this.txtRuta.ReadOnly = true;
-            this.txtRuta.Size = new System.Drawing.Size(207, 23);
-            this.txtRuta.TabIndex = 3;
+            txtRuta.Location = new Point(110, 51);
+            txtRuta.Name = "txtRuta";
+            txtRuta.ReadOnly = true;
+            txtRuta.Size = new Size(207, 23);
+            txtRuta.TabIndex = 3;
             // 
             // TxtNombreArchivo
             // 
-            this.TxtNombreArchivo.Location = new System.Drawing.Point(110, 87);
-            this.TxtNombreArchivo.Name = "TxtNombreArchivo";
-            this.TxtNombreArchivo.Size = new System.Drawing.Size(207, 23);
-            this.TxtNombreArchivo.TabIndex = 4;
+            TxtNombreArchivo.Location = new Point(110, 87);
+            TxtNombreArchivo.Name = "TxtNombreArchivo";
+            TxtNombreArchivo.Size = new Size(207, 23);
+            TxtNombreArchivo.TabIndex = 4;
             // 
             // BntAnexoGuardar
             // 
-            this.BntAnexoGuardar.Location = new System.Drawing.Point(110, 128);
-            this.BntAnexoGuardar.Name = "BntAnexoGuardar";
-            this.BntAnexoGuardar.Size = new System.Drawing.Size(75, 23);
-            this.BntAnexoGuardar.TabIndex = 5;
-            this.BntAnexoGuardar.Text = "Guardar";
-            this.BntAnexoGuardar.UseVisualStyleBackColor = true;
-            this.BntAnexoGuardar.Click += new System.EventHandler(this.BntAnexoGuardar_Click);
+            BntAnexoGuardar.Location = new Point(110, 128);
+            BntAnexoGuardar.Name = "BntAnexoGuardar";
+            BntAnexoGuardar.Size = new Size(75, 23);
+            BntAnexoGuardar.TabIndex = 5;
+            BntAnexoGuardar.Text = "Guardar";
+            BntAnexoGuardar.UseVisualStyleBackColor = true;
+            BntAnexoGuardar.Click += BntAnexoGuardar_Click;
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(205, 128);
-            this.BtnCancelar.Name = "BtnCancelar";
-            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.BtnCancelar.TabIndex = 6;
-            this.BtnCancelar.Text = "Cancelar";
-            this.BtnCancelar.UseVisualStyleBackColor = true;
-            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            BtnCancelar.Location = new Point(205, 128);
+            BtnCancelar.Name = "BtnCancelar";
+            BtnCancelar.Size = new Size(75, 23);
+            BtnCancelar.TabIndex = 6;
+            BtnCancelar.Text = "Cancelar";
+            BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // BtnExaminar
             // 
-            this.BtnExaminar.Location = new System.Drawing.Point(333, 51);
-            this.BtnExaminar.Name = "BtnExaminar";
-            this.BtnExaminar.Size = new System.Drawing.Size(75, 23);
-            this.BtnExaminar.TabIndex = 7;
-            this.BtnExaminar.Text = "Examinar";
-            this.BtnExaminar.UseVisualStyleBackColor = true;
-            this.BtnExaminar.Click += new System.EventHandler(this.BtnExaminar_Click);
+            BtnExaminar.Location = new Point(333, 51);
+            BtnExaminar.Name = "BtnExaminar";
+            BtnExaminar.Size = new Size(75, 23);
+            BtnExaminar.TabIndex = 7;
+            BtnExaminar.Text = "Examinar";
+            BtnExaminar.UseVisualStyleBackColor = true;
+            BtnExaminar.Click += BtnExaminar_Click;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // AgregarAnexo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 177);
-            this.Controls.Add(this.BtnExaminar);
-            this.Controls.Add(this.BtnCancelar);
-            this.Controls.Add(this.BntAnexoGuardar);
-            this.Controls.Add(this.TxtNombreArchivo);
-            this.Controls.Add(this.txtRuta);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblAgregarAnexo);
-            this.Name = "AgregarAnexo";
-            this.Text = "AgregarAnexo";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(440, 177);
+            Controls.Add(BtnExaminar);
+            Controls.Add(BtnCancelar);
+            Controls.Add(BntAnexoGuardar);
+            Controls.Add(TxtNombreArchivo);
+            Controls.Add(txtRuta);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(lblAgregarAnexo);
+            Name = "AgregarAnexo";
+            Text = "ENJOYMANAGEMENT-Tareas-Anexo";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

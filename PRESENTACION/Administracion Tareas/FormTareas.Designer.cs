@@ -273,7 +273,7 @@
             ClientSize = new Size(884, 461);
             Controls.Add(panelContenedor);
             Name = "FormTareas";
-            Text = "FormTareas";
+            Text = "ENJOYMANAGEMENT-Tareas";
             Load += FormTareas_Load;
             panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

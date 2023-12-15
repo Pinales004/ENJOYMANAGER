@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "aj2TlFqM/Sc2pPSQER0B3KlaIiNZRU9mzrOcnNjOrcH4rJDLr88pWmSf6C1JFVDjyceNgdadzhrxVsAOteGRQg==",
+  "dgSpecHash": "cZg629zBicUNZQyxeZle0UVQgbwGYInd8icsMKuH85BPkj9qKMr7ali+qFZevpYv9V+4Ae/zi4n1gzqj76NDHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pinal\\OneDrive\\Escritorio\\Nueva carpeta\\ENJOYMANAGERV1\\ENJOYMANAGER\\Comun\\Comun.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\darkj\\OneDrive\\Documentos\\ENJOYMANAGER\\Comun\\Comun.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.25\\microsoft.netcore.app.runtime.win-x64.6.0.25.nupkg.sha512",
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.25\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.25.nupkg.sha512",
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.25\\microsoft.aspnetcore.app.runtime.win-x64.6.0.25.nupkg.sha512",
+    "C:\\Users\\darkj\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\6.0.25\\microsoft.netcore.app.crossgen2.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

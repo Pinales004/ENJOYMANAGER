@@ -265,7 +265,7 @@
             Controls.Add(panelContenedor);
             ForeColor = SystemColors.ControlText;
             Name = "FormProyectos";
-            Text = "FormProyectos";
+            Text = "ENJOYMANAGEMENT-Proyectos";
             Load += FormProyectos_Load;
             panelContenedor.ResumeLayout(false);
             groupBox1.ResumeLayout(false);

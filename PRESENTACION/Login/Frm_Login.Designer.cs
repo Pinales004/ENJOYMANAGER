@@ -186,7 +186,7 @@
             Margin = new Padding(5);
             Name = "Frm_Login";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "ENJOYMANAGEMENT-Login";
             MouseMove += Frm_Login_MouseMove;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

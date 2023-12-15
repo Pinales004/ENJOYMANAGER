@@ -129,6 +129,7 @@
             txtApellido.TextAlign = HorizontalAlignment.Left;
             txtApellido.TrailingIcon = null;
             txtApellido.UseSystemPasswordChar = false;
+            txtApellido.KeyPress += txtApellido_KeyPress;
             // 
             // materialLabel7
             // 
@@ -203,6 +204,7 @@
             txtNombre.TextAlign = HorizontalAlignment.Left;
             txtNombre.TrailingIcon = null;
             txtNombre.UseSystemPasswordChar = false;
+            txtNombre.KeyPress += txtNombre_KeyPress;
             // 
             // materialLabel4
             // 
@@ -488,7 +490,7 @@
             Controls.Add(txtNombre);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevoUsuario";
-            Text = "Frm_NuevoUsuario";
+            Text = "ENJOYMANAGEMENT-Usuarios";
             Load += Frm_NuevoUsuario_Load;
             MouseMove += Frm_NuevoUsuario_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();

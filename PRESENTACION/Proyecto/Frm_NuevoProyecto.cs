@@ -21,6 +21,9 @@ namespace PRESENTACION.Proyecto
         }
         private void Frm_NuevoProyecto_Load(object sender, EventArgs e)
         {
+            txtNombreProyecto.MaxLength = 100;
+            txtDescripcionProyecto.MaxLength = 255;
+
             if (OperacionTipo == "Insertar")
             {
                 CargarEstadoProyecto();

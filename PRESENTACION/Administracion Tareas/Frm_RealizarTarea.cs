@@ -37,6 +37,10 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_RealizarTarea_Load(object sender, EventArgs e)
         {
+            txtNombreTarea.MaxLength = 100;
+            txtDescripcionTarea.MaxLength = 100;
+            txtComentario.MaxLength = 255;
+
             CargarAnexos();
             CargarComentarios();
             txtNombreTarea.Enabled = false;

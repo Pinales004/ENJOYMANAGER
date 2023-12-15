@@ -307,7 +307,7 @@
             MinimumSize = new Size(1120, 590);
             Name = "FormPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormPrincipal";
+            Text = "ENJOYMANAGEMENT";
             Load += FormPrincipal_Load;
             panelContenedor.ResumeLayout(false);
             panelFormularios.ResumeLayout(false);

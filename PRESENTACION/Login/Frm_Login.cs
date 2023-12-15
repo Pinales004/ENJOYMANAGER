@@ -97,12 +97,10 @@ namespace PRESENTACION
         //Validacion datos vacios
         public void ValidacionDatos()
         {
-
             if (txtUsuario.Text != "USUARIO")
             {
                 if (TxtContrasena.Text != "CONTRASEÑA")
                 {
-
                     Usuario user = new Usuario();
                     // Calcular el hash SHA-256 de la contraseña antes de enviarla a la base de datos
                     string contraseñaHash = HashHelper.CalculateSHA256Hash(TxtContrasena.Text);
@@ -110,40 +108,29 @@ namespace PRESENTACION
                     var Estado = user.AccountStatus(txtUsuario.Text);
                     // UserLoginCache.EstadoUsuario
 
-
-                    if (UserLoginCache.EstadoUsuario == 1)
+                    if(UserLoginCache.Borrado == false)
                     {
-                        this.TxtContrasena.Clear();
-                        this.txtUsuario.Focus();
-                        FormCambiarContraseña form = new FormCambiarContraseña();
-                        AbrirFormulario<FormCambiarContraseña>(form);
-                        return;
-                    }
-                    else if (UserLoginCache.ResetPasword == true)
-                    {
-                        this.TxtContrasena.Clear();
-                        this.txtUsuario.Focus();
-                        FormCambiarContraseña form = new FormCambiarContraseña();
-                        AbrirFormulario<FormCambiarContraseña>(form);
-                        return;
-                    }
-                    else if (Estado == 2)
-                    {
-
-                        if (ValidLogin)
+                        if (UserLoginCache.EstadoUsuario == 1)
                         {
-
-                            if (UserLoginCache.EstadoUsuario == 2)
+                            this.TxtContrasena.Clear();
+                            this.txtUsuario.Focus();
+                            FormCambiarContraseña form = new FormCambiarContraseña();
+                            AbrirFormulario<FormCambiarContraseña>(form);
+                            return;
+                        }
+                        else if (UserLoginCache.ResetPasword == true)
+                        {
+                            this.TxtContrasena.Clear();
+                            this.txtUsuario.Focus();
+                            FormCambiarContraseña form = new FormCambiarContraseña();
+                            AbrirFormulario<FormCambiarContraseña>(form);
+                            return;
+                        }
+                        else if (Estado == 2)
+                        {
+                            if (ValidLogin)
                             {
-
-                                if (UserLoginCache.Borrado)
-                                {
-                                    MsgError("Tu cuenta ha sido marcada como borrada. Por favor, contacta al administrador.");
-                                    this.TxtContrasena.Clear();
-                                    this.txtUsuario.Focus();
-                                    return;
-                                }
-                                else
+                                if (UserLoginCache.EstadoUsuario == 2)
                                 {
                                     FormPrincipal menu = new FormPrincipal();
                                     menu.FormClosed += Logout;
@@ -151,6 +138,24 @@ namespace PRESENTACION
                                     this.Hide();
                                 }
                             }
+                            else
+                            {
+                                MsgError("Usuario o contraseña incorrectos");
+                                this.TxtContrasena.Clear();
+                                this.txtUsuario.Focus();
+                            }
+                        }
+                        else if (Estado == 3)
+                        {
+                            MsgError(" Su usuario podria estar inactivo en este momento    \n  contacta el administrador del sistema.");
+                            this.TxtContrasena.Clear();
+                            this.txtUsuario.Focus();
+                        }
+                        else if (Estado == 4)
+                        {
+                            MsgError(" Este usuario esta Bloqueado    \n  contacta el administrador del sistema.");
+                            this.TxtContrasena.Clear();
+                            this.txtUsuario.Focus();
                         }
                         else
                         {
@@ -158,35 +163,13 @@ namespace PRESENTACION
                             this.TxtContrasena.Clear();
                             this.txtUsuario.Focus();
                         }
-
                     }
-                    else if (Estado == 3)
+                    if(UserLoginCache.Borrado == true)
                     {
-
-                        MsgError(" Su usuario podria estar inactivo en este momento    \n  contacta el administrador del sistema.");
-                        this.TxtContrasena.Clear();
-                        this.txtUsuario.Focus();
-
-
-                    }
-                    else if (Estado == 4)
-                    {
-
-                        MsgError(" Este usuario esta Bloqueado    \n  contacta el administrador del sistema.");
-                        this.TxtContrasena.Clear();
-                        this.txtUsuario.Focus();
-
-
-                    }
-                    else
-                    {
-                        MsgError("Usuario o contraseña incorrectos");
+                        MsgError("Este usuario fue borrado");
                         this.TxtContrasena.Clear();
                         this.txtUsuario.Focus();
                     }
-
-
-
                 }
                 else
                 {

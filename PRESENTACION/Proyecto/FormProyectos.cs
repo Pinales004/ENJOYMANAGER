@@ -16,6 +16,8 @@ namespace PRESENTACION
         }
         public void FormProyectos_Load(object sender, EventArgs e)
         {
+            txtbox_buscar.MaxLength = 100;
+
             CargarProyectos();
         }
         public void CargarProyectos()

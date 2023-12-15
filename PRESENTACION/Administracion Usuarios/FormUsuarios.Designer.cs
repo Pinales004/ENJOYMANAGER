@@ -174,7 +174,7 @@
             ClientSize = new Size(884, 461);
             Controls.Add(panelContenedor);
             Name = "Frm_Usuarios";
-            Text = "Administracion Usuarios";
+            Text = "ENJOYMANAGEMENT-Usuarios";
             Load += FormUsuarios_Load;
             panelContenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

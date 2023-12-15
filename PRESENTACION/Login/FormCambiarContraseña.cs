@@ -71,6 +71,9 @@ namespace PRESENTACION.Login
 
         private void FormCambiarContraseña_Load(object sender, EventArgs e)
         {
+            txtContraseña.MaxLength = 255;
+            txtContraseñaComprobar.MaxLength = 255;
+
             txtContraseña.UseSystemPasswordChar = true;
             txtContraseñaComprobar.UseSystemPasswordChar = true;
         }

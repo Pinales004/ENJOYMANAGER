@@ -445,7 +445,7 @@
             Controls.Add(txtNombreTarea);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_RealizarTarea";
-            Text = "Frm_NuevaTarea";
+            Text = "ENJOYMANAGEMENT-Tareas";
             Load += Frm_RealizarTarea_Load;
             MouseMove += Frm_RealizarTarea_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();

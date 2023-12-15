@@ -211,7 +211,7 @@
             Controls.Add(btn_volver);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCambiarContraseña";
-            Text = "FormCambiarContraseña";
+            Text = "ENJOYMANAGEMENT-Bienvenido";
             Load += FormCambiarContraseña_Load;
             MouseMove += Frm_NuevoProyecto_MouseMove;
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();

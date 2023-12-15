@@ -229,13 +229,13 @@ namespace DATOS.Conexion
             // Verificar si el UsuarioNombre ya existe y no está borrado
             if (UsuarioExistePorNombre(UsuarioNombre))
             {
-                throw new InvalidOperationException("El UsuarioNombre ya existe.");
+                throw new InvalidOperationException("El \"Nombre de usuario\" ya existe.");
             }
 
             // Verificar si el EmailUsuario ya existe y no está borrado
             if (UsuarioExistePorEmail(EmailUsuario))
             {
-                throw new InvalidOperationException("El EmailUsuario ya existe.");
+                throw new InvalidOperationException("El \"Email\" ya existe.");
             }
 
             using (var connection = GETConexionSQL())

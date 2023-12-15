@@ -165,7 +165,7 @@
             Controls.Add(btn_volver);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmEquipoProgramadores";
-            Text = "FrmEquipoProgramadores";
+            Text = "ENJOYMANAGEMENT-Proyectos-Equipo";
             Load += FrmEquipoProgramadores_Load;
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();

@@ -49,6 +49,8 @@ namespace PRESENTACION
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
+            txtbox_buscar.MaxLength = 100;
+            TxtResponsable.MaxLength = 50;
 
             rolUsuario();
         }

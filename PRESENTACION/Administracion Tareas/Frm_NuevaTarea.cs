@@ -28,6 +28,9 @@ namespace PRESENTACION.Administracion_Tareas
 
         private void Frm_NuevaTarea_Load(object sender, EventArgs e)
         {
+            txtDescripcionTarea.MaxLength = 100;
+            txtNombreTarea.MaxLength = 100;
+
             if (TipoOperacion == "Insertar")
             {
                 ListadoProyectos();
