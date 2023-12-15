@@ -139,6 +139,11 @@ namespace PRESENTACION.Administracion_Tareas
                 {
                     MostrarError("Debe ingresar un nombre para la tarea.");
                 }
+                if (txtNombreTarea.Text.Length > 100)
+                {
+                    MostrarError("Debe ingresar un nombre para la tarea menor a 100 caracteres.");
+                }
+
                 else if (string.IsNullOrWhiteSpace(txtDescripcionTarea.Text))
                 {
                     MostrarError("Debe ingresar una descripción de tarea.");

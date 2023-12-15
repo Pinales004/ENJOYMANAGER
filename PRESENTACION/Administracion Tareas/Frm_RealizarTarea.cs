@@ -273,6 +273,12 @@ namespace PRESENTACION.Administracion_Tareas
             ComentarioTarea comentario = new ComentarioTarea();
             if (!string.IsNullOrWhiteSpace(this.txtComentario.Text))
             {
+
+                if (this.txtComentario.Text.Length > 255)
+                {
+                    MessageBox.Show("El comentario debe ser menor a 255 caracteres");
+                }
+
                 if (modoEdicion && ComentarioId > 0)
                 {
                     ComentariosTarea comentariosActualiza = new ComentariosTarea(Convert.ToInt32(ComentarioId), txtComentario.Text);

@@ -226,6 +226,18 @@ namespace DATOS.Conexion
         }
         public void InsertUsuario(string UsuarioNombre, string nombres, string apellidos, bool sexo, string EmailUsuario, string ContrasenaUsuario, int RolUsuario, int EstadoUsuario)
         {
+            // Verificar si el UsuarioNombre ya existe y no está borrado
+            if (UsuarioExistePorNombre(UsuarioNombre))
+            {
+                throw new InvalidOperationException("El UsuarioNombre ya existe.");
+            }
+
+            // Verificar si el EmailUsuario ya existe y no está borrado
+            if (UsuarioExistePorEmail(EmailUsuario))
+            {
+                throw new InvalidOperationException("El EmailUsuario ya existe.");
+            }
+
             using (var connection = GETConexionSQL())
             {
                 connection.Open();
@@ -233,7 +245,8 @@ namespace DATOS.Conexion
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO Usuario (UsuarioNombre, Nombres, Apellidos, Sexo, EmailUsuario, ContrasenaUsuario, RolUsuario,EstadoUsuario) " +
+
+                    command.CommandText = "INSERT INTO Usuario (UsuarioNombre, Nombres, Apellidos, Sexo, EmailUsuario, ContrasenaUsuario, RolUsuario, EstadoUsuario) " +
                                         "VALUES (@UsuarioNombre, @Nombres, @Apellidos, @Sexo, @EmailUsuario, @ContrasenaUsuario, @RolUsuario, @EstadoUsuario)";
                     command.CommandType = CommandType.Text;
 
@@ -252,6 +265,63 @@ namespace DATOS.Conexion
                 }
             }
         }
+
+        private bool UsuarioExistePorNombre(string UsuarioNombre)
+        {
+            return UsuarioExiste("UsuarioNombre", UsuarioNombre);
+        }
+
+        private bool UsuarioExistePorEmail(string EmailUsuario)
+        {
+            return UsuarioExiste("EmailUsuario", EmailUsuario);
+        }
+
+        private bool UsuarioExiste(string campo, string valor)
+        {
+            using (var connection = GETConexionSQL())
+            {
+                connection.Open();
+
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = $"SELECT COUNT(*) FROM Usuario WHERE {campo} = @Valor AND Borrado = 0";
+                    command.CommandType = CommandType.Text;
+
+                    command.Parameters.Add(new SqlParameter("@Valor", valor));
+
+                    int count = (int)command.ExecuteScalar();
+
+                    // Si count es mayor a cero, significa que el UsuarioNombre o el EmailUsuario ya existen y no están borrados
+                    return count > 0;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public DataTable CargarUsuarios()
         {
             DataTable table = new DataTable();

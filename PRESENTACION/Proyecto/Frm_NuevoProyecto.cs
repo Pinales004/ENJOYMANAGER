@@ -190,9 +190,17 @@ namespace PRESENTACION.Proyecto
                 {
                     MostrarError("Debe ingresar un nombre de proyecto.");
                 }
+                if (txtNombreProyecto.Text.Length > 100)
+                {
+                    MostrarError("Debe ingresar un nombre de proyecto menor a 100 caracteres.");
+                }
                 else if (string.IsNullOrWhiteSpace(txtDescripcionProyecto.Text))
                 {
                     MostrarError("Debe ingresar una descripción de proyecto.");
+                }
+                if (txtDescripcionProyecto.Text.Length > 100)
+                {
+                    MostrarError("Debe ingresar una descripción de proyecto menor a 255 caracteres.");
                 }
                 //else if (dateTimeInicioPro.Value > dateTimeFinPro.Value)
                 //{

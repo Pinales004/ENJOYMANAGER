@@ -55,21 +55,41 @@ namespace PRESENTACION.Administracion_Usuarios
         }
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+
+
             Usuario cargar = new Usuario();
+            try
+            {
 
             if (string.IsNullOrWhiteSpace(this.txtNombreUsuario.Text))
             {
                 MessageBox.Show("Debe indicar un UsuarioNombre.");
             }
-            else if (string.IsNullOrWhiteSpace(this.txtNombre.Text))
+                else if (this.txtNombreUsuario.Text.Length > 100)
+                {
+                    MessageBox.Show("El NombreUsuario debe ser menor a 100 caracteres.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtNombre.Text))
             {
-                MessageBox.Show("Debe indicar los nombres del usuario.");
+                MessageBox.Show("Debe indicar el Nombres del usuario.");
             }
+                else if (this.txtNombre.Text.Length > 50)
+                {
+                    MessageBox.Show("El Nombre de usuario debe ser menor a 50 caracteres.");
+                }
             else if (string.IsNullOrWhiteSpace(this.txtApellido.Text))
             {
                 MessageBox.Show("Debe indicar el apellido del usuario.");
             }
-            else if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
+                else if (this.txtApellido.Text.Length > 50)
+                {
+                    MessageBox.Show("El Apellido de usuario debe ser menor a 50 acaracteres.");
+                }
+                else if (this.txtContraseña.Text.Length > 255)
+                {
+                    MessageBox.Show("La Contraseña debe ser menor a 255 caracteres.");
+                }
+                else if (string.IsNullOrWhiteSpace(this.txtContraseña.Text))
             {
                 MessageBox.Show("Debe ingresar una contraseña.");
             }
@@ -152,8 +172,18 @@ namespace PRESENTACION.Administracion_Usuarios
                     }
                     LimpiarCampos();
                     this.Hide();
+
                 }
             }
+
+            }
+            catch (InvalidOperationException ex)
+            {
+
+                MessageBox.Show(ex.Message, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
         }
         #endregion
 
