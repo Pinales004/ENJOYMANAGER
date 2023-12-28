@@ -1,4 +1,5 @@
 ﻿using DOMINIO.Models;
+using PRESENTACION.Administracion_Tareas;
 using PRESENTACION.Proyecto;
 using System.Data;
 
@@ -6,6 +7,7 @@ namespace PRESENTACION
 {
     public partial class FormProyectos : Form
     {
+        public string TareaId;
         public FormProyectos()
         {
             InitializeComponent();
@@ -265,6 +267,51 @@ namespace PRESENTACION
                 }
             }
         }
+        public void CargarEstadoTareaProgra(Frm_RealizarTarea form)
+        {
+            Tareas cargar = new Tareas();
+
+            // Configura el ComboBox en el formulario pasado como argumento
+            form.cmbEstadoTarea.DataSource = cargar.TareaEstado();
+            form.cmbEstadoTarea.DisplayMember = "Estado";
+            form.cmbEstadoTarea.ValueMember = "EstadoTareaid";
+        }
+        private void dataGridViewTareas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridViewTareas.SelectedRows.Count > 0)
+            {
+                var frm = new Frm_RealizarTarea();
+                CargarEstadoTareaProgra(frm);
+
+                DataTable dataTable = (DataTable)dataGridViewTareas.DataSource;
+
+                frm.TipoOperacion = "Editar";
+                DataRow selectedRow = dataTable.Rows[dataGridView1.SelectedRows[0].Index];
+
+                TareaId = dataGridViewTareas.SelectedRows[0].Cells["TareaId"].Value.ToString();
+
+                frm.TareaId = TareaId;
+
+                frm.txtNombreTarea.Text = selectedRow["Nombre de la tarea"].ToString();
+                frm.cmbEstadoTarea.Text = selectedRow["Estado"].ToString();
+                frm.txtDescripcionTarea.Text = selectedRow["Descripción"].ToString();
+                frm.dateTimePickerInicio.Value = DateTime.Parse(selectedRow["Fecha de inicio"].ToString());
+                frm.dateTimePickerFin.Value = DateTime.Parse(selectedRow["Fecha final"].ToString());
+
+                // Establece la propiedad FormTareas
+                //frm.FormTareas = this;
+                // Llamar al método AbrirFormulario con el formulario Frm_NuevaTarea
+                AbrirFormulario<Frm_RealizarTarea>(frm);
+            }
+            else
+            {
+                MessageBox.Show("Debe Seleccionar una fila");
+            }
+        }
     }
+
+
+
 }
 
