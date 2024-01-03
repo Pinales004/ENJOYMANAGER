@@ -91,11 +91,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj",
+      "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\Comun\\Comun.csproj",
       "projectName": "Comun",
-      "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\Comun.csproj",
+      "projectPath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\Comun\\Comun.csproj",
       "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\Comun\\obj\\",
+      "outputPath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\Comun\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",

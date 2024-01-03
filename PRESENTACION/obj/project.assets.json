@@ -582,11 +582,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+      "projectUniqueName": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
       "projectName": "ENJOYMANAGEMENT",
-      "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
+      "projectPath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\PRESENTACION\\PRESENTACION.csproj",
       "packagesPath": "C:\\Users\\darkj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\PRESENTACION\\obj\\",
+      "outputPath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\PRESENTACION\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\darkj\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -603,8 +603,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows7.0",
           "projectReferences": {
-            "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
-              "projectPath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
+            "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj": {
+              "projectPath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\DOMINIO\\DOMINIO.csproj"
             }
           }
         }

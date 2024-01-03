@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d4cHG/s14mQx3FaB0+yAnBgxQ48X4ub9cvOKGhQ0SU4RtMRTFY+UZmTvwgw/7inF2py5bfDzbpG3NrDQuVV9iA==",
+  "dgSpecHash": "McS2X7iNuo1FwUXw1C7DYSojn6io3ssmvfFUp1uSVHpKBEQmniLeOK9Cve/2VW3Y+2DRpkWrwetN2Rzt/xy/cw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\darkj\\OneDrive\\Documentos\\GitHub\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
+  "projectFilePath": "C:\\Users\\darkj\\OneDrive\\Escritorio\\ENJOYMANAGER\\DATOS\\DATOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darkj\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
     "C:\\Users\\darkj\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",

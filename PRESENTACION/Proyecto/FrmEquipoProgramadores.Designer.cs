@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEquipoProgramadores));
             panel1 = new Panel();
-            btn_eliminar = new PictureBox();
-            btn_guardar = new PictureBox();
-            btn_volver = new PictureBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             CmbProgramadores = new MaterialSkin.Controls.MaterialComboBox();
             dataGridView1 = new DataGridView();
+            btn_eliminar = new PictureBox();
+            btn_guardar = new PictureBox();
+            btn_volver = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -57,51 +57,6 @@
             panel1.Size = new Size(519, 461);
             panel1.TabIndex = 0;
             panel1.MouseMove += FrmEquipoProgramadores_MouseMove;
-            // 
-            // btn_eliminar
-            // 
-            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_eliminar.Cursor = Cursors.Hand;
-            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
-            btn_eliminar.Location = new Point(411, 404);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(45, 45);
-            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_eliminar.TabIndex = 87;
-            btn_eliminar.TabStop = false;
-            btn_eliminar.Click += btn_eliminar_Click;
-            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
-            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
-            // 
-            // btn_guardar
-            // 
-            btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btn_guardar.Cursor = Cursors.Hand;
-            btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
-            btn_guardar.Location = new Point(462, 404);
-            btn_guardar.Name = "btn_guardar";
-            btn_guardar.Size = new Size(45, 45);
-            btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_guardar.TabIndex = 85;
-            btn_guardar.TabStop = false;
-            btn_guardar.Click += btn_guardar_MouseEnter;
-            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
-            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
-            // 
-            // btn_volver
-            // 
-            btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btn_volver.Cursor = Cursors.Hand;
-            btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
-            btn_volver.Location = new Point(12, 404);
-            btn_volver.Name = "btn_volver";
-            btn_volver.Size = new Size(45, 45);
-            btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_volver.TabIndex = 84;
-            btn_volver.TabStop = false;
-            btn_volver.Click += btn_volver_Click;
-            btn_volver.MouseEnter += btn_volver_MouseEnter;
-            btn_volver.MouseLeave += btn_volver_MouseLeave;
             // 
             // materialLabel1
             // 
@@ -151,6 +106,51 @@
             dataGridView1.Size = new Size(487, 226);
             dataGridView1.TabIndex = 88;
             // 
+            // btn_eliminar
+            // 
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(411, 404);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 87;
+            btn_eliminar.TabStop = false;
+            btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
+            // 
+            // btn_guardar
+            // 
+            btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btn_guardar.Cursor = Cursors.Hand;
+            btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
+            btn_guardar.Location = new Point(462, 404);
+            btn_guardar.Name = "btn_guardar";
+            btn_guardar.Size = new Size(45, 45);
+            btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_guardar.TabIndex = 85;
+            btn_guardar.TabStop = false;
+            btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.MouseEnter += btn_guardar_MouseEnter;
+            btn_guardar.MouseLeave += btn_guardar_MouseLeave;
+            // 
+            // btn_volver
+            // 
+            btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_volver.Cursor = Cursors.Hand;
+            btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
+            btn_volver.Location = new Point(12, 404);
+            btn_volver.Name = "btn_volver";
+            btn_volver.Size = new Size(45, 45);
+            btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_volver.TabIndex = 84;
+            btn_volver.TabStop = false;
+            btn_volver.Click += btn_volver_Click;
+            btn_volver.MouseEnter += btn_volver_MouseEnter;
+            btn_volver.MouseLeave += btn_volver_MouseLeave;
+            // 
             // FrmEquipoProgramadores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -164,10 +164,10 @@
             Load += FrmEquipoProgramadores_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
