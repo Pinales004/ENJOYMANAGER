@@ -65,7 +65,7 @@ namespace PRESENTACION
             PictureBox button = (PictureBox)sender;
 
             // Restaura el color de fondo original al salir del botón
-            button.BackColor = SystemColors.Control;
+            button.BackColor = Color.Transparent;
         }
     }
 }

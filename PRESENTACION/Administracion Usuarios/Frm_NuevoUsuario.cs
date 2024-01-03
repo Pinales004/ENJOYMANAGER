@@ -1,6 +1,7 @@
 ﻿using DOMINIO.Models;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 namespace PRESENTACION.Administracion_Usuarios
 {
 
@@ -37,6 +38,23 @@ namespace PRESENTACION.Administracion_Usuarios
                 materialLabel9.Visible = false;
                 CboEstadoUsuario.Visible = false;
             }
+
+            // Suscribirse al evento TemaCambiado del formulario principal
+            FormPrincipal.TemaCambiado += FormPrincipal_TemaCambiado;
+
+            // Obtener y aplicar el tema actual
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            panel1.BackColor = TemaColores.BarraTitulo;
+        }
+        private void FormPrincipal_TemaCambiado(object sender, EventArgs e)
+        {
+            // El tema en el formulario principal cambió, actualizar el tema en este formulario
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            AplicarTema(temaActual);
+        }
+        private void AplicarTema(string tema)
+        {
+            panel1.BackColor = TemaColores.BarraTitulo;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -284,5 +302,6 @@ namespace PRESENTACION.Administracion_Usuarios
         {
             e.Handled = Validadores.Validador_Alfabetico(e.KeyChar);
         }
+
     }
 }

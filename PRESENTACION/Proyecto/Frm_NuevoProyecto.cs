@@ -47,6 +47,24 @@ namespace PRESENTACION.Proyecto
                 dateTimeFinPro.ShowCheckBox = true;
                 dateTimeFinPro.Checked = true;
             }
+
+            // Suscribirse al evento TemaCambiado del formulario principal
+            FormPrincipal.TemaCambiado += FormPrincipal_TemaCambiado;
+
+            // Obtener y aplicar el tema actual
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            panel1.BackColor = TemaColores.BarraTitulo;
+
+        }
+        private void FormPrincipal_TemaCambiado(object sender, EventArgs e)
+        {
+            // El tema en el formulario principal cambió, actualizar el tema en este formulario
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            AplicarTema(temaActual);
+        }
+        private void AplicarTema(string tema)
+        {
+            panel1.BackColor = TemaColores.BarraTitulo;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

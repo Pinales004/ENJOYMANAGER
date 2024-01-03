@@ -49,11 +49,35 @@ namespace PRESENTACION
 
         private void FormTareas_Load(object sender, EventArgs e)
         {
+            // Suscribirse al evento TemaCambiado del formulario principal
+            FormPrincipal.TemaCambiado += FormPrincipal_TemaCambiado;
+
+            // Obtener y aplicar el tema actual
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            panel1.BackColor = TemaColores.PanelBotones;
+            label1.ForeColor = TemaColores.TextBusqueda;
+            dataGridView1.BackgroundColor = TemaColores.TextBusqueda;
+            dataGridView1.GridColor = TemaColores.TextBusqueda;
+
             txtbox_buscar.MaxLength = 100;
             TxtResponsable.MaxLength = 50;
 
             rolUsuario();
         }
+        private void FormPrincipal_TemaCambiado(object sender, EventArgs e)
+        {
+            // El tema en el formulario principal cambió, actualizar el tema en este formulario
+            string temaActual = FormPrincipal.TemaSeleccionado;
+            AplicarTema(temaActual);
+        }
+        private void AplicarTema(string tema)
+        {
+            panel1.BackColor = TemaColores.PanelBotones;
+            label1.ForeColor = TemaColores.TextBusqueda;
+            dataGridView1.BackgroundColor = TemaColores.TextBusqueda;
+            dataGridView1.GridColor = TemaColores.TextBusqueda;
+        }
+
         public void CargarEstadoTarea(Frm_NuevaTarea form)
         {
             Tareas cargar = new Tareas();

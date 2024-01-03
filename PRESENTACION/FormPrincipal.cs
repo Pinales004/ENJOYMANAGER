@@ -50,15 +50,6 @@ namespace PRESENTACION
             }
         }
 
-        //Constructor
-        //public FormMenuPrincipal()
-        //{
-        //    InitializeComponent();
-        //    //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
-        //    this.SetStyle(ControlStyles.ResizeRedraw, true);
-        //    this.DoubleBuffered = true;
-        //}
-
         #region Funcionalidades del formulario
         //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 12;
@@ -162,11 +153,63 @@ namespace PRESENTACION
             AbrirFormulario<FormTareas>();
         }
 
+        // Evento que se disparará cuando el tema cambie
+        public static event EventHandler TemaCambiado;
+        // Agrega una variable estática para almacenar el valor seleccionado del ComboBox
+        private static string temaSeleccionado = "Acua";
+
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
+            TemaColores.ElegirTema("Acua");
+            label1.ForeColor = SystemColors.Menu;
+            label2.ForeColor = SystemColors.Menu;
+            panel1.BackColor = TemaColores.PanelPadre;
+            panel2.BackColor = TemaColores.PanelPadre;
+            panelBarraTitulo.BackColor = TemaColores.BarraTitulo;
+            panelFormularios.BackColor = TemaColores.PanelPadre;
+
             LoadUserData();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Almacena el valor seleccionado en la variable estática
+            temaSeleccionado = comboBox1.Text;
+
+            TemaColores.ElegirTema(comboBox1.Text);
+            panel1.BackColor = TemaColores.PanelPadre;
+            panel2.BackColor = TemaColores.PanelPadre;
+            panelBarraTitulo.BackColor = TemaColores.BarraTitulo;
+            panelFormularios.BackColor = TemaColores.PanelPadre;
+            if (comboBox1.Text == "Verde")
+            {
+                label1.ForeColor = SystemColors.ControlText;
+            }
+            else
+            {
+                label1.ForeColor = SystemColors.Menu;
+                label2.ForeColor = SystemColors.Menu;
+                lblApellido.ForeColor = SystemColors.Menu;
+                lblNombre.ForeColor = SystemColors.Menu;
+                lblRol.ForeColor = SystemColors.Menu;
+                btnCerrarSesion.ForeColor = SystemColors.Menu;
+                btnProyectos.ForeColor = SystemColors.Menu;
+                btnUsuarios.ForeColor = SystemColors.Menu;
+                btnTareas.ForeColor = SystemColors.Menu;
+            }
+            // Disparar el evento cuando el tema cambie
+            OnTemaCambiado(EventArgs.Empty);
+        }
+        // Propiedad estática para acceder al valor seleccionado desde otros formularios
+        public static string TemaSeleccionado
+        {
+            get { return temaSeleccionado; }
+        }
+        protected virtual void OnTemaCambiado(EventArgs e)
+        {
+            // Verificar si hay suscriptores al evento y notificarles
+            TemaCambiado?.Invoke(this, e);
+        }
         #endregion
 
         //Metodo abrir formulario dentro del panel

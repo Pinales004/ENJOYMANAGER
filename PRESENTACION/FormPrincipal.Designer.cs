@@ -32,6 +32,8 @@
             panelContenedor = new Panel();
             panelFormularios = new Panel();
             panel1 = new Panel();
+            label2 = new Label();
+            comboBox1 = new ComboBox();
             btnCerrarSesion = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             lblApellido = new Label();
@@ -83,6 +85,8 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(btnCerrarSesion);
             panel1.Controls.Add(flowLayoutPanel1);
             panel1.Dock = DockStyle.Bottom;
@@ -90,6 +94,29 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1150, 30);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(176, 6);
+            label2.Name = "label2";
+            label2.Size = new Size(41, 16);
+            label2.TabIndex = 11;
+            label2.Text = "Tema";
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.ActiveBorder;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.IntegralHeight = false;
+            comboBox1.Items.AddRange(new object[] { "Azul", "Celeste", "Marrón", "Rosa", "Verde", "Acua", "Morado" });
+            comboBox1.Location = new Point(223, 3);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(127, 23);
+            comboBox1.TabIndex = 5;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btnCerrarSesion
             // 
@@ -312,6 +339,7 @@
             panelContenedor.ResumeLayout(false);
             panelFormularios.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             panelBarraTitulo.ResumeLayout(false);
@@ -343,5 +371,7 @@
         private Label lblApellido;
         private Label lblNombre;
         private Label lblRol;
+        private ComboBox comboBox1;
+        private Label label2;
     }
 }

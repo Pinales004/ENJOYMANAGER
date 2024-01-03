@@ -51,14 +51,17 @@
             btn_volver = new PictureBox();
             CboEstadoUsuario = new MaterialSkin.Controls.MaterialComboBox();
             materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // materialLabel2
             // 
             materialLabel2.AutoSize = true;
+            materialLabel2.BackColor = SystemColors.ActiveCaption;
             materialLabel2.Depth = 0;
             materialLabel2.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel2.Location = new Point(630, 28);
@@ -71,6 +74,7 @@
             // materialLabel3
             // 
             materialLabel3.AutoSize = true;
+            materialLabel3.BackColor = SystemColors.ActiveCaption;
             materialLabel3.Depth = 0;
             materialLabel3.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel3.Location = new Point(329, 28);
@@ -134,6 +138,7 @@
             // materialLabel7
             // 
             materialLabel7.AutoSize = true;
+            materialLabel7.BackColor = SystemColors.ActiveCaption;
             materialLabel7.Depth = 0;
             materialLabel7.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel7.Location = new Point(448, 201);
@@ -146,6 +151,7 @@
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
+            materialLabel1.BackColor = SystemColors.ActiveCaption;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel1.Location = new Point(12, 28);
@@ -169,7 +175,7 @@
             cmbRol.FormattingEnabled = true;
             cmbRol.IntegralHeight = false;
             cmbRol.ItemHeight = 43;
-            cmbRol.Location = new Point(448, 222);
+            cmbRol.Location = new Point(448, 223);
             cmbRol.MaxDropDownItems = 4;
             cmbRol.MouseState = MaterialSkin.MouseState.OUT;
             cmbRol.Name = "cmbRol";
@@ -209,6 +215,7 @@
             // materialLabel4
             // 
             materialLabel4.AutoSize = true;
+            materialLabel4.BackColor = SystemColors.ActiveCaption;
             materialLabel4.Depth = 0;
             materialLabel4.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel4.Location = new Point(12, 114);
@@ -249,6 +256,7 @@
             // materialLabel5
             // 
             materialLabel5.AutoSize = true;
+            materialLabel5.BackColor = SystemColors.ActiveCaption;
             materialLabel5.Depth = 0;
             materialLabel5.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel5.Location = new Point(329, 114);
@@ -289,6 +297,7 @@
             // materialLabel6
             // 
             materialLabel6.AutoSize = true;
+            materialLabel6.BackColor = SystemColors.ActiveCaption;
             materialLabel6.Depth = 0;
             materialLabel6.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel6.Location = new Point(230, 201);
@@ -329,6 +338,7 @@
             // materialLabel8
             // 
             materialLabel8.AutoSize = true;
+            materialLabel8.BackColor = SystemColors.ActiveCaption;
             materialLabel8.Depth = 0;
             materialLabel8.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             materialLabel8.Location = new Point(12, 201);
@@ -370,7 +380,7 @@
             // 
             ResetPassword.AutoSize = true;
             ResetPassword.Depth = 0;
-            ResetPassword.Location = new Point(353, 290);
+            ResetPassword.Location = new Point(346, 290);
             ResetPassword.Margin = new Padding(0);
             ResetPassword.MouseLocation = new Point(-1, -1);
             ResetPassword.MouseState = MaterialSkin.MouseState.HOVER;
@@ -385,6 +395,7 @@
             // btn_limpiar
             // 
             btn_limpiar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_limpiar.BackColor = Color.Transparent;
             btn_limpiar.Cursor = Cursors.Hand;
             btn_limpiar.Image = (Image)resources.GetObject("btn_limpiar.Image");
             btn_limpiar.Location = new Point(692, 290);
@@ -400,9 +411,10 @@
             // btn_guardar
             // 
             btn_guardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_guardar.BackColor = Color.Transparent;
             btn_guardar.Cursor = Cursors.Hand;
             btn_guardar.Image = (Image)resources.GetObject("btn_guardar.Image");
-            btn_guardar.Location = new Point(743, 290);
+            btn_guardar.Location = new Point(746, 290);
             btn_guardar.Name = "btn_guardar";
             btn_guardar.Size = new Size(45, 45);
             btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -415,6 +427,7 @@
             // btn_volver
             // 
             btn_volver.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btn_volver.BackColor = Color.Transparent;
             btn_volver.Cursor = Cursors.Hand;
             btn_volver.Image = (Image)resources.GetObject("btn_volver.Image");
             btn_volver.Location = new Point(12, 290);
@@ -441,7 +454,7 @@
             CboEstadoUsuario.FormattingEnabled = true;
             CboEstadoUsuario.IntegralHeight = false;
             CboEstadoUsuario.ItemHeight = 43;
-            CboEstadoUsuario.Location = new Point(654, 222);
+            CboEstadoUsuario.Location = new Point(654, 223);
             CboEstadoUsuario.MaxDropDownItems = 4;
             CboEstadoUsuario.MouseState = MaterialSkin.MouseState.OUT;
             CboEstadoUsuario.Name = "CboEstadoUsuario";
@@ -452,42 +465,54 @@
             // materialLabel9
             // 
             materialLabel9.AutoSize = true;
+            materialLabel9.BackColor = SystemColors.ActiveCaption;
             materialLabel9.Depth = 0;
             materialLabel9.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel9.Location = new Point(657, 200);
+            materialLabel9.Location = new Point(654, 201);
             materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel9.Name = "materialLabel9";
             materialLabel9.Size = new Size(50, 19);
             materialLabel9.TabIndex = 120;
             materialLabel9.Text = "Estado";
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDark;
+            panel1.Controls.Add(materialLabel2);
+            panel1.Controls.Add(materialLabel4);
+            panel1.Controls.Add(materialLabel3);
+            panel1.Controls.Add(materialLabel8);
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(cmbGenero);
+            panel1.Controls.Add(materialLabel5);
+            panel1.Controls.Add(txtApellido);
+            panel1.Controls.Add(txtNombreUsuario);
+            panel1.Controls.Add(txtEmail);
+            panel1.Controls.Add(txtNombre);
+            panel1.Controls.Add(materialLabel6);
+            panel1.Controls.Add(materialLabel9);
+            panel1.Controls.Add(btn_volver);
+            panel1.Controls.Add(CboEstadoUsuario);
+            panel1.Controls.Add(btn_limpiar);
+            panel1.Controls.Add(ResetPassword);
+            panel1.Controls.Add(txtContraseña2);
+            panel1.Controls.Add(btn_guardar);
+            panel1.Controls.Add(txtContraseña);
+            panel1.Controls.Add(cmbRol);
+            panel1.Controls.Add(materialLabel7);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(803, 347);
+            panel1.TabIndex = 121;
+            panel1.MouseMove += Frm_NuevoUsuario_MouseMove;
+            // 
             // Frm_NuevoUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(803, 347);
-            Controls.Add(materialLabel9);
-            Controls.Add(CboEstadoUsuario);
-            Controls.Add(btn_limpiar);
-            Controls.Add(btn_guardar);
-            Controls.Add(btn_volver);
-            Controls.Add(ResetPassword);
-            Controls.Add(materialLabel6);
-            Controls.Add(txtContraseña2);
-            Controls.Add(materialLabel8);
-            Controls.Add(txtContraseña);
-            Controls.Add(materialLabel4);
-            Controls.Add(txtNombreUsuario);
-            Controls.Add(materialLabel5);
-            Controls.Add(txtEmail);
-            Controls.Add(materialLabel2);
-            Controls.Add(materialLabel3);
-            Controls.Add(cmbGenero);
-            Controls.Add(txtApellido);
-            Controls.Add(materialLabel7);
-            Controls.Add(materialLabel1);
-            Controls.Add(cmbRol);
-            Controls.Add(txtNombre);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Frm_NuevoUsuario";
             Text = "ENJOYMANAGEMENT-Usuarios";
@@ -496,8 +521,9 @@
             ((System.ComponentModel.ISupportInitialize)btn_limpiar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -524,5 +550,6 @@
         private PictureBox btn_volver;
         public MaterialSkin.Controls.MaterialComboBox CboEstadoUsuario;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private Panel panel1;
     }
 }

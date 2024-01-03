@@ -29,19 +29,49 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEquipoProgramadores));
+            panel1 = new Panel();
+            btn_eliminar = new PictureBox();
             btn_guardar = new PictureBox();
             btn_volver = new PictureBox();
-            materialCheckedListBox1 = new MaterialSkin.Controls.MaterialCheckedListBox();
             materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             CmbProgramadores = new MaterialSkin.Controls.MaterialComboBox();
             dataGridView1 = new DataGridView();
-            btn_eliminar = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).BeginInit();
-            materialCheckedListBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)btn_eliminar).BeginInit();
             SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(materialLabel1);
+            panel1.Controls.Add(CmbProgramadores);
+            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(btn_eliminar);
+            panel1.Controls.Add(btn_guardar);
+            panel1.Controls.Add(btn_volver);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(519, 461);
+            panel1.TabIndex = 0;
+            panel1.MouseMove += FrmEquipoProgramadores_MouseMove;
+            // 
+            // btn_eliminar
+            // 
+            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_eliminar.Cursor = Cursors.Hand;
+            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
+            btn_eliminar.Location = new Point(411, 404);
+            btn_eliminar.Name = "btn_eliminar";
+            btn_eliminar.Size = new Size(45, 45);
+            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
+            btn_eliminar.TabIndex = 87;
+            btn_eliminar.TabStop = false;
+            btn_eliminar.Click += btn_eliminar_Click;
+            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
+            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
             // 
             // btn_guardar
             // 
@@ -52,9 +82,9 @@
             btn_guardar.Name = "btn_guardar";
             btn_guardar.Size = new Size(45, 45);
             btn_guardar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_guardar.TabIndex = 80;
+            btn_guardar.TabIndex = 85;
             btn_guardar.TabStop = false;
-            btn_guardar.Click += btn_guardar_Click;
+            btn_guardar.Click += btn_guardar_MouseEnter;
             btn_guardar.MouseEnter += btn_guardar_MouseEnter;
             btn_guardar.MouseLeave += btn_guardar_MouseLeave;
             // 
@@ -67,39 +97,22 @@
             btn_volver.Name = "btn_volver";
             btn_volver.Size = new Size(45, 45);
             btn_volver.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_volver.TabIndex = 79;
+            btn_volver.TabIndex = 84;
             btn_volver.TabStop = false;
             btn_volver.Click += btn_volver_Click;
             btn_volver.MouseEnter += btn_volver_MouseEnter;
             btn_volver.MouseLeave += btn_volver_MouseLeave;
-            // 
-            // materialCheckedListBox1
-            // 
-            materialCheckedListBox1.AutoScroll = true;
-            materialCheckedListBox1.BackColor = Color.Silver;
-            materialCheckedListBox1.BorderStyle = BorderStyle.FixedSingle;
-            materialCheckedListBox1.Controls.Add(materialLabel1);
-            materialCheckedListBox1.Controls.Add(CmbProgramadores);
-            materialCheckedListBox1.Controls.Add(dataGridView1);
-            materialCheckedListBox1.Depth = 0;
-            materialCheckedListBox1.Location = new Point(12, 12);
-            materialCheckedListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            materialCheckedListBox1.Name = "materialCheckedListBox1";
-            materialCheckedListBox1.Size = new Size(495, 337);
-            materialCheckedListBox1.Striped = false;
-            materialCheckedListBox1.StripeDarkColor = Color.Empty;
-            materialCheckedListBox1.TabIndex = 81;
             // 
             // materialLabel1
             // 
             materialLabel1.AutoSize = true;
             materialLabel1.Depth = 0;
             materialLabel1.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            materialLabel1.Location = new Point(3, 20);
+            materialLabel1.Location = new Point(20, 37);
             materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             materialLabel1.Name = "materialLabel1";
             materialLabel1.Size = new Size(193, 19);
-            materialLabel1.TabIndex = 2;
+            materialLabel1.TabIndex = 90;
             materialLabel1.Text = "Agregar Miembro al Equipo";
             // 
             // CmbProgramadores
@@ -116,13 +129,13 @@
             CmbProgramadores.FormattingEnabled = true;
             CmbProgramadores.IntegralHeight = false;
             CmbProgramadores.ItemHeight = 43;
-            CmbProgramadores.Location = new Point(3, 42);
+            CmbProgramadores.Location = new Point(20, 71);
             CmbProgramadores.MaxDropDownItems = 4;
             CmbProgramadores.MouseState = MaterialSkin.MouseState.OUT;
             CmbProgramadores.Name = "CmbProgramadores";
             CmbProgramadores.Size = new Size(349, 49);
             CmbProgramadores.StartIndex = 0;
-            CmbProgramadores.TabIndex = 1;
+            CmbProgramadores.TabIndex = 89;
             // 
             // dataGridView1
             // 
@@ -131,27 +144,12 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
-            dataGridView1.Location = new Point(3, 106);
+            dataGridView1.Location = new Point(20, 139);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(487, 226);
-            dataGridView1.TabIndex = 0;
-            // 
-            // btn_eliminar
-            // 
-            btn_eliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_eliminar.Cursor = Cursors.Hand;
-            btn_eliminar.Image = (Image)resources.GetObject("btn_eliminar.Image");
-            btn_eliminar.Location = new Point(411, 404);
-            btn_eliminar.Name = "btn_eliminar";
-            btn_eliminar.Size = new Size(45, 45);
-            btn_eliminar.SizeMode = PictureBoxSizeMode.Zoom;
-            btn_eliminar.TabIndex = 83;
-            btn_eliminar.TabStop = false;
-            btn_eliminar.Click += btn_eliminar_Click;
-            btn_eliminar.MouseEnter += btn_eliminar_MouseEnter;
-            btn_eliminar.MouseLeave += btn_eliminar_MouseLeave;
+            dataGridView1.TabIndex = 88;
             // 
             // FrmEquipoProgramadores
             // 
@@ -159,31 +157,28 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(519, 461);
-            Controls.Add(btn_eliminar);
-            Controls.Add(materialCheckedListBox1);
-            Controls.Add(btn_guardar);
-            Controls.Add(btn_volver);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmEquipoProgramadores";
             Text = "ENJOYMANAGEMENT-Proyectos-Equipo";
             Load += FrmEquipoProgramadores_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_guardar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_volver).EndInit();
-            materialCheckedListBox1.ResumeLayout(false);
-            materialCheckedListBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)btn_eliminar).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Panel panel1;
+        private PictureBox btn_eliminar;
         private PictureBox btn_guardar;
         private PictureBox btn_volver;
-        private MaterialSkin.Controls.MaterialCheckedListBox materialCheckedListBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialComboBox CmbProgramadores;
         private DataGridView dataGridView1;
-        private PictureBox btn_eliminar;
     }
 }
